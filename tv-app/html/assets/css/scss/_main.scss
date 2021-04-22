@@ -654,7 +654,7 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
     .wrapper { width: 100%; max-width: 700px; position: relative; height: auto; min-height: 100vh; @include flexbox(); @include justify-content(center); @include flex-direction(column); padding: 15px; margin: 0 auto;
         .content { background: rgba(255, 255, 255, 1); }
         .content-header { background: rgba(191, 191, 191, 1); padding: 20px; position: relative;
-            .popup-close { display: inline-block; width: 29px; height: 29px; position: absolute; top: 15px; right: 15px; @include opacity(0.5); @include transition(0.3s, ease-in-out);
+            .popup-close { display: inline-block; width: 29px; height: 29px; position: absolute; top: 15px; right: 15px; @include opacity(0.5); @include transition(0.3s, ease-in-out); cursor: pointer;
                 .icon-close { background: url(../images/icon-icon.svg) no-repeat center center; background-size: 29px; display: inline-block; width: 29px; height: 29px; }
                 &:hover { @include opacity(1); }
             }
@@ -663,23 +663,31 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
             }
         }
         .content-body { padding: 20px; background: rgba(242, 242, 242, 1);
-            .slider-block { max-width: 500px; margin: 0 auto; 
+            .slider-block { margin: 0 auto 10px; 
                 .slider-action { background: $white; padding: 5px 20px; text-align: center;
                     span { background: #f2f2f2; color: $black; display: inline-block; padding: 5px 25px; font-size: 14px; }
                 }
                 .slider-arrow { height: 31px; width: 220px; margin: 0px auto; position: relative; top: -20px; text-align: center;
-                    .swiper-button { filter: invert(1); top: calc(50% - 10px); background-size: 20px !important; width: 20px; height: 20px; margin: 0;
+                    .swiper-button { @include opacity(0.6); filter: invert(1); top: calc(50% - 10px); background-size: 20px !important; width: 20px; height: 20px; margin: 0;
                         &.swiper-button-next { right: 0px; padding-right: 0px; background: url(../images/next-arrow.png) no-repeat center center; }
                         &.swiper-button-prev { left: 0; padding-left: 0px; background: url(../images/prev-arrow.png) no-repeat center center; }
                         &:hover { @include opacity(1); }
                         &:focus { outline: none; }
                         &:after { content: none; }                        
                     }    
-                    .btn-select { color: $white; background: #d81b5c; text-decoration: none; padding: 5px 20px; margin-bottom: 10px; display: inline-block; font-size: 14px; }                
+                    .btn-select { color: $white; background: #d81b5c; text-decoration: none; padding: 5px 20px; margin-bottom: 10px; display: inline-block; font-size: 14px; @include transition(0.3s, ease-in-out);
+                        &:hover { background: #b5164d; }
+                    }                
                 }
                 .modal-slider { padding: 20px 0 10px; }
                 .swiper-slide { width: 280px; height: auto; text-align: center;  
-                    .image-block { border: 1px solid transparent; line-height: 0.7; }
+                    .image-block { border: 1px solid transparent; line-height: 0.7;                         
+                        .bottom-title { position: absolute; font-size: 18px; bottom: 0px; left: 0; right: 0; width: 100%; text-align: center; color: $white; font-weight: bold; background: rgba(0,0,0,0.3); padding: 8px 15px;
+                            &.orange { color: rgba(237,125,49,1); }
+                            &.pink { color: rgba(216,27,92,1); }
+                            &.yellow { color: rgba(255,255,0,1); }
+                        }
+                    }
                     &.swiper-slide-active { top: -3px; @include box-shadow(0px 6px 8px 1px rgba(0, 0, 0, 0.3));
                         .image-block { border-color: $black; }
                     }
@@ -688,7 +696,7 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
             }            
             .description-block { @include flexbox(); padding-top: 20px;
                 .icon-check { background: url(../images/check.svg) no-repeat center center; background-size: contain; display: inline-block; width: 10px; height: 12px;}
-                .details-block { border: 1px solid rgba(191, 191, 191, 1); padding: 10px; font-size: 12px; width: 280px; margin-right: 20px;
+                .details-block { border: 1px solid rgba(191, 191, 191, 1); padding: 10px; font-size: 12px; width: 50%; margin-right: 20px;
                     span { margin-bottom: 3px; display: block;
                         &:last-child { margin-bottom: 0; }
                     }
@@ -698,7 +706,7 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
                         }
                     }
                 }
-                .info-block { border: 1px solid rgba(191, 191, 191, 1); font-size: 15px; width: calc(100% - 300px);
+                .info-block { border: 1px solid rgba(191, 191, 191, 1); font-size: 15px; width: calc(100% - 50%);
                     .heading { background: #bfbfbf; font-size: 14px; text-align: center; font-weight: bold; padding: 5px 15px; }
                     .info { padding: 10px; font-size: 12px;
                         strong { font-size: 14px; }
@@ -724,11 +732,7 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
             .content-body { padding: 15px;
                 .slider-block {                     
                     .modal-slider { padding: 30px 0 10px; }
-                }            
-                .description-block {                   
-                    .details-block { width: 230px; }
-                    .info-block { width: calc(100% - 250px); }
-                }
+                }   
             }        
         }
     }
@@ -741,8 +745,7 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
                     }
                 }
                 .description-block {                   
-                    .details-block { width: 210px; margin-right: 10px; }
-                    .info-block { width: calc(100% - 220px); }
+                    .details-block { margin-right: 10px; }
                 }
             }        
         }
