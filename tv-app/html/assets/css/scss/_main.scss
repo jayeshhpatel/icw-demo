@@ -509,7 +509,7 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
     /* slider-gallery-thumbs */
     .gallery-thumbs-block { background: rgba(0,0,0,0.6); justify-self: flex-end; padding: 15px 0;
         h1 { margin: 0 auto 15px; color: #ffffff; }
-        .gallery-thumb-arrow { max-width: 100%; margin: 0 50px; padding: 0 80px; position: relative; }
+        .gallery-thumb-arrow { max-width: 100%; margin: 0 120px; padding: 0 50px; position: relative; }
         .gallery-thumbs { width: 100%;
             .gallery-thumb { width: calc(16.67% - 10px); border: 2px solid transparent; line-height: 0.7; @include transition(0.3s, ease-in-out); overflow: hidden;
                 img { cursor: pointer; width: 100%; height: auto; object-fit: contain; position: relative; @include opacity(0.7); @include transition(0.3s, ease-in-out); }
@@ -680,7 +680,7 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
                     }                
                 }
                 .modal-slider { padding: 20px 0 10px; }
-                .swiper-slide { width: 280px; height: auto; text-align: center;  
+                .swiper-slide { width: 300px; height: auto; text-align: center;  
                     .image-block { border: 1px solid transparent; line-height: 0.7;                         
                         .bottom-title { position: absolute; font-size: 18px; bottom: 0px; left: 0; right: 0; width: 100%; text-align: center; color: $white; font-weight: bold; background: rgba(0,0,0,0.3); padding: 8px 15px;
                             &.orange { color: rgba(237,125,49,1); }
