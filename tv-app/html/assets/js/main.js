@@ -93,21 +93,15 @@ $(document).ready(function(){
             var videoLink = 'https://player.vimeo.com/video/'+ url +'?rel=0&loop=1&autoplay=1'
             console.log(videoLink);
             $('.gallery-thumb').removeClass('swiper-slide-active');
-            $(this).addClass('swiper-slide-active');
+            $(this).addClass('swiper-slide-active');           
             $("#videoFrame").attr("src", videoLink);
         });
-        $('.swiper-button-prev').on('click', function() {
+        $('.swiper-button-prev, .swiper-button-next').on('click', function() {
             var url = $('.swiper-slide-active').data('video-link');
             var videoLink = 'https://player.vimeo.com/video/'+ url +'?rel=0&loop=1&autoplay=1'
             console.log(videoLink);
             $("#videoFrame").attr("src", videoLink);
         });
-        $('.swiper-button-next').on('click', function() {
-            var url = $('.swiper-slide-active').data('video-link');
-            var videoLink = 'https://player.vimeo.com/video/'+ url +'?rel=0&loop=1&autoplay=1'
-            console.log(videoLink);
-            $("#videoFrame").attr("src", videoLink);
-        });        
     }
 
     /* video gallery slider - v2 */
@@ -159,14 +153,9 @@ $(document).ready(function(){
             $('.gallery-thumb').removeClass('swiper-slide-active');
             $(this).addClass('swiper-slide-active');
             $("#videoFrame").attr("src", videoLink);
+            
         });
-        $('.swiper-button-prev').on('click', function() {
-            var url = $('.swiper-slide-active').data('video-link');
-            var videoLink = 'https://player.vimeo.com/video/'+ url +'?rel=0&controls=0&loop=1&autoplay=0'
-            console.log(videoLink);
-            $("#videoFrame").attr("src", videoLink);
-        });
-        $('.swiper-button-next').on('click', function() {
+        $('.swiper-button-prev, .swiper-button-next').on('click', function() {
             var url = $('.swiper-slide-active').data('video-link');
             var videoLink = 'https://player.vimeo.com/video/'+ url +'?rel=0&controls=0&loop=1&autoplay=0'
             console.log(videoLink);
@@ -194,4 +183,14 @@ $(document).ready(function(){
             },
         });
     }
+    if($('.show-gallery-thumb').length) {
+        $('.show-gallery-thumb').on('click', function(){
+            $(this).toggleClass('hide-gallery');
+            $('.video-player-block').toggleClass('hide-gallery');
+            $('.gallery-thumbs').slideToggle();
+            $('.swiper-button').toggleClass('d-none');
+        })
+    }
 });
+
+

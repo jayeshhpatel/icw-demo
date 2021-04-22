@@ -192,7 +192,7 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
         &:before {
             position: absolute;
             right: 7px;
-            top: 12px;
+            top: 10px;
             content: ' ';
             border-left: 5px solid transparent;
             border-right: 5px solid transparent;
@@ -205,14 +205,21 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
         top: 100%;
         border: 1px solid #ccc;
         right: 0px;
-        display: none;
         background-color: white;
         box-shadow: 0 3px 6px rgba(0,0,0,.175);
         color: $black;
         font-size: 16px;
         @include border-radius(8px);
         overflow: hidden;
-
+        display: block !important;
+        z-index: 4;
+        visibility: hidden;        
+        @include opacity(0);
+        -webkit-transition: all 0.2s ease-in-out 0s,visibility 0s linear 0.3s,z-index 0s linear 0.01s;
+        -moz-transition: all 0.2s ease-in-out 0s,visibility 0s linear 0.3s,z-index 0s linear 0.01s;
+        -o-transition: all 0.2s ease-in-out 0s,visibility 0s linear 0.3s,z-index 0s linear 0.01s;
+        transition: all 0.2s ease-in-out 0s,visibility 0s linear 0.3s,z-index 0s linear 0.01s;
+        @include transform(translateY(2em));
         @media (max-width: 475px) { 
             font-size: 14px;
         }
@@ -228,7 +235,7 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
                     display: block;
                     color: $black;
                     cursor: pointer;
-                    padding: 12px 25px;
+                    padding: 10px 25px;
                     
                     &:hover {
                         background-color: #F5F5F5;
@@ -251,7 +258,10 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
       }
 
       &:hover .dropdown-nav {
-        display: block;
+        visibility: visible;
+        @include opacity(1);
+        transition-delay: 0s, 0s, 0.3s;
+        @include transform(translateY(0));
       }
   }
   
@@ -260,9 +270,13 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
 .container { 
     padding-left: 15px; padding-right: 15px; 
     max-width: 100%; margin: 0 auto;
+    
         @media (min-width: 1250px){
             max-width: 100%;
             padding-left: 50px; padding-right: 50px; 
+        }
+        @media (min-width: 1600px){
+            max-width: 1500px;
         }
 }
 
@@ -461,10 +475,10 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
                 &.yellow { color: rgba(255,255,0,1); }
             }
             &:hover { border-color: #fff;
-                img { transform: scale(1.05); }
+                img { @include transform(scale(1.05)); }
             }
             &.swiper-slide-active { border-color: #fff; 
-                img { transform: scale(1.01); }
+                img { @include transform(scale(1.01)); }
             }
         } 
         @media (max-width: 767px) {            
@@ -475,9 +489,9 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
         }       
     }
     /* slider-buttons */
-    .swiper-button { width: 30px; height: 30px; top: calc(50% + 28px); @include opacity(0.7); -webkit-transition: opacity 0.6s; transition: opacity 0.6s; background-size: 30px !important;
-        &.swiper-button-next { right: 10px; padding-right: 0px; background: url(../images/next-arrow.png) no-repeat center center; }
-        &.swiper-button-prev { left: 0; padding-left: 0px; background: url(../images/prev-arrow.png) no-repeat center center; }
+    .swiper-button { width: 30px; height: 30px; top: calc(50% + 28px); @include opacity(0.7); -webkit-transition: opacity 0.6s; transition: opacity 0.6s; background-size: 30px !important; background: url(../images/arrow-white.svg) no-repeat center center;
+        &.swiper-button-next { right: 10px; padding-right: 0px; @include transform(rotate(270deg)); }
+        &.swiper-button-prev { left: 0; padding-left: 0px; @include transform(rotate(90deg)); }
         &:hover { @include opacity(1); }
         &:focus { outline: none; }
         &:after { content: none; }
@@ -495,22 +509,27 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
     }    
 }         
 
-             
-
-
+.d-none { display: none !important; }
 /* vimeo-video-block */
-.vimeo-video-block { width: 100%; height: 100vh; position: relative; background: #000000 url(../images/bg.png) no-repeat top center; background-size: cover; background-attachment: fixed; @include flexbox(); @include flex-direction(column);
-    .video-player-block { width: 100%; height: 100%; padding-top: 110px; max-width: 1200px; margin: 0 auto; 
+.vimeo-video-block { width: 100%; height: 100vh; max-height: 100vh; position: relative; background: #000000 url(../images/bg.png) no-repeat top center; background-size: cover; background-attachment: fixed; @include flexbox(); @include flex-direction(column); @include justify-content(flex-end); @include align-items(center); overflow: hidden;
+    .video-player-block { width: 100%; height: 100%; padding-top: 110px; max-width: 1210px; margin: 0 auto; @include flexbox(); @include align-items(center); @include justify-content(center); @include flex-direction(column);
+        // &.hide-gallery { max-width: 1450px; }
+        .video-loader { background: #000000 url(../images/loader.svg) no-repeat center center; width: calc(100% - 30px); margin: 0 15px; }        
         #videoFrame { width: 100%; height: 100%; }
         @media (max-width: 1400px) { 
             #videoFrame { height: 100%; }
         }
     }
     /* slider-gallery-thumbs */
-    .gallery-thumbs-block { background: rgba(0,0,0,0.6); justify-self: flex-end; padding: 15px 0;
-        h1 { margin: 0 auto 15px; color: #ffffff; }
-        .gallery-thumb-arrow { max-width: 100%; margin: 0 120px; padding: 0 50px; position: relative; }
-        .gallery-thumbs { width: 100%;
+    .gallery-thumbs-block { background: rgba(0,0,0,0.6); justify-self: flex-end; padding: 15px 0; position: relative; width: 100%;
+        h1 { margin: 0 auto; color: #ffffff; }
+        .show-gallery-thumb { background-size: 30px; width: 30px; position: absolute; top: -15px; right: 30px; cursor: pointer; @include transition(0.3s, ease-in-out); @include opacity(0.7); line-height: 0.7;
+            .icon-down { background: url(../images/arrow-down.svg) no-repeat center center; background-size: 30px; width: 30px; height: 30px; display: inline-block; }
+            &:hover { @include opacity(1); }
+            &.hide-gallery { @include transform(rotate(180deg)); }
+        }
+        .gallery-thumb-arrow { max-width: 100%; padding: 0 40px; position: relative; }
+        .gallery-thumbs { width: 100%; margin-top: 15px;
             .gallery-thumb { width: calc(16.67% - 10px); border: 2px solid transparent; line-height: 0.7; @include transition(0.3s, ease-in-out); overflow: hidden;
                 img { cursor: pointer; width: 100%; height: auto; object-fit: contain; position: relative; @include opacity(0.7); @include transition(0.3s, ease-in-out); }
                 .top-title { position: absolute; top: 8px; padding: 0 10px; color: $white; font-weight: 600;
@@ -524,17 +543,17 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
                     &.yellow { color: rgba(255,255,0,1); }
                 }
                 &:hover { border-color: #fff;
-                    img { transform: scale(1.05); }
+                    img { @include transform(scale(1.05)); }
                 }
                 &.swiper-slide-active { border-color: #fff; 
-                    img { transform: scale(1.01); }
+                    img { @include transform(scale(1.01)); }
                 }
             }
         }
         /* slider-buttons */
-        .swiper-button { width: 30px; height: 30px; top: calc(50% + 28px); @include opacity(0.7); -webkit-transition: opacity 0.6s; transition: opacity 0.6s; background-size: 30px !important;
-            &.swiper-button-next { right: 10px; padding-right: 0px; background: url(../images/next-arrow.png) no-repeat center center; }
-            &.swiper-button-prev { left: 0; padding-left: 0px; background: url(../images/prev-arrow.png) no-repeat center center; }
+        .swiper-button { width: 30px; height: 30px; top: calc(50% + 28px); @include opacity(0.7); -webkit-transition: opacity 0.6s; transition: opacity 0.6s; background-size: 30px !important; background: url(../images/arrow-white.svg) no-repeat center center;
+            &.swiper-button-next { right: 10px; padding-right: 0px; @include transform(rotate(270deg)); }
+            &.swiper-button-prev { left: 0; padding-left: 0px; @include transform(rotate(90deg)); }
             &:hover { @include opacity(1); }
             &:focus { outline: none; }
             &:after { content: none; }
@@ -554,9 +573,6 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
             .gallery-thumbs { 
                 .gallery-thumb { width: calc(20% - 10px); }
             }
-        }
-        @media (max-width: 1250px) {
-            .gallery-thumb-arrow { margin: 0 15px; padding: 0 50px; }
         }
         @media (max-width: 992px) {
             .gallery-thumbs { 
@@ -584,7 +600,7 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
         }
     } 
 }
-
+.loading { background: rgba(0,0,0,0.3) url(../images/loader.gif) no-repeat center center; background-size: 60px; }
 .play-schedule-block { padding: 50px 0;
     .table-responsive { overflow: hidden; overflow-x: auto;
         .schedule-table { width: 100%; color: $white; border-spacing: 0px; position: relative;
@@ -668,21 +684,21 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
                     span { background: #f2f2f2; color: $black; display: inline-block; padding: 5px 25px; font-size: 14px; }
                 }
                 .slider-arrow { height: 31px; width: 220px; margin: 0px auto; position: relative; top: -20px; text-align: center;
-                    .swiper-button { @include opacity(0.6); filter: invert(1); top: calc(50% - 10px); background-size: 20px !important; width: 20px; height: 20px; margin: 0;
-                        &.swiper-button-next { right: 0px; padding-right: 0px; background: url(../images/next-arrow.png) no-repeat center center; }
-                        &.swiper-button-prev { left: 0; padding-left: 0px; background: url(../images/prev-arrow.png) no-repeat center center; }
+                    .swiper-button { @include opacity(0.6); top: calc(50% - 10px); background-size: 20px !important; width: 20px; height: 20px; margin: 0; background: url(../images/arrow.svg) no-repeat center center; @include transition(0.3s, ease-in-out);
+                        &.swiper-button-next { right: 0px; padding-right: 0px; @include transform(rotate(270deg)); }
+                        &.swiper-button-prev { left: 0; padding-left: 0px; @include transform(rotate(90deg)); }
                         &:hover { @include opacity(1); }
                         &:focus { outline: none; }
                         &:after { content: none; }                        
                     }    
-                    .btn-select { color: $white; background: #d81b5c; text-decoration: none; padding: 5px 20px; margin-bottom: 10px; display: inline-block; font-size: 14px; @include transition(0.3s, ease-in-out);
+                    .btn-select { color: $white; background: #d81b5c; text-decoration: none; padding: 5px 20px; margin-bottom: 10px; display: inline-block; font-size: 14px; @include transition(0.3s, ease-in-out); @include border-radius(5px);
                         &:hover { background: #b5164d; }
                     }                
                 }
                 .modal-slider { padding: 20px 0 10px; }
                 .swiper-slide { width: 300px; height: auto; text-align: center;  
-                    .image-block { border: 1px solid transparent; line-height: 0.7;                         
-                        .bottom-title { position: absolute; font-size: 18px; bottom: 0px; left: 0; right: 0; width: 100%; text-align: center; color: $white; font-weight: bold; background: rgba(0,0,0,0.3); padding: 8px 15px;
+                    .image-block { border: 2px solid transparent; line-height: 0.7;                         
+                        .bottom-title { position: absolute; font-size: 16px; bottom: 0px; left: 0; right: 0; width: 100%; text-align: center; color: $white; font-weight: bold; background: rgba(0,0,0,0.3); padding: 8px 15px;
                             &.orange { color: rgba(237,125,49,1); }
                             &.pink { color: rgba(216,27,92,1); }
                             &.yellow { color: rgba(255,255,0,1); }
@@ -740,9 +756,13 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
         .wrapper {             
             .content-body { 
                 .slider-block {
-                    .swiper-slide { width: 250px; right: -20px; 
-                        &.swiper-slide-active { width: 250px; top: -3px; }
+                    .swiper-slide { width: 200px;
+                        .image-block {                    
+                            .bottom-title { font-size: 14px; }
+                        }
+                        &.swiper-slide-active { width: 200px; top: -3px; }
                     }
+                    .slider-block .slider-arrow { width: 180px; }
                 }
                 .description-block {                   
                     .details-block { margin-right: 10px; }
