@@ -1,0 +1,9 @@
+.banner-slider {
+    .slide-info { 
+        height: 100%; min-height: 500px; max-height: 500px; @include flexbox(); @include align-items(center); @include justify-content(flex-end); background: #f3f3f3;
+        .description { padding: 50px 100px; }
+    }
+    .swiper-pagination {
+        .swiper-pagination-bullet { font-size: 0; }
+    }
+}

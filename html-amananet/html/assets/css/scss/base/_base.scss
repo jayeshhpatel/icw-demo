@@ -1,0 +1,50 @@
+body { 
+    background: $bodybg; color: $bodyfontcolor; font-size: $bodyfontsize; font-family: $bodyfont; position: relative; min-height: 100vh; overflow-x: hidden; font-style:normal; line-height:1.5; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; margin: 0;
+}
+.container {
+    width: 100%; padding-left: 15px; padding-right: 15px; margin: 0 auto;
+    @media (min-width: 576px) {        
+        max-width: 540px;
+    }
+    @media (min-width: 768px) {
+        max-width: 720px;
+    }
+    @media (min-width: 992px) {
+        max-width: 960px;
+    }
+    @media (min-width: 1200px) {
+        max-width: 1140px;
+    }
+    @media (min-width: 1400px) {
+        max-width: 1480px;
+    }
+    
+}
+
+*:focus {
+    outline: none;
+}
+a { 
+    color: $darkblack; text-decoration: none; @include inline-flex(); @include align-items(center);
+    em { 
+        margin-right: 8px; 
+    }
+    &:focus { 
+        outline: none; 
+    }
+    &:hover { 
+        color: $skyblue 
+    }
+}
+.overflow-hidden {  
+    overflow: hidden;
+}
+.d-none {
+    display: none !important;
+}
+.ml-auto {
+    margin-left: auto !important;
+}
+.main-content {
+    min-height: 100vh; padding-top: 76px;
+}
