@@ -5,7 +5,7 @@
             p { margin: 5px 0 20px; }
         }
     }
-    .swiper-pagination { text-align: right; padding: 10px 45px;
+    .swiper-pagination { text-align: right; padding: 10px 45px; width: calc(100% - 90px);
         .swiper-pagination-bullet { 
             font-size: 0; width: 15px; height: 15px; background: #707070; @include opacity(1);
             &.swiper-pagination-bullet-active { 
