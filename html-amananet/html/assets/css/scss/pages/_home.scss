@@ -1,9 +1,24 @@
 .banner-slider {
     .slide-info { 
         height: 100%; min-height: 500px; max-height: 500px; @include flexbox(); @include align-items(center); @include justify-content(flex-end); background: #f3f3f3;
-        .description { padding: 50px 100px; }
+        .description { padding: 50px 100px; 
+            p { margin: 5px 0 20px; }
+        }
     }
-    .swiper-pagination {
-        .swiper-pagination-bullet { font-size: 0; }
+    .swiper-pagination { text-align: right; padding: 10px 45px;
+        .swiper-pagination-bullet { 
+            font-size: 0; width: 15px; height: 15px; background: #707070; @include opacity(1);
+            &.swiper-pagination-bullet-active { 
+                background: #F37D19;
+            }
+        }
+    }
+}
+.online-training-block { padding: 80px;
+    p {  
+        margin: 0;
+    }
+    h2 {  
+        margin: 20px 0;
     }
 }

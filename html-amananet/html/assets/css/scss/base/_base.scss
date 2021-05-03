@@ -45,6 +45,18 @@ a {
 .ml-auto {
     margin-left: auto !important;
 }
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { 
+    line-height: 1; margin: 0; 
+}
+h1, .h1 {  
+    font-size: 45px; font-weight: normal;
+}
+h2, .h2 {  
+    font-size: 30px; font-weight: normal;
+}
 .main-content {
-    min-height: 100vh; padding-top: 76px;
+    min-height: 100vh;
+    .title-box { text-align: center; 
+        .small-title { text-transform: uppercase; font-size: 16px; color: $black; }
+    }
 }

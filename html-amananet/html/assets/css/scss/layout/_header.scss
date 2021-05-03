@@ -1,7 +1,7 @@
-.main-header {
+.main-header { background: $white; width: 100%;
     .navbar { 
         .container {
-            @include flexbox(); @include align-items(center);
+            @include flexbox(); @include align-items(center); width: auto;
         }
         ul { 
             margin: 0; padding: 0; @include flexbox(); @include align-items(center); list-style-type: none;
@@ -25,9 +25,10 @@
                     width: 100%; right: auto; left: 0; 
                 }
             }
-        }
-    }
-    .top-header { border-bottom: 3px solid #f3f3f3; padding: 8px 0;
+        }        
+    }    
+    .top-header { 
+        border-bottom: 3px solid #f3f3f3; padding: 8px 0; z-index: 991;
         ul { 
             margin: 0; padding: 0; @include flexbox(); @include align-items(center); list-style-type: none;
             li {                
@@ -39,9 +40,9 @@
         }
     }
     .sub-header {         
-        @include box-shadow( 0 1px 2px 0px rgba(0, 0, 0, 0.15)); padding: 25px 0; z-index: 999; background-color: #fff; @include transition(0.3s, ease-in-out); position: fixed; width: 100%; top: 43px;
-        &.is-fixed { 
-            top: -1px; 
+        @include box-shadow( 0 1px 2px 0px rgba(0, 0, 0, 0.15)); z-index: 999; background-color: #fff; @include transition(0.3s, ease-in-out); width: 100%; 
+        .navbar { 
+            padding: 30px 0; 
         }
         .bar-icon { 
             display: none; cursor: pointer; 
@@ -59,7 +60,16 @@
             }
         }
     }
+    .is-fixed {
+        position: fixed; top: -1px;
+        .navbar { 
+            padding: 20px 0; @include transition(0.3s, ease-in-out);
+        }
+    }
     @media (max-width: 767px) {
+        .top-header {
+            .home-menu { display: none; }
+        }
         .sub-header { padding: 20px 0;
             &.mobile-menu { top: -1px; }
             .bar-icon { 
