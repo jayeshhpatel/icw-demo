@@ -25,7 +25,7 @@ body {
     outline: none;
 }
 a { 
-    color: $darkblack; text-decoration: none; @include inline-flex(); @include align-items(center);
+    color: $darkblack; text-decoration: none; @include inline-flex(); @include align-items(center); @include transition(0.3s, ease-in-out);
     em { 
         margin-right: 8px; 
     }
@@ -36,6 +36,9 @@ a {
         color: $skyblue 
     }
 }
+img {  
+    max-width: 100%; height: auto;
+}
 .overflow-hidden {  
     overflow: hidden;
 }
@@ -44,6 +47,9 @@ a {
 }
 .ml-auto {
     margin-left: auto !important;
+}
+.pr-0 {
+    padding-right: 0 !important;
 }
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { 
     line-height: 1; margin: 0; 
@@ -54,9 +60,41 @@ h1, .h1 {
 h2, .h2 {  
     font-size: 30px; font-weight: normal;
 }
+
+.icon { background-size: contain !important; display: inline-block;
+    &.icon-paper-plane { background: url($icon-paper-plane) no-repeat center center; width: 12px; height: 12px; }
+    &.icon-phone { background: url($icon-phone) no-repeat center center; width: 12px; height: 12px; }
+    &.icon-down-arrow { background: url($icon-down-arrow) no-repeat center center; width: 16px; height: 16px; }
+    &.icon-adobe { background: url($iconpath + 'menu_adobe.png') no-repeat center center; width: 40px; height: 40px; }
+}
+
 .main-content {
     min-height: 100vh;
     .title-box { text-align: center; 
         .small-title { text-transform: uppercase; font-size: 16px; color: $black; }
+    }
+}
+@media (max-width: 1200px) { 
+    h1, .h1 {  
+        font-size: 36px; 
+    }
+    h2, .h2 {  
+        font-size: 26px; 
+    }
+}
+@media (max-width: 992px) { 
+    h1, .h1 {  
+        font-size: 32px; 
+    }
+    h2, .h2 {  
+        font-size: 24px; 
+    }
+}
+@media (max-width: 767px) { 
+    h1, .h1 {  
+        font-size: 30px; 
+    }
+    h2, .h2 {  
+        font-size: 20px; 
     }
 }

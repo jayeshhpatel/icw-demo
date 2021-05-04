@@ -1,8 +1,19 @@
 .banner-slider {
     .slide-info { 
-        height: 100%; min-height: 500px; max-height: 500px; @include flexbox(); @include align-items(center); @include justify-content(flex-end); background: #f3f3f3;
-        .description { padding: 50px 150px; 
+        height: 100%; min-height: 500px; max-height: 500px; @include flexbox(); @include align-items(center); background: #f3f3f3;
+        .description { width: 45%; margin-left: auto; padding: 0 20px;
             p { margin: 20px 0 25px; }
+        }
+        &.text-white {
+            .description {  
+                color: $white;
+            }
+        }
+        &.web-app-development {
+            background: url($imagepath + 'web-app-development.jpg') no-repeat top center; background-size: cover; 
+        }
+        &.cyber-security { 
+            background: url($imagepath + 'cyber-security.jpg') no-repeat top center; background-size: cover; 
         }
     }
     .swiper-pagination { text-align: right; padding: 10px 45px; width: calc(100% - 90px);
@@ -11,6 +22,23 @@
             &.swiper-pagination-bullet-active { 
                 background: #F37D19;
             }
+        }
+    }
+    @media (max-width: 1400px) {  
+        .slide-info {            
+            .description { width: 50%; }
+        }
+    }
+    @media (max-width: 992px) {  
+        .slide-info { 
+            min-height: 400px; max-height: 400px;          
+            .description { width: 60%; }
+        }
+    }
+    @media (max-width: 767px) {  
+        .slide-info { 
+            min-height: 300px; max-height: 300px;          
+            .description { width: 100%; padding: 0 15px; }
         }
     }
 }
