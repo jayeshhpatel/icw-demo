@@ -1,9 +1,9 @@
 .dropdown { position: relative;
     &.mega-dropdown { position: unset;
         .dropdown-toggle {
-            &::before { 
-                content: ''; width: 100%; height: 31px; background: transparent; position: absolute; bottom: -31px;
-            }
+            // &::before { 
+            //     content: ''; width: 100%; height: 31px; background: red; position: absolute; bottom: -31px;
+            // }
         }        
     }    
     .dropdown-menu {
@@ -87,13 +87,12 @@
             position: relative; top: 0;
         }
     }
-    .dropdown-toggle:hover {
-        & ~ .dropdown-menu {
+    &:hover {
+       .dropdown-menu {
             .menu-inner-block {
                 visibility: visible;
-                z-index: 2100;
-                overflow-y: auto;
-                max-height: 400px;
+                z-index: 9;
+                max-height: 500px;
                 transition: max-height 0.3s ease-in;
             }
             &.mega-dropdown-menu {
