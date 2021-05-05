@@ -6,27 +6,34 @@ $(document).ready(function() {
     //     $(window).scroll(function() {
     //         console.log(window_height);
     //         if($(this).scrollTop() >= stickyHeaderTop){
-    //             $(".main-header .sub-header").addClass("is-fixed");
+    //             $('.main-header .sub-header').addClass('is-fixed');
     //         }
     //         else if($(this).scrollTop() <= stickyHeaderTop){
-    //             $(".main-header .sub-header").removeClass("is-fixed");
+    //             $('.main-header .sub-header').removeClass('is-fixed');
     //         }
     //     });
     //     $(window).scroll();
     // }
-    $(".toggle-sidebar").click(function() {
-        $(".sub-header").toggleClass("mobile-menu");
-        $(".top-header").toggleClass("d-none");
-        $(".sub-header .collapse-nav").toggleClass("open");
-        $('body').toggleClass('overflow-hidden');
-        $(this).toggleClass('toggle');
-    })
-    var bannerSwiper = new Swiper(".banner-slider", {
+    if($('.toggle-sidebar').length) {
+        $('.toggle-sidebar').click(function() {
+            $('.sub-header').toggleClass('mobile-menu');
+            $('.top-header').toggleClass('d-none');
+            $('.sub-header .collapse-nav').toggleClass('open');
+            $('body').toggleClass('overflow-hidden');
+            $(this).toggleClass('toggle');
+        })
+    }
+    if($('.main-header').length) { 
+        $('.main-header li.dropdown div span').on('click', function() {
+            $(this).parents('.dropdown').toggleClass('open');
+        })
+    }
+    var bannerSwiper = new Swiper('.banner-slider', {
         pagination: {
-            el: ".swiper-pagination",
+            el: '.swiper-pagination',
             clickable: true,
             renderBullet: function (index, className) {
-                return '<span class="' + className + '">' + (index + 1) + "</span>";
+                return '<span class="' + className + '">' + (index + 1) + '</span>';
             },
         },
     });
@@ -39,8 +46,8 @@ $(document).ready(function() {
             disableOnInteraction: false,
         },        
         navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
         },
         breakpoints: {
             575: {

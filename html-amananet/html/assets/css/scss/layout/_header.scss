@@ -16,13 +16,11 @@
                     padding-right: 0;
                 }  
                 &.dropdown {
+                    div > span { pointer-events: none; }
                     .dropdown-menu { top: 32px; }
                 }            
                 a { 
-                    font-size: 12px; text-transform: uppercase; 
-                    .icon { @include transition(0.3s, ease-in-out); 
-                        &.icon-down-arrow { width: 12px; height: 12px; margin-left: 5px; }
-                    }
+                    font-size: 12px; text-transform: uppercase;                     
                     &:hover {
                         .icon { 
                             &.icon-paper-plane { background: url($icon-paper-plane-blue) no-repeat center center; }
@@ -30,6 +28,11 @@
                         }
                     }
                     &::after { content: none; }
+                }
+                span {
+                    .icon { @include transition(0.3s, ease-in-out); 
+                        &.icon-down-arrow { width: 12px; height: 12px; margin-left: 5px; }
+                    }
                 }
             }
         }
@@ -56,29 +59,28 @@
                         padding-right: 0;
                     }
                     &.dropdown {
+                        div > span { pointer-events: none; }
                         .dropdown-menu { top: 55px; }
                     }
                     a { 
                         position: relative; font-size: 16px; font-weight: 600;
                         .icon { @include transition(0.3s, ease-in-out); margin-left: 10px; margin-right: 0; }
-                        span {
+                        &::after { 
+                            content: ""; position: absolute; right: 0; bottom: -1px; background: $skyblue; width: 0; height: 1px; transition: all 0.3s ease-in-out; 
+                        }                        
+                    }  
+                    &:hover {
+                        & > div > a { color: $skyblue;
                             &::after { 
-                                content: ""; position: absolute; right: 0; bottom: -1px; background: $skyblue; width: 0; height: 1px; transition: all 0.3s ease-in-out; 
+                                width: 100%; right: auto; left: 0; 
                             }
                         }
-                        &:hover {
-                            &:hover {
-                                .icon {
-                                    &.icon-down-arrow { transform: rotate(180deg); background: url($icon-down-arrow-blue) no-repeat center center; }
-                                }
-                            }
-                            span {
-                                &::after { 
-                                    width: 100%; right: auto; left: 0; 
-                                }
+                        span {
+                            .icon {
+                                &.icon-down-arrow { transform: rotate(180deg); background: url($icon-down-arrow-blue) no-repeat center center; }
                             }
                         }
-                    }    
+                    }  
                 }
             }
         }
@@ -93,7 +95,7 @@
                         top: 45px;
                     }
                     .mega-dropdown-menu {
-                        top: 66px;
+                        top: 66px !important;
                     }
                 }
             }
@@ -161,11 +163,49 @@
                                 display: block !important; 
                             }
                             &.dropdown {
+                                div > span { pointer-events: all; cursor: pointer; }
                                 .dropdown-menu {
                                     position: relative;
-                                    top: 2px; 
+                                    top: 2px !important; 
                                     .menu-inner-block {
                                         @include box-shadow(none);
+                                    }
+                                }
+                            }
+                            &:hover {
+                                span {
+                                    .icon {
+                                        &.icon-down-arrow { transform: rotate(0deg); }
+                                    }   
+                                }
+                               .dropdown-menu {
+                                    .menu-inner-block {
+                                        visibility: hidden;
+                                        z-index: 9;
+                                        max-height: 0;
+                                        transition: max-height 0.3s ease-in;
+                                    }
+                                }
+                            }
+                            &.open {                                
+                                span {
+                                    .icon {
+                                        &.icon-down-arrow { transform: rotate(180deg); background: url($icon-down-arrow-blue) no-repeat center center; }
+                                    }   
+                                }
+                                .dropdown-menu {
+                                    .menu-inner-block {
+                                        visibility: visible;
+                                        z-index: 9;
+                                        max-height: 100vh;
+                                        transition: max-height 0.3s ease-in;
+                                    }
+                                    &.mega-dropdown-menu {
+                                        @media (max-width: 767px) { 
+                                            .menu-inner-block {
+                                                max-height: 100%; @include box-shadow(none);
+                                            }
+                                        }
                                     }
                                 }
                             }
