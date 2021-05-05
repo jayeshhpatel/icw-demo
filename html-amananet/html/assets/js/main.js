@@ -43,7 +43,7 @@ $(document).ready(function() {
             prevEl: ".swiper-button-prev",
         },
         breakpoints: {
-            767: {
+            575: {
                 slidesPerView: 2,
             },
             992: {
@@ -51,6 +51,9 @@ $(document).ready(function() {
             },
             1200: {
                 slidesPerView: 4,
+            },
+            1400: {
+                slidesPerView: 5,
             },
         },
     });

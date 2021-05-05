@@ -1,8 +1,12 @@
 .dropdown { position: relative;
     &.mega-dropdown { position: unset; }  
-    & > a {
+    & > a { 
+        span { position: relative; }
         .icon { 
             @include transition(0.3s, ease-in-out); margin-left: 8px; margin-right: 0;
+        }
+        @media(max-width: 767px) {
+            @include flexbox(); @include align-items(center); @include justify-content(space-between);
         }
     }    
     .dropdown-menu {
@@ -90,6 +94,11 @@
         }
     }
     &:hover {
+        a {
+            .icon {
+                &.icon-down-arrow { transform: rotate(180deg); background: url($icon-down-arrow-blue) no-repeat center center; }
+            }
+        }
        .dropdown-menu {
             .menu-inner-block {
                 visibility: visible;
