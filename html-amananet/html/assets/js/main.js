@@ -21,12 +21,36 @@ $(document).ready(function() {
         $('body').toggleClass('overflow-hidden');
         $(this).toggleClass('toggle');
     })
-    var swiper = new Swiper(".banner-slider", {
+    var bannerSwiper = new Swiper(".banner-slider", {
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
             renderBullet: function (index, className) {
                 return '<span class="' + className + '">' + (index + 1) + "</span>";
+            },
+        },
+    });
+    var logoSwiper = new Swiper(".logo-slider", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },        
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            767: {
+                slidesPerView: 2,
+            },
+            992: {
+                slidesPerView: 3,
+            },
+            1200: {
+                slidesPerView: 4,
             },
         },
     });

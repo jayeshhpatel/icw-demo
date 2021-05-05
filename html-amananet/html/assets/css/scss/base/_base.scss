@@ -65,6 +65,7 @@ h2, .h2 {
     &.icon-paper-plane { background: url($icon-paper-plane) no-repeat center center; width: 12px; height: 12px; }
     &.icon-phone { background: url($icon-phone) no-repeat center center; width: 12px; height: 12px; }
     &.icon-down-arrow { background: url($icon-down-arrow) no-repeat center center; width: 16px; height: 16px; }
+    &.icon-right-arrow { background: url($iconpath + 'arrow-right.svg') no-repeat center center; width: 100px; height: 100px; }
     &.icon-adobe { background: url($iconpath + 'menu_adobe.png') no-repeat center center; width: 40px; height: 40px; }
 }
 
