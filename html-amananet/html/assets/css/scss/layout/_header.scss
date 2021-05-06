@@ -4,7 +4,7 @@
             @include flexbox(); @include align-items(center); width: auto;
         }            
     }    
-    .top-header { max-height: 43px; transition: max-height 0.3s ease-out; overflow: hidden; visibility: visible;
+    .top-header { max-height: 43px; transition: max-height 0.3s ease-out; position: relative; z-index: 1031;
         .navbar { padding: 8px 0; border-bottom: 3px solid #f3f3f3; z-index: 991; background: $white;  }
         ul { 
             margin: 0; padding: 0; @include flexbox(); @include align-items(center); list-style-type: none;
@@ -39,7 +39,7 @@
         }
     }
     .sub-header {         
-       @include box-shadow( 0 1px 2px 0px rgba(0, 0, 0, 0.15)); z-index: 999; background-color: #fff; @include transition(0.3s, ease-in-out); width: 100%; position: fixed; top: 43px;
+       @include box-shadow( 0 1px 2px 0px rgba(0, 0, 0, 0.15)); z-index: 999; background-color: #fff; @include transition(0.3s, ease-in-out); width: 100%; position: fixed; top: 41px;
         .navbar { 
             padding: 30px 0; @include transition(0.3s, ease-in-out);
             .bar-icon { 
