@@ -74,10 +74,10 @@ var navbarHeight = $('.main-header').outerHeight();
 
 $(window).scroll(function(event){
     didScroll = true;
-    if($(this).scrollTop() >= 5){ 
+    if($(this).scrollTop() >= 130){ 
         $('.main-header').addClass('sticky-header');
     } else {
-        $('.main-header').removeClass('sticky-header');
+        $('.main-header').removeClass('sticky-header'); 
     }
 });
 
