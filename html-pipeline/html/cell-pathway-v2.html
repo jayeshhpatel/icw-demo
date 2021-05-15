@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="theme-color" content="#000000">
+        <meta name="Googlebot" content="noindex,nofollow">        
+        <meta name="author" content="AstraZeneca">
+        <meta name="description" content="AstraZeneca - Oncology Pipeline Tool">    
+
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" href="assets/images/favicons/apple-touch-icon.png" sizes="180x180">
+        <link rel="shortcut icon" type="images/x-icon" href="assets/images/favicons/favicon.ico"> 
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" media="print" href="assets/css/print.css">
+
+        <title>Cell Pathway | AstraZeneca</title> 
+
+        <style>
+            .overview-description { display: none; }
+            .overview-description.active { 
+                animation-duration: 1s;
+                animation-iteration-count: 1;
+                /*put the default display and opacity here, the same as "0%"*/
+                animation-name: fadeIn;
+                display:block;
+            }
+            .overview-block.is-hide { animation-duration: 1s;
+                animation-iteration-count: 1;
+                /*put the default display and opacity here, the same as "0%"*/
+                animation-name: fadeOut; }
+            @keyframes fadeIn {
+                0% {display:none !important; opacity:0;}
+                1% {display:block !important; opacity:0;}
+                100% {display:block !important; opacity:1;}
+            }
+            /*This is a fade out example. */
+            @keyframes fadeOut {
+                0% {display:block; opacity:1;}
+                1% {display:none; opacity:1;}
+                100% {display: none; opacity:0;}
+            }
+        </style>
+    </head>
+    <body class="home">
+        <!-- HEADER SECTION -->
+        <header class="main-header is-sticky-header"> <!-- .is-sticky-header -->
+            <div class="container">
+                <nav class="navbar">
+                        <a class="nav-logo" href="index.html"><img src="assets/images/logo-astrazeneca.svg" alt="AstraZeneca - Oncology Pipeline" /></a>                    
+                        <div class="menu">
+                            <ul class="nav">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="tumour-type.html">Tumor Type</a></li>
+                                <li><a href="cell-pathway.html" class="active">Cell Pathway</a></li>
+                                <li><a href="full-pipeline.html">Full Pipeline</a></li>
+                                <!-- <li><a href="#">Narrative</a></li> -->
+                                <li><a href="glossary.html">Glossary</a></li>
+                            </ul>
+                        </div>
+				   <div class="bar-icon">
+                        <div class="line1"></div><div class="line2"></div><div class="line3"></div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- // HEADER SECTION -->
+
+        <!-- MAIN SECTION -->
+        <main class="main-content-wrapper bg-cover" style="background-image: url(assets/images/cell-bg.png);"> <!-- DEV : It will base on Cell wise chanegs images here -->
+            <div class="inner-container">   
+                <div class="overview-block">
+                    <div class="container">
+
+                        <!-- Home Welcome Info -->
+                        <div class="cell-welcome lg-pull-right">
+                            <h1><strong>Browse by Cell Pathway</strong></h1>
+                            <!-- <h2>Cell Pathway Types</h2> -->
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+                        </div>
+                        <div class="clear"></div>
+                        <!-- // Home Welcome Info -->
+
+                        <!-- type links -->
+                        <div class="page-grid-actions">
+                            <ul class="type-links">
+                                <li><a href="#"><span><strong>B Cell</strong> <em class="az-icon icon-nav-arrow"></em></span></a></li>
+                                <li><a href="#"><span><strong>Dentrictic Cell</strong> <em class="az-icon icon-nav-arrow"></em></span></a></li>
+                                <li class="active"><a href="#" data-id="tumour-cell-overview" data-bg="url(assets/images/type-bg-8.png)"><span><strong>Tumor Cell</strong> <em class="az-icon icon-nav-arrow"></em></span></a></li>
+                                <li><a href="#"><span><strong>T Cell</strong> <em class="az-icon icon-nav-arrow"></em></span></a></li>
+                                <li><a href="ddr-overview.html"><span><strong>DDR Overview</strong> <em class="az-icon icon-nav-arrow"></em></span></a></li>
+                            </ul>
+                        </div>
+                        <!-- // type links -->
+
+                    </div>
+                </div> 
+
+                <div class="overview-desc-block"> 
+                    <div class="overview-description" id="tumour-cell-overview"> 
+                        <div class="container">
+                            <div class="type-innerpage-title">
+                                <div class="back-action">
+                                    <a href="cell-pathway-v2.html" class="btn-back btn-box"><em class="az-icon icon-arrow-left"></em>BACK</a>                               
+                                </div>
+
+                                <h1><strong>Tumour Cell Overview</strong></h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+                                
+                            </div>
+                            <div class="clear"></div>
+                            <div class="image-card-block">
+                                <div class="image-card">
+                                    <!-- <div class="card-header"><a href="cell-pathway.html" class="back-link"><em class="az-icon icon-arrow-left"></em><strong>Back</strong></a></div> -->
+                                    <div class="card-body">
+                                        
+                                        <div class="map-container">
+                                        
+                                            <div class="map-action">
+                                                <button class="action" id="zoom-in" title="Zoom In"><em class="az-icon icon-plus"></em></button>
+                                                <button class="action" id="zoom-out" title="Zoom Out"><em class="az-icon icon-minus"></em></button>
+                                                <button class="action" id="reset" title="Reset"><em class="az-icon icon-reset"></em></button>
+                                            </div>
+                                            <div class="image-map-block">
+                                                <div class="panzoom" id="panzoom-element">
+
+                                                    <span class="map-pin toggle-popup"style="position: absolute; top: 30%; left: 45%;"><img src="assets/images/icons/icon-map-pin.svg" width="30" alt=""></span>
+
+                                                    <span class="map-pin toggle-popup" style="position: absolute; top: 25%; left: 65%;"><img src="assets/images/icons/icon-map-pin.svg" width="30" alt=""></span>
+
+                                                    <span class="map-pin toggle-popup" style="position: absolute; top: 50%; left: 50%;"><img src="assets/images/icons/icon-map-pin.svg" width="30" alt=""></span>
+
+                                                    <span class="map-pin toggle-popup" style="position: absolute; top: 70%; left: 50%;"><img src="assets/images/icons/icon-map-pin.svg" width="30" alt=""></span>
+
+                                                    <span class="map-pin toggle-popup" style="position: absolute; top: 60%; left: 70%;"><img src="assets/images/icons/icon-map-pin.svg" width="30" alt=""></span>
+
+                                                    <img src="assets/images/pathway-entry-diagram.jpg" width="100%" class="img-panzoom" alt=""></div>
+                                                <!-- <img src="assets/images/pathway-entry-diagram.jpg" alt="Tumour Cell Overview" /> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>     
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- // MAIN SECTION -->
+
+        <!-- bubble ANIMATION -->
+        <div class="bubble-wrapper">
+            <div class="bubble bubble-1"></div>
+            <div class="bubble bubble-2"></div>
+            <div class="bubble bubble-3"></div>
+            <div class="bubble bubble-4"></div>
+            <div class="bubble bubble-5"></div>
+            <div class="bubble bubble-6"></div>
+            <div class="bubble bubble-7"></div>
+            <div class="bubble bubble-8"></div>
+            <div class="bubble bubble-9"></div>
+            <div class="bubble bubble-10"></div>
+            <div class="bubble bubble-11"></div>
+            <div class="bubble bubble-12"></div>
+            <div class="bubble bubble-13"></div>
+            <div class="bubble bubble-14"></div>
+            <div class="bubble bubble-15"></div>
+            <div class="bubble bubble-16"></div>
+            <div class="bubble bubble-17"></div>
+            <div class="bubble bubble-18"></div>
+            <div class="bubble bubble-19"></div>
+            <div class="bubble bubble-20"></div>
+            <div class="bubble bubble-21"></div>
+            <div class="bubble bubble-22"></div>
+            <div class="bubble bubble-23"></div>
+            <div class="bubble bubble-24"></div>
+            <div class="bubble bubble-25"></div>
+            <div class="bubble bubble-26"></div>
+            <div class="bubble bubble-27"></div>
+            <div class="bubble bubble-28"></div>
+            <div class="bubble bubble-29"></div>
+            <div class="bubble bubble-30"></div>
+            <div class="bubble bubble-31"></div>
+            <div class="bubble bubble-32"></div>
+            <div class="bubble bubble-33"></div>
+            <div class="bubble bubble-34"></div>
+            <div class="bubble bubble-35"></div>
+            <div class="bubble bubble-36"></div>
+            <div class="bubble bubble-37"></div>
+            <div class="bubble bubble-38"></div>
+            <div class="bubble bubble-39"></div>
+            <div class="bubble bubble-40"></div>
+        </div>
+        <!-- // bubble ANIMATION -->
+        
+        <!-- FOOTER SECTION -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="row footer-content-wrapper">
+                    <div class="col-12 col-lg-6 col-xl-7 footer-info">
+                        <p class="info">Any compounds illustrated from AstraZeneca refer to selected pipeline products still under development. AstraZeneca pipeline products are investigational products and as such are not approved by the US Food and Drug Administration, European Medicines Agency or any other regulatory agency for the uses under investigation. Information regarding these investigational products should under no circumstances be regarded as a recommendation for their use or of their safety or efficacy.</p>
+                        <p class="info">VPM ID: Z4-XXXXXX Date of preparation: February 2021<br>© 2020 AstraZeneca. All rights reserved.</p>
+                    </div>
+                    <div class="col-12 col-lg-6 col-xl-5 footer-menu">
+                        <ul class="menu">
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Legal Term Of Use</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- // FOOTER SECTION -->
+
+        <!-- JS -->
+        <script src="assets/js/main.js"></script>
+        <script>
+            // // fade out
+
+            // function fadeOut(el){
+            //     el.style.opacity = 1;
+            //     (function fade() {
+            //         if ((el.style.opacity -= .1) < 0) {
+            //             el.style.display = 'none';
+            //             el.classList.add('is-hidden');
+            //         } else {
+            //             requestAnimationFrame(fade);
+            //         }
+            //     })();
+            // }
+
+            // // fade in
+
+            // function fadeIn(el, display){
+            //     if (el.classList.contains('is-hidden')){
+            //         el.classList.remove('is-hidden');
+            //     }
+            //     el.style.opacity = 0;
+            //     el.style.display = display || "block";
+
+            //     (function fade() {
+            //         var val = parseFloat(el.style.opacity);
+            //         if (!((val += .1) > 1)) {
+            //         el.style.opacity = val;
+            //         requestAnimationFrame(fade);
+            //         }
+            //     })();
+            // }
+
+            // var btn = document.querySelector('.type-links li a');
+            // var el = document.querySelector('.overview-desc-block');
+            // var overview_block = document.querySelector('.overview-block');
+
+            // btn.addEventListener('click', function(e){
+            //     if(el.classList.contains('is-hidden')){
+            //         fadeIn(el);
+            //         overview_block.classList.add('is-hidden');
+            //     }
+            //     else {
+            //         fadeOut(el);
+            //         overview_block.classList.remove('is-hidden');
+            //     }
+            // });
+
+            window.addEventListener('load', function () {
+                let resultTabs = document.querySelectorAll(".type-links a");
+                for(let i=0; i < resultTabs.length; i++){
+                    resultTabs[i].addEventListener('click', function(){
+                        if( !this.classList.contains('active')){
+                            let itemRow = document.querySelector('.inner-container');                
+                            // itemRow.querySelector(".type-links li.active").classList.remove('active');
+                            // itemRow.querySelector(".overview-desc-block .overview-description.active").classList.remove('active');
+                            this.classList.add('active');
+                            document.querySelector('#'+ this.dataset.id).classList.add('active');
+                            document.querySelector('.overview-block').classList.add('is-hide');
+                            let tabBg = this.dataset.bg;
+                            document.querySelector('.bg-cover').style.backgroundImage = tabBg;
+                        }
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

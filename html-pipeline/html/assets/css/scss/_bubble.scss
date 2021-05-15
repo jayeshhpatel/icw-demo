@@ -1,0 +1,26 @@
+$bubbles_total: 40;
+$per: "%";
+.bubble-wrapper { position: fixed; left: 0; top: 0; right: 0; bottom: 0; z-index: -1; width: 100%; height: 100vh; min-height: 100%; overflow: hidden; }
+.bubble { background-color: rgba(255, 255, 255, 0.18); display: inline-block; width: 80px; height: 80px; border-radius: 50%; position: absolute; 
+   @for $bubble from 1 through $bubbles_total {
+     &-#{$bubble} {
+      opacity: (random(100))*0.01;
+      left: #{random(100)}vw;
+      top: #{random(100)}vh;
+       animation: move-#{$bubble} #{60 + $bubble*0.02}s infinite;
+      @include transform(translate(0, 0) scale((random(200) + 5)*0.01));
+    }
+  }
+} 
+.bubble-1, .bubble-4, .bubble-8, .bubble-13, .bubble-17, .bubble-30, .bubble-33, .bubble-36 { @include filter(blur(7px)); }
+.bubble-2, .bubble-5, .bubble-9, .bubble-14, .bubble-18, .bubble-21, .bubble-31, .bubble-37 { @include filter(blur(6px)); }
+.bubble-3, .bubble-6, .bubble-10, .bubble-15, .bubble-19, .bubble-25, .bubble-32, .bubble-39 { @include filter(blur(5px)); }
+.bubble-7, .bubble-11, .bubble-16, .bubble-23, .bubble-26, .bubble-28, .bubble-34, .bubble-40 { @include filter(blur(4px)); }
+.bubble-12, .bubble-20, .bubble-27, .bubble-22, .bubble-24, .bubble-29, .bubble-35, .bubble-38 { @include filter(blur(3px)); }
+@for $bubble from 1 through $bubbles_total {
+    @keyframes move-#{$bubble}{
+        #{(random(40)+40)+$per} {
+            @include transform(translate( #{random(100) - 100}vw, #{random(100) - 100}vh) scale((random(1) + 1)*0.1));
+        }   
+    }
+}

@@ -1,0 +1,126 @@
+@font-face {
+    font-family: 'Helvetica Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Helvetica Light'), url('../css/fonts/Helvetica-Light.woff') format('woff');
+}
+@font-face {
+    font-family: 'Helvetica Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Helvetica Bold'), url('../css/fonts/Helvetica-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Lexia Bd';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Lexia Bd'), url('../css/fonts/Lexia_Bd.woff') format('woff');
+}
+
+/* Variables */
+$bodyfont		      :"Helvetica Light", sans-serif!important;
+$bodyfontsize-xl	: 22px;
+$bodyfontsize	    : calc(14px + (17 - 14) * ((100vw - 300px) / (1600 - 300)));
+$bodyfontcolor		:#ffffff;
+$bodybg		        :#07383f;
+
+$hfont		        :"Lexia Lt",serif!important;
+$hfont-bold       :"Lexia Bd", sans-serif!important;
+
+$darkBlue	        :#061726;
+$white			      :#ffffff;
+$black	      		:#000;
+
+
+/* Mixins */
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+}
+
+@mixin box-shadow ($box-shadow){
+    -moz-box-shadow:$box-shadow;
+    -webkit-box-shadow:$box-shadow;
+    box-shadow:$box-shadow;
+}
+
+@mixin transition($duration, $ease) {
+    -webkit-transition: all $duration $ease;
+    -moz-transition: all $duration $ease;
+    -o-transition: all $duration $ease;
+    transition: all $duration $ease;
+}
+
+@mixin opacity($value) {
+    -moz-opacity: $value;
+    -khtml-opacity: $value;
+    -webkit-opacity: $value;
+    opacity: $value;
+}
+
+@mixin transform($value) {
+    -moz-transform: $value;  
+    -webkit-transform: $value;  
+    -o-transform: $value;  
+    -ms-transform: $value; 
+    transform: $value;
+}
+
+@mixin filter($value) { 
+    -webkit-filter: $value; 
+    -moz-filter: $value; 
+    -o-filter: $value;
+    filter: $value; 
+}
+
+/* display: flex */
+@mixin flexbox() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+@mixin inline-flex {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+@mixin justify-content($justify) {
+  -webkit-justify-content: $justify;
+     -moz-justify-content: $justify;
+      -ms-justify-content: $justify;
+          justify-content: $justify;
+            -ms-flex-pack: $justify;
+}
+@mixin align-items($align) {
+  -webkit-align-items: $align;
+     -moz-align-items: $align;
+      -ms-align-items: $align;
+       -ms-flex-align: $align;
+          align-items: $align;
+}
+@mixin flex-direction($direction) {
+  -webkit-flex-direction: $direction;
+     -moz-flex-direction: $direction;
+      -ms-flex-direction: $direction;
+          flex-direction: $direction;
+}
+@mixin flex-wrap($wrap) {
+  -webkit-flex-wrap: $wrap;
+     -moz-flex-wrap: $wrap;
+      -ms-flex-wrap: $wrap;
+          flex-wrap: $wrap;
+}
+@mixin flex-flow($flow) {
+  -webkit-flex-flow: $flow;
+     -moz-flex-flow: $flow;
+      -ms-flex-flow: $flow;
+          flex-flow: $flow;
+}
+/** Operation **/
+/* Parametric Mixins */
+/** Guarded Mixins **/
