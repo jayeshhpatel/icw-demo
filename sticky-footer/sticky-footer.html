@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Page Title</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <style>
+            .main-wrappper {
+                height: 1500px;
+                background-color: #eee;
+            }
+
+            .sticky-note.sticky-element {
+                position: sticky;
+            }
+
+            .sticky-note {
+                position: static;
+                bottom: 0;
+            }
+
+            .main-footer {
+                height: 300px;
+                background-color: green;
+            }
+
+            .sticky-element .snote-content {
+                display: none;
+            }
+            .sticky-element.is-notehide .snote-content {
+                display: none;
+            }
+            .is-noteshow .snote-content { 
+                display: block;
+            }
+            .is-notehide .snote-content { 
+                display: none;
+            }
+            .snote-content {
+                -webkit-transition: all .4s ease-in-out;
+                -moz-transition: all .4s ease-in-out;
+                -o-transition: all .4s ease-in-out;
+                transition: all .4s ease-in-out;
+            }
+
+            .is-noteshow .snote-content {
+                display: block;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="main-wrappper"></div>
+        <section class="sticky-note" id="footer-sticky">
+            <div class="snote-title">
+                <div class="container">
+                    <h2 class="stickynote-action">Important safety information <span>+</span></h2>
+                </div>
+            </div>
+            <div class="snote-content">
+                <div class="container">
+                    <p>This site is intended for Healthcare Professionals</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <p>This site is intended for Healthcare Professionals</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                </div>
+            </div>
+        </section>
+        <div class="main-footer"> </div>
+        <script>
+
+            (function (d) {
+                "use strict";
+                //lets add the observer element dynamically.
+                var sticky = d.createElement("sticky-note");
+                sticky.classList.add("sticky-notetop");
+                var ref = d.querySelector("#footer-sticky");
+                insertBefore(sticky, ref);
+                function insertBefore(el, referenceNode) {
+                    referenceNode.parentNode.insertBefore(el, referenceNode);
+                }
+
+                var observer = new IntersectionObserver(
+                    function (entries) {
+                        if (entries[0].intersectionRatio === 0) {
+                            d.querySelector("#footer-sticky").classList.add("sticky-element");
+                            d.querySelector("#footer-sticky").classList.remove("is-noteshow");
+                            // d.querySelector('.sticky-note').classList.remove('is-notescroll');
+
+
+                        } else if (entries[0].intersectionRatio === 1) {
+                            d.querySelector("#footer-sticky").classList.remove("sticky-element");
+                            // d.querySelector('.sticky-note').classList.toggle('is-notescroll');
+                        }
+                    },
+                    { threshold: [0, 1] }
+                );
+
+                observer.observe(d.querySelector(".sticky-notetop"));
+            })(document);
+
+            if (document.querySelector(".stickynote-action")) {
+                document.querySelector('.stickynote-action').addEventListener('click', togglestickyNote);
+
+                // stickyNote();
+            }
+            function togglestickyNote() {
+                this.classList.toggle('toggle');
+                document.querySelector('.sticky-note').classList.toggle('is-noteshow');
+                if( document.querySelector('.sticky-note').classList.contains('is-noteshow')){
+                    document.querySelector('.sticky-note').classList.remove('is-noteshow');
+                    document.querySelector('.sticky-note').classList.add('is-notehide');
+                } else {
+                    document.querySelector('.sticky-note').classList.remove('is-notehide');
+                    document.querySelector('.sticky-note').classList.add('is-noteshow');
+                };
+                if( document.querySelector('.sticky-note').classList.contains('is-notehide')){
+                    document.querySelector('.sticky-note').classList.add('is-noteshow');
+                    document.querySelector('.sticky-note').classList.remove('is-notehide');
+                } else {
+                    document.querySelector('.sticky-note').classList.add('is-notehide');
+                    document.querySelector('.sticky-note').classList.remove('is-noteshow');
+                } ;
+            }
+
+        </script>
+    </body>
+
+</html>
