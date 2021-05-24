@@ -89,12 +89,9 @@
                         if (entries[0].intersectionRatio === 0) {
                             d.querySelector("#footer-sticky").classList.add("sticky-element");
                             d.querySelector("#footer-sticky").classList.remove("is-noteshow");
-                            // d.querySelector('.sticky-note').classList.remove('is-notescroll');
-
 
                         } else if (entries[0].intersectionRatio === 1) {
                             d.querySelector("#footer-sticky").classList.remove("sticky-element");
-                            // d.querySelector('.sticky-note').classList.toggle('is-notescroll');
                         }
                     },
                     { threshold: [0, 1] }
