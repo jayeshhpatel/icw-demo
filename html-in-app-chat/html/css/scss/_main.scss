@@ -1,0 +1,192 @@
+html body.website { background: $white; color: $lightblack; font-size: $bodyfontsize; position: relative;  font-family: $bodyfont; min-height: 100vh; overflow-x: hidden; overflow-y: auto; 
+    @media (max-width: 767px) { 
+        font-size: 14px;
+    }
+}
+
+.website {
+
+    *:focus { outline: none !important; }
+    .text-orange { color: $orange !important; }
+    .bg-gray { background: $lightgray; }
+    img { max-width: 100%; height: auto; }
+
+    /**** Font-Style */ 
+    h1, .h1 { font-size: 55px; font-weight: bold; }
+    h2, .h2 { font-size: 48px; font-weight: bold; }
+    /* Font-Style ****/ 
+
+    /**** Button */
+    .btn { background: transparent; border: 1px solid transparent; @include border-radius(0); @include transition(0.3s, ease-in-out); text-decoration: none; min-width: 150px; padding: 11px 20px; font-size: 14px; font-weight: 500;
+        &:focus { outline: none !important; }
+        &.btn-primary { background: $blue; border-color: $blue; color: $white !important; 
+            &:hover, &:focus, &:active,
+            &:not(:disabled):not(.disabled).active, 
+            &:not(:disabled):not(.disabled):active,
+            &:not(:disabled):not(.disabled).active:focus, 
+            &:not(:disabled):not(.disabled):active:focus { 
+                background: $darkblue; border-color: $darkblue; color: $white; 
+            }
+        }
+        &.btn-white { background: $white; border-color: $white; color: $darkblack !important; @include box-shadow(0px 6px 20px rgba(19, 23, 31, 0.10));
+            &:hover, &:focus, &:active,
+            &:not(:disabled):not(.disabled).active, 
+            &:not(:disabled):not(.disabled):active,
+            &:not(:disabled):not(.disabled).active:focus, 
+            &:not(:disabled):not(.disabled):active:focus { 
+                background: $white; border-color: $white; color: $darkblue !important; 
+            }
+        }
+    }
+    /* Button ****/
+
+    /**** Dropdown Menu */
+    .dropdown { 
+        .dropdown-toggle {  
+            &::after { border: none; }        
+        }
+        .dropdown-menu { display: block!important; z-index: 4; visibility: hidden; @include opacity(0); @include transition-all (all 0.2s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s); transform: translateY(2em); padding: 5px 0; border: 1px solid #dfdfdf; background: $white; margin: 5px 0; pointer-events: none;
+            &::-webkit-scrollbar { width:6px;background-color:#F5F5F5; }
+            &::-webkit-scrollbar-thumb { background-color:rgba(0,0,0,0.3); }
+            &::-webkit-scrollbar-track { -webkit-box-shadow:inset 0 0 3px rgba(0,0,0,0.1);background-color:transparent; }
+            &.show { visibility: visible; opacity: 1; transition-delay: 0s, 0s, 0.3s; transform: translateY(0); pointer-events: all; }
+            li { @include transition(0.3s, ease-in-out); margin: 0 !important; padding: 5px 15px;
+                a { display:block; font-weight: 400; font-size: 14px; color: $darkblack; }
+                &:hover {  
+                    background: $midgray; color: $darkblack;
+                }
+            }
+        }
+        &.with-arrow {
+            .dropdown-toggle {
+                &::after { background: url(../images/icons/arrow-down-gray.svg) no-repeat center right; background-size: contain;  width: 10px; height: 10px; margin-left: 8px; @include transition(0.3s, ease-in-out); }
+            }
+            &.show, &:hover {
+                .dropdown-toggle {  
+                    &::after { transform: rotate(180deg); }
+                }
+            }
+        }
+        &:hover {             
+            .dropdown-menu { visibility: visible; opacity: 1; transition-delay: 0s, 0s, 0.3s; transform: translateY(0); pointer-events: all; }
+        }
+    }
+    /* Dropdown Menu ****/
+
+    /**** Header */
+    .main-header { 
+        .navbar { padding: 18px 15px;
+            .bar-icon { display: none; cursor: pointer; }
+            .navbar-collapse {
+                ul { @include align-items(center);
+                    li { margin: 0 15px;
+                        &:last-child { padding-right: 0; }
+                        a { font-size: 14px; font-weight: 600; color: $darkblack; @include transition(0.3s, ease-in-out); text-decoration: none; 
+                            &:hover, &.active { color: $blue; }
+                        }
+                        &.dropdown { 
+                            &:after { content: ''; width: 100%; height: 12px; background: transparent; display: block; position: absolute; bottom: -12px; }
+                            & > a { @include inline-flex(); @include align-items(center);
+                                &::after { vertical-align: middle; content: "";background: url(../images/icons/arrow-down-gray.svg) no-repeat center right; background-size: contain;  width: 10px; height: 10px; margin-left: 8px; display: inline-block; @include transition(0.3s, ease-in-out); }
+                            } 
+                            .dropdown-menu { right: auto; left: 50%; -webkit-transform: translate(-50%, 2em); -o-transform: translate(-50%, 2em); transform: translate(-50%, 2em);
+                                li {
+                                    a { color: $darkblack; font-weight: 500; }
+                                    &:hover {  
+                                        a { color: $darkblack; }
+                                    }
+                                }
+                            }
+                            &:hover {
+                                & > a { 
+                                    &::after { transform: rotate(180deg); }
+                                }
+                                .dropdown-menu { visibility: visible; opacity: 1; transition-delay: 0s, 0s, 0.3s; -webkit-transform: translate(-50%, 0em); -o-transform: translate(-50%, 0em); transform: translate(-50%, 0em); pointer-events: all; }
+                            }
+                        }
+                    }
+                }
+            }        
+        }
+        @media (max-width: 992px) {
+            .navbar {
+                .bar-icon { display: block; z-index: 1032; 
+                    div { width: 25px; height: 4px; margin: 4px 0px; @include transition(0.3s, ease-in-out); @include border-radius(3px); background: $darkblack; }
+                    &:hover { div { background: $gray ; } }
+                    &.toggle { right: 15px;
+                        .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
+                        .line2 { opacity: 0; }
+                        .line3 { transform: rotate(45deg) translate(-5px, -6px); }
+                    }
+                }
+                .navbar-collapse { height: calc(100vh); background: transparent; z-index: 1030; will-change: transform; transition: -webkit-transform .4s ease-in-out; -webkit-transition: -webkit-transform .4s ease-in-out; transition: transform .4s ease-in-out; transition: transform .4s ease-in-out, -webkit-transform .4s ease-in-out; width: 100%; display: block !important; background: $skyblue; -webkit-transform: translateY(-100%); transform: translateY(-100%); position: fixed; top: 0; left: 0; 
+                    &.open { -webkit-transform: translateY(0); transform: translateY(0); z-index: 1031; }
+                    .navbar-nav { padding: 60px 0 40px; height: 100vh; overflow-x: hidden; overflow-y: auto;
+                        li { margin: 8px 15px;
+                            &.dropdown { text-align: center; 
+                                .dropdown-menu { position: absolute; }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* Header ****/
+
+    /**** Main */
+    .main-content { min-height: 100vh;
+        .title-content { margin-bottom: 20px;
+            .tag { font-size: 18px; text-transform: uppercase; color: $blue; font-weight: 500; @include inline-flex; @include align-items(center); margin-bottom: 10px;
+                .line { width: 80px; height: 2px; background: $blue; display: inline-block; margin-left: 30px; }
+            }
+        }
+        .banner-section { padding: 100px 0; background: $white url(../images/banner-img.png) no-repeat center right; background-size: 55%; min-height: 80vh; @include flexbox(); @include align-items(center);
+            .content {  
+                h1 { line-height: 1.3; margin-bottom: 15px; }
+                p { margin-bottom: 30px; color: $lightblack; }
+                .action {  
+                    .btn { margin-right: 15px; }
+                }
+                .img-block { padding: 60px 0 0px; }
+            }
+        }
+        .tag-line { text-align: center; padding: 50px 0;
+            p { font-size: 20px; color: $blue; font-weight: 500; border-left: 2px solid $blue; border-right: 2px solid $blue; padding: 0px 20px; display: inline-block; }
+        }
+        .content-left-block { padding: 100px 0; 
+            .content { height: 100%; @include flexbox(); @include justify-content(center); @include flex-direction(column);
+            
+            }
+        }
+    }
+    /* Main ****/
+
+    /**** Responsive */
+    @media (max-width: 1200px) { }
+    @media (max-width: 992px) { 
+        h1, .h1 { font-size: 50px; font-weight: bold; }
+        .main-content { 
+            .banner-section { padding: 70px 0; }
+        }
+    }
+    @media (max-width: 767px) { 
+        h1, .h1 { font-size: 45px; font-weight: bold; }
+        .main-content { 
+            .banner-section { padding: 50px 0; background: $white; }
+        }
+    }
+    @media (max-width: 575px) { 
+        h1, .h1 { font-size: 40px; font-weight: bold; }
+        .btn { padding: 11px 15px; }
+        .main-content { 
+            .banner-section {
+                .content {
+                    .action .btn { margin-right: 8px; }
+                    .img-block { padding: 40px 0 0px; }
+                }
+            }
+        }
+    }
+    /* Responsive ****/
+}
