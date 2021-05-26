@@ -156,7 +156,7 @@ html body.website { background: $white; color: $lightblack; font-size: $bodyfont
         }
         .content-left-block { padding: 100px 0; 
             .content { height: 100%; @include flexbox(); @include justify-content(center); @include flex-direction(column);
-            
+                p { margin-bottom: 20px; }
             }
         }
     }
