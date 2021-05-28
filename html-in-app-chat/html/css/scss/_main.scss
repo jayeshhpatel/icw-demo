@@ -86,6 +86,23 @@ html body.website { background: $white; color: $lightblack; font-size: $bodyfont
     }
     /* Dropdown Menu ****/
 
+    /**** Input */
+    .form-group { margin-bottom: 25px;     
+        .form-control { font-family: $bodyfont;
+            &:focus { outline: none !important; box-shadow: none !important; }
+            &::-webkit-input-placeholder { color: $lightblack; }      
+            &:-ms-input-placeholder { color: $lightblack; }      
+            &::placeholder { color: $lightblack; }
+            &.form-control-md { height: 45px; }
+        }       
+        .custom-input { border-color: #e7e8e9; height: 48px; padding: 0 15px; font-weight: 500; @include border-radius(6px); }
+        textarea.custom-input { height: auto; padding: 15px; }
+        @media (max-width: 767px) {  
+            .custom-input { font-size: 14px; } 
+        }
+    }
+    /* Input ****/
+
     /**** Header */
     .main-header { 
         .navbar { padding: 18px 15px;
@@ -194,7 +211,7 @@ html body.website { background: $white; color: $lightblack; font-size: $bodyfont
     .main-content { min-height: 100vh;
         .title-content { margin-bottom: 20px;
             .tag { font-size: 18px; text-transform: uppercase; color: $blue; font-weight: 500; @include inline-flex; @include align-items(center); margin-bottom: 15px;
-                .line { width: 80px; height: 2px; background: $blue; display: inline-block; margin-left: 30px; }
+                &::after { content: ''; width: 80px; height: 2px; background: $blue; display: inline-block; margin-left: 30px; }
             }
         }
         .banner-section { padding: 100px 0; background: $white url(../images/banner-img.png) no-repeat center right; background-size: 55%; min-height: 80vh; @include flexbox(); @include align-items(center);
@@ -274,6 +291,22 @@ html body.website { background: $white; color: $lightblack; font-size: $bodyfont
                 }
             }
         }
+        .contact-block { margin: 50px 0 100px; }
+        .contact-form-block { background: #fcfdfe; @include border-radius(25px); padding: 100px; position: relative;
+            .contact-img { position: absolute; top: -50px; right: 50px; @include transition(0.3s, ease-in-out); 
+                &:hover { transform: translateY(-2em); }
+            }
+            .title-content { text-align: center; margin-bottom: 50px; z-index: 2; position: relative;
+
+                .tag{
+                    &::after { width: 60px; margin-left: 20px; }
+                    &::before { content: ''; width: 60px; height: 2px; background: $blue; display: inline-block; margin-right: 20px; }
+                }
+            }
+            .form-block {
+                .form-action { padding-top: 20px; }
+            }
+        }
     }
     /* Main ****/
 
@@ -290,13 +323,13 @@ html body.website { background: $white; color: $lightblack; font-size: $bodyfont
     }
     @media (max-width: 992px) { 
         h1, .h1 { font-size: 50px; }
-        h2, .h2 { font-size: 36px; }
+        h2, .h2 { font-size: 32px; }
         h3, .h3 { font-size: 24px; }
         h4, .h4 { font-size: 20px; }
         .main-content { 
             .title-content { margin-bottom: 15px;
                 .tag { font-size: 16px; 
-                    .line { width: 60px; margin-left: 20px; }
+                    &::after { width: 60px; margin-left: 20px; }
                 }
             }
             .banner-section { padding: 70px 0; }
@@ -319,13 +352,30 @@ html body.website { background: $white; color: $lightblack; font-size: $bodyfont
                 }
             }
             .content-check-list { padding-bottom: 50px; }
+            .contact-block { margin: 50px 0 70px; }
+            .contact-form-block { padding: 70px;
+                .contact-img { right: 10px; top: -30px;
+                    img { max-width: 220px; }
+                }
+                .title-content { 
+                    .tag {
+                        &::after { width: 50px; margin-left: 15px; }
+                        &::before { width: 50px; margin-right: 15px; }
+                    }
+                }
+            }
         }
     }
     @media (max-width: 767px) { 
         h1, .h1 { font-size: 45px; }
-        h2, .h2 { font-size: 26px; }
+        h2, .h2 { font-size: 28px; }
         h3, .h3 { font-size: 20px; }
         .main-content { 
+            .title-content { 
+                .tag { font-size: 14px; 
+                    &::after { width: 45px; margin-left: 15px; }
+                }
+            }
             .banner-section { padding: 50px 0; background: $white; 
                 .content p { margin-bottom: 15px; }
             }    
@@ -348,6 +398,10 @@ html body.website { background: $white; color: $lightblack; font-size: $bodyfont
                     }
                 }
             }
+            .contact-block { margin: 20px 0 50px; }
+            .contact-form-block { padding: 40px;
+                .contact-img { display: none; }                
+            }
         }
     }
     @media (max-width: 575px) { 
@@ -362,6 +416,7 @@ html body.website { background: $white; color: $lightblack; font-size: $bodyfont
                     .img-block { padding: 40px 0 0px; }
                 }
             }
+            .contact-form-block { padding: 20px; }
         }
     }
     /* Responsive ****/
