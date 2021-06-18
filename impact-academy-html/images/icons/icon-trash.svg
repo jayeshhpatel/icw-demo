@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="26px" height="38px" viewBox="0 0 26 38" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <desc>Created with Lunacy</desc>
+  <g id="trash-can">
+    <path d="M25.455 3.34699L24.6317 0.843628C24.466 0.339755 24.0012 0 23.4777 0L2.02231 0C1.4988 0 1.03405 0.33983 0.868317 0.843628L0.0450441 3.34699C-0.141477 3.91414 0.274546 4.5 0.86382 4.5L24.6361 4.5C25.2255 4.5 25.6415 3.91414 25.455 3.34699Z" transform="translate(0 6.75)" id="XMLID_1089_" fill="#FFFFFF" stroke="none" />
+    <path d="M2.52455 22.5343C2.61804 23.3688 3.32913 24 4.17564 24L18.3244 24C19.1709 24 19.882 23.3687 19.9755 22.5343L22.5 0L0 0L2.52455 22.5343Z" transform="translate(1.5 13.5)" id="XMLID_835_" fill="#FFFFFF" stroke="none" />
+    <path d="M2.2468 3.19656C2.2468 2.66375 2.68351 2.23026 3.22027 2.23026L6.52973 2.23026C7.06649 2.23026 7.5032 2.66375 7.5032 3.19656L7.5032 4.5L9.75 4.5L9.75 3.19656C9.75 1.43398 8.30538 0 6.52973 0L3.22027 0C1.44462 0 0 1.43398 0 3.19656L0 4.5L2.2468 4.5L2.2468 3.19656Z" transform="translate(8.25 0)" id="XMLID_831_" fill="#FFFFFF" stroke="none" />
+  </g>
+</svg>

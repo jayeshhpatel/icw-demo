@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="54px" height="54px" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>595B0735-1A25-436A-B5C9-5E8D06189722</title>
+    <defs>
+        <path d="M20,17.1829378 L20,36.8172776 C20,37.4704772 20.5285565,38 21.1805639,38 C21.381194,38 21.5785143,37.9487757 21.7538965,37.851163 L39.3925535,28.0339931 C39.9625106,27.7167714 40.1678624,26.9967261 39.8512195,26.425727 C39.7441555,26.2326593 39.5852689,26.0734822 39.3925535,25.9662224 L21.7538965,16.1490525 C21.1839394,15.8318307 20.4652082,16.037558 20.1485654,16.6085571 C20.0511308,16.7842599 20,16.981941 20,17.1829378 Z" id="path-1"></path>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="login/register-1" transform="translate(-751.000000, -1428.000000)">
+            <g id="Group-19" transform="translate(182.000000, 1247.000000)">
+                <g id="PRESENTATION-2" transform="translate(78.000000, 112.000000)">
+                    <g id="Static-content-Copy-8" transform="translate(354.000000, 0.000000)">
+                        <g id="Group" transform="translate(137.000000, 69.000000)">
+                            <circle id="Oval" fill="#4E1C65" cx="27" cy="27" r="27"></circle>
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <use id="Icon" fill="#FFFFFF" xlink:href="#path-1"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
