@@ -9,67 +9,58 @@
         <title>Text Animation</title> 
   
         <style>
-            .text-animation { display: flex; align-items: center; }
-            .fix-text { white-space: nowrap; padding-right: 4px; }
-            .messages-wrap { width: 100%; text-align: left; }
-            .message { display: none; }
-            .message.active { display: inline; }        
+            .text-animation { display: flex;; }
         </style>  
     </head>
     <body>
 
-        <div class="text-animation">
-            <span class="fix-text">How do you</span>
-            <span class="messages-wrap">
-                <strong class="message active">validate data & models with high complexity?</strong>
-                <strong class="message">mitigate risks when relying on machine learning?</strong>
-                <strong class="message">monitor a system that tends to fail silently?</strong>
-            </span>
+        
+        <div class="text-animation"> How do you
+            <div id="rotate"> 
+              <span>validate data & models with high complexity?.</span> 
+              <span>mitigate risks when relying on machine learning?</span>        
+              <span>monitor a system that tends to fail silently?</span>
+            </div> 
         </div>
-        <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                
-                //Elements to loop through
-                var elem = $('.message');
-                //Start at 0
-                i = 0;
-                
-                function getMessage() {                    
-                    //Loop through elements
-                    $(elem).each( function(index) {
-                        
-                        if ( i == index ) {
-                            //Show active element
-                            $(this).slideDown();
-                            $('.message').removeClass('active');
-                            $(this).addClass('active');
-                        } else if ( i == $(elem).length ) {
-                            //Show message
-                            $(this).slideDown();
-                            $('.message').removeClass('active');
-                            $(this).addClass('active');
-                            //Reset i lst number is reached
-                            i = 0;
-                        } else {
-                            //Hide all non active elements
-                            $(this).slideUp();
-                            $(this).removeClass('active');
-                        }
-                        
-                    });
-                    
-                    i++;
-                
-                }
-                
-                //Run once the first time
-                getMessage();
-                
-                //Repeat
-                window.setInterval(getMessage, 3500);
-                
-            });
-        </script>
     </body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        (function($){
+    $.fn.extend({ 
+        rotaterator: function(options) {
+ 
+            var defaults = {
+                fadeSpeed: 500,
+                pauseSpeed: 1000,
+				child:null
+            };
+             
+            var options = $.extend(defaults, options);
+         
+            return this.each(function() {
+                  var o =options;
+                  var obj = $(this);                
+                  var items = $(obj.children(), obj);
+				  items.each(function() {$(this).hide();})
+				  if(!o.child){var next = $(obj).children(':first');
+				  }else{var next = o.child;
+				  }
+				  $(next).slideDown(o.fadeSpeed, function() {
+						$(next).delay(o.pauseSpeed).slideUp(o.fadeSpeed, function() {
+							var next = $(this).next();
+							if (next.length == 0){
+									next = $(obj).children(':first');
+							}
+							$(obj).rotaterator({child : next, fadeSpeed : o.fadeSpeed, pauseSpeed : o.pauseSpeed});
+						})
+					});
+            });
+        }
+    });
+})(jQuery);
+
+ $(document).ready(function() {
+        $('#rotate').rotaterator({fadeSpeed:500, pauseSpeed:1000});
+ });
+    </script>
 </html>
