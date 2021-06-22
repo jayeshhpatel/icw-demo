@@ -13,12 +13,20 @@
             .text-rotator { position:relative; background-color: #ccc; }
             .grad { color: #121212; }
             .grad:after { content: ''; padding-right: 10px; padding-left: 2px; background-color: #FFF; }
-            .slogan { width: 100%; position: absolute; left: 0; top:0px;  z-index: 3; text-align: left; font: 25px "avenir-next-demibold","Helvetica Neue","Helvetica","Roboto","Arial",sans-serif; font-weight:400; overflow: hidden }
+            .slogan { width: 100%; position: absolute; left: 0; top:0px;  z-index: 3; text-align: left; font: 24px "avenir-next-demibold","Helvetica Neue","Helvetica","Roboto","Arial",sans-serif; font-weight:400; overflow: hidden }
             .slogan ul { position: relative; display: inline-block; overflow: visible !important; vertical-align: text-top; list-style: none; }
             .slogan ul li { position: absolute; left: 0; white-space: nowrap; font-weight: bold; } 
             .slogan ul li:nth-child(2) { top: 112px; }
             .slogan ul li:nth-child(3) { top: 224px; }
             .slogan ul li:nth-child(4) { top: 335px; }
+            @media (max-width: 767px) {
+                .slogan { font: 20px "avenir-next-demibold","Helvetica Neue","Helvetica","Roboto","Arial",sans-serif; }  
+            }
+            @media (max-width: 575px) {
+                .slogan { font: 16px "avenir-next-demibold","Helvetica Neue","Helvetica","Roboto","Arial",sans-serif; display: flex; white-space: nowrap; }  
+                .slogan ul { width: 100% !important; }
+                .slogan ul li { white-space: normal; width: 100%; } 
+            }
         </style>  
     </head>
     <body>
@@ -36,20 +44,21 @@
     <script>
         $(document).ready(function(){
             var sloganArea = $('.slogan ul');
-            sloganArea.width(sloganArea.find('li').eq(0).find('span').width());
+            // sloganArea.width(sloganArea.find('li').eq(0).find('span').width());
             setInterval(function () {
                 var itemHeight = $('.slogan ul li').eq(0).height();
                 sloganArea.animate({
-                    width : $('.slogan ul li').eq(1).find('span').width(),
+                    // width : $('.slogan ul li').eq(1).find('span').width(),
                     top : itemHeight * -1
                 },200, function(){
                     sloganArea.append($('.slogan ul li').eq(0));
                     sloganArea.css('top', 0);
+                    // $('.slogan ul li').removeclass('active');
                     $('.slogan ul li').each(function(i){
-                        $(this).css('top', i*itemHeight);
+                        $(this).css('top', i*itemHeight);                        
                     });
                 });
-            }, 3500);
+            }, 500);
         });
     </script>
 </html>
