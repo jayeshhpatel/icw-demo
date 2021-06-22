@@ -1,0 +1,75 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">       
+        <meta name="Googlebot" content="noindex,nofollow">   
+        
+        <title>Text Animation</title> 
+  
+        <style>
+            .text-animation { display: flex; align-items: center; }
+            .fix-text { white-space: nowrap; padding-right: 4px; }
+            .messages-wrap { width: 100%; text-align: left; }
+            .message { display: none; }
+            .message.active { display: inline; }        
+        </style>  
+    </head>
+    <body>
+
+        <div class="text-animation">
+            <span class="fix-text">How do you</span>
+            <span class="messages-wrap">
+                <strong class="message active">validate data & models with high complexity?</strong>
+                <strong class="message">mitigate risks when relying on machine learning?</strong>
+                <strong class="message">monitor a system that tends to fail silently?</strong>
+            </span>
+        </div>
+        <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                
+                //Elements to loop through
+                var elem = $('.message');
+                //Start at 0
+                i = 0;
+                
+                function getMessage() {                    
+                    //Loop through elements
+                    $(elem).each( function(index) {
+                        
+                        if ( i == index ) {
+                            //Show active element
+                            $(this).slideDown();
+                            $('.message').removeClass('active');
+                            $(this).addClass('active');
+                        } else if ( i == $(elem).length ) {
+                            //Show message
+                            $(this).slideDown();
+                            $('.message').removeClass('active');
+                            $(this).addClass('active');
+                            //Reset i lst number is reached
+                            i = 0;
+                        } else {
+                            //Hide all non active elements
+                            $(this).slideUp();
+                            $(this).removeClass('active');
+                        }
+                        
+                    });
+                    
+                    i++;
+                
+                }
+                
+                //Run once the first time
+                getMessage();
+                
+                //Repeat
+                window.setInterval(getMessage, 3500);
+                
+            });
+        </script>
+    </body>
+</html>
