@@ -1,0 +1,684 @@
+@import url('//fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+/* Variables */
+$portalbodyfont		  : 'Roboto', sans-serif!important;
+$portalbodyfontsize	: 16px;
+$portalbodycolor		:#ffffff;
+
+$white		:#fff;
+$black		:#000;
+$darkblack  :#1A1A1A;
+$blackgray	:#15181A;
+$blackgray2	:#141821;
+
+$gray		:#858997;
+$lightgray  :#C2C6D1;
+$darkgray	:#727272;
+$orange     :#F03A01;
+$red        :#f25a6b;
+$blue		:#4A4BFF;
+$lightblue	:#2F66FF;
+$darkblue	:#5351FC;
+$green      :#7FE230;
+
+/* Mixins */
+@mixin appearance($value) {
+    -o-appearance: $value;
+    -ms-appearance: $value;
+    -webkit-appearance: $value;
+    -moz-appearance: $value;
+    appearance: $value;
+}
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+}
+@mixin box-shadow ($box-shadow){
+    -moz-box-shadow:$box-shadow;
+    -webkit-box-shadow:$box-shadow;
+    box-shadow:$box-shadow;
+}
+@mixin box-shadow-all ($bs-t, $bs-r, $bs-b, $bs-l, $box-shadow-all-color){
+    box-shadow: $bs-t $bs-r $bs-b $bs-l $box-shadow-all-color;
+    -webkit-box-shadow: $bs-t $bs-r $bs-b $bs-l $box-shadow-all-color;
+    -moz-box-shadow: $bs-t $bs-r $bs-b $bs-l $box-shadow-all-color;
+    -o-box-shadow: $bs-t $bs-r $bs-b $bs-l $box-shadow-all-color;
+}
+@mixin transition($duration, $ease) {
+    -webkit-transition: all $duration $ease;
+    -moz-transition: all $duration $ease;
+    -o-transition: all $duration $ease;
+    transition: all $duration $ease;
+}
+@mixin transition-variable($var,$duration, $ease) {
+    -webkit-transition: $var $duration $ease;
+    -moz-transition: $var $duration $ease;
+    -o-transition: $var $duration $ease;
+    transition: $var $duration $ease;
+}
+@mixin transition-all($all, $visibility, $z-index) {
+    -webkit-transition: $all $visibility $z-index;
+    -moz-transition: $all $visibility $z-index;
+    -o-transition: $all $visibility $z-index;
+    transition: $all $visibility $z-index;
+}
+@mixin opacity($value) {
+    -moz-opacity: $value;
+    -khtml-opacity: $value;
+    -webkit-opacity: $value;
+    opacity: $value;
+}
+@mixin mb ($value) {
+    margin-bottom: $value;
+}
+@mixin mt ($value) {
+    margin-top: $value;
+}
+@mixin ml ($value) {
+    margin-left: $value;
+}
+@mixin mr ($value) {
+    margin-right: $value;
+}
+@mixin pb ($value) {
+    padding-bottom: $value;
+}
+@mixin pt ($value) {
+    padding-top: $value;
+}
+@mixin pl ($value) {
+    padding-left: $value;
+}
+@mixin pr ($value) {
+    padding-right: $value;
+}
+
+/* display: flex */
+@mixin flexbox() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+@mixin inline-flex {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+@mixin justify-content($justify) {
+    -webkit-justify-content: $justify;
+      -moz-justify-content: $justify;
+        -ms-justify-content: $justify;
+            justify-content: $justify;
+              -ms-flex-pack: $justify;
+}
+@mixin align-items($align) {
+    -webkit-align-items: $align;
+      -moz-align-items: $align;
+        -ms-align-items: $align;
+        -ms-flex-align: $align;
+            align-items: $align;
+}
+@mixin flex-direction($direction) {
+    -webkit-flex-direction: $direction;
+      -moz-flex-direction: $direction;
+        -ms-flex-direction: $direction;
+            flex-direction: $direction;
+}
+@mixin flex-wrap($wrap) {
+    -webkit-flex-wrap: $wrap;
+      -moz-flex-wrap: $wrap;
+        -ms-flex-wrap: $wrap;
+            flex-wrap: $wrap;
+}
+@mixin flex-flow($flow) {
+    -webkit-flex-flow: $flow;
+      -moz-flex-flow: $flow;
+        -ms-flex-flow: $flow;
+            flex-flow: $flow;
+}
+// Display Order
+@mixin order($val) {
+    -webkit-box-ordinal-group: $val;  
+      -moz-box-ordinal-group: $val;     
+          -ms-flex-order: $val;     
+            -webkit-order: $val;  
+              order: $val;
+}
+
+
+/** Operation **/
+/* Parametric Mixins */
+/** Guarded Mixins **/
+
+/* common CSS - Start */
+html .portal {
+    .cursor-pointer { cursor: pointer; }
+    .height-auto { min-height: auto !important; }
+    .text-gray { color: $gray !important; }
+    .text-black { color: $black !important; }
+    .text-blue { color: $darkblue !important; }
+    h1 { font-size: 55px; font-weight: bold; }
+    h2, h1.h2 { font-size: 2.2rem; font-weight: bold; }
+    .pagination { margin-bottom: 3px; color: #858997; font-weight: 500; @include flexbox(); @include align-items(center); @include justify-content(flex-end);
+        a { text-decoration: none; margin-left: 5px; font-size: 22px; color: #C2C6D1; @include transition(0.3s, ease-in-out ); 
+            &.active, &:hover { color: #4A4BFF; }
+        }
+    }
+    .btn { box-shadow: 0px 10px 30px rgba(19, 23, 31, 0.2); font-weight: 500; font-size: 16px; text-align: center; height: 45px; padding: 5px 20px; @include border-radius(0px); @include transition(0.3s, ease-in-out); font-family: $portalbodyfont; white-space: nowrap;
+        &:focus { outline: none !important; box-shadow: none !important; }
+        &.btn-primary { background: #5351FB; color: $white; border-color: #5351FB;
+            &:hover, &:focus { background: #3d3bf3; border-color: #3d3bf3; }
+        }
+        &.btn-orange { background: $orange; color: $white; border-color: $orange;
+            &:hover, &:focus { background: #df3500; border-color: #df3500; }
+        }
+        &.btn-gray { background: #DDE2E5; color: #8F8F8F; border-color: #DDE2E5;
+            &:hover, &:focus { background: #c6cacc; border-color: #c6cacc; color: $white; }
+        }
+        &.btn-danger { background: #F03D3E; color: $white; border-color: #F03D3E;
+            &:hover, &:focus { background: #ce0c0d; border-color: #ce0c0d; color: $white; }
+        }
+        &.btn-only-text { background: transparent; font-size: 15px; color: #5351FC; font-weight: 600; box-shadow: none; padding: 0; height: auto !important;
+            &.text-gray { color: $gray; }
+            &.text-blue { color: #5351FC; }
+            &:hover, &:focus { color: $gray; 
+                &.text-gray { color: $blue !important; }
+                &.text-blue { color: $gray !important; }
+            }
+        }
+        &.btn-outline-secondary { background: #FFFFFF; border: 1px solid #C3C6D1; color: $lightgray; 
+            &:hover, &:focus { background: $lightgray; border-color: $lightgray; color: $darkblack; }
+        }
+        &.btn-outline-blue { background: #FFFFFF; border: 1px solid #DDE2E5; color: #4a4bff; 
+            &:hover, &:focus { background: #4a4bff; border-color: #4a4bff; color: #FFFFFF; }
+        }
+        &.btn-outline-primary { background: #FFFFFF; border: 1px solid #4a4bff; color: #4a4bff; 
+            &:hover, &:focus { background: #4a4bff; border-color: #4a4bff; color: #FFFFFF; }
+        }
+        &.btn-outline-danger { background: $white; border-color: #F24A4A; color: #F24A4A; 
+            &:hover, &:focus { background: #F24A4A; border-color: #F24A4A; color: $white; }
+        }
+        &.btn-round { @include border-radius(50px); }
+        &.btn-disable { background: #E2E2F0; @include box-shadow(none); color: $white;
+            &:hover, &:focus { background: #E2E2F0; color: $white; }
+        }
+        &.btn-lg { height: 50px; min-width: 180px; }
+        &.btn-md { height: 40px; min-width: 130px; font-size: 15px; }
+        &.btn-w160 { min-width: 160px; }
+        &.btn-w175 { min-width: 175px; }
+        &.btn-w200 { min-width: 200px; }
+        &.btn-w150 { min-width: 150px; }
+        &.btn-full { min-width: 100%; }
+        &.btn-icon { color: #4953F9; font-size: 26px; @include box-shadow(none); background: transparent; padding: 0 20px; font-weight: 400;
+            &.disabled { color: #C2C6D1; 
+                &:hover { color: #C2C6D1; }
+            }
+            &.active { color: #4953F9; 
+                &:hover { color: $blue; }
+            }
+            &:hover { color: $darkgray; }
+        }
+    }
+    .custom-dropdown {
+        .dropdown-menu { background: #FFFFFF; @include box-shadow(0px 4px 20px rgba(0, 0, 0, 0.25)); border-radius: 20px; min-width: 170px; border: none; display: block!important; z-index: 4; visibility: hidden; @include opacity(0); transition : all 0.2s ease-in-out 0s,visibility 0s linear 0.3s,z-index 0s linear 0.01s; transform: translateY(2em); padding: 10px 0; 
+            &::-webkit-scrollbar { width:6px;background-color:#F5F5F5; }
+            &::-webkit-scrollbar-thumb { background-color:rgba(0,0,0,0.3); }
+            &::-webkit-scrollbar-track { -webkit-box-shadow:inset 0 0 3px rgba(0,0,0,0.1);background-color:transparent; }
+            &.show { visibility: visible; opacity: 1; transition-delay: 0s, 0s, 0.3s; transform: translateY(0) !important; }
+            .dropdown-item { font-size: 14px; padding: 4px 20px; @include transition(0.3s, ease-in-out);
+                a { color: $gray; @include transition(0.3s, ease-in-out); text-decoration: none; }
+                &:hover, &:focus, &:active, &.active { background: rgba(83, 81, 251, 0.05); }            
+            }        
+        }    
+        &.dropleft {  
+            .dropdown-menu { transform: translateX(2em) !important;
+                &.show { transform: translateX(0) !important; }
+            }
+        }
+        @media (max-width:575px){
+            .dropdown-menu { min-width: 150px; 
+                .dropdown-item { padding: 4px 12px; font-size: 13px; }
+            }
+        }
+    }
+
+    .form-control:focus, .custom-control-input:focus ~ .custom-control-label::before  { outline: none !important; box-shadow: none !important; }
+    .form-group { margin-bottom: 30px; position: relative;
+        .form-control { font-family: $portalbodyfont;
+            &:focus { outline: none !important; box-shadow: none !important; }
+            &::-webkit-input-placeholder { color: $gray; }      
+            &:-ms-input-placeholder { color: $gray; }      
+            &::placeholder { color: $gray; }
+            &.form-control-md { height: 45px; }
+        }
+        .custom-select { padding: 0 25px 0 0; color: $darkgray; font-size: 16px; @include appearance(none); background: url(../../images/icons/arrow-down-blue.svg) calc(100% - 0px) center no-repeat; background-size: 15px; border: none; border-bottom: 1px solid #595959; @include border-radius(0px);
+            &.round-select { background: url(../../images/icons/arrow-down-orange.svg) calc(100% - 15px) center no-repeat; border: 1px solid #595959; @include border-radius(30px); padding: 0 35px 0 15px; }
+            &.mw-300 { max-width: 300px; }
+            &.mw-240 { max-width: 240px; }
+        }    
+        label { font-weight: bold; font-size: 16px; color: $black; margin-bottom: 15px; }
+        .icon { font-size: 20px; color: $blue; position: absolute; right: 15px; top: 40px; }
+        .custom-input { border: none; border-bottom: 1px solid $gray; padding: 0; @include border-radius(0px); color: $darkgray; 
+            &.with-r-icon { padding-right: 30px; }
+        }
+        &._form-group { position: relative; padding-top: 15px; 
+            label { font-size: 16px; position: absolute; left: 15px; top: 17px; color: $gray; pointer-events: none; @include transition(0.3s, ease-in-out); font-weight: 400; margin-bottom: 0; }
+            .form-control { border: none; border-bottom: 1px solid $gray; border-radius: 0px; font-size: 16px;  color: $blackgray; } 
+            .form-control:-webkit-autofill,
+            .form-control:-webkit-autofill:hover, 
+            .form-control:-webkit-autofill:focus, 
+            .form-control:-webkit-autofill:active  { -webkit-box-shadow: 0 0 0 30px white inset !important;
+            + label { font-size: 12px; left: 15px; top: 3px; }
+            }
+            &.with-icon {
+                .right-icon { padding-right: 25px; }
+                .post-icon { position: absolute; right: 15px; top: 22px; color: #4E1CF8; z-index: 1; cursor: pointer; }
+            }
+            input[type="date"]::-webkit-calendar-picker-indicator { opacity: 0; z-index: 3; -webkit-appearance: none; }
+            &.focused {        
+                input { border-color: $blue	; } 
+                label { color: $blue; }
+            }        
+            &.has-data, &.focused { 
+                label { font-size: 12px; left: 15px; top: 3px; }
+            }
+        }
+        &.custom-label {
+            label { position: relative; top: 0 !important; left: 0 !important; font-size: 14px !important; margin-bottom: 8px; }
+        }
+    }  
+    .custom-checkbox { 
+        .custom-control-label { color: $gray; font-weight: 400; cursor: pointer;
+            a { color: $darkblue; @include transition(0.3s, ease-in-out); text-decoration: underline;
+                &:hover { color: $darkblack; }
+            }
+            &::before { @include border-radius(2px); border: 1px solid #C4C4C4; top: 3px; background: #C4C4C4; }
+            &::after { top: 3px; }
+            .custom-control-input:focus:not(:checked) ~ .custom-control-label::before { border-color: #c4c4c4; }
+        }
+    }
+    .input-group {  
+        .input-group-text { background: transparent; border-right: none; border: 1px solid #C3C6D1; @include border-radius(36px); padding: 10px 15px 10px 15px; min-height: 40px; }
+        .form-control { height: 40px; border: 1px solid #C3C6D1; border-left: none; @include border-radius(36px); padding-left: 0; color: $gray; }
+    }
+    .i-icon { background-size: contain; display: inline-block;
+        &.icon-notification { background: url($icon-notification) no-repeat center center; width: 19px; height: 26px; background-size: contain; }
+        &.icon-chat { background: url($icon-chat) no-repeat center center; width: 20px; height: 20px; @include transition(0.3s, ease-in-out); }      
+        &.icon-project-overview { background: url($icon-project-overview) no-repeat center center; width: 22px; height: 20px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-docs { background: url($icon-docs) no-repeat center center; width: 20px; height: 18px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-user { background: url($icon-user) no-repeat center center; width: 22px; height: 20px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-security { background: url($icon-security) no-repeat center center; width: 22px; height: 20px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-moderation { background: url($icon-moderation) no-repeat center center; width: 22px; height: 20px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-compliance { background: url($icon-compliance) no-repeat center center; width: 22px; height: 20px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-infrastructure { background: url($icon-infrastructure) no-repeat center center; width: 22px; height: 20px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-general { background: url($icon-general) no-repeat center center; width: 22px; height: 20px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-member { background: url($icon-member) no-repeat center center; width: 22px; height: 20px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-role { background: url($icon-role) no-repeat center center; width: 22px; height: 20px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-usage { background: url($icon-usage) no-repeat center center; width: 22px; height: 20px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-analytics { background: url($icon-analytics) no-repeat center center; width: 22px; height: 20px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-billing { background: url($icon-billing) no-repeat center center; width: 22px; height: 20px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-settings { background: url($icon-settings) no-repeat center center; width: 22px; height: 20px; @include transition(0.3s, ease-in-out); background-size: contain; }    
+        &.icon-search { background: url($icon-search) no-repeat center center; width: 17px; height: 17px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-ios-gray { background: url($icon-ios-gray) no-repeat center center; width: 24px; height: 24px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-android-gray { background: url($icon-android-gray) no-repeat center center; width: 24px; height: 24px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-javascript-gray { background: url($icon-javascript-gray) no-repeat center center; width: 22px; height: 24px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-javascript-lightgray { background: url($icon-javascript-lightgray) no-repeat center center; width: 22px; height: 22px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-cart { background: url($icon-cart) no-repeat center center; width: 24px; height: 24px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-credit-card { background: url($icon-credit-card) no-repeat center center; width: 50px; height: 50px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-paypal { background: url($icon-paypal) no-repeat center center; width: 35px; height: 50px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-delete { background: url($icon-delete) no-repeat center center; width: 18px; height: 18px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-big-ios { background: url($icon-big-ios) no-repeat center center; width: 70px; height: 70px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-big-android { background: url($icon-big-android) no-repeat center center; width: 70px; height: 70px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-big-javascript { background: url($icon-big-javascript) no-repeat center center; width: 70px; height: 70px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-clear-cart { background: url($icon-clear-cart) no-repeat center center; width: 37px; height: 37px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-error { background: url($icon-error) no-repeat center center; width: 27px; height: 24px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-plus { background: url($icon-plus) no-repeat center center; width: 28px; height: 28px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-long-arrow-right { background: url($icon-long-arrow-right) no-repeat center center; width: 17px; height: 8px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-ellipsis-h { background: url($icon-ellipsis-h) no-repeat center center; width: 26px; height: 7px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-angle-arrow-down { background: url($icon-angle-arrow-down) no-repeat center center; width: 20px; height: 11px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-upgrade-initiated { background: url($icon-upgrade-initiated) no-repeat center center; width: 25px; height: 25px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-upgrade-progress { background: url($icon-upgrade-progress) no-repeat center center; width: 25px; height: 25px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-upgrade-complete { background: url($icon-upgrade-complete) no-repeat center center; width: 25px; height: 25px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-help-bg { background: url($icon-help-bg) no-repeat center center; width: 16px; height: 17px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-plus-bg { background: url($icon-plus-bg) no-repeat center center; width: 21px; height: 21px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-close { background: url($icon-close) no-repeat center center; width: 12px; height: 12px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-warning { background: url($icon-warning) no-repeat center center; width: 15px; height: 15px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-zoom { background: url($icon-zoom) no-repeat center center; width: 18px; height: 18px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-deactivate-user { background: url($icon-deactivate-user) no-repeat center center; width: 16px; height: 16px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-activate-user { background: url($icon-activate-user) no-repeat center center; width: 16px; height: 16px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-resend { background: url($icon-resend) no-repeat center center; width: 16px; height: 16px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-freeze { background: url($icon-freeze) no-repeat center center; width: 16px; height: 16px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-unfreeze { background: url($icon-unfreeze) no-repeat center center; width: 16px; height: 16px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-channel-report { background: url($icon-channel-report) no-repeat center center; width: 16px; height: 16px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-channel-deactivate { background: url($icon-channel-deactivate) no-repeat center center; width: 16px; height: 16px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-reactivate { background: url($icon-reactivate) no-repeat center center; width: 16px; height: 16px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-reactivated { background: url($icon-reactivated) no-repeat center center; width: 16px; height: 16px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-edit { background: url($icon-edit) no-repeat center center; width: 16px; height: 16px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-more { background: url($icon-more) no-repeat center center; width: 20px; height: 12px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-add-platform { background: url($icon-add-platform) no-repeat center center; width: 50px; height: 50px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-fill-android { background: url($icon-fill-android) no-repeat center center; width: 32px; height: 32px; @include transition(0.3s, ease-in-out); background-size: contain!important; }
+        &.icon-fill-ios { background: url($icon-fill-ios) no-repeat center center; width: 32px; height: 32px; @include transition(0.3s, ease-in-out); background-size: contain!important; }
+        &.icon-fill-javascript { background: url($icon-fill-javascript) no-repeat center center; width: 32px; height: 32px; @include transition(0.3s, ease-in-out); background-size: contain !important; }
+        &.icon-refresh { background: url($icon-refresh-blue) no-repeat center center; width: 17px; height: 20px; @include transition(0.3s, ease-in-out); background-size: contain !important; }
+        &.icon-back-blue { background: url($icon-back-blue) no-repeat center center; width: 7px; height: 12px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-up { background: url($icon-up) no-repeat center center; width: 10px; height: 8px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.icon-down { background: url($icon-down) no-repeat center center; width: 10px; height: 8px; @include transition(0.3s, ease-in-out); background-size: contain; }
+    }
+    .icon-loader-spinner { -webkit-animation: loader-spin 1000ms linear infinite; animation: loader-spin 1000ms linear infinite; border: 2px solid #40A2D9; /* Light grey */ border-top: 2px solid #f3f3f3; /* Blue */ border-radius: 50%; width: 17px; height: 17px; display: inline-block; }
+    @-webkit-keyframes loader-spin {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(359deg); }
+    }  
+    @keyframes loader-spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(359deg); }
+    }
+
+    .far, .fal, .fad { background-size: contain !important; display: inline-block;
+        &.fa-ellipsis-h { background: url($fa-ellipsis-h) no-repeat center center; width: 27px; height: 7px; @include transition(0.3s, ease-in-out); }
+        &.fa-times { background: url($fa-times) no-repeat center center; width: 20px; height: 20px; @include transition(0.3s, ease-in-out); }
+        &.fa-long-arrow-right { background: url($fa-long-arrow-right) no-repeat center center; width: 17px; height: 9px; @include transition(0.3s, ease-in-out); }
+        &.fa-shield-check{ background: url($fa-shield-check) no-repeat center center; min-width: 20px; width: 20px; height: 20px; @include transition(0.3s, ease-in-out); background-size: contain; }
+        &.fa-exclamation-triangle{ background: url($fa-exclamation-triangle) no-repeat center center; min-width: 20px; width: 20px; height: 20px; @include transition(0.3s, ease-in-out); background-size: contain; }
+    }
+
+    .alert { @include border-radius(4px); border: 0.75px solid transparent; font-size: 15px; @include flexbox(); @include align-items(center); padding: 15px;
+        i { margin-right: 8px; font-size: 20px; }
+        &.alert-success { background: rgba(40, 160, 21, 0.15); border-color: rgba(40, 160, 21, 0.5); color: #28A015; }
+        &.alert-danger { background: rgba(243, 10, 10, 0.15); border-color: rgba(217, 24, 24, 0.5); color: #BD3535; 
+            a { color: #5351FB; @include transition(0.3s, ease-in-out);
+                &:hover { color: #858997; }
+            }
+        }
+        &.alert-warning { background: rgba(243, 206, 10, 0.15); border-color: rgba(243, 206, 10, 0.5); color: #806E10; }
+        &.custom-alert { margin-bottom: 30px; background: linear-gradient(187.29deg, #EEF2FF -17.29%, #F6F7FB 100%); border: none; @include border-radius(20px); max-width: 50%; padding: 18px 25px;
+            span { font-size: 16px; color: $gray; display: block; border-left: 3px solid  $green; padding: 8px 5px 8px 15px;
+                strong { color: $darkblack; }
+            }
+        }
+    }
+    .radio-show-btn { margin: 30px 0 20px;
+        .form-check { 
+            input[type="radio"] { opacity: 0; position: fixed; width: 0; 
+                &:focus + label { border-color: rgba(83, 81, 251, 0.6); }
+                &:checked + label { border-color: rgba(83, 81, 251, 0.6); @include box-shadow(0px 5px 30px rgba(19, 23, 31, 0.2)); color: $darkblue;
+                    i {
+                        &.icon-big-ios { background: url($icon-big-ios-blue) no-repeat center center;@include transition(0.3s, ease-in-out); background-size: contain; }
+                        &.icon-big-android { background: url($icon-big-android-blue) no-repeat center center; @include transition(0.3s, ease-in-out); background-size: contain; }
+                        &.icon-big-javascript { background: url($icon-big-javascript-blue) no-repeat center center; @include transition(0.3s, ease-in-out); background-size: contain; }
+                    }
+                }            
+            }
+            label { display: inline-block; padding: 15px; min-width: 150px; background: $white; border: 2px solid rgba(133, 137, 151, 0.6); @include box-shadow(0px 5px 30px rgba(19, 23, 31, 0.1)); @include border-radius(20px); @include transition(0.3s, ease-in-out); color: $gray; font-weight: 500; cursor: pointer;
+                span { display: block; margin-top: 5px; }
+                &:hover {
+                    border-color: rgba(83, 81, 251, 0.6); @include box-shadow(0px 5px 30px rgba(19, 23, 31, 0.2));
+                }
+            }
+            &:last-child {
+                margin-left: 0;
+            }
+            @media (max-width: 767px) {            
+                label { padding: 10px; min-width: 100px; font-size: 14px;
+                    span { margin-top: 0; }
+                    i { width: 50px; height: 50px; }                
+                }
+            }
+            @media (max-width: 420px) { margin-right: 5px;
+                label { padding: 10px 5px; min-width: 75px; font-size: 12px;
+                    span { margin-top: 0; }
+                    i { width: 35px; height: 35px; }                
+                }
+            }
+        }
+    }
+    .modal { padding-right: 0 !important;
+        .modal-dialog { max-width: 600px; 
+            &.mx-700 { max-width: 750px; }
+            &.mx-500 { max-width: 500px; }
+        }
+        .modal-content { position: relative; background: $white; @include box-shadow(0px 5px 30px rgba(0, 0, 0, 0.1)); @include border-radius(0px);
+            .modal-header { @include border-radius(20px 20px 0 0); }
+            .modal-footer { @include border-radius(0 0); }
+            &.without-header {
+                .modal-body { padding: 50px; 
+                    &.p-30 { padding: 30px; }
+                    &.p-40 { padding: 30px 40px; }
+                    .icon { position: absolute; top: -45px; left: 50%; transform: translateX(-50%); }
+                    .title { font-size: 32px; color: #1A1A1A; 
+                        &.font-28 { font-size: 28px; }
+                    }
+                    .sm-title { font-size: 20px; color: #1A1A1A; text-align: center; margin-top: 10px; }
+                    .info-big { color: $gray; font-size: 18px; font-weight: 600; }
+                    p { color: $gray; 
+                        &.darkgray { color: #495057; max-width: 370px; margin: 0 auto 25px; }
+                    }
+                    .countdown { display: grid; column-gap: 10px; grid-template-columns: repeat(4, 1fr); padding: 0; margin: 0; list-style-type: none;
+                        li { text-align: center; position: relative;
+                            & + li:before { content: ":"; display: block; font-size: 22px; position: absolute; top: 18%; left: -8px;
+                            }
+                        }
+                        .num { margin-bottom: 8px; font-size: 48px; color: rgba(41, 56, 69, 0.15); }
+                        .txt { font-size: 14px; color: #495057; }
+                    }
+                    .freezeCheck-checkbox { margin-left: 1rem; margin-top: 30px; margin-bottom: 0;
+                        label { color: #495057; margin-bottom: 0; }
+                    }
+                    form { padding-top: 40px; 
+                        .form-group { margin-bottom: 40px; 
+                            .custom-checkbox {
+                                label { position: relative; top: 0; left: 0; }
+                            }
+                        }
+                    }
+                    .modal-input { text-align: center;
+                        label { margin: 10px 0 0; font-size: 14px; font-weight: 400; color: #495057; }
+                        input { max-width: 115px; margin: 0 auto; border-color: #ACB5BD; }
+                        .custom-html-dropdown { max-width: 115px; margin: 0 auto; }
+                        .dropdown-input { border-color: #ACB5BD; }
+                    }
+                    .moderation-reports-block { border: 1px solid #DDE2E5; @include border-radius(12px); padding: 20px; margin-bottom: 25px; margin-top: 25px;
+                        span { font-size: 13px; color: #ACB5BD; padding-bottom: 15px; display: block; }
+                        p { color: #000000; font-size: 15px; margin-bottom: 0;
+                            img { width: 150px; height: 150px; @include border-radius(5px); }
+                        }
+                        .img-block { width: 150px; height: 150px; @include border-radius(5px); position: relative;                       
+                            img { width: 150px; height: 150px; @include border-radius(5px); }
+                        }
+                        .date { font-size: 13px; color: #495057; padding-top: 10px; }
+                    }
+                    .action { width: 100%; text-align: center; padding-top: 15px;
+                        &.d-flex {  @include justify-content(space-between);
+                            .btn:first-child { margin-right: 15px; }
+                            .btn {
+                                &.w-100 { height: 50px; }
+                            }
+                        }
+                    }
+                    .member-role { @include flexbox(); @include align-items(center); margin-bottom: 15px;
+                        div { width: 50%; }
+                        &.heading {
+                            div { color: #ACB5BD; font-weight: 500; font-size: 14px; }
+                        }
+                    }
+                }
+            }
+        }
+        &#zoom-image-message {
+            .modal-content { 
+                &.without-header {
+                    .close { @include inline-flex(); @include align-items(center); @include justify-content(center); position: absolute; top: -20px; right: -20px; background: url(../../images/icons/close-bg.svg) no-repeat center center; @include border-radius(50%); z-index: 9; min-width: 40px; height: 40px; @include opacity(1); @include transition(0.3s, ease-in-out);
+                        &:hover { @include opacity(0.8); }
+                    }
+                }
+            }
+        }
+        &#newApplicationModal {
+            .modal-dialog { max-width: 500px;}
+            .title { font-size: 24px; text-align: left; margin-bottom: 20px; }
+            .app-type-block { text-align: left;
+                .custom-radio { padding-left: 30px; margin: 15px 0px; 
+                    .custom-control-label { cursor: pointer;
+                        &::before, &::after { top: 8px; left: -30px; }
+                        span { @include inline-flex(); @include align-items(center); font-weight: 500; font-size: 18px; color: #ACB5BD; line-height: 1;
+                            em { margin-right: 12px; }
+                        }
+                    }
+                    .custom-control-input:checked ~ .custom-control-label {
+                        span { color: #495057;
+                            em { 
+                                &.icon-fill-ios { background: url($icon-fill-ios-blue) no-repeat center center; }
+                                &.icon-fill-android { background: url($icon-fill-android-blue) no-repeat center center; }
+                                &.icon-fill-javascript { background: url($icon-fill-javascript-blue) no-repeat center center; }
+                             }
+                        }
+                    }
+                }
+            }
+            .action { @include flexbox(); @include align-items(center); padding: 0;
+                .btn { margin: 10px 10px 0; max-width: 100%; width: 100%; }
+            }
+        }
+        @media (max-width: 992px) { 
+            .modal-content { 
+                &.without-header {
+                    .modal-body {                     
+                        .title { font-size: 28px; 
+                            &.font-28 { font-size: 24px; }
+                        }  
+                        .sm-title { font-size: 18px; margin-top: 30px; }
+                        .info-big { font-size: 16px; }                  
+                    }
+                }
+            }
+        } 
+        @media (max-width: 767px) {  
+            .modal-dialog { max-width: 500px;}
+            .modal-content { margin: 0 15px;
+                &.without-header {
+                    .modal-body { padding: 30px;
+                        &.p-30 { padding: 20px; }
+                        &.p-40 { padding: 20px 30px; }
+                        .title { font-size: 24px;
+                            &.font-28 { font-size: 18px; }
+                        }
+                        .info-big, p { font-size: 14px; }  
+                        form { padding-top: 30px; 
+                            .form-group { margin-bottom: 30px; }
+                        }
+                        .action { padding-top: 10px; }
+                    }
+                }
+            }
+            &#zoom-image-message {
+                .modal-content { 
+                    &.without-header {
+                        .close { top: -10px; right: -10px; }
+                    }
+                }
+            }
+        }
+        @media (max-width: 575px) {  
+            .modal-content { margin: 0 5px;
+                &.without-header {
+                    .modal-body { padding: 20px; 
+                        &.p-40 { padding: 20px; }
+                        .title { font-size: 20px;}
+                        .action { 
+                            &.d-flex { @include justify-content(center); }
+                        }
+                        .member-role { @include flexbox(); @include align-items(center); margin-bottom: 15px;
+                            & > div { 
+                                &:first-child { width: 40%; }
+                                &:last-child { width: 60%; }
+                            }
+                            &.heading {
+                                div { color: #ACB5BD; font-weight: 500; font-size: 14px; }
+                            }
+                        }
+                    }                    
+                }
+            }
+            &#newApplicationModal {
+                .title { font-size: 20px; }
+                .app-type-block { 
+                    .custom-radio { 
+                        .custom-control-label { 
+                            span { font-size: 16px; }
+                        }
+                    }
+                }
+                .action { display: block;
+                    .btn { margin: 10px 0px 0; max-width: 100%; width: 100%; }
+                }
+            }
+        }
+        @media (max-width: 420px) {  
+            .modal-content { margin: 0 5px;
+                &.without-header {
+                    .modal-body { padding: 20px; 
+                        &.p-40 { padding: 20px; }
+                        .title { font-size: 20px;}
+                        .action { display: block !important;
+                            &.d-flex { @include justify-content(center); 
+                                .btn:first-child { margin-right: 0px; margin-bottom: 10px; }
+                            }
+                        }
+                        p.ml-3 { margin-left: 0 !important; }
+                        .freezeCheck-checkbox { margin-left: 0; }
+                    }                    
+                }
+            }
+        }
+    }
+    .custom-html-dropdown { position: relative;
+        .dropdown-input { padding: 0 25px 0 0; color: #727272; font-size: 16px; @include appearance(none); background: url(../../images/icons/arrow-down-orange.svg) calc(100% - 0px) center no-repeat; background-size: 15px; border: none; border-bottom: 1px solid #595959; @include border-radius(0px); height: 40px; min-width: 100%; text-align: left;        
+            &::after{ content: none; }
+            &:focus { outline: none; }
+            &.round-input { background: url(../../images/icons/arrow-down-orange.svg) calc(100% - 15px) center no-repeat; border: 1px solid #595959; @include border-radius(30px); padding: 0 35px 0 15px; }        
+        }
+        .dropdown-menu { margin-top: 0; background: #FFFFFF; @include box-shadow(0px 4px 20px rgba(0, 0, 0, 0.25)); @include border-radius(20px);  min-width: 100%; border: none; display: block!important; z-index: 4; visibility: hidden; @include opacity(0); transition : all 0.2s ease-in-out 0s,visibility 0s linear 0.3s,z-index 0s linear 0.01s; transform: translateY(2em); padding: 10px 0; max-height: 350px; overflow: hidden; overflow-y: auto; top: 42px !important;
+            &::-webkit-scrollbar { width:6px;background-color:#F5F5F5; }
+            &::-webkit-scrollbar-thumb { background-color:rgba(0,0,0,0.3); }
+            &::-webkit-scrollbar-track { -webkit-box-shadow:inset 0 0 3px rgba(0,0,0,0.1); }
+            &.show { visibility: visible; opacity: 1; transition-delay: 0s, 0s, 0.3s; transform: translateY(0) !important; }
+            li {
+                button { font-size: 14px; border: none; background: transparent; width: 100%; text-align: left; padding: 5px 15px; @include transition(0.3s, ease-in-out ); color: $gray; padding: 4px 15px;
+                    &:focus { outline: none; }
+                    &:hover, &:focus { color: #444444; background: rgba(83, 81, 251, 0.05); }
+                }
+            }
+            .dropdown-item { cursor: pointer; padding: 5px 15px; font-size: 14px;
+                &:hover, &:focus, &:active, &.active { color: #444444; background: rgba(83, 81, 251, 0.05); }
+            }
+        }
+    }
+    @media (max-width: 992px) { 
+        .custom-alert { max-width: 100%; padding: 10px 15px;
+            span { font-size: 14px; padding: 5px 5px 5px 10px; }
+        }
+    }
+    @media (max-width: 767px) { 
+        .alert { font-size: 14px; padding: 8px;
+            i { margin-right: 5px; font-size: 16px; }
+        }
+        .radio-show-btn { margin: 20px 0 10px; }    
+    }
+    @media (max-width: 575px) { 
+        .form-group {
+            .custom-input { font-size: 14px; }    
+            .icon { top: 30px; } 
+        }
+        .alert { font-size: 12px; padding: 8px;
+            i { margin-right: 5px; font-size: 16px; }
+        }
+        .custom-alert { max-width: 100%; padding: 8px 15px;
+            span { font-size: 13px; padding: 5px 0px 5px 10px; }
+        }
+    }
+}
+/* common CSS - End */
