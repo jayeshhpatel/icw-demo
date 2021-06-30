@@ -1,5 +1,5 @@
 *,::after,::before{box-sizing:border-box}
-html {font-family:sans-serif; -webkit-text-size-adjust:100%; -webkit-tap-highlight-color:transparent; scroll-behavior: smooth; background-color: $bodybg;}
+html {font-family:sans-serif; -webkit-text-size-adjust:100%; -webkit-tap-highlight-color:transparent; scroll-behavior: smooth;}
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {display:block}
 
 [tabindex="-1"]:focus:not(:focus-visible){outline:0!important}
@@ -9,7 +9,7 @@ body { margin: 0; padding: 0; font-family: $bodyfont; color: $bodyfontcolor; fon
     background: $bodybg url("../images/bg.jpg") top center no-repeat fixed; background-size: 100% 100%; 
 
     &.home {
-        background: $bodybg url("../images/bg-home.jpg") top center no-repeat fixed !important; background-size: 100% 100% !important; 
+        background: url("../images/bg-home.jpg") top center no-repeat fixed !important; background-size: 100% 100% !important; 
         background-attachment: fixed;
     }
 
@@ -22,7 +22,7 @@ body { margin: 0; padding: 0; font-family: $bodyfont; color: $bodyfontcolor; fon
 a { color: $white; 
     &:hover, &:focus {
         color:$white; 
-        text-decoration: none;  outline:0!important;
+        text-decoration: none;
     }
 }  
 p {margin-top: 0; margin-bottom: 1rem;}
@@ -391,7 +391,7 @@ h6, .h6 {font-family: $hfont; font-weight: 400; font-size: 16px;}
 }
 
 /* main-header */
-.main-header { position: absolute; top: 0; left: 0; right: 0; z-index: 9; @include transition(0.3s, ease-in-out); /*overflow: hidden;*/
+.main-header { position: absolute; top: 0; left: 0; right: 0; z-index: 9; @include transition(0.3s, ease-in-out); overflow: hidden;
  
     &.is-sticky-header { position: fixed !important;
         // &.scroll-up { top: 0px;  background: rgba($darkBlue, 0.8); }
@@ -2231,17 +2231,7 @@ display: grid; grid-gap: 20px; grid-template-columns: 12% minmax(280px, 29.5%) 4
                 }
             }
         }
-        .map-pin { cursor: pointer; 
-            @media (max-width: 992px) { 
-                img { width: 20px; }
-            }
-            @media (max-width: 767px) { 
-                img { width: 18px; }
-            }
-            @media (max-width: 575px) { 
-                img { width: 15px; }
-            }
-        }
+        .map-pin { cursor: pointer; }
     }
     @media (max-width: 767px) { 
         .card-body .map-container .map-action .action { padding: 12px 10px; 
