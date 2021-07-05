@@ -30,7 +30,7 @@
                                 <a class="nav-link btn btn-orange" href="#">Upgrade Plan</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="ri-microsoft-fill"></i><span>My Projects</span></a>
+                                <a class="nav-link" href="#"><em class="ri-microsoft-fill"></em><span>My Projects</span></a>
                             </li>
                             <li class="nav-item profile-dropdown dropdown">
                                 <a class="nav-link" href="#" id="profile-dropdown" data-toggle="dropdown">
@@ -41,22 +41,29 @@
                                     </div>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="profile-dropdown">                                   
-                                    <li class="dropdown-item pb-0 d-block d-md-none">
-                                        <div class="org-box border-0">
+                                    <li class="pb-0 d-block d-md-none">
+                                        <div class="dropdown-item org-box border-0">
                                             <strong>John Doe</strong>
                                             <span>johndoe@gmail.com</span>                                            
                                         </div> 
                                     </li>
-                                    <li class="dropdown-item">
-                                        <div class="org-box">
+                                    <li class="dropdown organization-dropdown">
+                                        <div class="org-box dropdown-item " id="organizations-dropdown" data-toggle="dropdown">
                                             <span>Organizations</span>
                                             <strong>Cool Inc.</strong>
                                         </div> 
+                                        <ul class="dropdown-menu" aria-labelledby="organizations-dropdown">                                   
+                                            <li class="heading"><span>Owner</span></li>
+                                            <li><a class="dropdown-item active" href="#">MyTestOrg</a></li>
+                                            <li><a class="dropdown-item" href="#">MyTestOrg1</a></li>
+                                            <li><a class="dropdown-item" href="#">MyTestOrg2</a></li>
+                                            <li><a class="dropdown-item" href="#">MyTestOrg3</a></li>
+                                        </ul>
                                     </li>
-                                    <li class="dropdown-item"><a href="#">Account and Profile</a></li>
-                                    <li class="dropdown-item"><a href="#">Organization Settings</a></li>
-                                    <li class="dropdown-item"><a href="#">Billing</a></li>
-                                    <li class="dropdown-item"><a href="#" class="text-orange">Log Out</a></li>
+                                    <li><a class="dropdown-item" href="#">Account and Profile</a></li>
+                                    <li><a class="dropdown-item" href="#">Organization Settings</a></li>
+                                    <li><a class="dropdown-item" href="#">Billing</a></li>
+                                    <li><a class="dropdown-item" href="#" class="text-orange">Log Out</a></li>
                                 </ul>                                 
                             </li>
                         </ul>
@@ -79,55 +86,55 @@
                         <ul class="sidebar-menu">
                             <li class="menu-item">
                                 <a href="#" class="menu-link active">
-                                    <span class="icon"><i class="ri-bar-chart-fill"></i></span>
+                                    <span class="icon"><em class="ri-bar-chart-fill"></em></span>
                                     <span class="text">Project Overview</span>
                                 </a>
                             </li>
                             <li class="menu-item">
                                 <a href="#" class="menu-link">
-                                    <span class="icon"><i class="ri-mail-fill"></i></span>
+                                    <span class="icon"><em class="ri-mail-fill"></em></span>
                                     <span class="text">Messages</span>
                                 </a>
                             </li>
                             <li class="menu-item">
                                 <a href="#" class="menu-link">
-                                    <span class="icon"><i class="ri-user-fill"></i></span>
+                                    <span class="icon"><em class="ri-user-fill"></em></span>
                                     <span class="text">Users</span>
                                 </a>
                             </li>
                             <li class="menu-item">
                                 <a href="#" class="menu-link">
-                                    <span class="icon"><i class="ri-shield-fill"></i></span>
+                                    <span class="icon"><em class="ri-shield-fill"></em></span>
                                     <span class="text">Security</span>
                                 </a>
                             </li>
                             <li class="menu-item">
                                 <a href="#" class="menu-link">
-                                    <span class="icon"><i class="ri-file-list-fill"></i></span>
+                                    <span class="icon"><em class="ri-file-list-fill"></em></span>
                                     <span class="text">Compliance</span>
                                 </a>
                             </li>
                             <li class="menu-item">
                                 <a href="#" class="menu-link">
-                                    <span class="icon"><i class="ri-organization-chart"></i></span>
+                                    <span class="icon"><em class="ri-organization-chart"></em></span>
                                     <span class="text">Infrastructure</span>
                                 </a>
                             </li>
                             <li class="menu-item">
                                 <a href="#" class="menu-link">
-                                    <span class="icon"><i class="ri-database-2-fill"></i></span>
+                                    <span class="icon"><em class="ri-database-2-fill"></em></span>
                                     <span class="text">Usage</span>
                                 </a>
                             </li>
                             <li class="menu-item">
                                 <a href="#" class="menu-link">
-                                    <span class="icon"><i class="ri-bill-fill"></i></span>
+                                    <span class="icon"><em class="ri-bill-fill"></em></span>
                                     <span class="text">Billing</span>
                                 </a>
                             </li>
                             <li class="menu-item">
                                 <a href="#" class="menu-link">
-                                    <span class="icon"><i class="ri-settings-5-fill"></i></span>
+                                    <span class="icon"><em class="ri-settings-5-fill"></em></span>
                                     <span class="text">Settings</span>
                                 </a>
                             </li>
@@ -137,13 +144,13 @@
                         <ul class="sidebar-menu">                            
                             <li class="menu-item">
                                 <a href="#" class="menu-link active">
-                                    <span class="icon"><i class="ri-question-fill"></i></span>
+                                    <span class="icon"><em class="ri-question-fill"></em></span>
                                     <span class="text">Support</span>
                                 </a>
                             </li>                            
                             <li class="menu-item">
                                 <a href="#" class="menu-link">
-                                    <span class="icon"><i class="ri-file-fill"></i></span>
+                                    <span class="icon"><em class="ri-file-fill"></em></span>
                                     <span class="text">Documents</span>
                                 </a>
                             </li>
@@ -152,7 +159,21 @@
                 </div>
             </aside>
             <div class="main-content-wrapper">               
-                
+                <div class="content">
+                    <div class="title-box">
+                        <div class="title">
+                            <h1>My Project</h1>
+                        </div>
+                        <div class="search-input-block">
+                            <div class="search-input">
+                                <div class="form-group pre-icon-input">
+                                    <span class="pre-icon"></span>
+                                    <input class="form-control custom-input" type="text" id="search" placeholder="Search" />                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
         <script src="../js/jquery.min.js"></script>
