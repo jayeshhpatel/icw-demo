@@ -90,13 +90,16 @@ img { max-width: 100%; height: auto; }
     .banner-section .content-block { height: calc(550px - 61px); }
 }
 @media (max-width: 767px) {
-    .main-header .navbar .menu a { font-size: 18px; }
+    .main-header .navbar .container { -webkit-justify-content: center; -moz-justify-content: center; -ms-justify-content: center; justify-content: center; -ms-flex-pack: center; }
+    .main-header .navbar .navbar-brand { margin: 0; }
+    .main-header .navbar .menu { display: none; }
     .banner-section { max-height: 450px; min-height: 450px; background-size: 190px; }
     .banner-section .content-block { height: calc(450px - 61px); }
-    .banner-section .content-block .content h1, .main-footer .content h2 { font-size: 20px; }
-    body, .super-power-section .border-title h2, .content h3, .asset-section h2, .icon-box .info h3, .sales-professional-section h3, .sales-professional-section .row .col-12 .icon::after { font-size: 18px; }
+    .banner-section .content-block .content h1, .main-footer .content h2 { font-size: 30px; }
+    .super-power-section .border-title h2 { font-size: 30px; }
+    body, .content h3, .asset-section h2, .icon-box .info h3, .sales-professional-section h3, .sales-professional-section .row .col-12 .icon::after { font-size: 24px; }
+    .sales-professional-section .icon-box { max-width: 100%; }
     .bg-animation-section h2, .bg-animation-section .btn { font-size: 26px; }
-    .banner-section .content-block .content h1 { margin: 0 15px; }
     .trifecta-section .row, .how-to-work-section .row, .super-power-section .row { margin: 0 -15px;}
     .trifecta-section .row > .col-12, .how-to-work-section .row > .col-12, .super-power-section .row > .col-12 { padding: 0 15px; }
     .super-power-section .border-title { margin-bottom: 50px; }
@@ -105,16 +108,17 @@ img { max-width: 100%; height: auto; }
     .asset-section h2 { margin-bottom: 40px; }
     .asset-section::after { height: 180px; width: 80px; top: 60px; background-size: contain; }
     .trifecta-section { padding: 50px 0; }
-    .sales-professional-section { background-size: cover; }
+    .sales-professional-section { background-size: cover; padding: 50px 0 120px; }
     .sales-professional-section::after { height: 145px; width: 220px; right: 3%; }
     .sales-professional-section h3 { margin: 0 0 40px; }
     .main-footer .logo { padding-top: 80px; }
 }
 @media (max-width: 575px) { 
-    .banner-section { max-height: 350px; min-height: 350px; background-size: 150px; }
-    .banner-section .content-block { height: calc(350px - 61px); }
-    .banner-section .content-block .content h1, .main-footer .content h2 { font-size: 18px; }
-    body, .super-power-section .border-title h2, .content h3, .asset-section h2, .icon-box .info h3, .sales-professional-section h3, .sales-professional-section .row .col-12 .icon::after { font-size: 18px; }
+    .banner-section { max-height: 400px; min-height: 400px; background-size: 150px; }
+    .banner-section .content-block { height: calc(400px - 61px); }
+    .banner-section .content-block .content h1, .main-footer .content h2 { font-size: 24px; margin: 0 20px; }
+    .super-power-section .border-title h2 { font-size: 24px; }
+    body, .content h3, .asset-section h2, .icon-box .info h3, .sales-professional-section h3, .sales-professional-section .row .col-12 .icon::after { font-size: 20px; }
     .icon-box { padding: 10px 8px; } 
     .bg-animation-section h2 { font-size: 20px; }
     .bg-animation-section .action { bottom: -25px; }
