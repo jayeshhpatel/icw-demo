@@ -2,6 +2,17 @@
 body { min-height: 100vh; margin: 0; font-size: 20px; font-family: 'Assistant', sans-serif; }
 img { max-width: 100%; height: auto; }
 
+.icon-box { text-align: center; padding: 15px 20px; }
+.icon-box .icon { padding-bottom: 25px; }
+.icon-box .icon img { max-height: 45px; }
+.icon-box .info h3 { font-weight: 800; font-size: 20px; color: #0e1036; margin: 0; }
+.icon-box .info .desc { font-weight: 300; color: #0e1036; }
+
+.content h1 { font-size: 24px; color: #0e1036; font-weight: normal; text-align: justify; }
+.content h1 strong { font-weight: bold; color: #f69153; text-transform: uppercase; }
+.content h3 { display: inline-block; font-size: 20px; font-weight: 800; color: #f69153; margin: 0; text-transform: uppercase; }
+.content .info { color: #0e1036; font-weight: 300; margin-top: 0; text-align: justify; }
+.content .info strong { font-weight: 800; }
 
 .main-header { position: fixed; top: 0; width: 100%; transition: top 0.2s ease-in-out; z-index: 100; }
 .main-header.nav-up { top: -62px; }
@@ -16,8 +27,6 @@ img { max-width: 100%; height: auto; }
 .banner-section .video-block video { width: 100%; object-fit: cover; height: 100%; }
 .banner-section .content-block { height: calc(100vh - 61px); margin-top: 61px; display: flex; align-items: center; justify-content: center; }
 .banner-section .content-block .content { max-width: 500px; margin: 0 auto; }
-.banner-section .content-block .content h1 { font-size: 24px; color: #0e1036; font-weight: normal; text-align: justify; }
-.banner-section .content-block .content h1 strong { font-weight: bold; color: #f69153; text-transform: uppercase; }
 
 .super-power-section { padding: 50px 0; }
 .super-power-section .row { margin: 0 -25px;}
@@ -27,8 +36,6 @@ img { max-width: 100%; height: auto; }
 .super-power-section .border-title::before, .super-power-section .border-title::after { content: ''; position: absolute; left: 50%; transform: translateX(-50%); width: 320px; height: 2px; background: #f69153; }
 .super-power-section .border-title::before { top: 0; }
 .super-power-section .border-title::after { bottom: 0; }
-.super-power-section .content h3 { display: inline-block; font-size: 20px; font-weight: 800; color: #f69153; margin: 0; text-transform: uppercase; }
-.super-power-section .content .info { color: #0e1036; font-weight: 300; margin-top: 0; text-align: justify; }
 
 .bg-animation-section { position: relative; padding: 80px 0 115px; background: linear-gradient(-45deg, #0e1036, #6c6e92); background-size: 400% 400%; animation: gradient 15s ease infinite; }
 .bg-animation-section h2 { text-transform: uppercase; font-size: 30px; font-weight: 800; text-align: center; color: #ffffff; max-width: 550px; margin: 0 auto; }
@@ -44,26 +51,15 @@ img { max-width: 100%; height: auto; }
 .how-to-work-section { padding: 120px 0 70px; }
 .how-to-work-section .row { margin: 0 -25px;}
 .how-to-work-section .row > .col-12 { padding: 0 25px; }
-.how-to-work-section .content h3 { display: inline-block; font-size: 20px; font-weight: 800; color: #f69153; margin: 0; text-transform: uppercase; }
-.how-to-work-section .content .info { color: #0e1036; font-weight: 300; margin-top: 0; text-align: justify; }
-.how-to-work-section .content .info strong { font-weight: 800; }
 
 .asset-section { background: #f69153 url(../images/loop.png) no-repeat center center; background-size: 45%; padding: 50px 0; position: relative; }
 .asset-section::after { content: ''; position: absolute; background: url(../images/aiola-pose-vertical.png) no-repeat top right; height: 230px; width: 110px; top: 100px; right: 0; }
 .asset-section h2 { color: #ffffff; font-size: 20px; font-weight: 800; text-align: center; margin-bottom: 80px; }
     
-.icon-box { text-align: center; padding: 15px 20px; }
-.icon-box .icon { padding-bottom: 25px; }
-.icon-box .icon img { max-height: 45px; }
-.icon-box .info h3 { font-weight: 800; font-size: 20px; color: #0e1036; margin: 0; }
-.icon-box .info .desc { font-weight: 300; color: #0e1036; }
-
 .trifecta-section { padding: 80px 0; }
 .trifecta-section .row { margin: 0 -25px;}
 .trifecta-section .row > .col-12 { padding: 0 25px; }
-.trifecta-section .content h3 { display: inline-block; font-size: 20px; font-weight: 800; color: #f69153; margin: 0 0 20px; text-transform: uppercase; }
-.trifecta-section .content .info { color: #0e1036; font-weight: 300; margin-top: 0; text-align: justify; }
-.trifecta-section .content .info strong { font-weight: 800; }
+.trifecta-section .content h3 { margin: 0 0 20px; }
 
 .sales-professional-section { padding: 50px 0; text-align: center; background: url(../images/sales-professional-bg.jpg) no-repeat top left; background-size: 164% 110%; position: relative; }
 .sales-professional-section::after { content: ''; position: absolute; background: url(../images/aiola-pose-horizontal-orange.png) no-repeat top right; height: 200px; width: 320px; bottom: -10px; right: 9%; background-size: contain; } 
@@ -76,7 +72,7 @@ img { max-width: 100%; height: auto; }
 .main-footer { background: #0e1036; padding: 35px 0; }
 .main-footer .content h2 { font-size: 24px; font-weight: bold; text-align: center; color: #ffffff; }
 .main-footer .content h2 span { color: #f69153; }
-.main-footer .content .info { font-weight: 300; margin: 0; text-align: center; color: #ffffff; }
+.main-footer .content .info { color: #ffffff; }
 .main-footer .logo { text-align: center; padding-top: 120px; }
 .main-footer .logo .logo-link img { max-width: 56px; }
 
@@ -92,7 +88,7 @@ img { max-width: 100%; height: auto; }
     .banner-section { max-height: 450px; min-height: 450px; background-size: 190px; }
     .banner-section .content-block { height: calc(450px - 61px); }
     .banner-section .content-block .content h1, .main-footer .content h2 { font-size: 20px; }
-    body, .super-power-section .border-title h2, .super-power-section .content h3, .how-to-work-section .content h3, .asset-section h2, .icon-box .info h3, .trifecta-section .content h3, .sales-professional-section h3, .sales-professional-section .row .col-12 .icon::after { font-size: 18px; }
+    body, .super-power-section .border-title h2, .content h3, .asset-section h2, .icon-box .info h3, .sales-professional-section h3, .sales-professional-section .row .col-12 .icon::after { font-size: 18px; }
     .bg-animation-section h2, .bg-animation-section .btn { font-size: 26px; }
     .banner-section .content-block .content h1 { margin: 0 15px; }
     .trifecta-section .row, .how-to-work-section .row, .super-power-section .row { margin: 0 -15px;}
@@ -112,7 +108,7 @@ img { max-width: 100%; height: auto; }
     .banner-section { max-height: 350px; min-height: 350px; background-size: 150px; }
     .banner-section .content-block { height: calc(350px - 61px); }
     .banner-section .content-block .content h1, .main-footer .content h2 { font-size: 18px; }
-    body, .super-power-section .border-title h2, .super-power-section .content h3, .how-to-work-section .content h3, .asset-section h2, .icon-box .info h3, .trifecta-section .content h3, .sales-professional-section h3, .sales-professional-section .row .col-12 .icon::after { font-size: 16px; }
+    body, .super-power-section .border-title h2, .content h3, .asset-section h2, .icon-box .info h3, .sales-professional-section h3, .sales-professional-section .row .col-12 .icon::after { font-size: 16px; }
     .icon-box { padding: 10px 8px; } 
     .bg-animation-section h2 { font-size: 20px; }
     .bg-animation-section .action { bottom: -25px; }
