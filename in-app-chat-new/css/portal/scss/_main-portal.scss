@@ -130,7 +130,7 @@ html .portal {
         }
     }
 
-    .main-icon-sidebar { position: absolute; top: 0; left: 0; width: 70px; height: 100vh; background: #0e132a; @include transition (0.3s, ease-in-out); overflow: hidden; z-index: 1; @include box-shadow(0px 4px 20px rgba(0, 0, 0, 0.25)); @include border-radius(0 25px 25px 0); z-index: 1033;          
+    .main-icon-sidebar { position: absolute; top: 0; left: 0; width: 70px; height: 100vh; background: #f2f5f9; @include transition (0.3s, ease-in-out); overflow: hidden; z-index: 1; @include box-shadow(0px 4px 20px rgba(0, 0, 0, 0.25)); @include border-radius(0 25px 25px 0); z-index: 1033;          
         .sidebar-wrapper { @include border-radius(0 25px 25px 0); position: relative; height: 100%;
             .logo { @include flexbox(); @include align-items(center); padding: 20px 15px; background: #F03A01; @include border-radius(0 25px 0 0); @include transition-variable(background, 0.3s, ease-in-out); @include transition-variable(padding, 0.3s, ease-in-out); text-decoration: none; height: 80px;
                 .logo-img { width: 75px; text-align: center; 
@@ -143,7 +143,7 @@ html .portal {
                     svg { max-width: 110px; margin-top: -4px; }
                 }
             }  
-            .sidebar-menu-block { max-height: calc(100vh - 210px); overflow: hidden; overflow-y: auto; padding: 15px 0; 
+            .sidebar-menu-block { max-height: calc(100vh - 160px); overflow: hidden; overflow-y: auto; padding: 15px 0; 
                 &::-webkit-scrollbar { width:6px;background-color:#F5F5F5; }
                 &::-webkit-scrollbar-thumb { background-color:rgba(0,0,0,0.3); }
                 &::-webkit-scrollbar-track { -webkit-box-shadow:inset 0 0 3px rgba(0,0,0,0.1);background-color:transparent; }
@@ -151,21 +151,39 @@ html .portal {
             .sidebar-menu { list-style-type: none; padding: 0; margin: 0; width: 75px * 3.5; 
                 // SIDEBAR MENU ITEM
                 .menu-item { padding: 5px 25px 5px 15px;                              
-                    .menu-link { @include flexbox(); @include align-items(center); text-decoration: none; color: $white; @include border-radius(8px); position: relative;
+                    .menu-link { @include flexbox(); @include align-items(center); text-decoration: none; color: #6f7b8e; @include border-radius(8px); position: relative;
                         // ICON
-                        .icon { width: 100%; max-width: 40px; min-height: 40px; max-height: 40px; text-align: center; @include flexbox(); @include align-items(center); @include justify-content(center); @include border-radius(8px); font-size: 22px; 
+                        .icon { width: 100%; max-width: 40px; min-height: 40px; max-height: 40px; text-align: center; @include flexbox(); @include align-items(center); @include justify-content(center); @include border-radius(8px); font-size: 22px; z-index: 2;
                             i, em { line-height: 1; }
                         }          
                         // DESCRIPTION
-                        .text { width: 75px * 3; text-align: left; padding: 0 5px; @include border-radius(8px); @include opacity(0); @include transition-variable(opacity, 0.3s, ease-in-out); }
-                        &::before { content: '';  display: block; background: rgba(255, 255, 255, 0.3); width: 0px; height: 40px; position: absolute; @include border-radius(8px); @include transition-variable(width, 0.3s, ease-in-out); }
-                        &.active, &:hover { 
+                        .text { width: 75px * 3; text-align: left; padding: 0 5px; @include border-radius(8px); @include opacity(0); @include transition-variable(opacity, 0.3s, ease-in-out); z-index: 2; }
+                        &::before { content: '';  display: block; background: #4e5c73; width: 0px; height: 40px; position: absolute; @include border-radius(8px); @include transition-variable(width, 0.3s, ease-in-out); z-index: 1; }
+                        &.active, &:hover { color: $white;
                             &::before { width: 40px; }
                         }
                     }
                 }
             }
-            .bottom-menu { position: absolute; bottom: 0; background: #0e132a; padding: 15px 0; }
+            .bottom-menu { position: absolute; bottom: 0; background: #f2f5f9; padding: 15px 0; 
+                .menu-item {                           
+                    .menu-link {                        
+                        .text { text-align: center; @include flexbox(); @include align-items(center); @include justify-content(center); height: 40px;
+                            a { color: #6f7b8e; @include transition(0.3s, ease-in-out); text-decoration: none; }
+                            span { padding: 0 8px; }
+                        }
+                        &::before { content: none; }
+                        &.active, &:hover { 
+                            .text { 
+                                a {
+                                    &:hover { color: $blue; }    
+                                }
+                                span { color: #6f7b8e; } 
+                            }
+                        }
+                    }
+                }
+            }
         }
         &:hover, &.open { width: 75px * 3.5;
             .sidebar-wrapper {
@@ -189,6 +207,18 @@ html .portal {
                     }
                 }
             }
+            .bottom-menu { 
+                .sidebar-menu { 
+                    // SIDEBAR MENU ITEM
+                    .menu-item {                           
+                        .menu-link {
+                            .icon { display: none; }          
+                            // DESCRIPTION
+                            .text { padding: 0; text-align: center; }
+                        }
+                    }
+                }
+            }
         } 
         @media (max-width: 767px) { width: 0;
             .sidebar-wrapper { 
@@ -203,10 +233,13 @@ html .portal {
             h1, .h1 { font-size: calc(22px + (36 - 22) * ((100vw - 320px) / (1900 - 320))); }
             .search-input-block {  
                 .search-input {
-                    .form-group { position: relative; 
+                    .form-group { position: relative; margin-bottom: 0; min-width: 300px;
                         .custom-input {  }
                     }
                 }
+            }
+            .title-box { @include flexbox(); @include align-items(center); @include justify-content(space-between); 
+                h1, .h1 { margin-bottom: 0; }
             }
         }
     }
