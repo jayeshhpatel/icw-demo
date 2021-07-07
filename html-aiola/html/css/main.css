@@ -114,24 +114,13 @@ img { max-width: 100%; height: auto; }
     .main-footer .logo { padding-top: 80px; }
 }
 @media (max-width: 575px) { 
-    .banner-section { max-height: 400px; min-height: 400px; background-size: 150px; }
-    .banner-section .content-block { height: calc(400px - 61px); }
+    .banner-section { max-height: 360px; min-height: 360px; background-size: 150px; }
+    .banner-section .content-block { height: calc(360px - 61px); }
     .banner-section .content-block .content h1, .main-footer .content h2 { font-size: 24px; margin: 0 20px; }
     .super-power-section .border-title h2 { font-size: 24px; }
     body, .content h3, .asset-section h2, .icon-box .info h3, .sales-professional-section h3, .sales-professional-section .row .col-12 .icon::after { font-size: 20px; }
     .icon-box { padding: 10px 8px; } 
     .bg-animation-section h2 { font-size: 20px; }
     .bg-animation-section .action { bottom: -25px; }
-    .bg-animation-section .btn { padding: 0 30px; height: 50px; font-size: 18px; }
-    .super-power-section { padding: 40px 0 20px; }
-    .super-power-section .border-title { margin-bottom: 30px; }
-    .bg-animation-section { padding: 40px 0 65px; }
-    .how-to-work-section { padding: 70px 0 20px; }
-    .asset-section h2 { margin-bottom: 30px; }
-    .asset-section::after { height: 150px; width: 70px; top: 40px; }
-    .trifecta-section { padding: 40px 0; }
-    .asset-section { padding: 40px 0 20px; }
-    .sales-professional-section::after { height: 100px; width: 150px; right: 3%; }
-    .sales-professional-section h3 { margin: 0 0 30px; }
-    .main-footer .logo { padding-top: 60px; }
+    .bg-animation-section .btn { padding: 0 25px; height: 50px; font-size: 20px; }
 }
