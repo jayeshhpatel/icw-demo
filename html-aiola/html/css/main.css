@@ -6,7 +6,7 @@ img { max-width: 100%; height: auto; }
 .icon-box .icon { padding-bottom: 25px; }
 .icon-box .icon img { max-height: 45px; }
 .icon-box .info h3 { font-weight: 800; font-size: 20px; color: #0e1036; margin: 0; }
-.icon-box .info p { font-weight: 300; color: #0e1036; }
+.icon-box .info p { font-weight: 300; color: #0e1036; margin-bottom: 0; }
 
 .content h1 { font-size: 24px; color: #0e1036; font-weight: normal; text-align: justify; }
 .content h1 strong { font-weight: bold; color: #f69153; text-transform: uppercase; }
@@ -88,6 +88,7 @@ img { max-width: 100%; height: auto; }
 @media (max-width: 992px) {
     .banner-section { max-height: 550px; min-height: 550px; }
     .banner-section .content-block { height: calc(550px - 61px); }
+    .asset-section::after { top: 50px; }
 }
 @media (max-width: 767px) {
     .main-header .navbar .container { -webkit-justify-content: center; -moz-justify-content: center; -ms-justify-content: center; justify-content: center; -ms-flex-pack: center; }
@@ -112,10 +113,12 @@ img { max-width: 100%; height: auto; }
     .sales-professional-section::after { height: 145px; width: 220px; right: 3%; }
     .sales-professional-section h3 { margin: 0 0 40px; }
     .main-footer .logo { padding-top: 80px; }
+    .asset-section { background-size: 115%; }
 }
 @media (max-width: 575px) { 
     .banner-section { max-height: 360px; min-height: 360px; background-size: 150px; }
-    .banner-section .content-block { height: calc(360px - 61px); }
+    .banner-section .content-block { height: calc(360px - 61px); }    
+    .banner-section .content-block .content h1 strong { display: block; text-align: center; }
     .banner-section .content-block .content h1, .main-footer .content h2 { font-size: 24px; margin: 0 20px; }
     .super-power-section .border-title h2 { font-size: 24px; }
     body, .content h3, .asset-section h2, .icon-box .info h3, .sales-professional-section h3, .sales-professional-section .row .col-12 .icon::after { font-size: 20px; }
