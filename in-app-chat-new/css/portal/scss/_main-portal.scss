@@ -22,7 +22,7 @@ html .portal {
             }
             @media (max-width: 767px) { 
                 .main-content-wrapper { padding-left: 0; 
-                    .content { padding: 30px 15px; margin: 0 15px; }
+                    .content { padding: 30px 15px; margin: 0; }
                 }
             }
         }
@@ -96,7 +96,9 @@ html .portal {
         @media (max-width: 767px) {
             &.with-logo {  
                 .navbar { padding: 0 15px; 
-                    .logo img { max-width: 170px; }
+                    .logo { margin-left: 0;
+                        img { max-width: 170px; }
+                    } 
                 }
             }
             .navbar { height: 70px;
@@ -138,7 +140,7 @@ html .portal {
             &.with-logo {  
                 .navbar {
                     .logo { 
-                        img { max-width: 150px; }    
+                        img { max-width: 55px; }    
                     }
                 }
             }
@@ -278,9 +280,26 @@ html .portal {
             }
         }
     }
+    .main-footer { border-top: 1px solid #e1e1e1; padding: 0 8%;
+        .content-block { padding: 20px 0; margin: 0 15px; position: relative; 
+            .left-menu { position: absolute; left: 0; @include flexbox(); @include align-items(center);
+                .menu-link { font-size: 16px; color: #6f7b8e; @include transition (0.3s, ease-in-out); text-decoration: none;
+                    &:hover { color: $blue; }
+                }
+                span { padding: 0 10px; font-size: 16px; }
+            }
+            .copyright { text-align: center;
+                span { font-size: 16px; color: #6f7b8e; }
+            }
+            @media (max-width: 767px) {  
+                .left-menu { position: relative; text-align: center; @include justify-content(center); margin-bottom: 5px; }
+            }
+        }
+    }
     
     .main-content-wrapper { min-height: 100vh; padding-top: 80px; padding-left: 70px; background: $white;        
         .content { padding: 30px 70px; 
+            .mb-20 { margin-bottom: 20px; }
             h1, .h1 { font-size: calc(22px + (36 - 22) * ((100vw - 320px) / (1900 - 320))); }
             .search-input-block {  
                 .search-input {
@@ -307,15 +326,19 @@ html .portal {
                     .icon { font-size: 50px; }
                 }
             }
-            .project-info-box { @include border-radius(10px); border: 1px solid #f5f6f8;
-                .more-link { background: #f7f8f9; display: block; padding: 25px 20px; text-decoration: none; @include border-radius(10px); border: 1px solid #f5f6f8;
-                    .title { font-size: 18px; font-weight: 600; color: #0e132a; }
+            .project-info-box { @include border-radius(10px); border: 1px solid #f0f1f3; margin-bottom: 20px;
+                .more-link { background: #f7f8f9; display: block; padding: 25px 40px 25px 20px; text-decoration: none; @include border-radius(10px); border: 1px solid #f0f1f3; position: relative;
+                    &::after { content: ''; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z" fill="rgb(14, 19, 42)"/></svg>') no-repeat center center; display: inline-block; width: 18px; height: 18px; background-size: 30px; position: absolute; right: 15px; top: 50%; transform: translateY(-50%); @include transition(0.3s, ease-in-out); }
+                    .title { font-size: 18px; font-weight: 600; color: #0e132a; white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
                     .icons {  margin-top: 5px;
                         .icon { display: inline-block; margin-right: 5px;
                             &.icon-android { background: url(../../images/icons/icon-android.jpg) no-repeat center center; width: 15px; height: 15px; }
                             &.icon-ios { background: url(../../images/icons/icon-ios.jpg) no-repeat center center; width: 15px; height: 15px; }
                             &.icon-js { background: url(../../images/icons/icon-js.jpg) no-repeat center center; width: 15px; height: 15px; }
                         }
+                    }
+                    &:hover {  
+                        &::after { transform: translateY(-50%) translateX(5px); }
                     }
                 }
                 .starter { font-size: 14px; color: #000000; display: block; padding: 15px 25px; }
@@ -331,13 +354,24 @@ html .portal {
         
     }
     @media (max-width: 992px) {        
-        
+       
     }
     @media (max-width: 767px) {
-       
+        
     }
     @media (max-width: 575px) { 
-       
+        .main-content-wrapper {     
+            .content { padding: 30px 70px;                 
+                .search-input-block { max-width: 100%;
+                    .search-input {
+                        .form-group { min-width: 100%; }
+                    }
+                }
+                .title-box { display: block;
+                    h1, .h1 { margin-bottom: 20px; text-align: center; }
+                }
+            }
+        }
     }
     @media (max-width: 420px) { 
         
