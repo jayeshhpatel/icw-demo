@@ -365,7 +365,7 @@ html .portal {
                     }
                 }
                 .action { text-align: right; 
-                    .link { @include inline-flex; @include align-items(center); @include justify-content(flex-end); color: $blue; text-decoration: none; font-size: 16px; padding-left: 10px; @include transition (0.3s, ease-in-out); 
+                    .link { @include inline-flex; @include align-items(center); @include justify-content(flex-end); color: $blue; text-decoration: none; font-size: 16px; padding-left: 10px; @include transition (0.3s, ease-in-out); line-height: 1; 
                         em { margin-left: 5px; @include transition (0.3s, ease-in-out); font-size: 26px; }
                         &:hover { color: $black; 
                             em { transform: translateX(5px); }
