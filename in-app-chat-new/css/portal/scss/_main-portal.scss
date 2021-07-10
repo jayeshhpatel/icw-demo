@@ -29,13 +29,14 @@ html .portal {
     }
 
     .main-dashboard-header { position: fixed; width: 100%; top: 0; background: #f2f5f9; z-index: 1032;
-        .navbar { height: 80px;
+        .navbar { height: 80px; padding-right: 105px;
             .bar-icon { display: none; cursor: pointer; margin-left: auto; }
             .logo { display: none; }
             .navbar-collapse {
                 .navbar-nav { @include align-items(center);
                     .nav-item { padding: 0 15px;
                         &:first-child { padding-left: 0; }                        
+                        &:last-child { padding-right: 0; }                        
                         .nav-link { color: #0e132a; font-size: 14px; @include flexbox(); @include align-items(center); line-height: 1; @include transition(0.3s, ease-in-out); padding: 0;
                             i, em { font-size: 22px; line-height: 1; margin-right: 5px; margin-top: -2px }
                             &.btn-orange { @include flexbox(); @include align-items(center); @include justify-content(center); color: $white; padding: 0 25px; @include border-radius(12px); height: 40px;
@@ -88,7 +89,11 @@ html .portal {
                 .logo { display: block; }
             }
         }
-        @media (max-width: 992px) { 
+        @media (max-width: 1200px) {  
+            .navbar { height: 80px; padding-right: 55px; }
+        }
+        @media (max-width: 992px) {             
+            .navbar { height: 80px; padding-right: 15px; }
             &.with-logo {  
                 .navbar { padding: 0 5%; }
             }
@@ -183,7 +188,7 @@ html .portal {
         }
     }
 
-    .main-icon-sidebar { position: absolute; top: 0; left: 0; width: 70px; height: 100vh; background: #f2f5f9; @include transition (0.3s, ease-in-out); overflow: hidden; z-index: 1; @include box-shadow(0px 4px 20px rgba(0, 0, 0, 0.25)); @include border-radius(0 25px 25px 0); z-index: 1033;          
+    .main-icon-sidebar { position: fixed; top: 0; left: 0; width: 70px; height: 100vh; background: #f2f5f9; @include transition (0.3s, ease-in-out); overflow: hidden; z-index: 1; @include box-shadow(0px 4px 20px rgba(0, 0, 0, 0.25)); @include border-radius(0 25px 25px 0); z-index: 1033;          
         .sidebar-wrapper { @include border-radius(0 25px 25px 0); position: relative; height: 100%;
             .logo { @include flexbox(); @include align-items(center); padding: 20px 15px; background: #F03A01; @include border-radius(0 25px 0 0); @include transition-variable(background, 0.3s, ease-in-out); @include transition-variable(padding, 0.3s, ease-in-out); text-decoration: none; height: 80px;
                 .logo-img { width: 75px; text-align: center; 
@@ -298,7 +303,7 @@ html .portal {
     }
     
     .main-content-wrapper { min-height: 100vh; padding-top: 80px; padding-left: 70px; background: $white;        
-        .content { padding: 30px 70px; 
+        .content { padding: 30px 120px; 
             .mb-20 { margin-bottom: 20px; }
             h1, .h1 { font-size: calc(22px + (36 - 22) * ((100vw - 320px) / (1900 - 320))); }
             h2, .h2 { font-size: calc(20px + (28 - 20) * ((100vw - 320px) / (1900 - 320))); }
@@ -344,19 +349,30 @@ html .portal {
                     }
                 }
                 .starter { font-size: 14px; color: #000000; display: block; padding: 15px 25px; }
-                .btn { padding: 0 25px; line-height: 45px; margin: 0 25px 25px; font-weight: 400; @include border-radius(10px); }
+                .btn { padding: 0 25px; line-height: 45px; margin: 0 25px 25px; font-weight: 400; @include border-radius(10px); font-size: 14px; }
+            }
+            .overview-boxes { 
+                .row {
+                    & > .col-12 { margin-bottom: 30px; }
+                }
             }
             .overview-box { border: 1px solid #eff0f2; @include border-radius(10px); padding: 25px; height: 100%; position: relative;
+                &.feature-box { background: url(../../images/portal/features-overview-bg.png) no-repeat 95% 25%; }
                 .title { @include flexbox(); @include align-items(center); @include justify-content(space-between); padding-bottom: 25px;
                     h2, .h3 { margin-bottom: 0; }
-                    .link { color: $blue; text-decoration: none; font-size: 16px; @include transition (0.3s, ease-in-out);
+                    .link { color: $blue; font-size: 16px; @include transition (0.3s, ease-in-out); padding-left: 20px; display: inline-block;
                         &:hover { color: $black; }
                     }
                 }
                 .overview-info { display: grid; grid-template-columns: 50% 50%; padding-bottom: 25px; min-height: 73px; }
                 .desc { 
-                    .heading { font-size: 16px; color: #959dab; display: block; }
-                    .info { color: #000000; font-size: 16px; display: block; }
+                    .heading { font-size: 16px; color: #959dab; display: block; 
+                        .text-black { font-weight: 500; }
+                    }
+                    .info { color: #000000; font-size: 16px; display: block; font-weight: 500;
+                        &.font-20 { font-size: 20px; padding-top: 3px; }
+                    }
+                    .duretion { font-size: 14px; font-style: italic; color: #959dab; padding-top: 5px; }
                 }
                 .url { 
                     span { font-size: 16px; color: #959dab; }
@@ -372,6 +388,70 @@ html .portal {
                         }
                     }
                 }
+                .edit-project-box { @include flexbox(); @include align-items(center); @include justify-content(space-between); 
+                    .edit-project {
+                        .link { @include inline-flex; @include align-items(center); color: $black; font-size: 16px; margin-right: 15px; text-decoration: none; @include transition (0.3s, ease-in-out);
+                            em { margin-right: 5px; }
+                            &:hover { color: $blue; }
+                        }
+                    }
+                    .app-link {
+                        .link { background: #f2f5f9; @include inline-flex; @include align-items(center); color: $black; font-size: 16px; text-decoration: none; padding: 8px 15px; @include border-radius(5px); @include transition (0.3s, ease-in-out);
+                            .icon { display: inline-block; margin-right: 5px;
+                                &.icon-android { background: url(../../images/icons/icon-play-store.png) no-repeat center center; width: 15px; height: 15px; }
+                                &.icon-ios { background: url(../../images/icons/icon-app-store.png) no-repeat center center; width: 15px; height: 15px; }
+                                &.icon-js { background: url(../../images/icons/icon-js.jpg) no-repeat center center; width: 15px; height: 15px; }
+                            }
+                            em { color: $black; margin-left: 5px; }
+                            &:hover { background: #e0e2e6; }
+                        }
+                    }
+                }                
+                .include-info-block { display: grid; grid-template-columns: 45% 55%; 
+                    .include-list-block { 
+                        ul { margin: 0; padding-left: 10px; list-style-type: none; 
+                            li { @include flexbox(); @include align-items(center); font-size: 16px; color: #515e75; padding: 3px 0;
+                                &::before { content: ''; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" fill="rgb(47 212 53)"/></svg>') no-repeat center center; width: 20px; height: 20px; background-size: 23px; display: inline-block; margin-right: 8px; }
+                            }
+                        }
+                        &.not-include-list-block { 
+                            ul {
+                                li { 
+                                    &::before { background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"  fill="rgb(255 50 50)"/></svg>') no-repeat center center;}
+                                }
+                            }
+                        }
+                    }
+                }
+                .contact-info { text-align: right; padding-top: 5px; 
+                    .text { margin-bottom: 0; margin-top: 8px; color: #515e75;
+                        a { color: $blue; @include transition(0.3s, ease-in-out); white-space: nowrap;
+                            &:hover { color: #000000; }
+                        }
+                    }
+                }
+            }
+            .summary-box { display: grid; grid-template-columns: 50% 50%;
+                .description-block { border-right: 2px solid #f1f3f5; padding: 15px 30px 0; 
+                    &:first-child { padding-left: 0; }
+                    &:last-child { padding-right: 0; }
+                }
+            }
+            .progress-bar-block { padding-top: 10px;
+                .progress-bar { background: #e2e5e9; width: 100%; height: 5px; overflow: unset;
+                    .progress { background: $blue; width: 15%; height: 5px; overflow: unset; position: relative;
+                        &::after { content: ''; width: 20px; height: 20px; background: $blue; @include border-radius(50%); display: inline-block; position: absolute; top: -7px; right: 0; z-index: 1; }
+                        &.message-bar {  
+                            &::after { background: $blue url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm9.06 8.683L5.648 6.238 4.353 7.762l7.72 6.555 7.581-6.56-1.308-1.513-6.285 5.439z" fill="white" /></svg>') no-repeat center center; background-size: 12px; }
+                        }
+                        &.users-bar {  
+                            &::after { background: $blue url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 22a8 8 0 1 1 16 0H4zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6z" fill="white" /></svg>') no-repeat center center; background-size: 12px; }
+                        }
+                    }
+                }
+                .progress-count { @include flexbox(); @include align-items(center); @include justify-content(space-between); padding-top: 15px;
+                    span { color: #959dab; }
+                }
             }
         }
     }
@@ -380,17 +460,51 @@ html .portal {
         
     }
     @media (max-width: 1200px) {  
-        
+        .main-content-wrapper {
+            .content { padding: 30px 70px;
+                .overview-box { padding: 20px; 
+                    .edit-project-box { display: block; 
+                        .app-link { text-align: right; margin-top: 10px; }
+                    }
+                    .include-info-block { grid-template-columns: 50% 50%; }
+                }                   
+                .summary-box { 
+                    .description-block { padding: 15px 20px 0; }
+                }                
+            }
+        }
     }
     @media (max-width: 992px) {        
-       
+        .main-content-wrapper {
+            .content { padding: 30px;
+                .overview-box { padding: 20px; 
+                    .include-info-block { grid-template-columns: 100%; 
+                        .info-block { padding-bottom: 20px; 
+                            &:last-child { padding-bottom: 0; }
+                        }
+                    }
+                }  
+                .summary-box { grid-template-columns: 100%; 
+                    .description-block { padding: 15px 0px; border-right: none; border-bottom: 1px solid #f1f3f5; 
+                        &:first-child { padding-bottom: 20px; }
+                        &:last-child { padding-top: 20px; }
+                    }
+                } 
+            }
+        }
     }
     @media (max-width: 767px) {
-        
+        .main-content-wrapper { padding-left: 0px; 
+            .content { padding: 30px 15px; 
+                .overview-box {
+                    .contact-info { text-align: left; }
+                }
+            }
+        }
     }
     @media (max-width: 575px) { 
         .main-content-wrapper {     
-            .content { padding: 30px 70px;                 
+            .content { 
                 .search-input-block { max-width: 100%;
                     .search-input {
                         .form-group { min-width: 100%; }
@@ -399,11 +513,62 @@ html .portal {
                 .title-box { display: block;
                     h1, .h1 { margin-bottom: 20px; text-align: center; }
                 }
+                .overview-boxes { 
+                    .row {
+                        & > .col-12 { margin-bottom: 20px; }
+                    }
+                }
+                .overview-box {
+                    .title { padding-bottom: 20px;
+                        .link { font-size: 14px; padding-left: 15px; }
+                    }
+                    .overview-info { grid-template-columns: 100%; padding-bottom: 10px; min-height: auto; }
+                    .desc { padding-bottom: 8px;
+                        .heading { font-size: 14px; }
+                        .info { font-size: 14px; 
+                            &.font-20 { font-size: 18px; }
+                        }
+                    }
+                    .url { 
+                        span { font-size: 14px; }
+                        .link { font-size: 14px; }
+                    }
+                    .action {
+                        .link { font-size: 14px; 
+                            em { font-size: 20px; }                            
+                        }
+                    }
+                    .edit-project-box { 
+                        .edit-project {
+                            .link { font-size: 14px; }
+                        }
+                        .app-link {
+                            .link { font-size: 14px; }
+                        }
+                    }
+                    .include-info-block { 
+                        .include-list-block { 
+                            ul { padding-left: 0px;
+                                li { font-size: 14px;
+                                    &::before { margin-right: 5px; }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
     @media (max-width: 420px) { 
-        
+        .main-content-wrapper {        
+            .content {  
+                .progress-bar-block {                    
+                    .progress-count { 
+                        span { font-size: 12px; }
+                    }
+                }
+            }
+        }
     }
     @media (max-width: 350px) {
         
