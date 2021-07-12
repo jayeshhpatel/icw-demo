@@ -665,6 +665,25 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
     }
 }
 
+.play-schedule-section { display: flex;
+    .play-schedule-draggable-block { 
+        .heading { border: 1px solid #ffffff; background: red; color: #ffffff; padding: 5px 15px; font-size: 14px; }
+        .connected-sortable { margin: 0; list-style: none; width: 200px; padding: 0; 
+            li.draggable-item { width: inherit; padding: 5px 15px; background-color: #f5f5f5; -webkit-transition: transform 0.25s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out; -moz-transition: transform 0.25s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out; -o-transition: transform 0.25s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out; transition: transform 0.25s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out; z-index: 90; 
+                &:hover { cursor: pointer; background-color: #eaeaea; }
+            }
+        }
+    }
+    .play-schedule-draggable-area { display: grid; grid-template-columns: repeat(7, 14.28%); width: 100%; 
+        .droppable-area {  
+            .day-name { border: 1px solid #ffffff; color: #ffffff; text-align: center; font-size: 14px; padding: 5px 15px; }
+            .playlist-block { 
+                .playlist-title { background: rgba(189, 215, 238, 1); color: $black; font-size: 14px; padding: 5px 15px; }
+            }
+        }
+    }
+}
+
 .custom-modal { background: rgba(14, 15, 15, 0.49); width: 100vw; height: 100vh; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: flex; overflow: auto; visibility: hidden; pointer-events: none; opacity: 0; z-index: -2; padding: 0px 50px;   
     &.is-show { z-index: 99; visibility: visible; opacity: 1; pointer-events: all; }
     .wrapper { width: 100%; max-width: 700px; position: relative; height: auto; min-height: 100vh; @include flexbox(); @include justify-content(center); @include flex-direction(column); padding: 15px; margin: 0 auto;

@@ -18,6 +18,27 @@
         <title>tv.promovideocreator.com</title> 
         <style>
             
+            
+            
+li.draggable-item
+/* styles during drag */
+li.draggable-item.ui-draggable-dragging {
+  background-color: #e5e5e5;
+  -webkit-box-shadow: 0 0 8px rgba(53, 41, 41, 0.8);
+  -moz-box-shadow: 0 0 8px rgba(53, 41, 41, 0.8);
+  box-shadow: 0 0 8px rgba(53, 41, 41, 0.8);
+  transform: scale(1.02);
+  z-index: 100;
+  cursor: move;
+}
+.droppable-area { width: 100%; }
+.droppable-area.hovered {
+  background-color: #fff;
+  border-radius: 6px;
+  border: 1px solid #e5aeae;
+  -webkit-box-shadow: 0 0 8px rgba(214, 147, 147, 0.6);
+  box-shadow: 0 0 8px rgba(214, 147, 147, 0.6);
+}
         </style>
     </head>
     <body>
@@ -67,277 +88,71 @@
         <!-- MAIN SECTION -->
         <main class="inner-content-wrapper play-schedule">           
             <div class="container">
-                <div class="play-schedule-block">
-                    <div class="table-responsive">
-                        <table class="schedule-table">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>Sun</th>
-                                    <th>Mon</th>
-                                    <th>Tue</th>
-                                    <th>Wed</th>
-                                    <th>Thu</th>
-                                    <th>Fri</th>
-                                    <th>Sat</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th><span>1 AM</span></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th><span>2 AM</span></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th><span>3 AM</span></th>
-                                    <td><div class="bg-label" data-popup="teeth-whitening">Teeth Whitening</div><div class="bg-label">All On 4</div></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th><span>4 AM</span></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th><span>5 AM</span></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th><span>6 AM</span></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th><span>7 AM</span></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th><span>8 AM</span></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th><span>9 AM</span></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th><span>10 AM</span></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th><span>11 AM</span></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th><span>12 AM</span></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th><span>1 PM</span></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th><span>2 PM</span></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th><span>3 PM</span></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th><span>4 PM</span></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th><span>5 PM</span></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th><span>6 PM</span></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th><span>7 PM</span></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th><span>8 PM</span></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th><span>9 PM</span></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th><span>10 PM</span></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th><span>11 PM</span></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th><span>12 PM</span></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <div class="play-schedule-section">
+                    <div class="play-schedule-draggable-block">
+                        <div class="heading">Drag & Drop Video</div>
+                        <ul class="connected-sortable">
+                            <li class="draggable-item">Heading</li>
+                            <li class="draggable-item">SubHead</li>
+                            <li class="draggable-item">Text Box</li>
+                            <li class="draggable-item">Label</li>
+                            <li class="draggable-item">Input Field</li>
+                        </ul>
+                    </div>                      
+                    <div class="play-schedule-draggable-area">
+                        <div class="droppable-area">
+                            <div class="day-name">Sunday</div>
+                            <div class="playlist-block">
+                                <div class="playlist-title">Play List: SUN-1</div>
+                                <div class="playlist-info">
+                                    
+                                </div>
+                            </div>
+                            <div class="placeholder">
+                                <p>Add your items here</p>
+                            </div>
+                        </div>
+                        <div class="droppable-area">
+                            <div class="day-name">Sunday</div>
+                            <div class="placeholder">
+                                <p>Add your items here</p>
+                            </div>
+                        </div>
+                        <div class="droppable-area">
+                            <div class="day-name">Sunday</div>
+                            <div class="placeholder">
+                                <p>Add your items here</p>
+                            </div>
+                        </div>
+                        <div class="droppable-area">
+                            <div class="day-name">Sunday</div>
+                            <div class="placeholder">
+                                <p>Add your items here</p>
+                            </div>
+                        </div>
+                        <div class="droppable-area">
+                            <div class="day-name">Sunday</div>
+                            <div class="placeholder">
+                                <p>Add your items here</p>
+                            </div>
+                        </div>
+                        <div class="droppable-area">
+                            <div class="day-name">Sunday</div>
+                            <div class="placeholder">
+                                <p>Add your items here</p>
+                            </div>
+                        </div>
+                        <div class="droppable-area">
+                            <div class="day-name">Sunday</div>
+                            <div class="placeholder">
+                                <p>Add your items here</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
         <!-- // MAIN SECTION -->
-
-        <!-- FOOTER SECTION -->
-        <footer class="main-footer">
-            <div class="container">
-               
-            </div>
-        </footer>
-        <!-- // FOOTER SECTION -->
 
         <div class="custom-modal" id="teeth-whitening">
             <div class="wrapper">
@@ -446,6 +261,50 @@
         <script type="text/javascript" src="assets/js/jquery.min.js"></script>
         <script type="text/javascript" src="assets/js/swiper-bundle.min.js"></script>
         <script type="text/javascript" src="assets/js/main.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+        <script>
+            $( init );
+
+function init() {
+  $( ".draggable-item" ).draggable({
+    // code
+    cursor: 'move',
+    containment: '.play-schedule-section',
+    stack: '.connected-sortable ul',
+    revert: true,
+    stop: handleDragStop
+  });
+  
+  $( ".droppable-area" ).droppable({
+    // code
+    hoverClass: 'hovered',
+    accept: ":not(.ui-sortable-helper)",
+    drop: handleDropEvent
+  }).sortable({
+      items: "div:not(.placeholder)",
+      sort: function() {
+        // gets added unintentionally by droppable interacting with sortable
+        // using connectWithSortable fixes this, but doesn't allow you to customize active/hoverClass options
+        $( this ).removeClass( "ui-state-default" );
+      }
+  });
+  
+  function handleDragStop( event, ui ) {
+    // code for drag stop
+    
+    //var offsetXPos = parseInt( ui.offset.left );
+    //var offsetYPos = parseInt( ui.offset.top );
+    //alert( "Drag stopped!\n\nOffset: (" + offsetXPos + ", " + offsetYPos + ")\n");
+  }
+  
+  function handleDropEvent( event, ui ) {
+    var draggable = ui.draggable;
+    
+    $(this).find(".placeholder").remove();
+    $( "<div></div>" ).text( draggable.text() ).appendTo( this );
+  }
+};
+            </script>
     </body>
 </html>
 
