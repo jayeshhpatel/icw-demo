@@ -670,13 +670,16 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
         .heading { border-bottom: 1px solid rgba($white, 0.20); background: rgba(255,255,255,0.1); color: #ffffff; padding: 8px 10px; font-size: 14px; position: relative;
             .collapse-arrow { background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z" fill="white"/></svg>') no-repeat center center; display: inline-block; width: 15px; height: 15px; padding: 0 !important; background-size: 20px; position: absolute; bottom: 8px; right: 10px; cursor: pointer; }
         }
-        .connected-sortable { margin: 10px 0; list-style: none; padding: 0; max-height: 400px; overflow: hidden; overflow-y: auto;
-            li.draggable-item { width: inherit; padding: 5px 10px; margin: 5px 10px; background-color: #1d92d1; color: #ffffff; -webkit-transition: transform 0.25s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out; -moz-transition: transform 0.25s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out; -o-transition: transform 0.25s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out; transition: transform 0.25s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out; z-index: 90; display: flex; align-items: center; justify-content: space-between;
-                &:hover { cursor: pointer; background-color: #3cb2f1; }
-                .name { font-size: 14px; }
-                .drag-icon { background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M4.5 10.5c-.825 0-1.5.675-1.5 1.5s.675 1.5 1.5 1.5S6 12.825 6 12s-.675-1.5-1.5-1.5zm15 0c-.825 0-1.5.675-1.5 1.5s.675 1.5 1.5 1.5S21 12.825 21 12s-.675-1.5-1.5-1.5zm-7.5 0c-.825 0-1.5.675-1.5 1.5s.675 1.5 1.5 1.5 1.5-.675 1.5-1.5-.675-1.5-1.5-1.5z" fill="white"/></svg>') no-repeat center center; width: 15px; height: 15px; background-size: 18px; cursor: pointer; }
+        .play-schedule-sort-block { max-height: 400px; overflow: hidden; overflow-y: auto; 
+            .play-schedule-sortable { margin: 10px 0; list-style: none; padding: 0; 
+                li.draggable-item { width: inherit; padding: 5px 10px; margin: 5px 10px; background-color: #1d92d1; color: #ffffff; -webkit-transition: transform 0.25s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out; -moz-transition: transform 0.25s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out; -o-transition: transform 0.25s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out; transition: transform 0.25s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out; z-index: 90; display: flex; align-items: flex-end; justify-content: space-between;
+                    &:hover { cursor: pointer; background-color: #3cb2f1; }
+                    .name { font-size: 14px; }
+                    .drag-icon { background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M4.5 10.5c-.825 0-1.5.675-1.5 1.5s.675 1.5 1.5 1.5S6 12.825 6 12s-.675-1.5-1.5-1.5zm15 0c-.825 0-1.5.675-1.5 1.5s.675 1.5 1.5 1.5S21 12.825 21 12s-.675-1.5-1.5-1.5zm-7.5 0c-.825 0-1.5.675-1.5 1.5s.675 1.5 1.5 1.5 1.5-.675 1.5-1.5-.675-1.5-1.5-1.5z" fill="white"/></svg>') no-repeat center center; width: 15px; min-width: 15px; height: 15px; background-size: 18px; cursor: pointer; }
+                }
             }
         }
+        
     }
     .play-schedule-draggable-area-wrapper { width: 100%;
         .day-name-block { display: grid; grid-template-columns: repeat(7, 14.28%); width: 100%; margin-bottom: 10px;
@@ -692,7 +695,7 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
                             &:last-child { padding-bottom: 5px; }
                             &:first-child { padding-top: 5px; }
                         }
-                        .collapse-arrow { background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z"/></svg>') no-repeat center center; display: inline-block; width: 15px; height: 15px; padding: 0 !important; background-size: 20px; position: absolute; bottom: 5px; right: 10px; cursor: pointer; transition: all 0.3s ease-in-out;
+                        .collapse-arrow { background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z"/></svg>') no-repeat center center; display: inline-block; width: 15px; min-width: 15px; height: 15px; padding: 0 !important; background-size: 20px; position: absolute; bottom: 5px; right: 10px; cursor: pointer; transition: all 0.3s ease-in-out;
                             &.active { transform: rotate(90deg); }
                         }
                     }
@@ -702,7 +705,7 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
                 &.active { display: block; }
                 & > div { padding: 0 10px; display: flex; align-items: center; justify-content: space-between;
                     .name { font-size: 14px; }
-                    .drag-icon { background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M4.5 10.5c-.825 0-1.5.675-1.5 1.5s.675 1.5 1.5 1.5S6 12.825 6 12s-.675-1.5-1.5-1.5zm15 0c-.825 0-1.5.675-1.5 1.5s.675 1.5 1.5 1.5S21 12.825 21 12s-.675-1.5-1.5-1.5zm-7.5 0c-.825 0-1.5.675-1.5 1.5s.675 1.5 1.5 1.5 1.5-.675 1.5-1.5-.675-1.5-1.5-1.5z"/></svg>') no-repeat center center; width: 15px; height: 15px; background-size: 18px; cursor: pointer; }
+                    .drag-icon { background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M4.5 10.5c-.825 0-1.5.675-1.5 1.5s.675 1.5 1.5 1.5S6 12.825 6 12s-.675-1.5-1.5-1.5zm15 0c-.825 0-1.5.675-1.5 1.5s.675 1.5 1.5 1.5S21 12.825 21 12s-.675-1.5-1.5-1.5zm-7.5 0c-.825 0-1.5.675-1.5 1.5s.675 1.5 1.5 1.5 1.5-.675 1.5-1.5-.675-1.5-1.5-1.5z"/></svg>') no-repeat center center; width: 15px; min-width: 15px; height: 15px; background-size: 18px; cursor: pointer; }
                 }
                 .placeholder {
                     p { margin: 10px 0 0; color: red; text-decoration: underline; font-size: 14px; }

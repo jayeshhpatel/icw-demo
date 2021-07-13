@@ -91,23 +91,25 @@ li.draggable-item.ui-draggable-dragging {
                 <div class="play-schedule-section">
                     <div class="play-schedule-draggable-block">
                         <div class="heading">Drag & Drop Video <span class="collapse-arrow"></span></div>
-                        <ul class="connected-sortable">
-                            <li class="draggable-item"><span class="name" data-popup="teeth-whitening">Heading1</span> <span class="drag-icon"></span></li>
-                            <li class="draggable-item"><span class="name">Heading2</span> <span class="drag-icon"></span></li>
-                            <li class="draggable-item"><span class="name">Heading3</span> <span class="drag-icon"></span></li>
-                            <li class="draggable-item"><span class="name">Heading4</span> <span class="drag-icon"></span></li>
-                            <li class="draggable-item"><span class="name">Heading5</span> <span class="drag-icon"></span></li>
-                            <li class="draggable-item"><span class="name">Heading6</span> <span class="drag-icon"></span></li>
-                            <li class="draggable-item"><span class="name">Heading7</span> <span class="drag-icon"></span></li>
-                            <li class="draggable-item"><span class="name">Heading8</span> <span class="drag-icon"></span></li>
-                            <li class="draggable-item"><span class="name">Heading9</span> <span class="drag-icon"></span></li>
-                            <li class="draggable-item"><span class="name">Heading10</span> <span class="drag-icon"></span></li>
-                            <li class="draggable-item"><span class="name">Heading11</span> <span class="drag-icon"></span></li>
-                            <li class="draggable-item"><span class="name">Heading12</span> <span class="drag-icon"></span></li>
-                            <li class="draggable-item"><span class="name">Heading13</span> <span class="drag-icon"></span></li>
-                            <li class="draggable-item"><span class="name">Heading14</span> <span class="drag-icon"></span></li>
-                            <li class="draggable-item"><span class="name">Heading15</span> <span class="drag-icon"></span></li>
-                        </ul>
+                        <div class="play-schedule-sort-block">
+                            <ul class="play-schedule-sortable">
+                                <li class="draggable-item"><span class="name" data-popup="teeth-whitening">Heading1</span> <span class="drag-icon"></span></li>
+                                <li class="draggable-item"><span class="name">Heading Heading Heading Heading 2</span> <span class="drag-icon"></span></li>
+                                <li class="draggable-item"><span class="name">Heading3</span> <span class="drag-icon"></span></li>
+                                <li class="draggable-item"><span class="name">Heading4</span> <span class="drag-icon"></span></li>
+                                <li class="draggable-item"><span class="name">Heading5</span> <span class="drag-icon"></span></li>
+                                <li class="draggable-item"><span class="name">Heading6</span> <span class="drag-icon"></span></li>
+                                <li class="draggable-item"><span class="name">Heading7</span> <span class="drag-icon"></span></li>
+                                <li class="draggable-item"><span class="name">Heading8</span> <span class="drag-icon"></span></li>
+                                <li class="draggable-item"><span class="name">Heading9</span> <span class="drag-icon"></span></li>
+                                <li class="draggable-item"><span class="name">Heading10</span> <span class="drag-icon"></span></li>
+                                <li class="draggable-item"><span class="name">Heading11</span> <span class="drag-icon"></span></li>
+                                <li class="draggable-item"><span class="name">Heading12</span> <span class="drag-icon"></span></li>
+                                <li class="draggable-item"><span class="name">Heading13</span> <span class="drag-icon"></span></li>
+                                <li class="draggable-item"><span class="name">Heading14</span> <span class="drag-icon"></span></li>
+                                <li class="draggable-item"><span class="name">Heading15</span> <span class="drag-icon"></span></li>
+                            </ul>
+                        </div>
                     </div>   
                     <div class="play-schedule-draggable-area-wrapper">   
                         <div class="day-name-block">
@@ -207,7 +209,7 @@ li.draggable-item.ui-draggable-dragging {
                     // code
                     cursor: 'move',
                     containment: '.play-schedule-section',
-                    stack: '.connected-sortable ul',
+                    stack: '.play-schedule-sortable ul',
                     revert: true,
                     stop: handleDragStop
                 });
