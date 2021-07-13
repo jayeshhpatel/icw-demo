@@ -703,7 +703,7 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
             }
             .droppable-area { padding: 5px 0; display: none;
                 &.active { display: block; }
-                & > div { padding: 0 10px; display: flex; align-items: center; justify-content: space-between;
+                & > div { padding: 0 10px; display: flex; align-items: flex-end; justify-content: space-between;
                     .name { font-size: 14px; }
                     .drag-icon { background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M4.5 10.5c-.825 0-1.5.675-1.5 1.5s.675 1.5 1.5 1.5S6 12.825 6 12s-.675-1.5-1.5-1.5zm15 0c-.825 0-1.5.675-1.5 1.5s.675 1.5 1.5 1.5S21 12.825 21 12s-.675-1.5-1.5-1.5zm-7.5 0c-.825 0-1.5.675-1.5 1.5s.675 1.5 1.5 1.5 1.5-.675 1.5-1.5-.675-1.5-1.5-1.5z"/></svg>') no-repeat center center; width: 15px; min-width: 15px; height: 15px; background-size: 18px; cursor: pointer; }
                 }
