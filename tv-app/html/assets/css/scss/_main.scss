@@ -665,7 +665,7 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
     }
 }
 
-.play-schedule-section { display: flex;
+.play-schedule-section { display: flex; margin: 50px 0;
     .play-schedule-draggable-block { min-width: 220px; margin-right: 25px; background: rgba(0, 0, 0, 0.7); padding-bottom: 20px;
         .heading { border-bottom: 1px solid rgba($white, 0.20); background: rgba(255,255,255,0.1); color: #ffffff; padding: 8px 10px; font-size: 14px; position: relative;
             .collapse-arrow { background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z" fill="white"/></svg>') no-repeat center center; display: inline-block; width: 15px; height: 15px; padding: 0 !important; background-size: 20px; position: absolute; bottom: 8px; right: 10px; cursor: pointer; }
