@@ -255,7 +255,7 @@ html .portal {
             &::placeholder { color: #8690a0; }
             &.form-control-md { height: 45px; }
         }
-        .custom-select { padding: 0 25px 0 0; color: $darkgray; font-size: 16px; @include appearance(none); background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 16l-6-6h12z" fill="#8690a0" /></svg>') calc(100% - 0px) center no-repeat; background-size: 15px; border: none; border: 1px solid #e2e5e9; @include border-radius(8px);
+        .custom-select { padding: 0 25px 0 0; color: $darkgray; font-size: 16px; @include appearance(none); background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 16l-6-6h12z" fill="rgb(134 144 160)" /></svg>') calc(100% - 0px) center no-repeat; background-size: 15px; border: none; border: 1px solid #e2e5e9; @include border-radius(8px);
             &.round-select { background: url(../../images/icons/arrow-down-orange.svg) calc(100% - 15px) center no-repeat; border: 1px solid #595959; @include border-radius(30px); padding: 0 35px 0 15px; }
             &.mw-300 { max-width: 300px; }
             &.mw-240 { max-width: 240px; }
