@@ -4,9 +4,9 @@
     p, .glosssry-desc {page-break-inside: avoid;}
     
     @page {margin-top: 0cm; margin-bottom: 0cm; margin-left: 0cm; margin-right: 0cm;}
-
-    body.home { background-size: 1400px!important; }
-    body { background-size: 1400px!important; background-attachment: unset !important; }
+    html { background: transparent !important; }
+    body.home { background-size: 1440px!important; }
+    body { margin: 0 !important; background-color: transparent !important; background-size: 1440px!important; background-attachment: unset !important; }
 
     .main-header.is-sticky-header {  position: absolute !important; }
     
@@ -15,11 +15,11 @@
     .main-footer .row .col-xl-5 { max-width: 40% !important; float: left !important; }
     .main-footer .row .col-xl-5 ul.menu { max-width: 100% !important; float: right !important; }
 
-    .bg-home { background-size: 1400px !important; background-attachment: unset !important; } 
-    .main-content-wrapper.bg-tab-wrapper, .main-content-wrapper.bg-wrapper { background-size: 1400px !important; background-attachment: unset !important; }
-    .main-content-wrapper.bg-cover { background-size: 1400px!important; }
+    .bg-home { background-size: 14500px !important; background-attachment: unset !important; } 
+    .main-content-wrapper.bg-tab-wrapper, .main-content-wrapper.bg-wrapper { background-size: 1440px !important; background-attachment: unset !important; }
+    .main-content-wrapper.bg-cover { background-size: 1440px!important; }
     .main-content-wrapper::after { position: absolute !important; }
-    .main-content-wrapper { background-size: 1400px !important; background-attachment: unset !important; }
+    .main-content-wrapper { background-size: 1440px !important; background-attachment: unset !important; }
   
     .main-content-wrapper { display: block !important; }
     .home-welcome { max-width: 500px !important ; margin-left: auto !important; padding-top: 27px !important; }
