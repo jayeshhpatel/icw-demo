@@ -30,7 +30,7 @@
                                 <a class="nav-link btn btn-orange" href="#">Upgrade Plan</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><em class="ri-microsoft-fill"></em><span>My Projects</span></a>
+                                <a class="nav-link" href="my-project.html"><em class="ri-microsoft-fill"></em><span>My Projects</span></a>
                             </li>
                             <li class="nav-item profile-dropdown dropdown">
                                 <a class="nav-link" href="#" id="profile-dropdown" data-toggle="dropdown">
@@ -85,13 +85,13 @@
                     <div class="sidebar-menu-block">
                         <ul class="sidebar-menu">
                             <li class="menu-item">
-                                <a href="#" class="menu-link active">
+                                <a href="project-overview.html" class="menu-link">
                                     <span class="icon"><em class="ri-bar-chart-fill"></em></span>
                                     <span class="text">Project Overview</span>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="#" class="menu-link">
+                                <a href="messages.html" class="menu-link active">
                                     <span class="icon"><em class="ri-mail-fill"></em></span>
                                     <span class="text">Messages</span>
                                 </a>
@@ -200,28 +200,96 @@
                         <div class="row">
                             <div class="col-12 col-sm-12 col-md-12">
                                 <div class="overview-box">                                    
-                                    <div class="title">
+                                    <div class="title pb-3">
                                         <h2 class="h3">Export Data Range</h2>                                    
                                     </div>
                                     <div class="data-range-block">
                                         <div class="input-block">
                                             <div class="form-group">
                                                 <div class="custom-html-dropdown">
-                                                    <button class="dropdown-input dropdown-toggle" type="button" id="company-name" data-toggle="dropdown">Ogilvy Agency</button>
-                                                    <ul class="dropdown-menu" aria-labelledby="company-name">
-                                                        <li><button class="dropdown-item active" data-value="ogilvy agency">Ogilvy Agency</button></li>
-                                                        <li><button class="dropdown-item" data-value="ogilvy">Ogilvy</button></li>
+                                                    <button class="dropdown-input dropdown-toggle" type="button" id="option-select" data-toggle="dropdown">Option 1</button>
+                                                    <ul class="dropdown-menu" aria-labelledby="option-select">
+                                                        <li><button class="dropdown-item active" data-value="Option 1">Option 1</button></li>
+                                                        <li><button class="dropdown-item" data-value="Option 2">Option 2</button></li>
+                                                        <li><button class="dropdown-item" data-value="Option 3">Option 3</button></li>
                                                     </ul>
                                                 </div>
                                             </div>
                                             <div class="form-group post-icon-input">
-                                                <input type="text" class="form-control custom-input" id="startdate" />
-                                                <span class="post-icon"><em class="ri-search-line"></em></span>
+                                                <input type="text" class="form-control custom-input" id="startdate" placeholder="Starting Date" />
+                                                <span class="post-icon"><i class="ri-calendar-fill"></i></span>
                                             </div>
                                             <div class="form-group post-icon-input">
-                                                <input type="text" class="form-control custom-input" id="startdate" />
-                                                <span class="post-icon"><em class="ri-search-line"></em></span>
+                                                <input type="text" class="form-control custom-input" id="enddate" placeholder="Ending Date" />
+                                                <span class="post-icon"><i class="ri-calendar-fill"></i></span>
                                             </div>
+                                        </div>
+                                        <div class="action">
+                                            <a href="#" class="btn btn-primary">Export</a>
+                                        </div>
+                                    </div>
+                                    <div class="title pb-3">
+                                        <h2 class="h3">Past Exports</h2>                                    
+                                    </div>
+                                    <div class="past-export-block">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Started On</th>
+                                                        <th>Type</th>
+                                                        <th>Data Range</th>
+                                                        <th>Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>February 26th, 2021 <small>5:23 PM</small></td>
+                                                        <td>XML Export <small>Set by Milos</small></td>
+                                                        <td>13th March, 2020 - 13th March, 2020</td>
+                                                        <td>Ready for <a href="#">Download</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>February 26th, 2021 <small>5:23 PM</small></td>
+                                                        <td>XML Export <small>Set by Milos</small></td>
+                                                        <td>13th March, 2020 - 13th March, 2020</td>
+                                                        <td>Ready for <a href="#">Download</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>February 26th, 2021 <small>5:23 PM</small></td>
+                                                        <td>XML Export <small>Set by Milos</small></td>
+                                                        <td>13th March, 2020 - 13th March, 2020</td>
+                                                        <td>Ready for <a href="#">Download</a></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <p class="info">Exports will be permanently removed 10 days after they are downloaded.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-12">
+                                <div class="overview-box">                                    
+                                    <div class="title pb-3">
+                                        <h2 class="h3">File Retention & Deletion</h2>                                    
+                                    </div>
+                                    <div class="description">
+                                        <p>By default, all of your messages are kept for the lifetime of your workspace. If you'd like, you can have them deleted after a set amount of time.<br>Note that this affects all files - including images, docs, posts, and more.</p>
+                                    </div>
+                                    <h3 class="h5 pt-1">File Retention & Deletion</h3>
+                                    <div class="file-deletion-block">
+                                        <div class="input-block">                                           
+                                            <div class="form-group">
+                                                <input type="text" class="form-control custom-input" id="startdate" placeholder="Keep all files" />
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control custom-input" id="enddate" placeholder="Duration" />
+                                            </div>
+                                        </div>
+                                        <div class="action">
+                                            <a href="#" class="btn btn-primary">Save</a>
                                         </div>
                                     </div>
                                 </div>

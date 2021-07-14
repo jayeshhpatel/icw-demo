@@ -1,0 +1,130 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="theme-color" content="#40D4F4">
+        <meta name="Googlebot" content="noindex,nofollow">        
+        <meta name="author" content="In-App Chat">
+        <meta name="description" content="In-App Chat">   
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" href="images/favicons/apple-touch-icon.png" sizes="180x180">
+        <link rel="mask-icon" href="images/favicons/safari-pinned-tab.svg" color="#000000">
+        <link rel="shortcut icon" type="images/x-icon" href="favicon.ico">
+        <link rel="stylesheet" href="css/portal/main-portal.css">
+        <title>Navigation | In-App Chat</title> 
+        <style>
+            body { font-size: 16px; font-family: 'Roboto', sans-serif; }    
+            .page-thumbnail-block { position: relative; height: 230px; }
+            .all-page-links { padding-top: 100px; text-align: center; background: #efefef; }           
+            .all-page-links .img-fluid { height: 230px; width: 100%; }
+            .all-page-links a { display: block; }
+            .col-12 .page-name { padding: 10px 0px 30px; }
+            h4 { text-align: center; margin: 30px 0px 40px; }
+            a { font-weight: 500; color: #4A4BFF; transition: all 0.3s ease-in-out; }
+            a:hover { color: #727272; text-decoration: none;}
+            .action { display: flex; align-items: center; justify-content: space-between; padding: 10px 0px 0px!important; }
+            .version-div { position: absolute; top: 0; width: 100%; height: 230px; padding: 0; background: #fff;  display: flex; align-items: center; justify-content: center; flex-flow: column;}
+            .close-btn { position: absolute; top: 10px; right: 21px; cursor: pointer; font-size: 20px; color: #1A1A1A; transition: all 0.3s ease-in-out; }
+            .close-btn:hover { color: #4A4BFF; }
+        </style>
+    </head>
+    <body class="website"> 
+        <header class="_mainHeader container-logo bg-light fixed-top">
+            <div class="container-fluid"> 
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" href="page.html"><img src="images/logo.svg" alt="eRTC"></a>                    
+                </nav>
+            </div>
+        </header>
+        <div class="all-page-links">
+            <div class="container-fluid">                
+                <h2 class="mb-4">IAC Portal</h2>
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                        <div class="thumbnail-block">
+                            <div class="page-thumbnail-block">
+                                <div class="image-block">
+                                    <a target="_blank" href="portal/my-project.html">
+                                        <img src="screens/my-project.png" alt="" class="img-fluid" />                        
+                                    </a>
+                                </div>
+                                <div class="version-div" style="display: none;">
+                                    <div class="close-btn">
+                                        <i class="ri-close-line"></i>
+                                    </div>
+                                    <a target="_blank" class="version-link" href="portal/my-project.html">Version 1.0</a>
+                                </div>
+                            </div>
+                            <div class="action">
+                                <a target="_blank" href="portal/my-project.html">Version 1.0</a>
+                                <a href="javascript:void(0)" class="view-all-version">View All Versions</a>
+                            </div>
+                            <div class="page-name">My Project Page</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                        <div class="thumbnail-block">
+                            <div class="page-thumbnail-block">
+                                <div class="image-block">
+                                    <a target="_blank" href="portal/project-overview.html">
+                                        <img src="screens/project-overview.png" alt="" class="img-fluid" />                        
+                                    </a>
+                                </div>
+                                <div class="version-div" style="display: none;">
+                                    <div class="close-btn">
+                                        <i class="ri-close-line"></i>
+                                    </div>
+                                    <a target="_blank" class="version-link" href="portal/project-overview.html">Version 1.0</a>
+                                </div>
+                            </div>
+                            <div class="action">
+                                <a target="_blank" href="portal/project-overview.html">Version 1.0</a>
+                                <a href="javascript:void(0)" class="view-all-version">View All Versions</a>
+                            </div>
+                            <div class="page-name">Project Overview</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                        <div class="thumbnail-block">
+                            <div class="page-thumbnail-block">
+                                <div class="image-block">
+                                    <a target="_blank" href="portal/messages.html">
+                                        <img src="screens/messages.png" alt="" class="img-fluid" />                        
+                                    </a>
+                                </div>
+                                <div class="version-div" style="display: none;">
+                                    <div class="close-btn">
+                                        <i class="ri-close-line"></i>
+                                    </div>
+                                    <a target="_blank" class="version-link" href="portal/messages.html">Version 1.0</a>
+                                </div>
+                            </div>
+                            <div class="action">
+                                <a target="_blank" href="portal/messages.html">Version 1.0</a>
+                                <a href="javascript:void(0)" class="view-all-version">View All Versions</a>
+                            </div>
+                            <div class="page-name">Messages Page</div>
+                        </div>
+                    </div>
+                </div> 
+            </div> 
+        </div>     
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script>
+            jQuery(document).ready (function() {
+                jQuery('.thumbnail-block .view-all-version').on ('click', function() {
+                    jQuery(this).parents('.thumbnail-block').find('.image-block').slideUp();                    
+                    jQuery(this).parents('.thumbnail-block').find('.version-div').slideDown();
+                })
+                jQuery('.version-div .close-btn ').on ('click', function() {
+                    jQuery(this).parents('.thumbnail-block').find('.version-div').slideUp();
+                    jQuery(this).parents('.thumbnail-block').find('.image-block').slideDown();
+                })
+            });
+        </script>
+    </body>
+</html>

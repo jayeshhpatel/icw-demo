@@ -168,7 +168,7 @@ html .portal {
             &.active, &:hover { color: #4A4BFF; }
         }
     }
-    .btn { box-shadow: 0px 10px 30px rgba(19, 23, 31, 0.2); font-weight: 500; font-size: 16px; text-align: center; height: 45px; padding: 5px 20px; @include border-radius(0px); @include transition(0.3s, ease-in-out); font-family: $portalbodyfont; white-space: nowrap;
+    .btn { box-shadow: 0px 10px 30px rgba(19, 23, 31, 0.2); font-weight: 500; font-size: 16px; text-align: center; height: 45px; padding: 0px 20px; @include border-radius(10px); @include transition(0.3s, ease-in-out); font-family: $portalbodyfont; white-space: nowrap; line-height: 43px;
         &:focus { outline: none !important; box-shadow: none !important; }
         &.btn-primary { background: #5351FB; color: $white; border-color: #5351FB;
             &:hover, &:focus { background: #3d3bf3; border-color: #3d3bf3; }
@@ -262,8 +262,16 @@ html .portal {
         }    
         label { font-weight: bold; font-size: 16px; color: $black; margin-bottom: 15px; }
         .icon { font-size: 20px; color: $blue; position: absolute; right: 15px; top: 40px; }
-        .custom-input { border: none; border: 1px solid #e2e5e9; padding: 0; @include border-radius(8px); color: $darkgray; 
+        .custom-input { border: none; border: 1px solid #e2e5e9; padding: 0; @include border-radius(8px); color: $darkgray; height: 45px; padding: 0 12px;
             &.with-r-icon { padding-right: 30px; }
+        }
+        &.pre-icon-input { position: relative;
+            .pre-icon { position: absolute; left: 12px; top: 12px; line-height: 1; font-size: 20px; font-weight: 700; color: #e9ebee; }
+            .custom-input { padding: 5px 15px 5px 45px }
+        }
+        &.post-icon-input { position: relative;
+            .post-icon { position: absolute; right: 12px; top: 12px; line-height: 1; font-size: 20px; font-weight: 700; color: #e9ebee; }
+            .custom-input { padding: 5px 45px 5px 15px }
         }
         &._form-group { position: relative; padding-top: 15px; 
             label { font-size: 16px; position: absolute; left: 15px; top: 17px; color: $gray; pointer-events: none; @include transition(0.3s, ease-in-out); font-weight: 400; margin-bottom: 0; }
@@ -376,14 +384,6 @@ html .portal {
     @keyframes loader-spin {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(359deg); }
-    }
-
-    .far, .fal, .fad { background-size: contain !important; display: inline-block;
-        &.fa-ellipsis-h { background: url($fa-ellipsis-h) no-repeat center center; width: 27px; height: 7px; @include transition(0.3s, ease-in-out); }
-        &.fa-times { background: url($fa-times) no-repeat center center; width: 20px; height: 20px; @include transition(0.3s, ease-in-out); }
-        &.fa-long-arrow-right { background: url($fa-long-arrow-right) no-repeat center center; width: 17px; height: 9px; @include transition(0.3s, ease-in-out); }
-        &.fa-shield-check{ background: url($fa-shield-check) no-repeat center center; min-width: 20px; width: 20px; height: 20px; @include transition(0.3s, ease-in-out); background-size: contain; }
-        &.fa-exclamation-triangle{ background: url($fa-exclamation-triangle) no-repeat center center; min-width: 20px; width: 20px; height: 20px; @include transition(0.3s, ease-in-out); background-size: contain; }
     }
 
     .alert { @include border-radius(4px); border: 0.75px solid transparent; font-size: 15px; @include flexbox(); @include align-items(center); padding: 15px;
@@ -636,12 +636,12 @@ html .portal {
         }
     }
     .custom-html-dropdown { position: relative;
-        .dropdown-input { padding: 0 25px 0 0; color: #727272; font-size: 16px; @include appearance(none); background: url(../../images/icons/arrow-down-orange.svg) calc(100% - 0px) center no-repeat; background-size: 15px; border: none; border-bottom: 1px solid #595959; @include border-radius(0px); height: 40px; min-width: 100%; text-align: left;        
+        .dropdown-input { padding: 0 25px 0 12px; color: #727272; font-size: 16px; @include appearance(none); background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 16l-6-6h12z" fill="rgb(134 144 160)" /></svg>') calc(100% - 10px) center no-repeat; background-size: 24px; border: none; border: 1px solid #e2e5e9; @include border-radius(8px); height: 45px; min-width: 100%; text-align: left;        
             &::after{ content: none; }
             &:focus { outline: none; }
             &.round-input { background: url(../../images/icons/arrow-down-orange.svg) calc(100% - 15px) center no-repeat; border: 1px solid #595959; @include border-radius(30px); padding: 0 35px 0 15px; }        
         }
-        .dropdown-menu { margin-top: 0; background: #FFFFFF; @include box-shadow(0px 4px 20px rgba(0, 0, 0, 0.25)); @include border-radius(20px);  min-width: 100%; border: none; display: block!important; z-index: 4; visibility: hidden; @include opacity(0); transition : all 0.2s ease-in-out 0s,visibility 0s linear 0.3s,z-index 0s linear 0.01s; transform: translateY(2em); padding: 10px 0; max-height: 350px; overflow: hidden; overflow-y: auto; top: 42px !important;
+        .dropdown-menu { margin-top: 0; background: #FFFFFF; @include box-shadow(0px 4px 20px rgba(0, 0, 0, 0.25)); @include border-radius(10px);  min-width: 100%; border: none; display: block!important; z-index: 4; visibility: hidden; @include opacity(0); transition : all 0.2s ease-in-out 0s,visibility 0s linear 0.3s,z-index 0s linear 0.01s; transform: translateY(2em); padding: 10px 0; max-height: 350px; overflow: hidden; overflow-y: auto; top: 42px !important;
             &::-webkit-scrollbar { width:6px;background-color:#F5F5F5; }
             &::-webkit-scrollbar-thumb { background-color:rgba(0,0,0,0.3); }
             &::-webkit-scrollbar-track { -webkit-box-shadow:inset 0 0 3px rgba(0,0,0,0.1); }
@@ -663,14 +663,21 @@ html .portal {
         }
     }
     @media (max-width: 767px) { 
+        .btn { font-size: 14px; height: 42px; line-height: 40px; }
         .alert { font-size: 14px; padding: 8px;
             i { margin-right: 5px; font-size: 16px; }
         }
+        .form-group {
+            .custom-input { font-size: 14px; }    
+            &.post-icon-input .post-icon { top: 14px; font-size: 18px; }
+            &.pre-icon-input .pre-icon { top: 14px; font-size: 18px; }
+        }
+        .custom-html-dropdown .dropdown-input { font-size: 14px; }
         .radio-show-btn { margin: 20px 0 10px; }    
     }
     @media (max-width: 575px) { 
         .form-group {
-            .custom-input { font-size: 14px; }    
+            .custom-input, custom-select { font-size: 14px; }    
             .icon { top: 30px; } 
         }
         .alert { font-size: 12px; padding: 8px;

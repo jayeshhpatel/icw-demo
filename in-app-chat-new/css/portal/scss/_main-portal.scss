@@ -44,7 +44,7 @@ html .portal {
                             }
                             &:hover { color: $blue; }
                         }
-                        &.profile-dropdown {
+                        &.profile-dropdown { padding-right: 15px;
                             .nav-link { @include flexbox(); @include align-items(center); z-index: 1001; position: relative; 
                                 &::after { display: inline-block; margin-left: 10px; vertical-align: middle; content: ""; border-top: 6px solid #4e5c73; border-right: 6px solid transparent; border-bottom: 0; border-left: 6px solid transparent; border-radius: 2px; }
                                 .img { @include border-radius(50%); margin-right: 8px;
@@ -90,7 +90,7 @@ html .portal {
             }
         }
         @media (max-width: 1200px) {  
-            .navbar { height: 80px; padding-right: 55px; }
+            .navbar { height: 80px; padding-right: 38px; }
         }
         @media (max-width: 992px) {             
             .navbar { height: 80px; padding-right: 15px; }
@@ -308,6 +308,7 @@ html .portal {
             h1, .h1 { font-size: calc(22px + (36 - 22) * ((100vw - 320px) / (1900 - 320))); }
             h2, .h2 { font-size: calc(20px + (28 - 20) * ((100vw - 320px) / (1900 - 320))); }
             h3, .h3 { font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1900 - 320))); }
+            h5, .h5 { font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1900 - 320))); }
             .search-input-block {  
                 .search-input {
                     .form-group { position: relative; margin-bottom: 0; min-width: 300px;
@@ -374,6 +375,9 @@ html .portal {
                     }
                     .duretion { font-size: 14px; font-style: italic; color: #959dab; padding-top: 5px; }
                 }
+                .description { 
+                    p { font-size: 14px; color: #7d8798; }
+                }
                 .url { 
                     span { font-size: 16px; color: #959dab; }
                     .link { color: $blue; text-decoration: none; font-size: 16px; padding-left: 10px; @include transition (0.3s, ease-in-out); 
@@ -430,8 +434,54 @@ html .portal {
                         }
                     }
                 }
-                .data-range-block { @include flexbox(); @include align-items(center); @include justify-content(space-between);
-                    .input-block { @include flexbox(); @include align-items(center); @include justify-content(space-between); }
+                .data-range-block { @include flexbox(); @include align-items(center); @include justify-content(space-between); margin-bottom: 30px;
+                    .input-block { @include flexbox(); @include align-items(center); @include justify-content(space-between); width: 100%;
+                        .form-group { width: 100%; margin: 0 10px; 
+                            &:first-child { margin-left: 0; }
+                            &:last-child { margin-right: 0; }
+                            .post-icon { color: #8690a0; }
+                        }
+                    }
+                    .action {
+                        .btn { min-width: 180px; margin-left: 25px;}
+                    }
+                }
+                .past-export-block {
+                    .table {
+                        thead {
+                            tr {
+                                th { border: none; font-size: 16px; font-weight: 500; font-style: italic; color: #4e5c73; white-space: nowrap;
+                                    &:first-child { padding-left: 0; }
+                                    &:last-child { padding-right: 0; }
+                                }
+                            }
+                        }
+                        tbody {
+                            tr {
+                                td { border: none; font-size: 16px; color: #000000; padding: 5px 12px; white-space: nowrap;
+                                    &:first-child { padding-left: 0; }
+                                    &:last-child { padding-right: 0; }
+                                    small { color: #7d8798; font-size: 12px; }
+                                    a { color: $blue; @include transition(.3s, ease-in-out); text-decoration: underline; 
+                                        &:hover { text-decoration: none; }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .info { text-align: right; font-size: 14px; color: #7d8798; margin-bottom: 0; }
+                }
+                .file-deletion-block { @include flexbox(); @include align-items(center); @include justify-content(space-between); width: 70%;
+                    .input-block { @include flexbox(); @include align-items(center); @include justify-content(space-between); width: 100%; 
+                        .form-group { width: 100%; margin: 0 10px; 
+                            &:first-child { margin-left: 0; }
+                            &:last-child { margin-right: 0; }
+                        }
+                    }
+                    .action {
+                        .btn { min-width: 150px; margin-left: 25px;}
+                    }
+
                 }
             }
             .summary-box { display: grid; grid-template-columns: 50% 50%;
@@ -464,12 +514,17 @@ html .portal {
     }
     @media (max-width: 1200px) {  
         .main-content-wrapper {
-            .content { padding: 30px 70px;
+            .content { padding: 30px 50px;
                 .overview-box { padding: 20px; 
                     .edit-project-box { display: block; 
                         .app-link { text-align: right; margin-top: 10px; }
                     }
-                    .include-info-block { grid-template-columns: 50% 50%; }
+                    .include-info-block { grid-template-columns: 50% 50%; }                   
+                    .data-range-block {
+                        .action {
+                            .btn { min-width: 130px; margin-left: 15px;}
+                        }
+                    }
                 }                   
                 .summary-box { 
                     .description-block { padding: 15px 20px 0; }
@@ -481,11 +536,11 @@ html .portal {
         .main-content-wrapper {
             .content { padding: 30px;
                 .overview-box { padding: 20px; 
-                    .include-info-block { grid-template-columns: 100%; 
+                    .include-info-block { 
                         .info-block { padding-bottom: 20px; 
                             &:last-child { padding-bottom: 0; }
                         }
-                    }
+                    } 
                 }  
                 .summary-box { grid-template-columns: 100%; 
                     .description-block { padding: 15px 0px; border-right: none; border-bottom: 1px solid #f1f3f5; 
@@ -501,6 +556,41 @@ html .portal {
             .content { padding: 30px 15px; 
                 .overview-box {
                     .contact-info { text-align: left; }
+                    .include-info-block { grid-template-columns: 100%; } 
+                    .data-range-block { display: block; margin-bottom: 30px;  
+                        .input-block {
+                            .form-group { margin: 0 8px; }
+                        }                     
+                        .action { margin-top: 15px;
+                            .btn { margin-left: 0px;}
+                        }
+                    }
+                    .past-export-block {
+                        .table {
+                            thead {
+                                tr {
+                                    th { font-size: 14px; }
+                                }
+                            }
+                            tbody {
+                                tr {
+                                    td { font-size: 14px;
+                                        small { font-size: 11px; }
+                                    }
+                                }
+                            }
+                        }
+                        .info { font-size: 12px; }
+                    }
+                    .file-deletion-block { width: 100%;  
+                        .input-block {
+                            .form-group { margin: 0 8px; }
+                        }                       
+                        .action {
+                            .btn { min-width: 120px; margin-left: 15px;}
+                        }
+    
+                    }
                 }
             }
         }
@@ -557,6 +647,16 @@ html .portal {
                                 }
                             }
                         }
+                    }
+                    .data-range-block { 
+                        .input-block { display: block;
+                            .form-group { margin: 0 0px 10px; }
+                        }  
+                    }
+                    .file-deletion-block { display: block;
+                        .input-block { display: block;
+                            .form-group { margin: 0 0px 10px; }
+                        }  
                     }
                 }
             }
