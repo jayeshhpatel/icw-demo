@@ -1,18 +1,9 @@
 @media print {
     /* a[href*='//']:after {content:" (" attr(href) ") ";color: red;}
     a:after {content:" (" attr(href) ") "; color: green;} */
-    p {page-break-inside: avoid;}
+    p, .glosssry-desc {page-break-inside: avoid;}
+    
     @page {margin-top: 0cm; margin-bottom: 0cm; margin-left: 0cm; margin-right: 0cm;}
-
-    @page {
-        padding: 0 !important;
-        margin-top: 0 !important;
-        margin-bottom: 0 !important; 
-      }
-      body  {
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
-      }
 
     body.home { background-size: 1400px!important; }
     body { background-size: 1400px!important; }
@@ -58,14 +49,18 @@
 
     .page-grid-actions .type-links li { min-width: calc(20% - 20px); margin: 40px 10px; } 
     .page-grid-actions { padding: 10px 0 40px !important; }
+    .type-innerpage-title .back-action { margin-bottom: 10px; margin-top: 15px; }
 
     .type-innerpage-title { max-width: 500px !important; }
     .type-sub-link-block .type-sub-links li a, .type-sub-link-block .type-sub-links li .target-link { padding: 15px 0 15px 25px !important; }
     .type-sub-link-block .type-sub-links li, .type-sub-link-block .type-sub-links li { margin: 12px 15px !important; }
 
     .type-sub-card { margin: 0px -20px !important; grid-template-columns: repeat(3, 33.33%) !important; }
+    .type-innerpage-title h1 { margin-bottom: 5px; }
+    .type-innerpage-title hr { margin: 10px 0; }
+    .type-action-card { padding: 15px 0 30px !important; }
     .type-action-card.type-action-card-pr { padding-right: 50px; }
-    .type-sub-card > li { margin: 0px 20px 40px !important; }
+    .type-sub-card > li { margin: 0px 15px 20px !important; }
     .type-sub-card .card-block .card-body ul.list-info li { margin-bottom: 20px !important; font-size: 18px !important; }
     .tab-content-block .tab-content .tab-content-body br { display: none !important; }
 
@@ -111,6 +106,8 @@
     .tab-content-block .tab-content .tab-content-body { padding-top: 30px !important; } 
     .tab-content-block .tab-content .tab-type-action-card { padding: 0px 0 30px; }
 
-    .custom-modal {position: static !important; padding-top: 15px; padding-bottom: 25px; height: auto;  z-index: 99; visibility: visible; opacity: 1;}
-    .custom-modal .wrapper {min-height: auto;}
+    .custom-modal {position: relative !important; padding-top: 100px; padding-bottom: 100px; height: auto; z-index: 99; visibility: visible; opacity: 1; page-break-inside: avoid; page-break-after:always; page-break-before:always}
+    .custom-modal .wrapper {min-height: auto; }
+    .custom-modal .wrapper .content-footer .btn { max-width: 480px !important; }
+    .custom-modal .wrapper .content-footer .btn:first-child { float: right !important; }
 }

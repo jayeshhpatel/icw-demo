@@ -16,23 +16,20 @@
         <link rel="stylesheet" href="assets/css/main.css">
         <link rel="stylesheet" media="print" href="assets/css/print.css">
         <title>Home | AstraZeneca</title> 
+        <link rel="preload" href="assets/images/bg-homepage.png" as="image" />
         <style>
-            .main-content-wrapper {
+            .main-content-wrapper > .inner-container {
                 animation: fadeInAnimation ease 2s;
                 animation-iteration-count: 1;
                 animation-fill-mode: forwards;
             }
             @keyframes fadeInAnimation {
-                0% {
-                    opacity: 0;
-                }
-                100% {
-                    opacity: 1;
-                }
+                0% {opacity: 0; transform: translateY(5%);}
+                100% {opacity: 1; transform: translateY(0px);}
             }
         </style>
     </head>
-    <body class="home">
+    <body class="home" style="background-color: #07383f; background-image: url(assets/images/bg-home.jpg);">
         <div class="alert alert-warning alert-sticky msg-mobile">
             <strong>For Best View!</strong> <br>Site best viewed in Desktop or Laptop.
             <button type="button" class="btn-close" onclick="dismiss(this);"><em class="az-icon icon-alert-close"></em></button>
@@ -62,7 +59,7 @@
         <!-- // HEADER SECTION -->
 
         <!-- MAIN SECTION -->
-        <main class="main-content-wrapper bg-home">
+        <main class="main-content-wrapper bg-home is-bg-ani is-bg-left">
             <div class="inner-container">
                 <div class="container">
 

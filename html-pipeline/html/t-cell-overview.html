@@ -13,22 +13,11 @@
         <link rel="shortcut icon" type="images/x-icon" href="assets/images/favicons/favicon.ico"> 
 
         <!-- CSS -->
-        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/main.css">        
         <link rel="stylesheet" media="print" href="assets/css/print.css">
-        
-        <title>Tumour Cell Overview | Cell Pathway | AstraZeneca</title> 
+
+        <title>T Cell Overview | Cell Pathway | AstraZeneca</title> 
         <link rel="preload" href="assets/images/type-bg-8.png" as="image" />
-        <style>
-            .main-content-wrapper > .inner-container {
-               animation: fadeInAnimation ease 2s;
-               animation-iteration-count: 1;
-               animation-fill-mode: forwards;
-           }
-           @keyframes fadeInAnimation {
-               0% { opacity: 0; }
-               100% { opacity: 1;}
-           }
-       </style>
     </head>
     <body style="background-color: #07383f; background-image: url(assets/images/bg.jpg);">
         <!-- HEADER SECTION -->
@@ -55,25 +44,19 @@
         <!-- // HEADER SECTION -->
 
         <!-- MAIN SECTION -->
-        <main class="main-content-wrapper bg-mask-wrapper is-bg-ani is-bg-right" style="background-image: url(assets/images/type-bg-8.png);"> <!-- DEV : It will base on Type wise chanegs images here -->
+        <main class="main-content-wrapper bg-mask-wrapper" style="background-image: url(assets/images/type-bg-8.png);"> <!-- DEV : It will base on Type wise chanegs images here -->
             <div class="inner-container">
                 <div class="container">
-
                 <!-- type sub title -->
                     <div class="type-innerpage-title">
-                        <div class="back-action">
-                            <a href="cell-pathway.html" class="btn-back"><em class="az-icon icon-arrow-left"></em>BACK</a>                               
-                        </div>
-
-                        <h1><strong>Tumour Cell Overview</strong></h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
-                        
+                        <div class="back-action"><a class="btn-back btn-box" href="#"><em class="az-icon icon-arrow-left"></em>BACK</a></div>
+                        <h1><strong>T Cell Overview</strong></h1>
                     </div>
                     <div class="clear"></div>
                     <div class="image-card-block">
                         <div class="image-card">
                             <!-- <div class="card-header"><a href="cell-pathway.html" class="back-link"><em class="az-icon icon-arrow-left"></em><strong>Back</strong></a></div> -->
-                            <div class="card-body">
+                            <div class="card-body max-h-auto" style="max-height: inherit;">
                                 
                                 <div class="map-container">
                                    
@@ -84,30 +67,26 @@
                                     </div>
                                     <div class="image-map-block">
                                         <div class="panzoom" id="panzoom-element">
+                                            <span class="map-pin toggle-popup" style="top: 5%; left: 31%; position: absolute;"><img src="assets/images/icons/icon-map-pin.svg" width="30" alt=""></span>
+                                            <span class="map-pin toggle-popup" style="top: 9%; left: 40%; position: absolute;"><img src="assets/images/icons/icon-map-pin.svg" width="30" alt=""></span>
+                                            <span class="map-pin toggle-popup" style="top: 18%; left: 71%; position: absolute;"><img src="assets/images/icons/icon-map-pin.svg" width="30" alt=""></span>
+                                            <span class="map-pin toggle-popup" style="top: 42%; left: 91%; position: absolute;"><img src="assets/images/icons/icon-map-pin.svg" width="30" alt=""></span>
+                                            <span class="map-pin toggle-popup" style="top: 10%; left: 7%; position: absolute;"><img src="assets/images/icons/icon-map-pin.svg" width="30" alt=""></span>
 
-                                            <span class="map-pin toggle-popup"style="position: absolute; top: 30%; left: 45%;"><img src="assets/images/icons/icon-map-pin.svg" width="30" alt=""></span>
-
-                                            <span class="map-pin toggle-popup" style="position: absolute; top: 25%; left: 65%;"><img src="assets/images/icons/icon-map-pin.svg" width="30" alt=""></span>
-
-                                            <span class="map-pin toggle-popup" style="position: absolute; top: 50%; left: 50%;"><img src="assets/images/icons/icon-map-pin.svg" width="30" alt=""></span>
-
-                                            <span class="map-pin toggle-popup" style="position: absolute; top: 70%; left: 50%;"><img src="assets/images/icons/icon-map-pin.svg" width="30" alt=""></span>
-
-                                            <span class="map-pin toggle-popup" style="position: absolute; top: 60%; left: 70%;"><img src="assets/images/icons/icon-map-pin.svg" width="30" alt=""></span>
-
-                                            <img src="assets/images/pathway-entry-diagram.jpg" width="100%" class="img-panzoom" alt=""></div>
+                                            <img src="assets/images/Screenshot%202021-03-25%20at%2016.42.17.png" width="100%" class="img-panzoom" alt="">
+                                        </div>
                                         <!-- <img src="assets/images/pathway-entry-diagram.jpg" alt="Tumour Cell Overview" /> -->
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>          
-
+                    </div>  
                 </div>
             </div>
         </main>
-        <!-- // MAIN SECTION -->
-
+        <!-- // MAIN SECTION -->    
+        
+        
         <!-- RIGHT Sidebar overlay -->
         <div class="popup-sidebar" id="popupSidebar">
             <div class="sidebar-content-wrapper">
@@ -133,9 +112,6 @@
             </div>
         </div>
         <div class="popup-sidebar-overlay"></div> <!-- RIGHT Sidebar overlay -->
-
-
-        
 
         <!-- bubble ANIMATION -->
         <div class="bubble-wrapper">
@@ -204,9 +180,8 @@
 
         <!-- JS -->
         <script src="assets/js/main.js"></script>
-
         <script src="assets/js/panzoom.min.js"></script>
-        <!-- DEV help Panning and Zooming Any Elements - panzoom https://www.jqueryscript.net/zoom/jQuery-Plugin-For-Panning-Zooming-Any-Elements-panzoom.html#options -->
+        <!-- DEV help Panning and Zooming Any Elements - panzoom https://www.jqueryscript.net/zoom/any-element-zoom-pan.html -->
 
         <script>
             const elem = document.getElementById('panzoom-element');

@@ -10,11 +10,35 @@
   font-weight: normal;
   src: local('Helvetica'), url('../css/fonts/Helvetica.woff') format('woff');
 }
+// @font-face {
+//   font-family: 'Helvetica Bold';
+//   font-style: normal;
+//   font-weight: normal;
+//   src: local('Helvetica Bold'), url('../css/fonts/Helvetica-Bold.woff') format('woff');
+// }
 @font-face {
-  font-family: 'Helvetica Bold';
+  font-family: 'HelveticaNeue Bold';
+  src: url('../css/fonts/Helvetica-Bold.eot');
+  src: url('../css/fonts/Helvetica-Bold.eot?#iefix') format('embedded-opentype'),
+      url('../css/fonts/Helvetica-Bold.woff2') format('woff2'),
+      url('../css/fonts/Helvetica-Bold.woff') format('woff'),
+      url('../css/fonts/Helvetica-Bold.ttf') format('truetype'),
+      url('../css/fonts/Helvetica-Bold.svg#Helvetica-Bold') format('svg');
+  font-weight: bold;
   font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../css/fonts/HelveticaNeue.eot');
+  src: url('../css/fonts/HelveticaNeue.eot?#iefix') format('embedded-opentype'),
+       url('../css/fonts/HelveticaNeue.woff2') format('woff2'),
+       url('../css/fonts/HelveticaNeue.woff') format('woff'),
+       url('../css/fonts/HelveticaNeue.ttf') format('truetype'),
+       url('../css/fonts/HelveticaNeue.svg#neue_helveticaroman') format('svg');
   font-weight: normal;
-  src: local('Helvetica Bold'), url('../css/fonts/Helvetica-Bold.woff') format('woff');
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Lexia Rg';
@@ -44,6 +68,8 @@ $bodybg		        :#07383f;
 
 $hfont		        :"Lexia Lt",serif!important;
 $hfont-bold       :"Lexia Bd", sans-serif!important;
+$hfont-Hneue       :"Helvetica Neue", sans-serif!important;
+$hfont-Hbold       :"HelveticaNeue Bold", sans-serif!important;
 
 $darkBlue	        :#061726;
 $white			      :#ffffff;

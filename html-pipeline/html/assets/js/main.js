@@ -55,10 +55,18 @@ window.addEventListener('load', function () {
 if(document.querySelector(".custom-modal")){
     const openEls = document.querySelectorAll("[data-popup]"); 
     const closeEls = document.querySelectorAll(".popup-close"); 
+    // const modalEls = document.querySelectorAll(".custom-modal"); 
     for (const el of openEls) {
         el.addEventListener("click", function() {
             const modalId = this.dataset.popup;
-            console.log(modalId);
+            // console.log(modalEls);
+
+            // reset all modal is-show
+            // document.querySelectorAll('.custom-modal').forEach(function(item) {
+            //     item.classList.remove('is-show');
+            // })
+
+            // document.querySelectorAll(".custom-modal .is-show").classList.remove('is-show');
             document.getElementById(modalId).classList.add('is-show');
         });
     }  
@@ -333,3 +341,13 @@ Array.from(document.querySelectorAll('.type-sub-link-block h3'))
 function dismiss(element){
     element.parentNode.style.display='none';
 };
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    let isbgani = document.querySelector(".is-bg-ani");
+    if(isbgani) {
+        window.setTimeout(function() {
+            isbgani.classList.add("is-bg-active");
+        }, 500);
+    }
+});

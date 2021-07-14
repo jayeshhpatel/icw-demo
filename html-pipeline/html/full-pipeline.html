@@ -17,8 +17,20 @@
         <link rel="stylesheet" media="print" href="assets/css/print.css">
 
         <title>Full Pipeline | AstraZeneca</title> 
+        <link rel="preload" href="assets/images/type-bg-4.png" as="image" />
+        <style>
+            .main-content-wrapper > .inner-container {
+               animation: fadeInAnimation ease 2s;
+               animation-iteration-count: 1;
+               animation-fill-mode: forwards;
+           }
+           @keyframes fadeInAnimation {
+               0% { opacity: 0; }
+               100% { opacity: 1;}
+           }
+       </style>
     </head>
-    <body>
+    <body style="background-color: #07383f; background-image: url(assets/images/bg.jpg);">
         <!-- HEADER SECTION -->
         <header class="main-header is-sticky-header"> <!-- .is-sticky-header -->
             <div class="container">
@@ -43,7 +55,7 @@
         <!-- // HEADER SECTION -->
 
         <!-- MAIN SECTION -->
-        <main class="main-content-wrapper bg-wrapper" style="background-image: url(assets/images/type-bg-4.png);"> <!-- DEV : It will base on Type wise chanegs images here -->
+        <main class="main-content-wrapper bg-wrapper is-bg-ani is-bg-right" style="background-image: url(assets/images/type-bg-4.png);"> <!-- DEV : It will base on Type wise chanegs images here -->
             <div class="inner-container">
                 <div class="container">
                     <div class="title-box pb-0">
