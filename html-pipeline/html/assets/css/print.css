@@ -6,7 +6,7 @@
     @page {margin-top: 0cm; margin-bottom: 0cm; margin-left: 0cm; margin-right: 0cm;}
 
     body.home { background-size: 1400px!important; }
-    body { background-size: 1400px!important; }
+    body { background-size: 1400px!important; background-attachment: unset !important; }
 
     .main-header.is-sticky-header {  position: absolute !important; }
     
@@ -20,8 +20,7 @@
     .main-content-wrapper.bg-cover { background-size: 1400px!important; }
     .main-content-wrapper::after { position: absolute !important; }
     .main-content-wrapper { background-size: 1400px !important; background-attachment: unset !important; }
-
-
+  
     .main-content-wrapper { display: block !important; }
     .home-welcome { max-width: 500px !important ; margin-left: auto !important; padding-top: 27px !important; }
     .home-grid-actions { padding: 30px 0 25px!important; }
