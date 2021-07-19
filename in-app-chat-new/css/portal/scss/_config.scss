@@ -168,7 +168,7 @@ html .portal {
             &.active, &:hover { color: #4A4BFF; }
         }
     }
-    .btn { box-shadow: 0px 10px 30px rgba(19, 23, 31, 0.2); font-weight: 500; font-size: 16px; text-align: center; height: 45px; padding: 0px 20px; @include border-radius(10px); @include transition(0.3s, ease-in-out); font-family: $portalbodyfont; white-space: nowrap; line-height: 43px;
+    .btn { box-shadow: 0px 10px 30px rgba(19, 23, 31, 0.2); font-weight: 400; font-size: 16px; text-align: center; height: 45px; padding: 0px 20px; @include border-radius(10px); @include transition(0.3s, ease-in-out); font-family: $portalbodyfont; white-space: nowrap; line-height: 43px;
         &:focus { outline: none !important; box-shadow: none !important; }
         &.btn-primary { background: #5351FB; color: $white; border-color: #5351FB;
             &:hover, &:focus { background: #3d3bf3; border-color: #3d3bf3; }
@@ -212,6 +212,7 @@ html .portal {
         &.btn-w175 { min-width: 175px; }
         &.btn-w200 { min-width: 200px; }
         &.btn-w150 { min-width: 150px; }
+        &.btn-w130 { min-width: 130px; }
         &.btn-full { min-width: 100%; }
         &.btn-icon { color: #4953F9; font-size: 26px; @include box-shadow(none); background: transparent; padding: 0 20px; font-weight: 400;
             &.disabled { color: #C2C6D1; 
@@ -304,7 +305,7 @@ html .portal {
             a { color: $darkblue; @include transition(0.3s, ease-in-out); text-decoration: underline;
                 &:hover { color: $darkblack; }
             }
-            &::before { @include border-radius(2px); border: 1px solid #C4C4C4; top: 3px; background: #C4C4C4; }
+            &::before { @include border-radius(2px); border: 1px solid #d4d7e4; top: 3px; }
             &::after { top: 3px; }
             .custom-control-input:focus:not(:checked) ~ .custom-control-label::before { border-color: #c4c4c4; }
         }
