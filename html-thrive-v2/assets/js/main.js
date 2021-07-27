@@ -26,35 +26,35 @@ window.addEventListener("scroll", () => {
 });
 
 // Mobile MENU
-function toggleMenu(){
-    this.classList.toggle('toggle');
-    this.parentElement.classList.toggle("open");
-    document.querySelector('body').classList.toggle('overflow-hidden');
-}
-document.querySelector('.bar-icon').addEventListener('click', toggleMenu );
+// function toggleMenu(){
+//     this.classList.toggle('toggle');
+//     this.parentElement.classList.toggle("open");
+//     document.querySelector('body').classList.toggle('overflow-hidden');
+// }
+// document.querySelector('.bar-icon').addEventListener('click', toggleMenu );
 
 // Sub Mobile MENU
-if(document.querySelector(".has-sub-menu")){
-    const hasMenuEls = document.querySelectorAll(".has-sub-menu");  
-    for (const el of hasMenuEls) {
-        el.addEventListener("click", function() {
-            this.classList.toggle('menu-active');
-        });
-    }     
-}
+// if(document.querySelector(".has-sub-menu")){
+//     const hasMenuEls = document.querySelectorAll(".has-sub-menu");  
+//     for (const el of hasMenuEls) {
+//         el.addEventListener("click", function() {
+//             this.classList.toggle('menu-active');
+//         });
+//     }     
+// }
 
 // Desktop MENU
-function toggleMenuDesktop(){
-    var w = document.documentElement.clientWidth;
-    // var h = document.documentElement.clientHeight;
-    if(w > 1200){
-        document.querySelector("body").classList.remove('overflow-hidden');
-        document.querySelector(".navbar").classList.remove('open');
-        document.querySelector(".bar-icon").classList.remove('toggle');
-    }
+// function toggleMenuDesktop(){
+//     var w = document.documentElement.clientWidth;
+//     // var h = document.documentElement.clientHeight;
+//     if(w > 1200){
+//         document.querySelector("body").classList.remove('overflow-hidden');
+//         document.querySelector(".navbar").classList.remove('open');
+//         document.querySelector(".bar-icon").classList.remove('toggle');
+//     }
     
-}
-window.addEventListener("resize", toggleMenuDesktop);
+// }
+// window.addEventListener("resize", toggleMenuDesktop);
 
 
 // embed-video

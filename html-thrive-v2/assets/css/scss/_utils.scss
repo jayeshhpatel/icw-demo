@@ -1,12 +1,3 @@
-
-
-
-$icon-left-arrow : 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path id="Path" d="M8.553,1.839h0L6.786.1a.34.34,0,0,0-.478,0,.333.333,0,0,0,0,.474L7.5,1.741H.338a.335.335,0,1,0,0,.67H7.5L6.31,3.581a.333.333,0,0,0,0,.474.34.34,0,0,0,.478,0L8.552,2.314h0A.333.333,0,0,0,8.553,1.839Z" transform="translate(5.821 8.231)" fill="white"/><circle id="Oval" cx="9.5" cy="9.5" r="9.5" transform="translate(0.5 0.5)" fill="none" stroke="white" stroke-miterlimit="10" stroke-width="1"/></svg>';
-
-$icon-left-arrow-dark : 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path id="Path" d="M8.553,1.839h0L6.786.1a.34.34,0,0,0-.478,0,.333.333,0,0,0,0,.474L7.5,1.741H.338a.335.335,0,1,0,0,.67H7.5L6.31,3.581a.333.333,0,0,0,0,.474.34.34,0,0,0,.478,0L8.552,2.314h0A.333.333,0,0,0,8.553,1.839Z" transform="translate(5.821 8.231)" fill="rgb(59 65 65)"/><circle id="Oval" cx="9.5" cy="9.5" r="9.5" transform="translate(0.5 0.5)" fill="none" stroke="rgb(59 65 65)" stroke-miterlimit="10" stroke-width="1"/></svg>';
-
-$icon-right-arrow : 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10.388" height="16.533" viewBox="0 0 10.388 16.533"><path id="Path_12" data-name="Path 12" d="M4779.7,6016.4l6.146-6.146-6.146-6.146" transform="translate(-4777.581 -6001.989)" fill="none" stroke="rgb(0 55 98)" stroke-linecap="round" stroke-width="3"/></svg>';
-
 $icon-close : 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="26.586" height="26.586" viewBox="0 0 26.586 26.586"><path id="Path_2193" data-name="Path 2193" d="M9.088,34.484a1.9,1.9,0,0,0,2.68.011l.011-.011L21.786,24.477,31.831,34.522a1.9,1.9,0,0,0,2.691-2.691h0L24.477,21.786,34.522,11.741A1.9,1.9,0,0,0,31.831,9.05L21.786,19.095,11.741,9.088A1.9,1.9,0,1,0,9.05,11.779L19.095,21.786,9.088,31.831A1.892,1.892,0,0,0,9.088,34.484Z" transform="translate(-8.493 -8.493)" fill="rgb(0 55 98)"/></svg>';
 
 $icon-close-white : 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="26.586" height="26.586" viewBox="0 0 26.586 26.586"><path id="Path_2193" data-name="Path 2193" d="M9.088,34.484a1.9,1.9,0,0,0,2.68.011l.011-.011L21.786,24.477,31.831,34.522a1.9,1.9,0,0,0,2.691-2.691h0L24.477,21.786,34.522,11.741A1.9,1.9,0,0,0,31.831,9.05L21.786,19.095,11.741,9.088A1.9,1.9,0,1,0,9.05,11.779L19.095,21.786,9.088,31.831A1.892,1.892,0,0,0,9.088,34.484Z" transform="translate(-8.493 -8.493)" fill="white"/></svg>';
@@ -25,33 +16,103 @@ $icon-close-white : 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/
         // @include transform(rotate(-90deg));
         @include transition(0.3s, ease-in-out);
     }
+
     &:hover, &:focus {
         &:after {
-            @include transform(translateX(5px));
+            @include transform(translateX(5px)); 
+            background: url(../images/icons/arrow-white.svg) center center no-repeat;
         }
     }
 }
 
-.icon-back {
-    width: 24px; height: 24px; content: ""; display: inline-block;  margin-right: 10px;
-        background: url($icon-left-arrow) center center no-repeat; background-size: cover;
-        transform:rotate(180deg);
-        -ms-transform:rotate(180deg);
-        -webkit-transform:rotate(180deg);
+.btn-arrow-white{
+    @include inline-flex(); @include align-items(center); @include justify-content(center);
+    &:after {
+        content: "";
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        margin-left: 8px;
+        background: url(../images/icons/arrow-white.svg) center center no-repeat;
+        background-size: contain; 
+        // @include transform(rotate(-90deg));
+        @include transition(0.3s, ease-in-out);
+    }
+    &:hover, &:focus {
+        &:after {
+            @include transform(translateX(5px)); 
+        }
+    }
 }
-.icon-back-dark {
-    width: 24px; height: 24px; content: ""; display: inline-block;  margin-right: 10px;
-        background: url($icon-left-arrow-dark) center center no-repeat; background-size: cover;
-        transform:rotate(180deg);
-        -ms-transform:rotate(180deg);
-        -webkit-transform:rotate(180deg);
+
+.btn-arrow-pink {
+    @include inline-flex(); @include align-items(center); @include justify-content(center);
+    &:after {
+        content: "";
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        margin-left: 8px;
+        background: url(../images/icons/arrow-pink.svg) center center no-repeat;
+        background-size: contain; 
+        // @include transform(rotate(-90deg));
+        @include transition(0.3s, ease-in-out);
+    }
+    &:hover, &:focus {
+        &:after {
+            @include transform(translateX(5px)); 
+        }
+    }
+}
+
+.btn {
+    padding: 15px 20px; font-size: 16px; font-family: $hfont-bold; line-height: 1; cursor: pointer; 
+    @include border-radius(0);
 }
 
 
-.btn-border { padding: 15px 20px; font-size: 16px; white-space: nowrap; font-family: $bodyfont; color: $bodyfontcolor; border: 1px solid #c7cca4; text-decoration: none !important; display: inline-block; @include transition(0.2s, ease-in-out); letter-spacing: 1.50px; line-height: 1; cursor: pointer;
+.btn-border { padding: 15px 20px; font-size: 16px; white-space: nowrap; font-family: $hfont-bold; color: $black; border: 1px solid rgba($color: #000000, $alpha: 0.20); text-decoration: none !important; display: inline-block; @include transition(0.2s, ease-in-out); line-height: 1; cursor: pointer;
     &.focus, &:focus { outline: none !important; }
     &:hover, &:focus, &:active {
         background-color: $pink !important; border-color: $pink !important; color: $white;
+    }
+}
+
+.btn-primary {
+    color: #fff;
+    background-color:$interaction;
+    border-color:$interaction;
+    &:hover, &:focus, &:active,
+    &:not(:disabled):not(.disabled).active, 
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active:focus, 
+    &:not(:disabled):not(.disabled):active:focus {
+        color: #fff !important;
+        background-color: $primary !important;
+        border-color: $primary !important;
+        box-shadow: none !important;
+    }
+    &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(206, 192, 225, 1) !important;
+    }
+
+    &.disabled,
+    &:disabled {
+        background-color: #ADBDBA;
+        border-color: #ADBDBA;
+
+        &:hover, &:focus, &:active {
+            background: #ADBDBA !important;
+            border-color: #ADBDBA !important;
+        }
+    }
+}
+
+.btn-link {
+    color: #D0006F;  font-size: 16px; font-family: $hfont-bold; line-height: 1; cursor: pointer;  text-decoration: none;
+
+    & > [class^="btn-arrow"] {
+        margin-top: 3px;
     }
 }
 

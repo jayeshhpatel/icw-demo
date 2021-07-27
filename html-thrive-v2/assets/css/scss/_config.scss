@@ -1,14 +1,22 @@
 /* Variables */
 $bodyfont		    :'Helvetica Neue', sans-serif!important;
 $bodyfontsize	    :calc(14px + (16 - 14) * ((100vw - 300px) / (1920 - 300)));
-$bodyfontcolor		:#3B4141;
-$bodybg		        :#ececec;
+$bodyfontcolor		:#000000;
+$bodybg		        :#fff;
 
-$hfont-45		    : 'Helvetica Neue', sans-serif; //"Helvetica 45", sans-serif;
-$hfont-65           : "Helvetica 65", sans-serif;
-$hfont-bold         : "HelveticaNeue Bold", sans-serif;
+$hfont		        :"lexialight",serif!important;
+$hfont-normal       :"lexiaregular", serif!important;
+$hfont-bold         :"lexiabold", serif!important;
 
-$pink	        :#d0006e;
+$hfont-45		    :'Helvetica Neue', sans-serif; //"Helvetica 45", sans-serif;
+$hfont-65           :"Helvetica 65", sans-serif;
+$hfont-hbold        :"HelveticaNeue Bold", sans-serif;
+
+$primary        :#830051;
+$accent         :#c4d600;
+$interaction    :#d0006f;
+
+$pink	            :#d0006e;
 $darkTheme	        :#860052;
 $darkBlue	        :#003762;
 $white			    :#ffffff;
