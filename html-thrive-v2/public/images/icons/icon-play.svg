@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="92" height="62" viewBox="0 0 92 62">
+  <defs>
+    <filter id="Rectangle_364" x="0" y="0" width="92" height="62" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feFlood flood-opacity="0.302"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Icon:_Play" data-name="Icon: Play" transform="translate(5.86 -7.725)">
+    <g transform="matrix(1, 0, 0, 1, -5.86, 7.72)" filter="url(#Rectangle_364)">
+      <rect id="Rectangle_364-2" data-name="Rectangle 364" width="80" height="50" rx="4" transform="translate(6 4)" fill="#d0006f"/>
+    </g>
+    <path id="Polygon_2" data-name="Polygon 2" d="M11.7,0l11.7,20.067H0Z" transform="translate(53.207 24.398) rotate(90)" fill="#fff"/>
+  </g>
+</svg>
