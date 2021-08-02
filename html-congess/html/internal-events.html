@@ -71,11 +71,11 @@
                 <div class="container">
                 
                     <div class="mobile-tab-view">
-                        <a href="#" class="tab-link active">Bookmarked</a>
-                        <a href="#" class="tab-link">All evenets</a>
+                        <a href="#" class="tab-link active" data-id="bookmarked-block">Bookmarked</a>
+                        <a href="#" class="tab-link" data-id="all-events-block">All evenets</a>
                     </div>
 
-                    <div class="bookmarked-block tab-content-block active">
+                    <div class="tab-content-block active" id="bookmarked-block">
                         <h2 class="title">Bookmarked</h2>
                         <div class="row row-card">
                             <div class="col-12 col-sm-12 col-md-6">
@@ -132,7 +132,7 @@
 
                     <hr class="d-none d-md-block">
 
-                    <div class="all-events-block tab-content-block">
+                    <div class="tab-content-block" id="all-events-block">
                         <h2 class="title">All events</h2>
                         <div class="row row-card">
                             <div class="col-12 col-sm-12 col-md-6">
@@ -282,6 +282,23 @@
         <script type="text/javascript" src="assets/js/main.js"></script>
 
         <script type="text/javascript" src="assets/js/ie.js"></script>
+
+        <script>
+            window.addEventListener('load', function () {
+                let resultTabs = document.querySelectorAll(".mobile-tab-view .tab-link");
+                for(let i=0; i < resultTabs.length; i++){
+                    resultTabs[i].addEventListener('click', function(){
+                        if( !this.classList.contains('active')){
+                            let itemRow = document.querySelector('.section-block');                
+                            itemRow.querySelector(".mobile-tab-view a.active").classList.remove('active');
+                            itemRow.querySelector(".section-block .tab-content-block.active").classList.remove('active');
+                            this.classList.add('active');
+                            document.querySelector('#'+ this.dataset.id).classList.add('active');                            
+                        }
+                    });
+                }
+            });
+        </script>
     </body>
 </html>
 
