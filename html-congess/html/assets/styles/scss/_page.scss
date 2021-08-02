@@ -1,0 +1,191 @@
+.main-content-wrapper {
+    padding-top: 90px;
+
+    @media (max-width: 992px){
+        padding-top: 75px;
+    }
+    @media (max-width: 767px){
+        padding-top: 50px;
+        .container {
+            & > .row:not(.row-grid) {
+                margin-left: -15px; margin-right: -15px; 
+                & > .col-12 {padding-left: 0px; padding-right: 0px;}
+            }
+
+            .card-full-mobile {
+                margin-left: -15px;
+                margin-right: -15px;
+            }
+        }
+    }
+}
+
+.no-hero-content-wrapper {
+    margin-bottom: 50px;  
+    @media (max-width: 767px) { 
+        margin-bottom: 30px;
+    }  
+}
+
+.is-light {
+    * {color: #fff !important;}
+}
+.is-dark {
+    * {color: $bodyfontcolor !important;}
+}
+
+.breadcrumb-block {
+    border-bottom: 1px solid rgba(#9DB0AC, 0.2);
+    padding: 10px 0px;
+    overflow: auto;
+    .breadcrumb {
+        margin: 0px; flex-wrap: nowrap;
+
+        .breadcrumb-item {
+            white-space: nowrap;
+            &+.breadcrumb-item {
+                margin-right: 15px;
+            }
+            &+.breadcrumb-item::before {
+                content: '';
+                background: url(../images/icons/arrow-dark.svg) left center no-repeat;
+                background-size: 6px;
+                width: 15px;
+                display: block;
+                height: 15px;
+                margin-top: 3px;
+            }
+            &.active {
+                color: #3C4242;
+            }
+        }
+    }
+}
+
+// Commen Section
+.section-block {
+    margin-bottom: 50px;
+    @media (max-width: 1600px) { 
+        margin-bottom: 30px;
+    }
+    @media (max-width: 767px) { 
+        margin-bottom: 0px;
+
+        &.section-block-xs {margin-bottom: 30px;}
+    }
+
+    &.sticky-top {
+        top: 65px; 
+        background: rgba(255, 255, 255, 0.8); z-index: 1021;
+        @media (max-width: 1279px){
+            top: 72px;
+        }
+        @media (max-width: 767px){
+            top: 50px;
+        }
+    }
+}
+
+.section-title-block {
+    margin-bottom: 30px;
+    .title {
+        margin-bottom:15px;
+        font-size: calc(28px + (38 - 28) * ((100vw - 320px) / (1600 - 320)));
+        font-family:$hfont;   
+    }
+    .date {
+        font-size: calc(20px + (26 - 20) * ((100vw - 320px) / (1600 - 320)));
+        font-family:$hfont; 
+        padding: 5px 0px; 
+    }
+    p:last-child {margin-bottom: 0px;}
+}
+
+.section-info-block {
+    margin-bottom: 50px; 
+    background: #F8F8F8;
+    padding: 50px 0px;
+    @media (min-width: 768px) { 
+        padding: 50px 100px;
+    }
+    @media (max-width: 1600px) { 
+        margin-bottom: 30px;
+    }
+
+    * :last-child {margin-bottom: 0px !important;}
+}
+
+// mobile-card-slider
+.mobile-card-slider {
+    margin-bottom: 60px;
+    @media (max-width: 992px) {
+        margin-right: -15px;
+    }
+
+    .splide__arrow {
+        transform:none !important;
+        top: 100%;
+        background: transparent;
+        z-index: 20;
+        margin-top: 5px;
+        @include opacity(1);
+
+        &:disabled {
+            @include opacity(0.5);
+        }
+        svg {
+            fill: #D0006F;
+        }
+
+        &.splide__arrow--prev { left: 0;}
+        &.splide__arrow--next {
+            right: 0;
+            @media (max-width: 992px) {
+                right: 15px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            display: none !important;
+        }
+    }
+        
+    .splide__pagination {
+        background: #fff;
+        width: 100%;
+        padding: 10px 15px;
+        top: 100%;
+        bottom: auto;
+
+        .splide__pagination__page {
+            background: #9CA1AA;
+            &.is-active {
+                background: $interaction;
+                @include opacity(1);
+                @include transform (scale(1.4));
+            }
+            
+            &:hover {
+                cursor: pointer;
+                @include opacity(0.9);
+            }
+
+        }
+    }
+}
+
+/* main-content-wrapper */
+.is-loader {position: relative;
+    &::before {
+        background: url(../images/loader.svg) center center no-repeat; background-size: cover;
+        content: "";
+        width: 57px;
+        height: 57px;
+        display: inline-block; position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+    }
+}

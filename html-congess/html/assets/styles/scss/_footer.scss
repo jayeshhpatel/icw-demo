@@ -1,0 +1,88 @@
+/* main-footer */
+.main-footer { 
+    color: $black; padding: 0px 0 30px; margin-top: auto; z-index: 8; font-size: 12px;
+    .footer-top {
+        padding: 15px 0px;
+        @include flexbox();
+        @include align-items(center); @include justify-content(space-between);
+        .footer-logo {
+            display: inline-block; margin-right: 20px;
+            img {
+                 height: 40px;
+            }
+        }
+
+        .menu {
+            margin: 0; padding: 0; list-style-type: none; 
+            // @media (min-width:768px){
+            //     display: none !important;
+            // }
+            li {display: inline-block; text-align: right;
+                a {
+                    font-family: $hfont; color: $interaction; text-decoration: none; white-space: nowrap;
+                    font-size: 16px;
+
+                    &:hover, &.active { 
+                        color: $darkTheme;
+                    }
+                }
+            }
+        }
+    }
+    .footer-content-wrapper {
+        border-top: 2px solid #9DB0AC; padding-top: 40px; font-size: 12px;
+        @include flexbox(); 
+        @media (min-width:768px){
+            @include align-items(flex-start); @include justify-content(space-between);
+        }
+        
+    }
+    .footer-logo-copyright {
+        // @include flexbox(); @include align-items(flex-start);
+    
+        .copyright {font-family: $hfont-45; font-size: 12px;
+           p, div { margin: 0px 0px 10px; line-height: 1.2;
+                &:last-child {margin-bottom: 0px}
+            }
+        }
+        
+    }
+
+    .footer-menu {
+        .menu {margin: 0; padding: 0; list-style-type: none;
+            li {display: block; text-align: right; margin-bottom: 8px;
+                &:last-child {margin-bottom: 0px}
+                
+                a:not(.btn-nav) {
+                    color: $bodyfontcolor; font-family: $bodyfont; text-decoration: none; display: inline-block;  white-space: nowrap;
+                    
+                    &:hover, &:focus, &.active { 
+                        color: $darkTheme;
+                    }                
+                }
+                
+            }
+        }
+    }
+
+    @media (max-width:767px){
+        .footer-content-wrapper {
+            text-align: center; padding-top: 30px;
+            @include flexbox();
+            @include align-items(center); @include justify-content(center);
+            flex-direction: column-reverse!important;
+
+            .footer-logo-copyright { 
+                padding-bottom: 0px;
+            }
+
+            .footer-menu {
+                padding-bottom: 20px;
+                .menu {text-align: center;
+                    li {display: inline-block; margin:0px 8px 10px;}
+                }
+            }
+        }
+    }
+   
+}
