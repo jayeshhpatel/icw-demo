@@ -156,10 +156,14 @@
         }
 
         & > :last-child {margin-bottom: 0px !important;}
-    }
+    }   
 
 }
-
+.card-video {
+    .card-head { 
+        .video-wrapper { width: 100%; }
+    }
+}
 .card-block.is-card-hover {
     -webkit-transition: box-shadow 0.5s;
     transition: box-shadow 0.5s;
