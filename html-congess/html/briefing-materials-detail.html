@@ -14,7 +14,6 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="assets/styles/fonts.css">
-        <link rel="stylesheet" href="assets/styles/splide.css">
         <link rel="stylesheet" href="assets/styles/main.css">
         <title>Briefing Materials | Astrazeneca THRIVE</title> 
     </head>
@@ -95,9 +94,9 @@
                         </ul>
 
                         <div class="pdf-block">
-                            <a href="#" class="pdf-link"><img src="assets/images/img1-m.jpg" alt="PDF" /></a>
+                            <a href="#" target="_blank" class="pdf-link"><img src="assets/images/img1-m.jpg" alt="PDF" /></a>
                             <div class="action">
-                                <a href="#" class="btn btn-primary">View now</a>
+                                <a href="#" class="btn btn-primary">Download PDF</a>
                             </div>
                         </div>
                         <h2 class="title">Excepteur sint occaecat</h2>
@@ -150,24 +149,9 @@
 
         <script type="text/javascript" src="assets/js/popper.min.js"></script>
         <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="assets/js/splide.min.js"></script>
         <script type="text/javascript" src="assets/js/main.js"></script>
 
         <script type="text/javascript" src="assets/js/ie.js"></script>
-
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                // Will be slider view in Mobile
-                new Splide("#image-card-slider", {                    
-                    perPage: 1,
-                    gap: "50px",
-                    arrows: true,
-                    pagination: false,
-                    updateOnMove : true,
-                    arrowPath:'M12.0795 2.06301C13.5189 0.645663 15.8526 0.645663 17.292 2.06301L35 19.5L17.292 36.937C15.8526 38.3543 13.5189 38.3543 12.0795 36.937C10.6402 35.5196 10.6402 33.2217 12.0795 31.8043L24.5751 19.5L12.0795 7.19569C10.6402 5.77834 10.6402 3.48036 12.0795 2.06301Z', 
-                }).mount();
-            });
-        </script>
     </body>
 </html>
 
