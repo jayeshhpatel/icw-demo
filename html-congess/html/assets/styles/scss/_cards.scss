@@ -102,7 +102,7 @@
     }
 
     .card-body {
-        padding: 50px 40px 60px; transition: 0.5s;
+        padding: 50px 40px 55px; transition: 0.5s;
         @media (max-width: 767px) {
             padding: 30px 30px 50px;
         }
@@ -120,11 +120,14 @@
             margin-bottom: 20px;
         }
         .card-cat-name {
-            font-size: 12px; font-weight: normal; font-family: $hfont-65; text-transform: uppercase;
+            font-size: 16px; font-weight: normal; font-family: $hfont-65; 
             margin-bottom: 15px;
+            a { text-decoration: underline; opacity: 0.7;
+                &:hover { text-decoration: none; }
+            }
         }
         .card-date {
-            font-size: 18px; font-weight: normal; font-family: $hfont-65;
+            font-size: 16px; font-weight: normal; font-family: $hfont-65;
             margin-bottom: 15px;
         }
 
@@ -134,7 +137,7 @@
         }
         .card-title {
             margin-bottom: 20px;
-            font-size: calc(28px + (38 - 28) * ((100vw - 320px) / (1600 - 320)));
+            font-size: calc(28px + (32 - 28) * ((100vw - 320px) / (1600 - 320)));
 
             em {
                img, svg {vertical-align: super;} 
@@ -151,7 +154,19 @@
         }
         .card-action {
             a {
-                margin-right: 10px; margin-top: 10px;
+                margin-right: 10px; margin-top: 15px;
+                &.btn {
+                    .icon-calender { background: url(../images/icons/icon-calender.svg) no-repeat center center; background-size: 18px; width: 18px; height: 18px; margin-right: 12px; }
+                    .icon-bookmark { background: url(../images/icons/icon-bookmark.svg) no-repeat center center; background-size: 18px; width: 18px; height: 18px; margin-right: 12px; }
+                }
+            }
+            @media (max-width: 575px) { 
+                a { margin-right: 0;
+                    &.btn {
+                        .icon-calender { margin-right: 8px; }
+                        .icon-bookmark { margin-right: 8px; }
+                    }
+                }
             }
         }
 
