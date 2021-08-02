@@ -85,7 +85,7 @@
                 top: 50%;
                 margin-left: -40px;
                 margin-top: -25px;
-                background: url(../images/icons/icon-play.svg) center center no-repeat;
+                background: url(../../images/icons/icon-play.svg) center center no-repeat;
                 background-size: contain; 
                 // @include transform(rotate(-90deg));
                 @include transition(0.3s, ease-in-out);
@@ -126,6 +126,11 @@
         .card-date {
             font-size: 18px; font-weight: normal; font-family: $hfont-65;
             margin-bottom: 15px;
+        }
+
+        .card-sm-title {  
+            margin-bottom: 10px; text-transform: uppercase; font-family: $hfont;
+            font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1600 - 320)));
         }
         .card-title {
             margin-bottom: 20px;
@@ -236,6 +241,35 @@
                 // object-fit: cover;
             }
         }
+        // If Video Icon
+        .is-video {
+            @include transition(0.3s, ease-in-out);
+            overflow: hidden;
+            position: relative;
+            &::before {
+                position: absolute; z-index: 1;
+                content: "";
+                display: inline-block;
+                height: 50px;
+                width: 80px;
+                left: 50%;
+                top: 50%;
+                margin-left: -40px;
+                margin-top: -25px;
+                background: url(../images/icons/icon-play.svg) center center no-repeat;
+                background-size: contain; 
+                // @include transform(rotate(-90deg));
+                @include transition(0.3s, ease-in-out);
+            }
+
+            &:hover, &:focus {
+                @include opacity(0.9);
+                &::before {
+                    @include transform (scale(1.2)); 
+                }
+                 
+            }
+        }
     }
 
     .card-body {
@@ -261,8 +295,13 @@
             padding: 50px 30px 50px;
         }
 
+        .card-sm-title {  
+            margin-bottom: 10px; text-transform: uppercase; font-family: $hfont;
+            font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1600 - 320)));
+        }
+
         .card-title {
-            margin-bottom: 20px;
+            margin-bottom: 20px; 
             font-size: calc(22px + (28 - 22) * ((100vw - 320px) / (1600 - 320)));
         }
         .card-text {

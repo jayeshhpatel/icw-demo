@@ -4,6 +4,12 @@
     .title {
         font-size: calc(38px + (42 - 38) * ((100vw - 320px) / (1600 - 320)));
     }
+    .sm-title {
+        font-size: calc(28px + (32 - 28) * ((100vw - 320px) / (1600 - 320)));
+    }
+    .main-title {  
+        font-size: calc(32px + (52 - 32) * ((100vw - 320px) / (1600 - 320))); font-family: $hfont-hbold; 
+    }
 }
 
 // page-hero
