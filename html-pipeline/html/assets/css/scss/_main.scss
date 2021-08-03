@@ -1567,7 +1567,7 @@ display: grid; grid-gap: 20px; grid-template-columns: 12% minmax(280px, 29.5%) 4
 
     .popup-header { padding-right: 20px; margin-bottom: 10px; position: relative;
         @media (min-width: 768px) {
-            @include flexbox(); @include align-items(center); @include justify-content(space-between); margin-bottom: 25px; 
+            @include flexbox(); @include align-items(flex-start); @include justify-content(space-between); margin-bottom: 25px; 
         }
         
         h2 { font-size: 37px; margin-bottom: 0; font-family: $hfont-bold;
@@ -1577,7 +1577,7 @@ display: grid; grid-gap: 20px; grid-template-columns: 12% minmax(280px, 29.5%) 4
             }
         }
         .action-group { text-align: right;
-            .close-popup { position: absolute; top: 0px; right: 20px; display: inline-block; line-height: 0.7; @include transition(0.3s, ease-in-out);
+            .close-popup { position: relative; top: 0px; right: 0px; display: inline-block; line-height: 0.7; @include transition(0.3s, ease-in-out); margin-bottom: 15px;
                 &:hover, &:focus, &.active { @include opacity(0.5); }
             }
             .filter-action { 
