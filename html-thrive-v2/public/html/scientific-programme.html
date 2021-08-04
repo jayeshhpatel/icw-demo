@@ -28,8 +28,8 @@
             <div class="container-fluid">
                 <nav class="navbar navbar-m-expand-xxl">
                     <a class="nav-logo" href="index.html"><img src="../images/logo.svg" alt="Astrazeneca THRIVE" /></a> 
-                    <button class="navbar-toggler x" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                    <div class="mainmenu collapse navbar-collapse" id="mainMenu">
+                    <button class="navbar-toggler x" type="button"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                    <div class="mainmenu collapse navbar-collapse mobile-menu" id="mainMenu">
                         <ul class="nav">
                             <li><a class="active" href="scientific-programme.html">Scientific Programme</a></li>
                             <li><a href="on-demand-landing.html">On Demand</a></li>
@@ -439,7 +439,15 @@
                         
                     });
                 }  
-            }        
+            }    
+            
+            // Mobile MENU
+            function toggleSidebar(){
+                this.classList.toggle('toggle');
+                this.parentElement.classList.toggle("open");
+                document.querySelector('body').classList.toggle('overflow-hidden');
+            }
+            document.querySelector('.navbar-toggler').addEventListener('click', toggleSidebar );
 
 
             document.addEventListener("DOMContentLoaded", function () {
