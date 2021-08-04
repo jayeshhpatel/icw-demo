@@ -31,16 +31,12 @@
     height: 100%;
     background: #e1f6f9;
     border: 0px;
-
-    &.bg-white {
-        background: #fff;
-        border: 1px solid #D2D2D2 !important;
-    }
     
     .card-head {
         overflow: hidden;
         transition: 0.5s;
         position: relative;
+        display: block;
 
         .card-head-bottom {
             position: absolute;
@@ -85,7 +81,7 @@
                 top: 50%;
                 margin-left: -40px;
                 margin-top: -25px;
-                background: url(../../images/icons/icon-play.svg) center center no-repeat;
+                background: url(../images/icons/icon-play.svg) center center no-repeat;
                 background-size: contain; 
                 // @include transform(rotate(-90deg));
                 @include transition(0.3s, ease-in-out);
@@ -106,44 +102,24 @@
         @media (max-width: 767px) {
             padding: 30px 30px 50px;
         }
-        &.card-body-top-action {
-            padding-right: 80px;   
-        }
-
-        .card-action-top {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
 
         .card-labal {
             margin-bottom: 20px;
+            a {
+                font-weight: normal; font-family: $hfont-hbold; text-transform: uppercase; text-decoration: none;
+                color: inherit;
+                &:hover, &:focus {
+                    text-decoration: underline; color: $interaction;
+                }
+            }
         }
         .card-cat-name {
             font-size: 12px; font-weight: normal; font-family: $hfont-65; text-transform: uppercase;
             margin-bottom: 15px;
         }
-        .card-external-action {
-            font-size: 12px; font-weight: normal; font-family: $hfont-45; text-transform: uppercase;
-            margin-bottom: 15px;
-            strong {
-                font-family: $hfont-65;
-            }
-            a {
-                opacity: 0.8;
-                &:hover, &:focus {
-                    opacity: 1;  
-                }
-            }
-        }
         .card-date {
             font-size: 18px; font-weight: normal; font-family: $hfont-65;
             margin-bottom: 15px;
-        }
-
-        .card-sm-title {  
-            margin-bottom: 10px; text-transform: uppercase; font-family: $hfont;
-            font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1600 - 320)));
         }
         .card-title {
             margin-bottom: 20px;
@@ -168,15 +144,11 @@
             }
         }
 
-        & > :last-child {margin-bottom: 0px !important;}
-    }   
+        & > div:last-child {margin-bottom: 0px !important;}
+    }
 
 }
-.card-video {
-    .card-head { 
-        .video-wrapper { width: 100%; }
-    }
-}
+
 .card-block.is-card-hover {
     -webkit-transition: box-shadow 0.5s;
     transition: box-shadow 0.5s;
@@ -258,35 +230,6 @@
                 // object-fit: cover;
             }
         }
-        // If Video Icon
-        .is-video {
-            @include transition(0.3s, ease-in-out);
-            overflow: hidden;
-            position: relative;
-            &::before {
-                position: absolute; z-index: 1;
-                content: "";
-                display: inline-block;
-                height: 50px;
-                width: 80px;
-                left: 50%;
-                top: 50%;
-                margin-left: -40px;
-                margin-top: -25px;
-                background: url(../images/icons/icon-play.svg) center center no-repeat;
-                background-size: contain; 
-                // @include transform(rotate(-90deg));
-                @include transition(0.3s, ease-in-out);
-            }
-
-            &:hover, &:focus {
-                @include opacity(0.9);
-                &::before {
-                    @include transform (scale(1.2)); 
-                }
-                 
-            }
-        }
     }
 
     .card-body {
@@ -312,13 +255,8 @@
             padding: 50px 30px 50px;
         }
 
-        .card-sm-title {  
-            margin-bottom: 10px; text-transform: uppercase; font-family: $hfont;
-            font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1600 - 320)));
-        }
-
         .card-title {
-            margin-bottom: 20px; 
+            margin-bottom: 20px;
             font-size: calc(22px + (28 - 22) * ((100vw - 320px) / (1600 - 320)));
         }
         .card-text {
@@ -428,31 +366,3 @@
         }
     }
 }
-
-.card-pdf-block { margin-bottom: 40px; 
-
-    .card-body {
-        padding: 0px 0px 20px;
-    }
-
-    .card-foot { display: block; margin-bottom: 25px;
-        img { min-width: 100%; }
-    }
-    
-    .action {  
-        .btn { padding-left: 50px; position: relative;
-            &:after {
-                content: "";
-                display: inline-block;
-                position: absolute;
-                left: 12px;
-                top: 11px;
-                height: 26px;
-                width: 26px;
-                background: url(../images/icons/icon-dwonload-white.svg) center center no-repeat;
-                background-size: 26px 26px; 
-                @include transition(0.3s, ease-in-out);
-            }
-        }
-    }
-} 

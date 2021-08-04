@@ -197,7 +197,7 @@
 }
 
 .btn-download {
-    @include flexbox();  @include align-items(flex-start); @include justify-content(space-between); @include flex-direction(column); text-align: left;
+    @include inline-flex();  @include align-items(flex-start); @include justify-content(space-between); @include flex-direction(column); text-align: left;
     color: $interaction; font-size: 16px;  font-family: $hfont-normal; line-height: 1; cursor: pointer;  text-decoration: none;
     padding: 10px;
     padding-left: 50px; position: relative; min-height: 34px;
@@ -254,9 +254,14 @@
     }
 
     .btn-download {
+        border: 1px solid #fff;
         &:after {filter: brightness(0) invert(1);}   
         small {
             @include opacity(0.8);
+        }
+
+        &:hover, &:focus { 
+            border-color: $interaction;
         }
     }
 }

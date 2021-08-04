@@ -192,7 +192,7 @@
                 
 
                 @media (max-width: 375px) { 
-                    & > li { padding: 10px 0; border-right: none;
+                    & > li { /*padding: 10px 0; border-right: none;*/
                         a { font-size: 16px; }
                     }
                 }

@@ -63,8 +63,8 @@
 
             <section class="page-title-hero mb-2">
                 <div class="container">
-                    <h1 class="sm-title">Virtual conference, J.P. Morrgan, European Healthcare Conference</h1>
-                    <div class="main-title">Briefing Materials</div>
+                    <div class="sm-title">Virtual conference, J.P. Morrgan, European Healthcare Conference</div>
+                    <h1 class="main-title">Briefing Materials</h1>
                 </div>
             </section>
 
@@ -75,7 +75,7 @@
                             <div class="date"><strong>18 - 21 June 2021</strong></div>
                         </div>
                         <div class="col-12 col-sm-auto">
-                            <a href="#" class="btn btn-primary">In progress</a>
+                            <a href="briefing-materials-detail.html" class="btn btn-primary">In progress</a>
                         </div>
                     </div>
                 </div>
@@ -140,43 +140,22 @@
                             <div class="card card-block-grid is-card-hover bg-blue is-light">
                                 <div class="card-head">
                                     <div class="slider-block">
-                                        <div id="image-card-slider" class="image-card-slider splide">
+                                        <div id="is-card-slider" class="is-card-slider splide">
                                             <div class="splide__track">
                                                 <ul class="splide__list">
                                                     <li class="splide__slide">
-                                                        <div class="card card-block is-card-hover is-light">
-                                                            <div class="card-head">
-                                                                <div class="card-head-img">
-                                                                    <img src="assets/images/img1-m.jpg" alt="AstraZeneca">
-                                                                </div>
-                                                            </div>
+                                                        <div class="slide-img">
+                                                            <img src="assets/images/img1-m.jpg" alt="AstraZeneca">
                                                         </div>
                                                     </li>
                                                     <li class="splide__slide">
-                                                        <div class="card card-block is-card-hover is-light">
-                                                            <div class="card-head">
-                                                                <div class="card-head-img">
-                                                                    <img src="assets/images/img2-m.jpg" alt="AstraZeneca">
-                                                                </div>
-                                                            </div>
+                                                        <div class="slide-img">
+                                                            <img src="assets/images/img2-m.jpg" alt="AstraZeneca">
                                                         </div>
                                                     </li>
                                                     <li class="splide__slide">
-                                                        <div class="card card-block is-card-hover is-light">
-                                                            <div class="card-head">
-                                                                <div class="card-head-img">
-                                                                    <img src="assets/images/img3-m.jpg" alt="AstraZeneca">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="splide__slide">
-                                                        <div class="card card-block is-card-hover is-light">
-                                                            <div class="card-head">
-                                                                <div class="card-head-img">
-                                                                    <img src="assets/images/img4-m.jpg" alt="AstraZeneca">
-                                                                </div>
-                                                            </div>
+                                                        <div class="slide-img">
+                                                            <img src="assets/images/img3-m.jpg" alt="AstraZeneca">
                                                         </div>
                                                     </li>
                                                 </ul>
@@ -274,19 +253,15 @@
 
         <script>
             document.addEventListener("DOMContentLoaded", function () {
-                // Will be slider view in Mobile
-                new Splide("#image-card-slider", {                    
+                new Splide("#is-card-slider", {                    
                     perPage: 1,
                     gap: "50px",
                     arrows: true,
                     pagination: false,
                     updateOnMove : true,
-                    arrowPath:'M12.0795 2.06301C13.5189 0.645663 15.8526 0.645663 17.292 2.06301L35 19.5L17.292 36.937C15.8526 38.3543 13.5189 38.3543 12.0795 36.937C10.6402 35.5196 10.6402 33.2217 12.0795 31.8043L24.5751 19.5L12.0795 7.19569C10.6402 5.77834 10.6402 3.48036 12.0795 2.06301Z', 
+                    arrowPath:'M10.1934 1.21486C10.4579 0.9353 10.8942 0.92753 11.168 1.19751L31 20.7525L11.1478 38.8216C10.8637 39.0802 10.428 39.0547 10.1747 38.7645C9.92146 38.4744 9.94647 38.0296 10.2306 37.771L28.9739 20.7112L10.2104 2.2099C9.93664 1.93992 9.92903 1.49443 10.1934 1.21486Z', 
                 }).mount();
             });
         </script>
     </body>
 </html>
-
-
-  

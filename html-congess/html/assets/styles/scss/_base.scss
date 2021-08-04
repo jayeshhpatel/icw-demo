@@ -269,9 +269,12 @@ body {
             padding-right: 40px; 
         }
         @media (min-width: 1600px){
-            max-width: 100%;
-            padding-left: 5%;
-            padding-right: 5%;
+            // max-width: 100%;
+            // padding-left: 5%;
+            // padding-right: 5%;
+            max-width: 1520px;
+            padding-left: 40px; 
+            padding-right: 40px;
         }
 }
 
@@ -291,8 +294,12 @@ body {
             padding-right: 120px;
         }
         @media (min-width: 1600px){
-            max-width: 100%;
-            padding-left: 5%;
-            padding-right: 5%;
+            // max-width: 100%;
+            // padding-left: 5%;
+            // padding-right: 5%;
+
+            max-width: 1520px;
+            padding-left: 40px; 
+            padding-right: 40px;
         }
 }

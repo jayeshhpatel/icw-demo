@@ -1,0 +1,82 @@
+// scientific-programme
+.filter-section {
+    @include flexbox();  @include align-items(center); @include justify-content(flex-start);
+    background: #fff;
+    padding: 11px 0px;
+    @include border-radius(4px);
+    @include box-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+
+    @media (max-width: 767px) { 
+        margin: -20px -15px 0px; @include border-radius(0px);
+    }
+
+    .lable-title {
+        font-family: $hfont-65; display: inline-block; padding: 0px 15px 0px 20px;
+        font-size: 16px; font-weight: normal;
+        @media (max-width: 767px) { 
+            display: none;
+        }
+    }
+    .filter-items {overflow: auto; 
+        ul {
+            overflow: auto; list-style: none; margin: 0px; padding: 0px; white-space: nowrap;
+            @include inline-flex();
+            @media (max-width: 767px) { 
+                margin: 0px 10px;
+            }
+        }
+        .btn-filter-item {
+            font-family: $hfont-65; font-size: 12px; font-weight: normal; text-align: center; text-transform: uppercase;
+            white-space: nowrap;
+            background-color: transparent;
+            border: 1px solid #D0006F;
+            padding: 7px 10px 7px 30px; margin-right: 10px;
+            line-height: 1;
+            @include border-radius(5px);
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            -webkit-appearance: button;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            text-decoration: none;
+            vertical-align: middle;
+            position: relative;
+            color: #000;
+            color: var(--filter-color);
+            border-color: var(--filter-color);
+
+            &::before {
+                content: ""; position: absolute;
+                width: 12px; height: 12px; background: #F4F4F4; 
+                border: 1px solid #9CA1AA;
+                border-radius: 30px;
+                left: 10px;
+                border-color: #9ea3ab;
+                -moz-box-shadow: none;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+                @include transition(0.3s, ease-in-out);
+            }
+
+            &:hover, &:focus {
+                color: var(--filter-color);
+                opacity: 0.8;
+            }
+
+            &.selected {
+                background: #D0006F;
+                border-color: #D0006F;
+                color: #fff;
+                background: var(--filter-color);
+                border-color: var(--filter-color);
+
+                &::before {
+                    background: #ffffff;
+                    border-color: #fff;
+                    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.35);
+                }
+            }
+        }
+    }
+}

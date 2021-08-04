@@ -109,6 +109,10 @@ body.overflow-hidden { overflow: hidden !important; padding-right: 18px;}
 
 .text-warp-inherit {white-space: inherit !important;}
 
+.space {
+    display: inline-block;
+    padding: 0px 8px;
+}
 
 .pull-left {float: left;}
 .pull-right {float: right;}

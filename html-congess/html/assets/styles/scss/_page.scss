@@ -116,24 +116,33 @@
 }
 
 // image-card-slider
-.slider-block { width: 100%; }
-.image-card-slider {   
 
-    .card {
-        .card-head { max-width: 100%; }
+.slider-block {   
+    width: 100%;
+
+    .slide-img {
+        width: 100%;
+        img {
+            width: 100%; 
+            -moz-transform: scale(1) !important;
+            -webkit-transform: scale(1) !important;
+            -o-transform: scale(1) !important;
+            -ms-transform: scale(1) !important;  
+        }
     }
-    .splide__arrow {
-        transform:none !important;        
+
+    .splide__arrow {      
         background: transparent;
         z-index: 20;
-        margin-top: 5px;
         @include opacity(1);
 
         &:disabled {
             @include opacity(0.5);
         }
         svg {
-            fill: #ffffff; width: 60px; height: 60px;
+            fill: #fff; width: 60px; height: 60px; 
+            stroke: #fff;
+            stroke-width: 3px;
         }
 
         &.splide__arrow--prev { left: 15px;}
@@ -143,10 +152,6 @@
                 right: 15px;
             }
         }
-
-        // @media (min-width: 992px) {
-        //     display: none !important;
-        // }
     }
         
     .splide__pagination {
@@ -173,9 +178,9 @@
     }
 }
 
-.section-details-block { 
-    max-width: 70%;
-    .title {  
+.section-summary-block { 
+    max-width: 75%;
+    h2, .title {  
         font-size: calc(28px + (32 - 28) * ((100vw - 320px) / (1600 - 320))); font-family: $hfont-bold; margin-bottom: 20px;
     }
     ul, .lists { 
@@ -184,36 +189,14 @@
             &::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: $darkBlue; display: inline-block; position: absolute; top: calc(6px + (10 - 6) * ((100vw - 320px) / (1600 - 320))); left: 0; }
         }
     }
-    .pdf-block { margin-bottom: 40px; 
-        .pdf-link { display: block; margin-bottom: 25px;
-            img { min-width: 100%; }
-        }
-
-        .pdf-iframe { margin-bottom: 25px; }
-
-        .action {  
-            .btn { padding-left: 50px; position: relative;
-                &:after {
-                    content: "";
-                    display: inline-block;
-                    position: absolute;
-                    left: 12px;
-                    top: 11px;
-                    height: 26px;
-                    width: 26px;
-                    background: url(../images/icons/icon-dwonload-white.svg) center center no-repeat;
-                    background-size: 26px 26px; 
-                    @include transition(0.3s, ease-in-out);
-                }
-            }
-        }
-    }    
-    p, .info { font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1600 - 320))); }
+       
+    // p{ font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1600 - 320))); }
 
     @media (max-width: 992px) {
         max-width: 100%;
     }
 }
+
 
 .mobile-tab-view {   
     @media (min-width: 767px) {

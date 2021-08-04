@@ -1,0 +1,47 @@
+// .modal-backdrop
+.modal-backdrop {
+    z-index: 2040;
+    &.show {
+        @include opacity(0.6);
+    }
+}
+.az-modal {
+    z-index: 2060 !important;
+
+    .modal-content {
+        border: 0;
+       @include border-radius(3px);
+    }
+
+    .az-modal-md {
+        max-width: 600px;
+    }
+
+    .modal-header {
+        padding: 40px 50px 20px;
+        border-bottom: 0px;
+
+        .modal-title {
+            line-height: 1.2;
+            font-family: $hfont; font-weight: normal; font-size: calc(20px + (32 - 20) * ((100vw - 320px) / (1600 - 320))); 
+        }
+
+       .btn-close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+    }
+    .modal-body {
+        padding: 0px 50px;
+    }
+    .modal-footer {
+        border-top: 0px; padding: 10px 50px 50px;
+    }
+
+    @media (max-width: 767px){
+        .modal-header {padding: 30px 30px 20px;}
+        .modal-body {padding: 0px 30px;}
+        .modal-footer {padding: 10px 30px 30px;}
+    }
+}
