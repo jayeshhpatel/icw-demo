@@ -136,10 +136,10 @@
                         <div class="col-12">
                        
                             <div class="collapse-block">
-                                <div class="collapse-title collapse-header sticky-top active">
-                                    <h2>Tuesday 29<sup>th</sup> June 2021</h2>
+                                <div class="collapse-title sticky-top">
+                                    <h2 data-bs-toggle="collapse" data-bs-target="#collapse_1" aria-expanded="true" aria-controls="collapse_1">Tuesday 29<sup>th</sup> June 2021</h2>
                                 </div>
-                                <div class="collapse-body collapse-card-body active">
+                                <div class="collapse-body collapse show" id="collapse_1">
                                     <div class="collapse-inner-body">
 
                                         <div class="card card-block is-card-hover is-light bg-blue">
@@ -279,10 +279,10 @@
                             </div>
 
                             <div class="collapse-block">
-                                <div class="collapse-title collapse-header sticky-top">
-                                    <h2>Wednesday 30<sup>th</sup> June 2021</h2>
+                                <div class="collapse-title sticky-top">
+                                    <h2 data-bs-toggle="collapse" data-bs-target="#collapse_2" aria-expanded="false" aria-controls="collapse_2">Wednesday 30<sup>th</sup> June 2021</h2>
                                 </div>
-                                <div class="collapse-body collapse-card-body">
+                                <div class="collapse-body collapse" id="collapse_2">
                                     <div class="collapse-inner-body">
 
                                         <div class="card card-block is-card-hover bg-light-magenta">
@@ -302,10 +302,10 @@
                             </div>
 
                             <div class="collapse-block">
-                                <div class="collapse-title collapse-header sticky-top">
-                                    <h2>Thursday 1<sup>st</sup> July 2021</h2>
+                                <div class="collapse-title sticky-top">
+                                    <h2 data-bs-toggle="collapse" data-bs-target="#collapse_3" aria-expanded="false" aria-controls="collapse_3">Thursday 1<sup>st</sup> July 2021</h2>
                                 </div>
-                                <div class="collapse-body collapse-card-body">
+                                <div class="collapse-body collapse" id="collapse_3">
                                     <div class="collapse-inner-body">
 
                                         <div class="card card-block is-card-hover bg-lime">
@@ -367,7 +367,7 @@
 
 
         <!-- Modal > comingsoonModal -->
-        <div class="az-modal modal fade show" id="comingsoonModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="comingsoonModalLabel" aria-hidden="true">
+        <div class="az-modal modal fade" id="comingsoonModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="comingsoonModalLabel" aria-hidden="true">
             <div class="modal-dialog az-modal-md modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
@@ -378,16 +378,16 @@
                     <p>We are still finalising this item check back soon for more details</p>
                 </div>
                 <div class="modal-footer justify-content-center">
-                    <button type="button" class="btn btn-primary popup-close">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>
         </div>
-        <div class="modal-backdrop fade show"></div>
+
        
         <!-- JS -->
-        <!-- <script type="text/javascript" src="../js/popper.min.js"></script>
-        <script type="text/javascript" src="../js/bootstrap.min.js"></script> -->
+        <script type="text/javascript" src="../js/popper.min.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.min.js"></script>
 
         <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script> -->
         <script type="text/javascript" src="../js/splide.min.js"></script>
@@ -397,49 +397,13 @@
         <script type="text/javascript" src="../js/ie.js"></script>
 
         <script type="text/javascript">
-
-            /* collapseCard */
-            let collapseCard = document.getElementsByClassName("collapse-title");
-            if (collapseCard) {
-                for (i = 0; i < collapseCard.length; i++) {
-                    collapseCard[i].addEventListener("click", toggleItem, false);
-                }
-            }
-            function toggleItem() {
-                var itemClass = this.className;
-                for (i = 0; i < collapseCard.length; i++) {
-                    collapseCard[i].className = "collapse-title collapse-header";
-                    collapseCard[i].parentNode.querySelector('.collapse-body').classList.remove('active');
-                    // collapseCard[i].parentNode.querySelector('.collapse-body').style.height= "0px";
-                }
-                if (itemClass == "collapse-title collapse-header") {
-                    this.className = "collapse-title collapse-header active";
-                    console.log(this.parentNode);
-                    this.parentNode.querySelector('.collapse-body').classList.add('active');
-                    // this.parentNode.querySelector('.collapse-body').style.height = 'auto';
-                }
-            }
-
-            // Model Popup
-            if(document.querySelector(".az-modal")){
-                const openEls = document.querySelectorAll("[data-popup]"); 
-                const closeEls = document.querySelectorAll(".popup-close"); 
-                for (const el of openEls) {
-                    el.addEventListener("click", function() {
-                        const modalId = this.dataset.popup;
-                        console.log(modalId);
-                        document.getElementById(modalId).classList.add('show');
-                        document.querySelector('body').innerHTML += '<div class="modal-backdrop fade show"></div>';
-                    });
-                }  
-                for (const el of closeEls) {
-                    el.addEventListener("click", function() {
-                        document.querySelector(".az-modal.show").classList.remove('show');
-                        document.querySelector('.modal-backdrop').remove();  
-                        
-                    });
-                }  
-            }        
+            // Modal > comingsoonModal
+            document.addEventListener('DOMContentLoaded', function () {
+                var noteModal = new bootstrap.Modal(document.getElementById('comingsoonModal'), {
+                    keyboard: false
+                })
+                noteModal.show()
+            }, false);
 
 
             document.addEventListener("DOMContentLoaded", function () {

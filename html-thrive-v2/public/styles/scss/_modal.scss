@@ -7,7 +7,7 @@
 }
 .az-modal {
     z-index: 2060 !important;
-
+    &.show { display: block; }
     .modal-content {
         border: 0;
        @include border-radius(3px);

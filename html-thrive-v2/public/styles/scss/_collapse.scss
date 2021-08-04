@@ -26,7 +26,8 @@
             font-family: $hfont; font-weight: normal; font-size: calc(18px + (26 - 18) * ((100vw - 320px) / (1600 - 320))); 
             padding: 15px 50px 15px 0px ; margin: 0px;
         }
-        [data-bs-toggle="collapse"] {
+        
+        [data-bs-toggle="collapse"], &.collapse-header h2 {
             cursor: pointer;
             position: relative;
 
@@ -49,14 +50,17 @@
                 @include transition(0.3s, ease-in-out);
             }
         }
-        [aria-expanded="true"] {
+        [aria-expanded="true"], &.active h2 {
             &::before {
                 @include transform(rotate(270deg));
             }
         }
     }
 
-    .collapse-body {
+    .collapse-body { 
+        &.collapse-card-body { overflow: hidden; height: 0; transition: height 0.3s ease-in-out; display: block;
+            &.active { height: auto; }
+        }
         .collapse-inner-body {
             padding: 20px 0px;
         }
