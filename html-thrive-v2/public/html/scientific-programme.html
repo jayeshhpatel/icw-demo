@@ -136,10 +136,10 @@
                         <div class="col-12">
                        
                             <div class="collapse-block">
-                                <div class="collapse-title collapse-header sticky-top active">
-                                    <h2>Tuesday 29<sup>th</sup> June 2021</h2>
+                                <div class="collapse-title sticky-top">
+                                    <h2 class="active" data-id="tue-29-jun-2021">Tuesday 29<sup>th</sup> June 2021</h2>
                                 </div>
-                                <div class="collapse-body collapse-card-body active">
+                                <div class="collapse-body active" id="tue-29-jun-2021">
                                     <div class="collapse-inner-body">
 
                                         <div class="card card-block is-card-hover is-light bg-blue">
@@ -279,10 +279,10 @@
                             </div>
 
                             <div class="collapse-block">
-                                <div class="collapse-title collapse-header sticky-top">
-                                    <h2>Wednesday 30<sup>th</sup> June 2021</h2>
+                                <div class="collapse-title sticky-top">
+                                    <h2 data-id="wen-30-jun-2021">Wednesday 30<sup>th</sup> June 2021</h2>
                                 </div>
-                                <div class="collapse-body collapse-card-body">
+                                <div class="collapse-body" id="wen-30-jun-2021">
                                     <div class="collapse-inner-body">
 
                                         <div class="card card-block is-card-hover bg-light-magenta">
@@ -302,10 +302,10 @@
                             </div>
 
                             <div class="collapse-block">
-                                <div class="collapse-title collapse-header sticky-top">
-                                    <h2>Thursday 1<sup>st</sup> July 2021</h2>
+                                <div class="collapse-title sticky-top">
+                                    <h2 data-id="thur-01-jul-2021">Thursday 1<sup>st</sup> July 2021</h2>
                                 </div>
-                                <div class="collapse-body collapse-card-body">
+                                <div class="collapse-body" id="thur-01-jul-2021">
                                     <div class="collapse-inner-body">
 
                                         <div class="card card-block is-card-hover bg-lime">
@@ -398,26 +398,49 @@
         <script type="text/javascript">
 
             /* collapseCard */
-            let collapseCard = document.getElementsByClassName("collapse-title");
-            if (collapseCard) {
-                for (i = 0; i < collapseCard.length; i++) {
-                    collapseCard[i].addEventListener("click", toggleItem, false);
+            // let collapseCard = document.getElementsByClassName("collapse-title h2");
+            // if (collapseCard) {
+            //     for (i = 0; i < collapseCard.length; i++) {
+            //         collapseCard[i].addEventListener("click", toggleItem, false);
+            //     }
+            // }
+            // function toggleItem() {
+            //     var itemClass = this.className;
+            //     for (i = 0; i < collapseCard.length; i++) {
+            //         collapseCard[i].className = "collapse-title sticky-top";
+            //         collapseCard[i].parentNode.querySelector('.collapse-body').classList.remove('active');
+            //         // collapseCard[i].parentNode.querySelector('.collapse-body').style.height= "0px";
+            //     }
+            //     if (itemClass == "collapse-title") {
+            //         this.className = "collapse-title sticky-top active";
+            //         this.parentNode.querySelector('.collapse-body').classList.add('active');
+            //         // this.parentNode.querySelector('.collapse-body').style.height = 'auto';
+            //     }
+            // }
+
+            window.addEventListener('load', function () {
+                let resultTabs = document.querySelectorAll(".collapse-title h2");
+                for(let i=0; i < resultTabs.length; i++){
+                    resultTabs[i].addEventListener('click', function(){
+                        if( !this.classList.contains('active')){
+                            // let itemRow = document.querySelector('.section-collapse');   
+                            document.querySelectorAll('.collapse-title h2').forEach(function(elm, indx){
+                                elm.classList.remove('active');
+                            });             
+                            document.querySelectorAll('.section-collapse .collapse-body').forEach(function(elm, indx){
+                                elm.classList.remove('active');
+                            });             
+                            // itemRow.querySelector(".collapse-title h2").classList.remove('active');
+                            // itemRow.querySelector(".section-collapse .collapse-body").classList.remove('active');
+                            this.classList.add('active');
+                            document.querySelector('#'+ this.dataset.id).classList.add('active');                            
+                        } else if( this.classList.contains('active')) { 
+                            this.classList.remove('active');
+                            document.querySelector('#'+ this.dataset.id).classList.remove('active');
+                        }
+                    });
                 }
-            }
-            function toggleItem() {
-                var itemClass = this.className;
-                for (i = 0; i < collapseCard.length; i++) {
-                    collapseCard[i].className = "collapse-title collapse-header";
-                    collapseCard[i].parentNode.querySelector('.collapse-body').classList.remove('active');
-                    // collapseCard[i].parentNode.querySelector('.collapse-body').style.height= "0px";
-                }
-                if (itemClass == "collapse-title collapse-header") {
-                    this.className = "collapse-title collapse-header active";
-                    console.log(this.parentNode);
-                    this.parentNode.querySelector('.collapse-body').classList.add('active');
-                    // this.parentNode.querySelector('.collapse-body').style.height = 'auto';
-                }
-            }
+            });
 
             // Model Popup
             if(document.querySelector(".az-modal")){
