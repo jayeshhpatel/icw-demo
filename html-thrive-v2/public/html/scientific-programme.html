@@ -367,7 +367,7 @@
 
 
         <!-- Modal > comingsoonModal -->
-        <div class="az-modal modal fade show" id="comingsoonModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="comingsoonModalLabel" aria-hidden="true">
+        <div class="az-modal modal fade show" id="comingsoonModal" style="display: block;">
             <div class="modal-dialog az-modal-md modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
@@ -383,8 +383,7 @@
               </div>
             </div>
         </div>
-        <div class="modal-backdrop fade show"></div>
-       
+
         <!-- JS -->
         <!-- <script type="text/javascript" src="../js/popper.min.js"></script>
         <script type="text/javascript" src="../js/bootstrap.min.js"></script> -->
@@ -429,14 +428,15 @@
                         const modalId = this.dataset.popup;
                         console.log(modalId);
                         document.getElementById(modalId).classList.add('show');
-                        document.querySelector('body').innerHTML += '<div class="modal-backdrop fade show"></div>';
+                        document.getElementById(modalId).setAttribute("style", "display: block;");
                     });
                 }  
                 for (const el of closeEls) {
                     el.addEventListener("click", function() {
-                        document.querySelector(".az-modal.show").classList.remove('show');
-                        document.querySelector('.modal-backdrop').remove();  
-                        
+                        document.querySelector(".az-modal.show").classList.remove('show');  
+                        setTimeout( function() {
+                            document.querySelector(".az-modal").setAttribute("style", "display: none;");
+                        },300 );
                     });
                 }  
             }    
