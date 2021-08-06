@@ -147,6 +147,7 @@ window.addEventListener('load', function () {
                 });             
                 // itemRow.querySelector(".collapse-title h2").classList.remove('show');
                 // itemRow.querySelector(".section-collapse .collapse-body").classList.remove('show');
+                console.log('#'+ this.dataset.collapse);
                 this.classList.add('show');
                 document.querySelector('#'+ this.dataset.collapse).classList.add('show');                            
             } else if( this.classList.contains('show')) { 

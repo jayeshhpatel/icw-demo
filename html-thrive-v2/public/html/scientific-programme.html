@@ -471,8 +471,15 @@
                 document.querySelector('body').classList.toggle('overflow-hidden');
             }
             document.querySelector('.navbar-toggler').addEventListener('click', toggleSidebar );
-
-
+            document.addEventListener("DOMContentLoaded", function(){
+                document.querySelector('.mainmenu').setAttribute("style", "display: block;");
+            });
+            window.addEventListener('resize', function(event){ 
+                document.querySelector('.mainmenu').setAttribute("style", "display: none;");
+                setTimeout( function() {
+                    document.querySelector('.mainmenu').setAttribute("style", "display: block;");
+                },100 );
+            })
             document.addEventListener("DOMContentLoaded", function () {
 
                 // Will be slider view in Mobile

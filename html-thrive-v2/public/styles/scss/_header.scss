@@ -168,7 +168,7 @@
         background-color: #fff;
         padding: 15px 0 !important;
         .nav-logo {margin-left: 15px;}
-        .mobile-menu { position: fixed; width: 100%; top: 74px; display: block; transform: translateY(-120%); @include transition(0.3s, ease-in-out); background: #ffffff; z-index: -1; } 
+        .mobile-menu { position: fixed; width: 100%; top: 74px; display: none; transform: translateY(-120%); @include transition(0.3s, ease-in-out); background: #ffffff; z-index: -1; } 
         &.open {
             .mobile-menu { transform: translateY(0); } 
         }
