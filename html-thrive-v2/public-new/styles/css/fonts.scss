@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('fonts/helvetica_neue_lt_55_roman.eot');
+    src: url('fonts/helvetica_neue_lt_55_roman.eot?#iefix') format('embedded-opentype'),
+         url('fonts/helvetica_neue_lt_55_roman.woff2') format('woff2'),
+         url('fonts/helvetica_neue_lt_55_roman.woff') format('woff'),
+         url('fonts/helvetica_neue_lt_55_roman.ttf') format('truetype'),
+         url('fonts/helvetica_neue_lt_55_roman.svg#neue_helveticaroman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica 65';
+    src: url('fonts/HelveticaNeue-Medium.eot');
+    src: url('fonts/HelveticaNeue-Medium.eot?#iefix') format('embedded-opentype'),
+        url('fonts/HelveticaNeue-Medium.woff2') format('woff2'),
+        url('fonts/HelveticaNeue-Medium.woff') format('woff'),
+        url('fonts/HelveticaNeue-Medium.ttf') format('truetype'),
+        url('fonts/HelveticaNeue-Medium.svg#HelveticaNeue-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HelveticaNeue Bold';
+    src: url('fonts/Helvetica-Bold.eot');
+    src: url('fonts/Helvetica-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Helvetica-Bold.woff2') format('woff2'),
+        url('fonts/Helvetica-Bold.woff') format('woff'),
+        url('fonts/Helvetica-Bold.ttf') format('truetype'),
+        url('fonts/Helvetica-Bold.svg#Helvetica-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'lexiabold';
+    src: url('fonts/lexia_bd.eot');
+    src: url('fonts/lexia_bd.eot?#iefix') format('embedded-opentype'),
+         url('fonts/lexia_bd.woff2') format('woff2'),
+         url('fonts/lexia_bd.woff') format('woff'),
+         url('fonts/lexia_bd.ttf') format('truetype'),
+         url('fonts/lexia_bd.svg#lexiabold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lexialight';
+    src: url('fonts/lexia_lt.eot');
+    src: url('fonts/lexia_lt.eot?#iefix') format('embedded-opentype'),
+         url('fonts/lexia_lt.woff2') format('woff2'),
+         url('fonts/lexia_lt.woff') format('woff'),
+         url('fonts/lexia_lt.ttf') format('truetype'),
+         url('fonts/lexia_lt.svg#lexialight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lexiaregular';
+    src: url('fonts/lexia_rg.eot');
+    src: url('fonts/lexia_rg.eot?#iefix') format('embedded-opentype'),
+         url('fonts/lexia_rg.woff2') format('woff2'),
+         url('fonts/lexia_rg.woff') format('woff'),
+         url('fonts/lexia_rg.ttf') format('truetype'),
+         url('fonts/lexia_rg.svg#lexiaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

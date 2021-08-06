@@ -1,0 +1,86 @@
+// scientific-programme
+.section-collapse {
+    margin-bottom: 50px;
+    @media (max-width: 1600px) { 
+        margin-bottom: 30px;
+    }
+    // @media (max-width: 767px) { 
+    //     margin-bottom: 0px;
+    // }
+}
+.collapse-block {
+    .collapse-title {
+        border-bottom:1px solid #9CA1AA;
+
+        &.sticky-top {
+            top: 110px; 
+            background: rgba(255, 255, 255, 0.8);
+            @media (max-width: 1279px){
+                top: 72px;
+            }
+            @media (max-width: 767px){
+                top: 100px;
+            }
+        }
+        h2 {
+            font-family: $hfont; font-weight: normal; font-size: calc(18px + (26 - 18) * ((100vw - 320px) / (1600 - 320))); 
+            padding: 15px 50px 15px 0px ; margin: 0px;
+        
+            cursor: pointer;
+            position: relative;
+    
+            &:hover, &:focus {
+                @include opacity(0.8);
+            } 
+    
+            &::before {
+                position: absolute;
+                content: "";
+                display: inline-block;
+                height: 16px;
+                width: 16px;
+                top: 50%;
+                margin-top: -8px;
+                right: 0px;
+                background: url(../images/icons/arrow-red.svg) center center no-repeat;
+                background-size: contain; 
+                @include transform(rotate(90deg));
+                @include transition(0.3s, ease-in-out);
+            }
+        }
+
+        .collapse-action {
+            &.show {
+                &::before {
+                    @include transform(rotate(270deg));
+                }
+            }
+        }
+        
+    }
+
+    
+
+    .collapse-body { 
+         overflow: hidden; height: 0; transition: height 0.3s ease-in-out; display: block;
+            &.show { height: auto; }
+        
+        .collapse-inner-body {
+            padding: 20px 0px;
+        }
+        
+        .card-block {
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 767px) { 
+            .collapse-inner-body {
+                padding: 15px 0px;
+            }
+            
+            .card-block {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

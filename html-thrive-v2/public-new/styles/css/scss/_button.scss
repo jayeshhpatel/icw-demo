@@ -1,0 +1,279 @@
+.btn-arrow {
+    @include inline-flex(); @include align-items(center); @include justify-content(center);
+    &:after {
+        content: "";
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        margin-left: 8px;
+        background: url(../images/icons/arrow-dark.svg) center center no-repeat;
+        background-size: contain; 
+        // @include transform(rotate(-90deg));
+        @include transition(0.3s, ease-in-out);
+    }
+
+    &:hover, &:focus {
+        &:after {
+            @include transform(translateX(5px)); 
+            background: url(../images/icons/arrow-white.svg) center center no-repeat;
+        }
+    }
+}
+
+.btn-arrow-white{
+    @include inline-flex(); @include align-items(center); @include justify-content(center);
+    &:after {
+        content: "";
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        margin-left: 8px;
+        background: url(../images/icons/arrow-white.svg) center center no-repeat;
+        background-size: contain; 
+        // @include transform(rotate(-90deg));
+        @include transition(0.3s, ease-in-out);
+    }
+    &:hover, &:focus {
+        &:after {
+            @include transform(translateX(5px)); 
+        }
+    }
+}
+
+.btn-arrow-pink {
+    @include inline-flex(); @include align-items(center); @include justify-content(center);
+    &:after {
+        content: "";
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        margin-left: 8px;
+        background: url(../images/icons/arrow-pink.svg) center center no-repeat;
+        background-size: contain; 
+        // @include transform(rotate(-90deg));
+        @include transition(0.3s, ease-in-out);
+    }
+    &:hover, &:focus {
+        &:after {
+            @include transform(translateX(5px)); 
+        }
+    }
+}
+
+.btn {
+    padding: 15px 20px; font-size: 18px; font-family: $hfont-normal; line-height: 1; cursor: pointer; 
+    @include border-radius(0);
+
+    &.btn-md {
+        padding: 12px 15px; font-size: 14px;
+    }
+
+    &:hover, &:focus, &:active {
+        text-decoration: none;
+    }
+}
+
+
+.btn-border { padding: 15px 20px; font-size: 16px; white-space: nowrap; font-family: $hfont-normal; color: $black; border: 1px solid rgba($color: #000000, $alpha: 0.20); text-decoration: none !important; display: inline-block; @include transition(0.2s, ease-in-out); line-height: 1; cursor: pointer;
+    &.focus, &:focus { outline: none !important; }
+    &:hover, &:focus, &:active {
+        background-color: $pink !important; border-color: $pink !important; color: $white;
+    }
+}
+
+.btn-white { padding: 15px 20px; font-size: 16px; background: rgba(#FFFFFF, 0.8); white-space: nowrap; font-family: $hfont-normal; color: $black !important; border: 1px solid rgba(#FFFFFF, 0.8); text-decoration: none !important; display: inline-block; @include transition(0.2s, ease-in-out); line-height: 1; cursor: pointer;
+    &.focus, &:focus { outline: none !important; }
+    &:hover, &:focus, &:active {
+        background-color: $pink !important; border-color: $pink !important; color: $white !important;
+    }
+}
+
+.btn-primary {
+    color: #fff;
+    background-color:$interaction;
+    border-color:$interaction;
+    &:hover, &:focus, &:active,
+    &:not(:disabled):not(.disabled).active, 
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active:focus, 
+    &:not(:disabled):not(.disabled):active:focus {
+        color: #fff !important;
+        background-color: $primary !important;
+        border-color: $primary !important;
+        box-shadow: none !important;
+    }
+    &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(206, 192, 225, 1) !important;
+    }
+
+    &.disabled,
+    &:disabled {
+        background-color: #ADBDBA;
+        border-color: #ADBDBA;
+
+        &:hover, &:focus, &:active {
+            background: #ADBDBA !important;
+            border-color: #ADBDBA !important;
+        }
+    }
+}
+
+.btn-secondary {
+    color: #003865;
+    background-color:#C4D600;
+    border-color:#C4D600;
+    &:hover, &:focus, &:active,
+    &:not(:disabled):not(.disabled).active, 
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active:focus, 
+    &:not(:disabled):not(.disabled):active:focus {
+        color: #fff !important;
+        background-color: $primary !important;
+        border-color: $primary !important;
+        box-shadow: none !important;
+    }
+    &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(206, 192, 225, 1) !important;
+    }
+
+    &.disabled,
+    &:disabled {
+        background-color: #ADBDBA;
+        border-color: #ADBDBA;
+
+        &:hover, &:focus, &:active {
+            background: #ADBDBA !important;
+            border-color: #ADBDBA !important;
+        }
+    }
+}
+
+.btn-link {
+    color: #D0006F;  font-size: 16px; font-family: $hfont-normal; line-height: 1; cursor: pointer;  text-decoration: none;
+
+    & > [class*="btn-arrow"] {
+        margin-top: 3px;
+    }
+
+    &:hover, &:focus, &:active {
+        color: #D0006F; text-decoration: none;
+    } 
+
+    &.disabled,
+    &:disabled {
+        color: currentColor;
+        @include opacity(0.5); 
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
+
+.btn-link-view {
+    color: #003865; font-size: 16px; font-family: $hfont-normal; line-height: 1; cursor: pointer;  text-decoration: none;
+
+    & > [class*="btn-arrow"] {
+        margin-top: 3px;
+    }
+
+    &:hover, &:focus, &:active {
+        color: #D0006F; text-decoration: none;
+    }  
+    &.disabled,
+    &:disabled {
+        color: currentColor;
+        @include opacity(0.5); 
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
+
+.btn-round {
+    @include border-radius(40px);
+}
+
+.btn-icon {
+    @include inline-flex(); @include align-items(center); @include justify-content(center);
+    padding: 11px 15px;
+}
+
+.btn-download {
+    @include inline-flex();  @include align-items(flex-start); @include justify-content(space-between); @include flex-direction(column); text-align: left;
+    color: $interaction; font-size: 16px;  font-family: $hfont-normal; line-height: 1; cursor: pointer;  text-decoration: none;
+    padding: 10px;
+    padding-left: 50px; position: relative; min-height: 34px;
+    border: 1px solid $interaction;
+    @include border-radius(5px);
+    @include transition(0.3s, ease-in-out);
+    &:after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left: 8px;
+        top: 8px;
+        height: 34px;
+        width: 34px;
+        background: url(../images/icons/icon-dwonload.svg) center center no-repeat;
+        background-size: 34px 34px; 
+        @include transition(0.3s, ease-in-out);
+    }
+    span {
+        color: $interaction; display: block; padding-bottom: 3px;
+    }
+    small {
+        font-size: 12px; font-family: $hfont-45;  color: #000000;
+        strong {
+            font-family: $hfont-65;
+        }
+    }
+
+    &:hover, &:focus {
+        @include opacity(0.8); text-decoration: none;
+        background: $interaction; color: #fff !important;
+        * {color: #fff !important;}
+        &:after {
+            // @include transform(scale(1.1)); 
+            filter: brightness(0) invert(1);
+        }
+    }
+}
+
+.link-with-icon {
+    @include inline-flex(); @include align-items(center); @include justify-content(center);
+    span {
+        margin-right: 15px; min-width: 20px;
+    }
+}
+
+
+.is-light {
+
+    .btn[class*="btn-arrow"] {
+        &::after {
+            background: url(../images/icons/arrow-white.svg) center center no-repeat !important; 
+        }
+    }
+
+    .btn-download {
+        border: 1px solid #fff;
+        &:after {filter: brightness(0) invert(1);}   
+        small {
+            @include opacity(0.8);
+        }
+
+        &:hover, &:focus { 
+            border-color: $interaction;
+        }
+    }
+}
+
+.btn-stretched-link {
+    &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        content: "";
+    }
+}
