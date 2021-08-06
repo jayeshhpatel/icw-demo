@@ -140,22 +140,24 @@ var videoPlayButton,
 
 
 document.addEventListener('DOMContentLoaded', function(){ 
-    let video_block = document.querySelectorAll(".video-wrapper .embed-play-action");
-    for(let i=0; i < video_block.length; i++){
-        playcolor = video_block[i].dataset.playcolor;
-        playiconcolor = video_block[i].dataset.playiconcolor;
-    
-        if(playcolor == null || playcolor == ""){
-            playcolor = '#D0006F';
+    if(document.querySelector(".embed-video")){
+        let video_block = document.querySelectorAll(".video-wrapper .embed-play-action");
+        for(let i=0; i < video_block.length; i++){
+            playcolor = video_block[i].dataset.playcolor;
+            playiconcolor = video_block[i].dataset.playiconcolor;
+        
+            if(playcolor == null || playcolor == ""){
+                playcolor = '#D0006F';
+            }
+            if(playiconcolor == null || playiconcolor == ""){
+                playiconcolor = '#ffffff';
+            }
+            video_block[i].innerHTML += '<div class="video-overlay-play-button"><svg width="88" height="59" viewBox="0 0 88 59" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(#filter0_d)"><path d="M80 2.99512H8C5.79086 2.99512 4 4.78598 4 6.99512V48.9951C4 51.2043 5.79086 52.9951 8 52.9951H80C82.2091 52.9951 84 51.2043 84 48.9951V6.99512C84 4.78598 82.2091 2.99512 80 2.99512Z" fill="'+ playcolor +'"></path></g><path d="M57.0669 27.3731L36.9999 39.0731V15.6731L57.0669 27.3731Z" fill="'+ playiconcolor +'"></path><defs><filter id="filter0_d" x="0" y="0.995117" width="88" height="58" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix><feOffset dy="2"></feOffset><feGaussianBlur stdDeviation="2"></feGaussianBlur><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.302 0"></feColorMatrix><feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend><feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend></filter></defs></svg></div>';
         }
-        if(playiconcolor == null || playiconcolor == ""){
-            playiconcolor = '#ffffff';
-        }
-        video_block[i].innerHTML += '<div class="video-overlay-play-button"><svg width="88" height="59" viewBox="0 0 88 59" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(#filter0_d)"><path d="M80 2.99512H8C5.79086 2.99512 4 4.78598 4 6.99512V48.9951C4 51.2043 5.79086 52.9951 8 52.9951H80C82.2091 52.9951 84 51.2043 84 48.9951V6.99512C84 4.78598 82.2091 2.99512 80 2.99512Z" fill="'+ playcolor +'"></path></g><path d="M57.0669 27.3731L36.9999 39.0731V15.6731L57.0669 27.3731Z" fill="'+ playiconcolor +'"></path><defs><filter id="filter0_d" x="0" y="0.995117" width="88" height="58" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix><feOffset dy="2"></feOffset><feGaussianBlur stdDeviation="2"></feGaussianBlur><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.302 0"></feColorMatrix><feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend><feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend></filter></defs></svg></div>';
+        setTimeout( function() {
+            playVideo()
+        },100 );
     }
-    setTimeout( function() {
-        playVideo()
-    },100 );
 });
 function playVideo() {
     let video_block_btn = document.querySelectorAll(".video-wrapper .video-overlay-play-button");            
