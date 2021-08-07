@@ -111,7 +111,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="splide__slide">
+                            <!-- <li class="splide__slide">
                                 <div class="card card-block is-card-hover is-light bg-purle">
                                     <div class="card-body card-body-center">
                                         <div class="card-labal"><span class="badge bg-lime-green link-dark">Key event</span></div>
@@ -123,7 +123,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </li>
+                            </li> -->
                         </ul>
                         </div>
                     </div>
@@ -432,7 +432,12 @@
                     }
                 }).mount();
             });
-
+            document.addEventListener("DOMContentLoaded", function () {
+                let slide_count = document.querySelector(".splide__list").getElementsByTagName("li").length;
+                if(slide_count <= 1) {
+                    document.querySelector('.mobile-card-slider').classList.add('one-silde-slider');
+                }
+            });
         </script>
 
     </body>
