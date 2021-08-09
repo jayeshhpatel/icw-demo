@@ -2161,14 +2161,14 @@ display: grid; grid-gap: 20px; grid-template-columns: 12% minmax(280px, 29.5%) 4
                 }
             }
         }
-        .table-row { display: grid; grid-template-columns: 50% 50%; padding: 15px 20px; 
+        .table-row { display: grid; grid-template-columns: 50% 50%; padding: 15px 5px; 
             &.bg-light { @include border-radius(15px); background: rgba(255,255,255,0.08); }
-            .table-col { display: grid; grid-template-columns: 45% 55%; @include align-items(center);
+            .table-col { display: grid; grid-template-columns: 45% 55%; @include align-items(center); margin: 0 15px;
                 .heading { font-family: $hfont-Hbold; font-size: 24px; }
-                .phase-block { @include flexbox(); @include align-items(center); }
-                .phase-name { text-transform: uppercase; font-size: 24px; padding-right: 20px; min-width: 125px; }
-                .phase { line-height: 0.7;
-                    span { min-width: 60px; height: 60px; @include border-radius(10px); background: rgba(197, 215, 45, 1); @include opacity(0.2); display: inline-block; }
+                .phase-block { @include flexbox(); @include align-items(center); @include justify-content(flex-end); }
+                .phase-name { text-transform: uppercase; font-size: 24px; padding-right: 20px; min-width: 125px; white-space: nowrap; }
+                .phase { line-height: 0.7; @include flexbox();
+                    span { min-width: 60px; height: 60px; margin: 0 2px; @include border-radius(10px); background: rgba(197, 215, 45, 1); @include opacity(0.2); display: inline-block; }
                     &.phase-four { 
                         span { @include opacity(0.5); }
                     }
@@ -2181,6 +2181,135 @@ display: grid; grid-gap: 20px; grid-template-columns: 12% minmax(280px, 29.5%) 4
                     &.phase-one {
                         span:nth-child(-n+1) { @include opacity(0.5); }
                     }
+                }
+            }
+        }
+    }
+    @media (max-width: 1800px){ 
+        .table-row-bg { padding: 40px 35px;  
+            .table-row { padding: 15px 0px; 
+                .table-col { 
+                    .heading { font-size: 22px; }
+                    .phase-name { font-size: 22px; padding-right: 10px; min-width: 105px; }
+                    .phase { 
+                        span { min-width: 55px; height: 55px; }                        
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 1600px){ 
+        .table-row-bg { padding: 30px;  
+            .table-row-header { 
+                .row-title { font-size: 26px; }
+                .action {
+                    .target-info { padding: 15px 40px 15px 20px; 
+                        .az-icon { right: 20px; }
+                        @media (max-width: 992px) { padding: 12px 15px; min-width: 240px; }
+                    }
+                }
+            }                
+            .table-row { 
+                .table-col { 
+                    .heading { font-size: 20px; }
+                    .phase-name { font-size: 20px; min-width: 96px; }
+                    .phase { 
+                        span { min-width: 50px; height: 50px; }                        
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 1400px){ 
+        .table-row-bg {
+            .table-row { 
+                .table-col { grid-template-columns: 40% 60%;
+                    .heading { font-size: 18px; }
+                    .phase-name { font-size: 18px; min-width: 90px; }
+                    .phase { 
+                        span { min-width: 45px; height: 45px; }                        
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 1200px){ 
+        .table-row-bg {
+            .table-row-header { margin-bottom: 30px;
+                .row-title { font-size: 24px; }
+            }
+            .table-row { 
+                .table-col { grid-template-columns: 30% 70%;
+                    .heading { font-size: 16px; }
+                    .phase-name { font-size: 16px; min-width: 80px; }
+                    .phase { 
+                        span { min-width: 40px; height: 40px; }                        
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 992px){ 
+        .table-header { padding: 20px 20px;
+            .title { font-size: 20px; }
+        }
+        .table-row-bg {
+            .table-row-header { margin-bottom: 30px;
+                .row-title { font-size: 24px; }
+            }
+            .table-row { grid-template-columns: 100%;
+                .table-col { padding: 8px 15px;
+                    .heading { font-size: 18px; }
+                    .phase-name { font-size: 18px; min-width: auto; padding-right: 15px; }
+                    .phase-block { @include justify-content(flex-end); }
+                    .phase { 
+                        span { min-width: 50px; height: 50px; }                        
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 767px){         
+        .table-row-bg { padding: 25px 20px;      
+            .table-row-header { 
+                .row-title { font-size: 22px; }
+            }
+            .table-row { grid-template-columns: 100%; padding: 0;
+                &.bg-light { background: transparent; }
+                .table-col { grid-template-columns: 100%; padding: 20px 15px; margin: 0;
+                    .heading { text-align: center; padding-bottom: 10px; }
+                    .phase-block { @include justify-content(center); }
+                    &:nth-child(1) { background: rgba(255,255,255,0.08); @include border-radius(15px); }                    
+                }
+            }
+        }
+    }
+    @media (max-width: 500px){         
+        .table-header { padding: 15px;
+            .title { font-size: 18px; }
+        }
+        .table-row-bg {   
+            .table-row-header { display: block;
+                .row-title { font-size: 20px; padding-bottom: 10px; }
+            }
+            .table-row { 
+                .table-col { 
+                    .heading { font-size: 16px; }
+                    .phase-name { font-size: 16px; min-width: auto; padding-right: 8px; }
+                    .phase { 
+                        span { min-width: 40px; height: 40px; }                        
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 400px){  
+        .table-row-bg {  
+            .table-row { 
+                .table-col { padding: 15px;
+                    .phase-block { display: block; text-align: center; }
+                    .phase { @include justify-content(center); }
+                    .phase-name { padding-right: 0; padding-bottom: 8px; }
                 }
             }
         }
