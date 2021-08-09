@@ -2258,7 +2258,7 @@ display: grid; grid-gap: 20px; grid-template-columns: 12% minmax(280px, 29.5%) 4
                 .row-title { font-size: 24px; }
             }
             .table-row { grid-template-columns: 100%;
-                .table-col { padding: 8px 15px;
+                .table-col { padding: 8px 15px; grid-template-columns: 40% 60%;
                     .heading { font-size: 18px; }
                     .phase-name { font-size: 18px; min-width: auto; padding-right: 15px; }
                     .phase-block { @include justify-content(flex-end); }
