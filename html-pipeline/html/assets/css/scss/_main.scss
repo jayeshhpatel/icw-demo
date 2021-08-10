@@ -1005,14 +1005,14 @@ body .main-content-wrapper {
         }
     }
     .tab-content-popup { position: absolute; z-index: 9; top: 25px; left: auto; right: 0px; background: rgba(100, 125, 130, 0.98); padding: 80px 150px 40px 50px; @include border-radius(30px); display: none; width: 90%;
-        .close-popup { position: absolute; top: 30px; right: 30px; display: inline-block; line-height: 0.7; @include transition(0.3s, ease-in-out); margin-bottom: 15px;
+        .close-popup { position: absolute; top: 30px; right: 30px; display: inline-block; line-height: 0.7; @include transition(0.3s, ease-in-out); margin-bottom: 15px; z-index: 99;
             &:hover, &:focus, &.active { @include opacity(0.5); }
         }
         .popup-header { padding-right: 25px; margin-bottom: 10px; position: relative;
             @media (min-width: 768px) {
-                @include flexbox(); @include align-items(flex-start); @include justify-content(space-between); margin-bottom: 25px; 
+                @include flexbox(); @include align-items(flex-start); @include justify-content(space-between); margin-bottom: 25px;  min-height: 47px;
             }            
-            h2 { font-size: 37px; margin-bottom: 0; font-family: $hfont-bold;
+            h2 { font-size: 37px; margin-bottom: 3px; font-family: $hfont-bold;
                 strong {font-family: $hfont-bold;}
                 @media (max-width: 1600px){ font-size:calc(22px + (30 - 22) * ((100vw - 300px) / (1600 - 300))); }
             }            
@@ -1044,7 +1044,7 @@ body .main-content-wrapper {
             }
         }
         .popup-body {           
-            .type-sub-link-block { padding: 20px 0 0;
+            .type-sub-link-block { padding: 10px 0 0;
                 .type-sub-links { @include flexbox(); @include align-items(center); @include justify-content(space-between); @include flex-wrap(wrap);
                     li { overflow: inherit; 
                         @media (max-width: 767px) { width: 45%; }
@@ -1054,21 +1054,17 @@ body .main-content-wrapper {
                 }
                 label { position: relative; 
                     input { opacity: 0; transform: scale(0); display: none; }
-                    h3 { margin-bottom: 0; font-family: $hfont-Hneue; }
-                    span.phase-link { position: relative; @include inline-flex; @include align-items(center); @include justify-content(center); cursor: pointer; padding: 18px 40px; min-width: 180px; @include box-shadow (0 3px 6px 0 rgba(0,0,0,0.08)); @include border-radius(15px); background: #798e93; }
-                    input:checked + span.phase-link { background: rgba(#FFFFFF, 1);
-                        h3 { color: #183057; font-family: $hfont-Hbold; }
-                    }
+                    span.phase-link { position: relative; @include inline-flex; @include align-items(center); @include justify-content(center); cursor: pointer; min-height: 70px; min-width: 180px; @include box-shadow (0 3px 6px 0 rgba(0,0,0,0.08)); @include border-radius(15px); background: #798e93; font-family: $hfont-Hneue; font-size: 24px; }
+                    input:checked + span.phase-link { background: rgba(#FFFFFF, 1); color: #183057; font-family: $hfont-Hbold; }
                     @media (max-width: 1600px) {  
-                        span.phase-link { padding: 18px 40px; min-width: 160px;  
-                            h3 { font-size: calc(16px + (22 - 16) * ((100vw - 320px) / (1600 - 320))); }
+                        span.phase-link { font-size: calc(16px + (22 - 16) * ((100vw - 320px) / (1600 - 320)));
                         }
                     }
-                    @media (max-width: 1400px) {  
-                        span.phase-link { padding: 18px 30px; }
+                    @media (max-width: 1320px) {  
+                        span.phase-link { min-width: 160px; }
                     }
                     @media (max-width: 992px) {  
-                        span.phase-link { padding: 15px 25px; min-width: 140px; }
+                        span.phase-link { min-height: 60px; min-width: 140px; }
                     }
                     @media (max-width: 767px) {  
                         span.phase-link { min-width: 100%; }
@@ -1080,7 +1076,7 @@ body .main-content-wrapper {
         @media (max-width: 1600px) { padding: 80px 80px 40px 50px; width: 95%; }
         @media (max-width: 1200px) { padding: 80px 40px 40px; width: 100%; }
         @media (max-width: 992px) { padding: 65px 30px 30px; width: 100%; }
-        @media (max-width: 767px) { padding: 25px 0px 25px 20px; }
+        @media (max-width: 767px) { padding: 25px 20px 25px 20px; }
     }
     @media (max-width: 1200px){ margin-right: 0; }
     @media (max-width: 550px){ 
