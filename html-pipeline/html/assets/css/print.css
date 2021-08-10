@@ -2,10 +2,12 @@
     /* a[href*='//']:after {content:" (" attr(href) ") ";color: red;}
     a:after {content:" (" attr(href) ") "; color: green;} */
     p, .glosssry-desc {page-break-inside: avoid;}
+
+    * {background-attachment: unset !important;}
     
     @page {margin-top: 0cm; margin-bottom: 0cm; margin-left: 0cm; margin-right: 0cm;}
-    body.home { background-size: 1440px!important; }
-    body { margin: 0 !important; background-size: 1440px!important; background-attachment: unset !important; }
+    body.home { background-size: 100%!important; }
+    body { margin: 0 !important; background-size: 100%!important; background-attachment: unset !important; }
 
     .main-header.is-sticky-header {  position: absolute !important; }
     
@@ -13,12 +15,13 @@
     .main-footer .row .col-xl-7 { max-width: 60% !important; float: left !important; }
     .main-footer .row .col-xl-5 { max-width: 40% !important; float: left !important; }
     .main-footer .row .col-xl-5 ul.menu { max-width: 100% !important; float: right !important; }
-
-    .bg-home { background-size: 1440px !important; background-attachment: unset !important; } 
-    .main-content-wrapper.bg-tab-wrapper, .main-content-wrapper.bg-wrapper { background-size: 1440px !important; background-attachment: unset !important; }
-    .main-content-wrapper.bg-cover { background-size: 1440px!important; }
+     
+    body.home .main-content-wrapper.bg-cover {height: calc(100vh - 100px);}
+    .bg-home { background-size: 100% 100% !important; background-attachment: unset !important; height: calc(100vh - 100px); } 
+    .main-content-wrapper.bg-tab-wrapper, .main-content-wrapper.bg-wrapper { background-size: 100% !important; background-attachment: unset !important; }
+    .main-content-wrapper.bg-cover { background-size: 100%!important; }
     .main-content-wrapper::after { position: absolute !important; }
-    .main-content-wrapper { background-size: 1440px !important; background-attachment: unset !important; }
+    .main-content-wrapper { background-size: 100% !important; background-attachment: unset !important; }
   
     .main-content-wrapper { display: block !important; }
     .home-welcome { max-width: 500px !important ; margin-left: auto !important; padding-top: 27px !important; }
@@ -80,17 +83,19 @@
     .more-info-block .more-info-content .step-overview-desc strong { display: block !important; }
 
     .ddr-tabs { display: none !important; }
-    .ddr-tab-content-block { margin-bottom: 0 !important; }
+    .ddr-tab-content-block { margin-bottom: 0 !important;  width: 100%;}
     .ddr-tab-content-block .tab-content { display: flex !important; flex-direction: column !important; align-items: flex-start !important; }
     .ddr-tab-content-block .tab-header { display: inline-flex !important; align-items: center !important; justify-content: space-between; width: 100%; color: rgba(255, 255, 255, 1); background: #3b495b; padding: 20px 30px; margin-bottom: 1px; border-radius: 26px 26px 0px 0px; }
+    .ddr-tab-content-block .tab-content .tab-content-body { width: 100%; }
     .ddr-tab-content-block .tab-header h2 { margin: 0; }
     .ddr-tab-content-block .tab-header .az-icon {-moz-opacity: 1; -khtml-opacity: 1; -webkit-opacity: 1; opacity: 1; -moz-transform: rotate(90deg); -webkit-transform: rotate(90deg); -o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(90deg);    }
     .ddr-overview-page-title { max-width: 70% !important; }
     .type-innerpage-title.ddr-overview-page-title h1 { margin-bottom: 10px !important; }
     .type-innerpage-title.ddr-overview-page-title .desc { min-height: auto !important; }
-    .ddr-tab-content-block .tab-content .image-card .card-body { max-height: 500px !important; }
-    .image-card .card-body .image-map-block .panzoom-element { display: flex !important; flex-direction: column !important; align-items: flex-start !important; }
+    .ddr-tab-content-block .tab-content .image-card .card-body { max-height: inherit !important; width: 100%; overflow: unset !important; }
+    .image-card .card-body .image-map-block .panzoom-element { display: flex !important; flex-direction: column !important; align-items: flex-start !important;  overflow: unset !important;}
     .ddr-tab-content-block .tab-content .image-card-block { padding: 0px 0 60px !important; }
+    .image-card .card-body .image-map-block img.img-panzoom {width: 100%; max-width: 100%;}
     .server-wrapper { padding-top: 80px !important; }
     .server-error-block { margin-top: 0 !important; }
     .server-error-block .server-error-card { margin: 60px 0 !important; padding: 80px 40px !important; }

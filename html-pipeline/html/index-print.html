@@ -14,13 +14,12 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="assets/css/main.css">
-        <!-- <link rel="stylesheet" media="print" href="assets/css/print.css"> -->
-        
-        <title>Tumor Type | AstraZeneca</title> 
-        <link rel="preload" href="assets/images/type-bg-2.png" as="image" />
+        <link rel="stylesheet" media="print" href="assets/css/print.css">
+        <title>Home | AstraZeneca</title> 
+        <link rel="preload" href="assets/images/bg-homepage.png" as="image" />
         <style>
             .main-content-wrapper > .inner-container {
-                animation: fadeInAnimation ease 3s;
+                animation: fadeInAnimation ease 2s;
                 animation-iteration-count: 1;
                 animation-fill-mode: forwards;
             }
@@ -28,10 +27,47 @@
                 0% {opacity: 0; transform: translateY(5%);}
                 100% {opacity: 1; transform: translateY(0px);}
             }
-            /* * {background-attachment: unset !important;} */
-       </style>
+
+/* JUST WEB PRINT CSS */
+html body.is-web-print {background-image: none !important; min-height: auto !important;}
+html body.is-web-print .main-content-wrapper {background-image: none !important; display: block !important; min-height: auto !important;}
+html body.is-web-print .main-bg {position: absolute;  width: 100%; height: 100%; top: 0; right: 0; bottom: 0; left: 0; z-index: 1;  }
+html body.is-web-print .body-bg {position: fixed; width: 100%; height: 100%; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; text-align: left;}
+/* JUST WEB PRINT CSS */
+        </style>
+        <script>
+            /*
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return typeof sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+    return false;
+};
+var print = getUrlParameter('print');
+
+if(print == 'pdf'){
+  alert("hi");
+    document.querySelector('body').classList.add('is-web-print');
+    // document.body.classList.add("is-web-print");
+}
+*/
+        </script>
     </head>
-    <body style="background-color: #07383f; background-image: url(assets/images/bg.jpg);">
+    <body class="home is-web-print" style="background-color: #07383f; background-image: url(assets/images/bg-home.jpg);">
+        <div class="alert alert-warning alert-sticky msg-mobile">
+            <strong>For Best View!</strong> <br>Site best viewed in Desktop or Laptop.
+            <button type="button" class="btn-close" onclick="dismiss(this);"><em class="az-icon icon-alert-close"></em></button>
+        </div>
+
         <!-- HEADER SECTION -->
         <header class="main-header is-sticky-header"> <!-- .is-sticky-header -->
             <div class="container">
@@ -39,8 +75,8 @@
                         <a class="nav-logo" href="index.html"><img src="assets/images/logo-astrazeneca.svg" alt="AstraZeneca - Oncology Pipeline" /></a>                    
                         <div class="menu">
                             <ul class="nav">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="tumour-type.html"  class="active">Tumor Type</a></li>
+                                <li><a href="index.html" class="active">Home</a></li>
+                                <li><a href="tumour-type.html">Tumor Type</a></li>
                                 <li><a href="cell-pathway.html">Cell Pathway</a></li>
                                 <li><a href="full-pipeline.html">Full Pipeline</a></li>
                                 <!-- <li><a href="#">Narrative</a></li> -->
@@ -56,49 +92,46 @@
         <!-- // HEADER SECTION -->
 
         <!-- MAIN SECTION -->
-        <main class="main-content-wrapper is-bg-ani is-bg-right" style="background-image: url(assets/images/type-bg-2.png);"> <!-- DEV : It will base on Type wise chanegs images here -->
+        <main class="main-content-wrapper bg-home is-bg-ani is-bg-left">
             <div class="inner-container">
                 <div class="container">
 
-                <!-- type sub title -->
-                    <div class="type-innerpage-title">
-                        <div class="back-action">
-                            <a href="index.html" class="btn-back"><em class="az-icon icon-arrow-left"></em>BACK</a>                               
-                        </div>
-
-                        <h1><strong>Browse by Tumor Type</strong></h1>
-                        <!-- <h2>Tumour <strong>Type?</strong></h2> -->
-                        <p>Our industry-leading oncology pipeline is broad and exciting, addressing multiple disease pathways and allowing for a variety of combination therapies.</p>
+                    <!-- Home Welcome Info -->
+                    <div class="home-welcome lg-pull-right">
+                        <h1><strong>AstraZeneca</strong><br>
+                        <strong>Oncology Pipeline Tool</strong></h1>
+                        <h2>What is Science?</h2>
+                        <p>AstraZeneca is investigating combinations of biologic and small molecule therapies for the treatment of cancer. These combinations target the tumour directly and some help boost the body’s own immune system to potentially induce tumour cell death.</p>
                     </div>
                     <div class="clear"></div>
-                    <!-- // type sub title -->
+                    <!-- // Home Welcome Info -->
 
-                    <!-- type sub links -->
-                    <div class="type-sub-link-block">
-                        <ul class="type-sub-links">
-                            <li><a class="active" href="head-and-neck.html"><h3><strong>Head and Neck LONG NAME LONG NAME LONG NAME LONG NAME</strong></h3> <span><img src="assets/images/icons/icon-head-and-neck.svg" alt="Head and Neck" /></span></a></li>
-                            <li><a href="#"><h3><strong>Breasts</strong></h3> <span><img src="assets/images/icons/icon-breasts.svg" alt="Breasts" /></span></a></li>
-                            <li><a href="#"><h3><strong>Hepatic</strong></h3> <span><img src="assets/images/icons/icon-hepatic.svg" alt="Hepatic" /></span></a></li>
-                            <li><a href="#"><h3><strong>Cervical</strong></h3> <span><img src="assets/images/icons/icon-cervical.svg" alt="Cervical" /></span></a></li>
-                            <li><a href="#"><h3><strong>Other Solid Tumours</strong></h3> <span><img src="assets/images/icons/icon-tumours.svg" alt="Tumours" /></span></a></li>
-                            <li><a href="#"><h3><strong>Lung</strong></h3> <span><img src="assets/images/icons/icon-lung.svg" alt="Lung" /></span></a></li>
-                            <li><a href="#"><h3><strong>Haematolgick</strong></h3> <span><img src="assets/images/icons/icon-haematolgick.svg" alt="Haematolgick" /></span></a></li>
-                            <!-- <li class="lg-empty"></li> -->
-                            <li><a href="#"><h3><strong>Pancreatic</strong></h3> <span><img src="assets/images/icons/icon-pancreatic.svg" alt="Pancreatic" /></span></a></li>
-                            <li><a href="#"><h3><strong>Bladder</strong></h3> <span><img src="assets/images/icons/icon-bladder.svg" alt="Bladder" /></span></a></li>
-                            <li><a href="#"><h3><strong>Ovarian</strong></h3> <span><img src="assets/images/icons/icon-ovarian.svg" alt="Ovarian" /></span></a></li>
-                            <li><a href="#"><h3><strong>Colorectal</strong></h3> <span><img src="assets/images/icons/icon-colorectal.svg" alt="Colorectal" /></span></a></li>
-                            <li><a href="#"><h3><strong>Endometrial</strong></h3> <span><img src="assets/images/icons/icon-endometrial.svg" alt="Endometrial" /></span></a></li>
-                            <li><a href="#"><h3><strong>Prostate</strong></h3> <span><img src="assets/images/icons/icon-prostate.svg" alt="Prostate" /></span></a></li>
-                            <li><a href="#"><h3><strong>Gastric</strong></h3> <span><img src="assets/images/icons/icon-gastric.svg" alt="Gastric" /></span></a></li>
+                    <!-- type links -->
+                    <div class="home-grid-actions">
+                        <ul class="type-links">
+                            <li><a href="tumour-type.html"><span><strong>Tumor Type</strong> <em class="az-icon icon-nav-arrow"></em></span></a></li>
+                            <li><a href="cell-pathway.html"><span><strong>Cell Pathway</strong> <em class="az-icon icon-nav-arrow"></em></span></a></li>
+                            <li><a href="full-pipeline.html"><span><strong>Full Pipeline</strong> <em class="az-icon icon-nav-arrow"></em></span></a></li>
+                            <li><a href="glossary.html"><span><strong>Glossary</strong> <em class="az-icon icon-nav-arrow"></em></span></a></li>
+                            <!-- <li><a href="#"><span><strong>Narrative</strong></span></a></li> -->
                         </ul>
                     </div>
-                    <!-- // type sub links -->
+                    <!-- // type links -->
 
                 </div>
             </div>
         </main>
         <!-- // MAIN SECTION -->
+
+
+        <!-- // Start JUST WEB PRINT -->
+        <div class="main-bg">
+            <img src="assets/images/bg-homepage.png" alt="" style="width: 100%;height: auto;">
+        </div>
+        <div class="body-bg">
+            <img src="assets/images/bg-home.jpg" alt="" style="width: 100%; height: 100%;">
+        </div>
+        <!-- // End JUST WEB PRINT -->
 
         <!-- bubble ANIMATION -->
         <div class="bubble-wrapper">
@@ -144,7 +177,7 @@
             <div class="bubble bubble-40"></div>
         </div>
         <!-- // bubble ANIMATION -->
-
+        
         <!-- FOOTER SECTION -->
         <footer class="main-footer">
             <div class="container">
