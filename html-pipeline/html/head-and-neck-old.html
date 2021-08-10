@@ -71,76 +71,39 @@
                         <div class="type-innerpage-title-action">
                             <a href="narrative.html" class="btn btn-light btn-icon btn-min-block btn-radius">Go to Narrative <em class="az-icon icon-arrow-right-white"></em></a>
                         </div>
-                        
+                        <hr>
+                        <div class="select-note"><strong>Select a mechanism below</strong></div>
                             
                     </div>
                     <div class="clear"></div>
 
-                    <div class="select-title-block">
-                        <div class="title-block">
-                            <div class="title">Select a mechanism below</div>
-                            <div class="filter-block">
-                                <a href="#" class="btn btn-light btn-light2 btn-icon btn-sm popup-link">Filter by phases <em class="az-icon icon-arrow-down"></em></a>
-                                <div class="filter-name">Filter by phases</div>
-                                <div class="filter-select">
-                                    <a href="#" class="btn btn-icon">Phase I-II <em class="az-icon icon-close"></em></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Filter Popup -->
-                        <div class="tab-content-popup filter-popup">
-                            <a href="#!" class="close-popup"><em class="az-icon icon-close"></em></a>
-                            <div class="popup-header">
-                                <h2><strong>Select phases</strong></h2>                                
-                                <div class="action-group">                                    
-                                    <div class="filter-action is-hide">
-                                        <div class="filter-action-inner">
-                                            <button type="button" class="btn btn-icon clear-selection">Clear selection <em class="az-icon icon-close"></em></button>
-                                            <button type="button" class="btn btn-icon apply-filter">Apply filters <em class="az-icon icon-check"></em></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="popup-body is-scrolling">
-                                <div class="type-sub-link-block">
-                                    <ul class="type-sub-links">
-                                        <li>
-                                            <label class="check" for="target_1">
-                                                <input type="checkbox" id="target_1">
-                                                <span class="phase-link">
-                                                    <h3>Phase I</h3>
-                                                </span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="check" for="target_2">
-                                                <input type="checkbox" id="target_2">
-                                                <span class="phase-link">
-                                                    <h3>Phase II</h3>
-                                                </span>
-                                            </label>
-                                        </li> 
-                                        <li>
-                                            <label class="check" for="target_3">
-                                                <input type="checkbox" id="target_3">
-                                                <span class="phase-link">
-                                                    <h3>Phase III</h3>
-                                                </span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="check" for="target_4">
-                                                <input type="checkbox" id="target_4">
-                                                <span class="phase-link">
-                                                    <h3>Phase IV</h3>
-                                                </span>
-                                            </label>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    <!-- // Filter Popup -->
+                    <div class="type-filter-block">
+                        <ul class="type-filter">
+                            <li>
+                                <label class="check" for="target_1">
+                                    <input type="checkbox" id="target_1" checked>
+                                    <span class="target-link">Phase I</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="check" for="target_2">
+                                    <input type="checkbox" id="target_2">
+                                    <span class="target-link">Phase II</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="check" for="target_3">
+                                    <input type="checkbox" id="target_3">
+                                    <span class="target-link">Phase III</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="check" for="target_4">
+                                    <input type="checkbox" id="target_4">
+                                    <span class="target-link">Phase IV</span>
+                                </label>
+                            </li> 
+                        </ul>
                     </div>
                     <!-- // type sub title -->
 
@@ -301,59 +264,5 @@
 
         <!-- JS -->
         <script src="assets/js/main.js"></script>
-        <script>
-            var filterTypePopup = document.querySelector('.filter-popup');
-            let byIdPopup = document.querySelectorAll('.popup-link');
-            for(let i=0; i < byIdPopup.length; i++){
-                byIdPopup[i].addEventListener('click', function(e){
-                    e.preventDefault();
-                    filterTypePopup.classList.add('is-show');
-
-                    // Start - Title Ellips if long title text 
-                    Array.from(document.querySelectorAll('.type-sub-link-block h3'))
-                    .forEach(element => {
-                        if (isEllipsisActive(element)) {
-                        element.title = element.innerText;
-                        }
-                    });
-                    // End - Title Ellips if long title text 
-
-                    return false;
-                  
-                })
-            }
-            let byTargetLink = document.querySelectorAll('.phase-link');
-            for(let i=0; i < byTargetLink.length; i++){
-                byTargetLink[i].addEventListener('click', function(e){                     
-                    // document.querySelector('.popup-header .close-popup').classList.add('is-hide');
-                    document.querySelector('.popup-header .filter-action').classList.remove('is-hide');
-                    document.querySelector('.popup-header .filter-action').classList.add('is-show');
-                    console.log();
-                });
-            }
-            let closePopup = document.querySelector('.close-popup');            
-            closePopup.addEventListener('click', function(){
-                filterTypePopup.classList.remove('is-show');
-                return false;
-            })
-
-            let clearSelection = document.querySelector('.clear-selection');            
-            clearSelection.addEventListener('click', function(){
-                document.querySelectorAll('.phase-link').forEach(function(elm, indx){
-                    var checkBox = elm.parentElement;
-                    checkBox.querySelector('input').checked = false;
-                }); 
-                return false;
-            })
-
-            let applyFilter = document.querySelector('.apply-filter');            
-            applyFilter.addEventListener('click', function(){
-                filterTypePopup.classList.remove('is-show');
-                document.querySelector('.popup-link').classList.add('is-hide');
-                document.querySelector('.filter-select').classList.add('is-show');
-                document.querySelector('.filter-name').classList.add('is-show');
-                return false;
-            })
-        </script>
     </body>
 </html>
