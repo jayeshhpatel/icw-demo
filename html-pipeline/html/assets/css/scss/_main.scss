@@ -988,7 +988,9 @@ body .main-content-wrapper {
 }
 
 .select-title-block { margin-right: 12%; margin-left: 25px; position: relative; 
-    .title-block { @include flexbox(); @include align-items(center); @include justify-content(space-between); margin: 0 0px 0 -25px; }
+    .title-block { @include flexbox(); @include align-items(center); @include justify-content(space-between); margin: 0 0px 0 -25px; 
+        @media (max-width: 575px) { margin-left: 0; }
+    }
     .title { font-size: 32px; font-family: $hfont-Hbold; 
         @media (max-width: 1600px){ font-size: calc(20px + (30 - 20) * ((100vw - 320px) / (1600 - 320))); }
     }
@@ -1048,7 +1050,7 @@ body .main-content-wrapper {
                 .type-sub-links { @include flexbox(); @include align-items(center); @include justify-content(space-between); @include flex-wrap(wrap);
                     li { overflow: inherit; 
                         @media (max-width: 767px) { width: 45%; }
-                        @media (max-width: 575px) { width: 40%; }
+                        @media (max-width: 575px) { width: 43%; }
                         @media (max-width: 400px) { width: 100%; }
                     }
                 }
@@ -1057,7 +1059,7 @@ body .main-content-wrapper {
                     span.phase-link { position: relative; @include inline-flex; @include align-items(center); @include justify-content(center); cursor: pointer; min-height: 70px; min-width: 180px; @include box-shadow (0 3px 6px 0 rgba(0,0,0,0.08)); @include border-radius(15px); background: #798e93; font-family: $hfont-Hneue; font-size: 24px; }
                     input:checked + span.phase-link { background: rgba(#FFFFFF, 1); color: #183057; font-family: $hfont-Hbold; }
                     @media (max-width: 1600px) {  
-                        span.phase-link { font-size: calc(16px + (22 - 16) * ((100vw - 320px) / (1600 - 320)));
+                        span.phase-link { font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1600 - 320)));
                         }
                     }
                     @media (max-width: 1320px) {  
@@ -1079,7 +1081,7 @@ body .main-content-wrapper {
         @media (max-width: 767px) { padding: 25px 20px 25px 20px; }
     }
     @media (max-width: 1200px){ margin-right: 0; }
-    @media (max-width: 550px){ 
+    @media (max-width: 575px){ margin-left: 0px;
         .title-block { display: block;
             .title { margin-bottom: 15px; }
         }
