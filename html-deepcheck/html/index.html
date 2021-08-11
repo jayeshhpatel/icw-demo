@@ -11,39 +11,334 @@
         <link rel="apple-touch-icon" href="images/favicon.png" sizes="180x180">
         <link rel="shortcut icon" type="images/x-icon" href="images/favicon.png">
 
-        <link rel="stylesheet" href="css/website/main-header.css">
+        <link rel="stylesheet" href="css/main.css">
         <title>Home | Deepchecks</title>
     </head>
-    <body class="website">
-        <header class="main-header fixed-top">
-            <nav class="navbar navbar-expand-lg">               
-                <div class="container">
-                    <a class="navbar-brand" href="home.html"><img src="images/logo.svg" alt="In-App Chat" /></a> 
-                    <div class="collapse navbar-collapse">                        
-                        <ul class="navbar-nav ml-auto">
-                            <li><a href="home.html" class="active">Home</a></li>
-                            <li><a href="#">Features</a></li>
-                            <li><a href="#">Pricing</a></li>
-                            <li class="dropdown nav-dropdown">
-                                <a href="#">Solution</a>
-                                <ul>
-                                   <li><a href="peer-to-peer.html">Peer-to-Peer</a></li>
-                                   <li><a href="chatbots.html">Chatbots</a></li>
-                                   <li><a href="chatops.html">ChatOps</a></li>
-                                </ul>
+    <body>
+        <header class="main-header">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><img src="images/logo-dark.svg" class="logo" alt=""></a>                  
+                    <div class="nav-item profile-dropdown dropdown">
+                        <a class="nav-link" href="#" id="profile-dropdown" data-bs-toggle="dropdown">
+                            <div class="img"><span>S</span></div>
+                            <div class="info d-none d-md-block">Dani Shovav</div>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="profile-dropdown">                                   
+                            <li class="pb-0 d-block d-md-none">
+                                <div class="dropdown-item org-box border-0">Dani Shovav</div> 
                             </li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <li class="btn-primary"><a href="#">Sign Up</a></li>
-                            <li class="btn-white"><a href="#">Login</a></li>
-                        </ul>
+                            <li><a class="dropdown-item" href="#">Option 1</a></li>
+                            <li><a class="dropdown-item" href="#">Option 2</a></li>
+                            <li><a class="dropdown-item" href="#">Option 3</a></li>
+                            <li><a class="dropdown-item" href="#">Option 4</a></li>
+                        </ul>                                 
                     </div>
-                    <div class="bar-icon toggle-sidebar">
-                        <div class="line1"></div><div class="line2"></div>
-                    </div>  
-                </div>    
+                </div>
             </nav>
         </header>
-        <script src="js/main-website.js"></script>
-        <script src="js/main-website.js"></script>
+        <main class="content-wrapper">
+            <div class="banner-section">
+                <div class="container">
+                    <div class="banner-info">
+                        <h1 class="title">Datasets</h1>
+                        <div class="info">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis</p>
+                            <a href="#" class="btn btn-primary">Contribute</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-section">
+                <div class="container">
+                    <div class="search-filter-block">
+                        <div class="search-block">
+                            <div class="form-group pre-icon-input">
+                                <span class="pre-icon"><em class="icon-search"></em></span>
+                                <input type="text" class="form-control" placeholder="Search model">
+                            </div>
+                            <div class="filter-by">
+                                <span class="title">Filter By:</span>
+                                <span class="filter-name">Medical <span class="action"><em class="icon-close"></em></span></span>
+                                <span class="filter-name">Tabular <span class="action"><em class="icon-close"></em></span></span>
+                                <span class="filter-name">1MB-4MB <span class="action"><em class="icon-close"></em></span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table-section">
+                <div class="container">
+                    <div class="table-outer-block">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="first-col">1</th>
+                                        <th>
+                                            <div class="dropdown">
+                                                <a href="#" id="domain-dropdown" data-bs-toggle="dropdown">Domain</a>
+                                                <ul class="dropdown-menu" aria-labelledby="domain-dropdown"> 
+                                                    <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                                </ul>    
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="dropdown">
+                                                <a href="#" id="samples-dropdown" data-bs-toggle="dropdown">Samples</a>
+                                                <ul class="dropdown-menu" aria-labelledby="samples-dropdown"> 
+                                                    <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                                </ul>    
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="dropdown">
+                                                <a href="#" id="features-dropdown" data-bs-toggle="dropdown">Features</a>
+                                                <ul class="dropdown-menu" aria-labelledby="features-dropdown"> 
+                                                    <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                                </ul>    
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="dropdown">
+                                                <a href="#" id="has-timestamp-dropdown" data-bs-toggle="dropdown">Has Timestamp</a>
+                                                <ul class="dropdown-menu" aria-labelledby="has-timestamp-dropdown"> 
+                                                    <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                                </ul>    
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="dropdown">
+                                                <a href="#" id="role-dropdown" data-bs-toggle="dropdown">Role</a>
+                                                <ul class="dropdown-menu" aria-labelledby="role-dropdown"> 
+                                                    <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                                </ul>    
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="dropdown">
+                                                <a href="#" id="dataset-type-dropdown" data-bs-toggle="dropdown">Dataset Type</a>
+                                                <ul class="dropdown-menu" aria-labelledby="dataset-type-dropdown"> 
+                                                    <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                                </ul>    
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="dropdown">
+                                                <a href="#" id="size-ram-dropdown" data-bs-toggle="dropdown">Size (Ram)</a>
+                                                <ul class="dropdown-menu" aria-labelledby="size-ram-dropdown"> 
+                                                    <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                                </ul>    
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="dropdown">
+                                                <a href="#" id="size-compressed-dropdown" data-bs-toggle="dropdown">Size (compressed)</a>
+                                                <ul class="dropdown-menu" aria-labelledby="size-compressed-dropdown"> 
+                                                    <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                                </ul>    
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <span>Evaluation metric</span>
+                                        </th>
+                                        <th>
+                                            <span>Evaluation metric</span>
+                                        </th>
+                                        <th>
+                                            <span>Evaluation metric</span>
+                                        </th>
+                                        <th class="last-col">last</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="first-col">Evaluation metric</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a href="#" id="domain-dropdown" data-bs-toggle="dropdown">Domain</a>
+                                                <ul class="dropdown-menu" aria-labelledby="domain-dropdown"> 
+                                                    <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                                </ul>    
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a href="#" id="samples-dropdown" data-bs-toggle="dropdown">Samples</a>
+                                                <ul class="dropdown-menu" aria-labelledby="samples-dropdown"> 
+                                                    <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                                </ul>    
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a href="#" id="features-dropdown" data-bs-toggle="dropdown">Features</a>
+                                                <ul class="dropdown-menu" aria-labelledby="features-dropdown"> 
+                                                    <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                                </ul>    
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a href="#" id="has-timestamp-dropdown" data-bs-toggle="dropdown">Has Timestamp</a>
+                                                <ul class="dropdown-menu" aria-labelledby="has-timestamp-dropdown"> 
+                                                    <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                                </ul>    
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a href="#" id="role-dropdown" data-bs-toggle="dropdown">Role</a>
+                                                <ul class="dropdown-menu" aria-labelledby="role-dropdown"> 
+                                                    <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                                </ul>    
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a href="#" id="dataset-type-dropdown" data-bs-toggle="dropdown">Dataset Type</a>
+                                                <ul class="dropdown-menu" aria-labelledby="dataset-type-dropdown"> 
+                                                    <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                                </ul>    
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a href="#" id="size-ram-dropdown" data-bs-toggle="dropdown">Size (Ram)</a>
+                                                <ul class="dropdown-menu" aria-labelledby="size-ram-dropdown"> 
+                                                    <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                                </ul>    
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a href="#" id="size-compressed-dropdown" data-bs-toggle="dropdown">Size (compressed)</a>
+                                                <ul class="dropdown-menu" aria-labelledby="size-compressed-dropdown"> 
+                                                    <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                                </ul>    
+                                            </div>
+                                        </td>
+                                        <td>
+                                        <span>Evaluation metric</span>
+                                        </td>
+                                        <td>
+                                        <span>Evaluation metric</span>
+                                        </td>
+                                        <td>
+                                        <span>Evaluation metric</span>
+                                        </td>
+                                        <td class="last-col">Evaluation metric</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="first-col">Evaluation metric</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a href="#" id="domain-dropdown" data-bs-toggle="dropdown">Domain</a>
+                                                <ul class="dropdown-menu" aria-labelledby="domain-dropdown"> 
+                                                    <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                                </ul>    
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a href="#" id="samples-dropdown" data-bs-toggle="dropdown">Samples</a>
+                                                <ul class="dropdown-menu" aria-labelledby="samples-dropdown"> 
+                                                    <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                                </ul>    
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a href="#" id="features-dropdown" data-bs-toggle="dropdown">Features</a>
+                                                <ul class="dropdown-menu" aria-labelledby="features-dropdown"> 
+                                                    <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                                </ul>    
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a href="#" id="has-timestamp-dropdown" data-bs-toggle="dropdown">Has Timestamp</a>
+                                                <ul class="dropdown-menu" aria-labelledby="has-timestamp-dropdown"> 
+                                                    <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                                </ul>    
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a href="#" id="role-dropdown" data-bs-toggle="dropdown">Role</a>
+                                                <ul class="dropdown-menu" aria-labelledby="role-dropdown"> 
+                                                    <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                                </ul>    
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a href="#" id="dataset-type-dropdown" data-bs-toggle="dropdown">Dataset Type</a>
+                                                <ul class="dropdown-menu" aria-labelledby="dataset-type-dropdown"> 
+                                                    <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                                </ul>    
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a href="#" id="size-ram-dropdown" data-bs-toggle="dropdown">Size (Ram)</a>
+                                                <ul class="dropdown-menu" aria-labelledby="size-ram-dropdown"> 
+                                                    <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                                </ul>    
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a href="#" id="size-compressed-dropdown" data-bs-toggle="dropdown">Size (compressed)</a>
+                                                <ul class="dropdown-menu" aria-labelledby="size-compressed-dropdown"> 
+                                                    <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                                </ul>    
+                                            </div>
+                                        </td>
+                                        <td>
+                                        <span>Evaluation metric</span>
+                                        </td>
+                                        <td>
+                                        <span>Evaluation metric</span>
+                                        </td>
+                                        <td>
+                                        <span>Evaluation metric</span>
+                                        </td>
+                                        <td class="last-col">Evaluation metric</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>

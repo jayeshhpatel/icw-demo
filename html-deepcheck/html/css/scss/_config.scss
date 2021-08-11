@@ -1,0 +1,147 @@
+/* Variables */
+$bodyfont		  : 'Roboto', sans-serif!important;
+$bodyfontsize	  : 14px;
+$bodyfontcolor	  : #3D4650;
+$bodycolor	  :#ffffff;
+
+$white		:#fff;
+$black		:#000;
+$dark-black		: #3A474E;;
+
+$light-purple: #855CF8;
+$gray: #94A4AD;
+$light-gray: #F3F5F8;
+
+$bg-light-gray: #F4F6F9;
+$bg-light-purple: #9D60FB;
+
+
+/* Mixins */
+@mixin appearance($value) {
+    -o-appearance: $value;
+    -ms-appearance: $value;
+    -webkit-appearance: $value;
+    -moz-appearance: $value;
+    appearance: $value;
+}
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+}
+@mixin box-shadow ($box-shadow){
+    -moz-box-shadow:$box-shadow;
+    -webkit-box-shadow:$box-shadow;
+    box-shadow:$box-shadow;
+}
+@mixin box-shadow-all ($bs-t, $bs-r, $bs-b, $bs-l, $box-shadow-all-color){
+    box-shadow: $bs-t $bs-r $bs-b $bs-l $box-shadow-all-color;
+    -webkit-box-shadow: $bs-t $bs-r $bs-b $bs-l $box-shadow-all-color;
+    -moz-box-shadow: $bs-t $bs-r $bs-b $bs-l $box-shadow-all-color;
+    -o-box-shadow: $bs-t $bs-r $bs-b $bs-l $box-shadow-all-color;
+}
+@mixin transition($duration, $ease) {
+    -webkit-transition: all $duration $ease;
+    -moz-transition: all $duration $ease;
+    -o-transition: all $duration $ease;
+    transition: all $duration $ease;
+}
+@mixin transition-variable($var,$duration, $ease) {
+    -webkit-transition: $var $duration $ease;
+    -moz-transition: $var $duration $ease;
+    -o-transition: $var $duration $ease;
+    transition: $var $duration $ease;
+}
+@mixin transition-all($all, $visibility, $z-index) {
+    -webkit-transition: $all $visibility $z-index;
+    -moz-transition: $all $visibility $z-index;
+    -o-transition: $all $visibility $z-index;
+    transition: $all $visibility $z-index;
+}
+@mixin opacity($value) {
+    -moz-opacity: $value;
+    -khtml-opacity: $value;
+    -webkit-opacity: $value;
+    opacity: $value;
+}
+@mixin mb ($value) {
+    margin-bottom: $value;
+}
+@mixin mt ($value) {
+    margin-top: $value;
+}
+@mixin ml ($value) {
+    margin-left: $value;
+}
+@mixin mr ($value) {
+    margin-right: $value;
+}
+@mixin pb ($value) {
+    padding-bottom: $value;
+}
+@mixin pt ($value) {
+    padding-top: $value;
+}
+@mixin pl ($value) {
+    padding-left: $value;
+}
+@mixin pr ($value) {
+    padding-right: $value;
+}
+
+/* display: flex */
+@mixin flexbox() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+@mixin inline-flex {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+@mixin justify-content($justify) {
+    -webkit-justify-content: $justify;
+      -moz-justify-content: $justify;
+        -ms-justify-content: $justify;
+            justify-content: $justify;
+              -ms-flex-pack: $justify;
+}
+@mixin align-items($align) {
+    -webkit-align-items: $align;
+      -moz-align-items: $align;
+        -ms-align-items: $align;
+        -ms-flex-align: $align;
+            align-items: $align;
+}
+@mixin flex-direction($direction) {
+    -webkit-flex-direction: $direction;
+      -moz-flex-direction: $direction;
+        -ms-flex-direction: $direction;
+            flex-direction: $direction;
+}
+@mixin flex-wrap($wrap) {
+    -webkit-flex-wrap: $wrap;
+      -moz-flex-wrap: $wrap;
+        -ms-flex-wrap: $wrap;
+            flex-wrap: $wrap;
+}
+@mixin flex-flow($flow) {
+    -webkit-flex-flow: $flow;
+      -moz-flex-flow: $flow;
+        -ms-flex-flow: $flow;
+            flex-flow: $flow;
+}
+// Display Order
+@mixin order($val) {
+    -webkit-box-ordinal-group: $val;  
+      -moz-box-ordinal-group: $val;     
+          -ms-flex-order: $val;     
+            -webkit-order: $val;  
+              order: $val;
+}
+/** Operation **/
