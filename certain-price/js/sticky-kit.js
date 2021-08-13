@@ -78,7 +78,8 @@
           }).removeClass(sticky_class);
           restore = true;
         }
-        top = (elm.offset().top - (parseInt(elm.css("margin-top"), 10) || 0) - offset_top) + (height / 1.5);
+        top = (elm.offset().top - (parseInt(elm.css("margin-top"), 10) || 0) - offset_top) + (parent_height / 9);
+        // console.log(top);
         height = elm.outerHeight(true);
         el_float = elm.css("float");
         if (spacer) {

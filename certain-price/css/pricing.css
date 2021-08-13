@@ -200,7 +200,7 @@ body .price-intro-content * { text-align: center; color: #fff;}
     .mobile-plan-title-cell.mobile-plan-title-cell-first { border-left-width: 0px; }
     .btn_link { font-size: 16px; line-height: 1.1; text-decoration: underline; cursor: pointer; }
 
-    .price-section-new .price-block { background: transparent; }
+    .price-section-new .price-block { background: transparent; border: none; }
     .price-section-new .price-block-header { border-radius: 0 !important; background: transparent; }
     .price-section-new .pr-header-block-cell { border: 2px solid #c3c3c3 !important; border-radius: 0; background: #ffffff; }
     .price-section-new .included-title { display: none; }
