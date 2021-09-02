@@ -33,6 +33,22 @@ function toggleSidebar(){
 }
 document.querySelector('.bar-icon').addEventListener('click', toggleSidebar );
 
+document.querySelector('.search-nav').addEventListener('click', function(){
+    this.classList.add('hide');
+    document.querySelector('.search-container').classList.add('active');
+    
+});
+document.querySelector('.search-input').addEventListener('focus', function(){    
+    document.querySelector('.suggestion-list').classList.add('active');
+    
+});
+document.querySelector('.search-input').addEventListener('focusout', function(){    
+    document.querySelector('.suggestion-list').classList.remove('active');
+    document.querySelector('.search-nav').classList.remove('hide');
+    document.querySelector('.search-container').classList.remove('active');
+    
+});
+
 // Custom Tab
 window.addEventListener('load', function () {
     let resultTabs = document.querySelectorAll(".custom-tabs a");

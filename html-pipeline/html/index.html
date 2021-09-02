@@ -40,19 +40,43 @@
         <header class="main-header is-sticky-header"> <!-- .is-sticky-header -->
             <div class="container">
                 <nav class="navbar">
-                        <a class="nav-logo" href="index.html"><img src="assets/images/logo-astrazeneca.svg" alt="AstraZeneca - Oncology Pipeline" /></a>              
-                        <div class="menu">
-                            <ul class="nav">
-                                <li><a href="index.html" class="active">Home</a></li>
-                                <li><a href="tumour-type.html">Tumor Type</a></li>
-                                <li><a href="cell-pathway.html">Cell Pathway</a></li>
-                                <li><a href="full-pipeline.html">Full Pipeline</a></li>
-                                <!-- <li><a href="#">Narrative</a></li> -->
-                                <li><a href="glossary.html">Glossary</a></li>
-                            </ul>
-                        </div>
-                    <button type="button" class="nav-search"><img src="assets/images/icons/icon-search-white.svg" alt="AstraZeneca - Oncology Pipeline" /></button>  
-				   <div class="bar-icon">
+                    <a class="nav-logo" href="index.html"><img src="assets/images/logo-astrazeneca.svg" alt="AstraZeneca - Oncology Pipeline" /></a>              
+                    <div class="menu">
+                        <ul class="nav">
+                            <li><a href="index.html" class="active">Home</a></li>
+                            <li><a href="tumour-type.html">Tumor Type</a></li>
+                            <li><a href="cell-pathway.html">Cell Pathway</a></li>
+                            <li><a href="full-pipeline.html">Full Pipeline</a></li>
+                            <!-- <li><a href="#">Narrative</a></li> -->
+                            <li><a href="glossary.html">Glossary</a></li>
+                        </ul>
+                    </div>     
+                    <span class="search-nav" for="searchright"><img src="assets/images/icons/icon-search-white.svg" alt="AstraZeneca - Oncology Pipeline" /></span>              
+                    <div class="search-container">
+                        <form method="get">
+                            <input class="search search-input" id="searchright" type="text" name="search" placeholder="Search">
+                            <button class="button search-btn" for="searchright"><img src="assets/images/icons/icon-search-white.svg" alt="AstraZeneca - Oncology Pipeline" /></button>
+                        </form>
+                        <ul class="suggestion-list" id="suggestion-lists">
+                            <li class="suggestion-wise-list bg-light">
+                                <div class="list-title">Clinical trials</div>
+                                <ul>
+                                    <li>Dolor sit ame</li>
+                                    <li>Lorem ipsum</li>
+                                    <li>Dolor sit ame</li>
+                                </ul>
+                            </li>
+                            <li class="suggestion-wise-list">
+                                <div class="list-title">Target / Compounds</div>
+                                <ul>
+                                    <li>Dolor sit ame</li>
+                                    <li>Lorem ipsum</li>
+                                    <li>Dolor sit ame</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+				    <div class="bar-icon">
                         <div class="line1"></div><div class="line2"></div><div class="line3"></div>
                     </div>
                 </nav>
