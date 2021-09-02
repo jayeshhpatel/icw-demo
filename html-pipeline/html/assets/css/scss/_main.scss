@@ -488,8 +488,11 @@ h6, .h6 {font-family: $hfont; font-weight: 400; font-size: 16px;}
             }
             
             &.active { visibility: visible;
-                .search + .search-btn {
+                .search-btn {
                     transition-duration: 0.4s; -moz-transition-duration: 0.4s; -webkit-transition-duration: 0.4s; -o-transition-duration: 0.4s; background-color: #12314e; border-color: transparent; color: white;
+                    &:hover {
+                        background-color: rgba(239,2,129,1);
+                    }
                 }
                 .search {
                     width: 350px; /* Bar width+1px */
