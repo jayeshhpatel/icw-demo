@@ -71,7 +71,8 @@
                         <div class="type-innerpage-title-action">
                             <a href="narrative.html" class="btn btn-light btn-icon btn-min-block btn-radius">Go to Narrative <em class="az-icon icon-arrow-right-white"></em></a>
                         </div>
-                        
+                        <!-- <hr>
+                        <div class="select-note"><strong>Select a mechanism below</strong></div> -->
                             
                     </div>
                     <div class="clear"></div>
@@ -80,10 +81,10 @@
                         <div class="title-block">
                             <div class="title">Select a mechanism below</div>
                             <div class="filter-block">
-                                <a href="#" class="btn btn-light btn-light2 btn-icon btn-sm popup-link">Filter by phases <em class="az-icon icon-arrow-down"></em></a>
-                                <div class="filter-name">Filter by phases</div>
+                                <a href="javascript:void(0);" class="btn btn-light btn-light2 btn-icon btn-sm popup-link">Filter by phase(s) <em class="az-icon icon-arrow-down"></em></a>
+                                <div class="btn btn-light btn-light2 btn-icon btn-sm filter-name">Filter by phase(s) <em class="az-icon icon-arrow-down"></em></div>
                                 <div class="filter-select">
-                                    <a href="#" class="btn btn-icon">Phase I-II <em class="az-icon icon-close"></em></a>
+                                    <a href="javascript:void(0);" class="btn btn-icon" onclick="hide(this)">Phase I-II <em class="az-icon icon-close"></em></a> <a href="javascript:void(0);" class="btn btn-icon" onclick="hide_last(this)">Phase I-II <em class="az-icon icon-close"></em></a>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +92,7 @@
                         <div class="tab-content-popup filter-popup">
                             <a href="#!" class="close-popup"><em class="az-icon icon-close"></em></a>
                             <div class="popup-header">
-                                <h2><strong>Select phases</strong></h2>                                
+                                <h2><strong>Select phase(s)</strong></h2>                                
                                 <div class="action-group">                                    
                                     <div class="filter-action is-hide">
                                         <div class="filter-action-inner">
@@ -134,6 +135,35 @@
                         </div>
                     <!-- // Filter Popup -->
                     </div>
+
+                    <!-- <div class="type-filter-block">
+                        <ul class="type-filter">
+                            <li>
+                                <label class="check" for="target_1">
+                                    <input type="checkbox" id="target_1" checked>
+                                    <span class="target-link">Phase I</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="check" for="target_2">
+                                    <input type="checkbox" id="target_2">
+                                    <span class="target-link">Phase II</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="check" for="target_3">
+                                    <input type="checkbox" id="target_3">
+                                    <span class="target-link">Phase III</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="check" for="target_4">
+                                    <input type="checkbox" id="target_4">
+                                    <span class="target-link">Phase IV</span>
+                                </label>
+                            </li> 
+                        </ul>
+                    </div> -->
                     <!-- // type sub title -->
 
                     <!-- is-scrolling -->
@@ -301,13 +331,24 @@
                     e.preventDefault();
                     filterTypePopup.classList.add('is-show');
 
+                    var inputs = document.querySelectorAll('.check input');   
+                    for (var i = 0; i < inputs.length; i++) {   
+                        inputs[i].checked = false;   
+                    }
+                    document.querySelector('.popup-header .filter-action').classList.add('is-hide');   
+                    
+                    // Array.from(document.querySelectorAll('.filter-popup .check'))
+                    // .forEach(element => {
+                    //     console.log("hi");
+                    //     element.checked = false;
+                    // });
                     // Start - Title Ellips if long title text 
-                    Array.from(document.querySelectorAll('.type-sub-link-block h3'))
-                    .forEach(element => {
-                        if (isEllipsisActive(element)) {
-                        element.title = element.innerText;
-                        }
-                    });
+                    // Array.from(document.querySelectorAll('.type-sub-link-block h3'))
+                    // .forEach(element => {
+                    //     if (isEllipsisActive(element)) {
+                    //     element.title = element.innerText;
+                    //     }
+                    // });
                     // End - Title Ellips if long title text 
 
                     return false;
@@ -341,11 +382,45 @@
             let applyFilter = document.querySelector('.apply-filter');            
             applyFilter.addEventListener('click', function(){
                 filterTypePopup.classList.remove('is-show');
+
+                document.querySelector('.popup-link').classList.remove('is-show');
                 document.querySelector('.popup-link').classList.add('is-hide');
+
+                document.querySelector('.filter-select').classList.remove('is-hide');
                 document.querySelector('.filter-select').classList.add('is-show');
+
+                document.querySelector('.filter-name').classList.remove('is-hide');
                 document.querySelector('.filter-name').classList.add('is-show');
+
+                var inputs = document.querySelectorAll('.check');   
+                    for (var i = 0; i < inputs.length; i++) {   
+                        inputs[i].style.display = 'block';
+                    }
                 return false;
-            })
+            });
+
+            function hide(elem) {
+                elem.style.display = 'none';
+                
+                document.querySelector('.filter-select').classList.add('is-hide');
+                document.querySelector('.filter-name').classList.remove('is-show');
+                document.querySelector('.filter-name').classList.add('is-hide');
+                document.querySelector('.popup-link').classList.remove('is-hide');
+
+                document.querySelector('.popup-link').classList.add('is-show');
+                return false;
+            }
+
+            function hide_last(elem) {
+                elem.style.display = 'none';
+                document.querySelector('.filter-select').classList.add('is-hide');
+                document.querySelector('.filter-name').classList.remove('is-show');
+                document.querySelector('.filter-name').classList.add('is-hide');
+                document.querySelector('.popup-link').classList.remove('is-hide');
+
+                document.querySelector('.popup-link').classList.add('is-show');
+                return false;
+            }
         </script>
     </body>
 </html>
