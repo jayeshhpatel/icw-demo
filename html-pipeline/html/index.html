@@ -183,5 +183,25 @@
 
         <!-- JS -->
         <script src="assets/js/main.js"></script>
+        <script>
+            if(document.querySelector('.search-nav')) {
+                document.querySelector('.search-nav').addEventListener('click', function(){
+                    this.classList.add('hide');
+                    document.querySelector('.search-container').classList.add('active');
+                    
+                });
+                document.querySelector('.search-input').addEventListener('focusout', function(){    
+                    document.querySelector('.suggestion-list').classList.remove('active');
+                    document.querySelector('.search-nav').classList.remove('hide');
+                    document.querySelector('.search-container').classList.remove('active');
+                    
+                });
+                document.querySelector('.search-input').onkeyup = function() {
+                    if (this.value.length >= 3) {   
+                        document.querySelector('.suggestion-list').classList.add('active');
+                    }
+                }
+            }
+        </script>
     </body>
 </html>
