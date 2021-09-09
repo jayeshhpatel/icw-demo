@@ -41,6 +41,7 @@
         outline: none;
         background: #000;
         color: transparent;
+        box-shadow: 0 0 0 0.2rem rgba(206, 192, 225, 1) !important;
         &:before {
             opacity: 1;
         }
@@ -69,25 +70,29 @@
             content: '';
         }
     }
-    // &:hover {
-    //     &:before {
-    //         margin-right: 30%;
-    //     }
-    // }
-    // &:focus {
-    //     &:before {
-    //         margin-right: 0%;
-    //     }
-    // }
-    // @media (max-width: 1500px) {
-    //     left: -30px;
-    // }
     @media (max-width: 1400px) {
         left: -68px;
     }
-    @media (max-width: 1200px) {
-        left: -15px;
+    @media (max-width: 1300px) {
+        top: -54px;
+        right: 68px;
+        left: auto;
+        height: 48px;
+        width: 48px;
     }
+    @media (max-width: 600px) {
+        top: 100%;
+        right: 50%;
+        left: auto;
+        height: 32px;
+        width: 32px;
+        margin-right: 10px; margin-top: -10px;
+        &::before {background-size: 9px; background-position: 45% 50%;}
+    }
+}
+
+@media (max-width: 600px) {
+    .card-slider.slick-initialized {padding-bottom: 40px;}
 }
 
 .slick-next {
@@ -103,24 +108,23 @@
         }
     }
 
-    // &:hover {
-    //     &:before {
-    //         margin-left: 30%;
-    //     }
-    // }
-    // &:focus {
-    //     &:before {
-    //         margin-left: 0%;
-    //     }
-    // }
-    // @media (max-width: 1500px) {
-    //     right: -30px;
-    // }
     @media (max-width: 1400px) {
         right: -68px;
     }
-    @media (max-width: 1200px) {
-        right: -15px;
+    @media (max-width: 1300px) {
+        top: -54px;
+        right: 0;
+        height: 48px;
+        width: 48px;
+    }
+    @media (max-width: 600px) {
+        top: 100%;
+        right: 50%;
+        left: auto;
+        height: 32px;
+        width: 32px;
+        margin-right: -40px; margin-top: -10px;
+        &::before {background-size: 9px; background-position: 65% 50%;}
     }
 }
 
