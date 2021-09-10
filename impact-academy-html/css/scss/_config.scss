@@ -79,6 +79,22 @@ $green      :#0EC995;
   -o-transition: all $duration $ease;
   transition: all $duration $ease;
 }
+
+@mixin transform($value) {
+  -moz-transform: $value;  
+  -webkit-transform: $value;  
+  -o-transform: $value;  
+  -ms-transform: $value; 
+  transform: $value;
+}
+@mixin transformAll($value, $value) {
+  -moz-transform: $value, $value;  
+  -webkit-transform: $value, $value;  
+  -o-transform: $value, $value;  
+  -ms-transform: $value, $value; 
+  transform: $value, $value;
+}
+
 @mixin opacity($value) {
   -moz-opacity: $value;
   -khtml-opacity: $value;
