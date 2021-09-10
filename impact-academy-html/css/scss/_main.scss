@@ -763,11 +763,11 @@ h6, .h6 {font-family: $hfont; font-weight: 400; font-size: 16px;}
                         font-size: 19px; font-weight: bold; letter-spacing: -0.41px; color: $black; font-family: $ul_list_font; 
                     }
                     .menu-action { @include flexbox; @include align-items(center); padding-left: 10px;
-                        .setting { cursor: pointer;
+                        .setting { cursor: pointer; line-height: 0.7;
                             .ia-setting { display: inline-block; background: url('../images/icons/icon-notification-settings.svg') center center no-repeat; background-size: contain; height: 30px; width: 29px; }
                             .ia-arrow-left { display: inline-block; background: url('../images/icons/icon-right.svg') center center no-repeat; background-size: contain; height: 24px; width: 24px; @include transform(rotate(180deg)); }
                         }
-                        .notification-close { margin-left: 20px; cursor: pointer;
+                        .notification-close { margin-left: 20px; cursor: pointer; line-height: 0.7;
                             .ia-close { display: inline-block; background: url('../images/icons/icon-notification-close.svg') center center no-repeat; background-size: contain; height: 24px; width: 24px }
                         }
                     }
