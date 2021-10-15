@@ -33,6 +33,7 @@ function toggleSidebar(){
 }
 document.querySelector('.bar-icon').addEventListener('click', toggleSidebar );
 
+
 // Custom Tab
 window.addEventListener('load', function () {
     let resultTabs = document.querySelectorAll(".custom-tabs a");
@@ -59,7 +60,6 @@ if(document.querySelector(".custom-modal")){
     for (const el of openEls) {
         el.addEventListener("click", function() {
             const modalId = this.dataset.popup;
-            // console.log(modalEls);
 
             // reset all modal is-show
             // document.querySelectorAll('.custom-modal').forEach(function(item) {
@@ -116,7 +116,6 @@ for(let i=0; i < byIdOpeners.length; i++){
     byIdOpeners[i].addEventListener('click', function(e){
         e.preventDefault();
         let targetID = this.dataset.id;
-        console.log(targetID);
         if(targetID) {
             var element = document.getElementById(targetID);            
             var elementMainDiv = element.parentNode;
@@ -175,7 +174,6 @@ for(let i=0; i < backSite.length; i++){
 //     byIdCards[i].addEventListener('click', function(e){
 //         e.preventDefault();
 //         let targetCardID = this.dataset.cardid;
-//         console.log(targetCardID);
 //         if(targetCardID) {
 //             var element = document.getElementById(targetCardID);            
 //             var elementMainDiv = element.parentNode;
@@ -224,15 +222,21 @@ if (collapseCard) {
 }
 function toggleItem() {
     var itemClass = this.className;
-    for (i = 0; i < collapseCard.length; i++) {
-        collapseCard[i].className = "card-header header-action";
-        collapseCard[i].parentNode.parentNode.querySelector('.card-body').classList.remove('active');
-        collapseCard[i].parentNode.parentNode.querySelector('.card-body').style.height= "0px";
-    }
+    // for (i = 0; i < collapseCard.length; i++) {
+    //     collapseCard[i].className = "card-header header-action";
+    //     collapseCard[i].parentNode.parentNode.querySelector('.card-body').classList.remove('active');
+    //     collapseCard[i].parentNode.parentNode.querySelector('.card-body').style.height= "0px";
+    // }
     if (itemClass == "card-header header-action") {
         this.className = "card-header header-action active";
         this.parentNode.parentNode.querySelector('.card-body').classList.add('active');
         this.parentNode.parentNode.querySelector('.card-body').style.height = 'auto';
+    }
+
+    if (itemClass == "card-header header-action active") {
+        this.className = "card-header header-action";
+        this.parentNode.parentNode.querySelector('.card-body').classList.remove('active');
+        this.parentNode.parentNode.querySelector('.card-body').style.height = '0px';
     }
 }
 
@@ -289,7 +293,6 @@ if(videoPlaySrc) {
     videoPlaySrc.addEventListener('click', function(){ 
         let videoSrcID = this.dataset.videosrc;
         let videoBlock = this.parentNode;
-        console.log(videoBlock);
         this.classList.add('is-hide');
         let videoIframe= document.createElement('div');
         videoIframe.classList.add('embed-container');

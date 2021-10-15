@@ -17,7 +17,7 @@
 //   src: local('Helvetica Bold'), url('../css/fonts/Helvetica-Bold.woff') format('woff');
 // }
 @font-face {
-  font-family: 'HelveticaNeue Bold';
+  font-family: 'Helvetica Bold';
   src: url('../css/fonts/Helvetica-Bold.eot');
   src: url('../css/fonts/Helvetica-Bold.eot?#iefix') format('embedded-opentype'),
       url('../css/fonts/Helvetica-Bold.woff2') format('woff2'),
@@ -68,8 +68,8 @@ $bodybg		        :#07383f;
 
 $hfont		        :"Lexia Lt",serif!important;
 $hfont-bold       :"Lexia Bd", sans-serif!important;
-$hfont-Hneue       :"Helvetica Neue", sans-serif!important;
-$hfont-Hbold       :"HelveticaNeue Bold", sans-serif!important;
+$hfont-Hbold       :"Helvetica Bold", sans-serif!important;
+$hfont-Hneue       :"Helvetica Bold", sans-serif!important;
 
 $darkBlue	        :#061726;
 $white			      :#ffffff;
