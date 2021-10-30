@@ -1,0 +1,5 @@
+// @koala-prepend "jquery-3.4.1.min.js"
+// @koala-append "popper.min.js"
+// @koala-append "bootstrap.min.js"
+// @koala-append "all-jquery.js"
+// @koala-append "_main.js"
