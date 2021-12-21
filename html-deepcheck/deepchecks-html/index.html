@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="theme-color" content="#000000">
+        <meta name="Googlebot" content="noindex,nofollow">
+        <meta name="author" content="Deepchecks">
+        <meta name="description" content="Continuous validation for machine learning. Validate and monitor your data and models during training, production and new version releases.">
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" href="assets/images/favicons/apple-touch-icon.png" sizes="180x180">
+        <link rel="mask-icon" href="assets/images/favicons/safari-pinned-tab.svg" color="#000000">
+        <link rel="shortcut icon" type="assets/images/favicons/x-icon" href="favicon.ico">  
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+        <title>Testing Machine Learning Models | Deepchecks</title>
+    </head>
+
+    <body>
+        <!-- HEADER SECTION -->
+        <header class="main-header">
+            <div class="header-note">
+                <div class="container">
+                    <div class="note-text">If you like what we’re working on, please <a href="https://github.com/GitHub-Stars"> <strong class="text-blue"> star us on GitHub.</strong></a> This enables us to continue to give back to the community.</div>
+                </div>
+            </div>
+            <div class="header-nav-wrap">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container">
+                        <div class="header-first-block">
+                            <button class="sidebar-icon toggle-sidebar d-inline-block d-lg-none">
+                                <span class="line1"></span>
+                                <span class="line2"></span>
+                                <span class="line3"></span>
+                            </button>
+                            <a class="header-logo" href="/"><img src="assets/images/logo.svg" alt="Deepchecks" /></a>
+                            <div class="menu-list">
+                                <ul class="navbar-nav me-auto">
+                                    <li class="nav-item">
+                                        <a href="#!">Resources</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="#!">Blog</a></li>
+                                            <li><a href="#!">Glossary</a></li>
+                                            <li><a href="#!">Integrations</a></li>
+                                            <li><a href="#!">Supported Models</a></li>
+                                            <li><a href="#!">F.A.Q.</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="community.html">Community</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#!">Documentation</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://docs.deepchecks.com/html/guides/examples/quickstart_in_5_minutes.html" class="btn-primary d-inline-flex">Get Started</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- // HEADER SECTION -->
+        
+        <!-- MAIN SECTION -->
+        <main class="main-content-wrapper">
+            <section class="main-banner">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 col-lg-5 order-2 order-md-1">
+                            <div class="banner-text main-title mb-0 text-start wow fadeInUp" data-wow-delay="0.2s">
+                                <span class="sub-title">Open source package for ml validation</span>
+                                <h1>Build Test Suites for ML Models & Data with Deepchecks</h1>
+                                <p class="line-text mt-0">pip install deepchecks</p>
+                                <span class="import-link">import deepchecks as dc</span>
+                                <div class="banner-btn">
+                                    <a href="https://docs.deepchecks.com/html/guides/examples/quickstart_in_5_minutes.html" class="btn-primary">Get Started</a>
+                                    <a href="https://github.com/deepchecks/deepchecks" class="btn-secondary"><img src="assets/images/github-icon.svg" alt="deepchecks"/>Our Github</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-7 text-center order-1 order-md-2">
+                            <div class="hero-image wow fadeInUp" data-wow-delay="0.4s">
+                                <img src="assets/images/hero-img.svg" alt="deepchecks"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animation-shape">
+                    <span class="shape1">145</span>
+                    <span class="shape2"></span>
+                </div>
+            </section>
+            <section class="work-section">
+                <div class="container">
+                    <div class="main-title wow fadeInUp" data-wow-delay="0.2s">
+                        <h2>Meet Deepchecks Open Source</h2>
+                        <p class="mw-700"><strong>Deepchecks Open Source</strong> is a python library for data scientists and ML engineers. The package includes extensive test suites for machine learning models and data, built in a way that’s flexible, extendable and editable. </p>
+                    </div>
+                    <div class="plan-img">
+                        <img src="assets/images/plane.svg" alt="deepchecks" class="d-none d-md-block"/>
+                        <img src="assets/images/plane-mobile.svg" alt="deepchecks" class="d-block d-md-none"/>
+                    </div>
+                    <div class="work-block">
+                        <div class="row align-items-center">
+                            <div class="col-md-5 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="main-title text-start">
+                                    <h2>How Does It Work?</h2>
+                                    <p>Suites are composed of checks. Each check contains  outputs to display in a notebook and/or conditions with a pass/fail output.</p>
+                                    <p><strong>Conditions</strong> can be added or removed from a check;</p>
+                                    <p><strong>Checks</strong> can be edited or added/removed to a suite;</p>
+                                    <p><strong>Suites</strong> can be created from scratch or forked from an existing suite. </p>
+                                </div>
+                                <div class="report-block d-none d-md-block">
+                                    <p>As for the “Report” - it starts with a list of the Conditions (and which passed or not) and then continues with the Display Data (from the various checks).</p>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="image-block text-center wow fadeInUp" data-wow-delay="0.5s">
+                                    <img src="assets/images/diagram.svg" alt="diagram"/>
+                                </div>
+                                <div class="report-block d-block d-md-none">
+                                    <p>As for the “Report” - it starts with a list of the Conditions (and which passed or not) and then continues with the Display Data (from the various checks).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="features-section img-content-block">
+                <div class="container">
+                    <div class="main-title text-center wow fadeInUp" data-wow-delay="0.2s">
+                        <h2>Key Features & Checks</h2>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <h3>Data Integrity</h3>
+                            <div class="d-none d-md-block">
+                                <div class="code-items">
+                                    <div class="code overflow-auto">
+                                        <code id="code1">
+                                            IntegrityCheckSuite.<span class="text-red">run</span><span class="text-black">(</span>train_dataset<span class="text-black">=</span>df_train<span class="text-black">,</span> test_dataset<span class="text-black">=</span>df_test<span class="text-black">,</span> check_datasets_policy=<span class="text-lightyellow">’both’</span><span class="text-black">)</span>
+                                        </code>
+                                        <div class="clipboard-btn position-absolute" data-clipboard-target="#code1" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy to clipboard">
+                                           <img src="assets/images/copy-icon.svg" alt="Copy to clipboard"/>
+                                        </div>
+                                    </div>
+                                    <div class="code">
+                                        <code class="text-black" id="code2">
+                                            <span class="text-yellow">check</span> = StringMismatch()<br/>
+                                            <span class="text-yellow">result</span> = check.run(df)
+                                        </code>
+                                        <div class="clipboard-btn position-absolute" data-clipboard-target="#code2" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy to clipboard">
+                                            <img src="assets/images/copy-icon.svg" alt="Copy to clipboard"/>
+                                         </div>
+                                    </div>
+                                </div>
+                                <a href="https://docs.deepchecks.com/html/guides/examples/quickstart_in_5_minutes.html" class="btn-primary">Get Started</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                            <div class="data-table">
+                                <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">Column Name</th>
+                                        <th scope="col">Base Form</th>
+                                        <th scope="col">Value</th>
+                                        <th scope="col">Count</th>
+                                        <th scope="col">% in Data</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td rowspan="6" class="rowspan-column"><strong>col1</strong></td>
+                                        <td><strong>deep</strong></td>
+                                        <td>deep!!!</td>
+                                        <td>1</td>
+                                        <td>12.5%</td>
+                                      </tr>
+                                      <tr>
+                                        <td><strong>deep</strong></td>
+                                        <td>Deep</td>
+                                        <td>1</td>
+                                        <td>12.5%</td>
+                                      </tr>
+                                      <tr>
+                                        <td><strong>deep</strong></td>
+                                        <td>deep</td>
+                                        <td>1</td>
+                                        <td>12.5%</td>
+                                      </tr>
+                                      <tr>
+                                        <td><strong>deep</strong></td>
+                                        <td>deep</td>
+                                        <td>1</td>
+                                        <td>12.5%</td>
+                                      </tr>
+                                      <tr>
+                                        <td><strong>foo</strong></td>
+                                        <td>foo?</td>
+                                        <td>1</td>
+                                        <td>12.5%</td>
+                                      </tr>
+                                      <tr>
+                                        <td><strong>foo</strong></td>
+                                        <td>foo</td>
+                                        <td>1</td>
+                                        <td>12.5%</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                            </div>
+                            <div class="d-block d-md-none">
+                                <div class="code-items">
+                                     <div class="code overflow-auto">
+                                        <code id="code1">
+                                            IntegrityCheckSuite.<span class="text-red">run</span><span class="text-black">(</span>train_dataset<span class="text-black">=</span>df_train<span class="text-black">,</span> test_dataset<span class="text-black">=</span>df_test<span class="text-black">,</span> check_datasets_policy=<span class="text-lightyellow">’both’</span><span class="text-black">)</span>
+                                        </code>
+                                        <div class="clipboard-btn position-absolute" data-clipboard-target="#code1" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy to clipboard">
+                                           <img src="assets/images/copy-icon.svg" alt="Copy to clipboard"/>
+                                        </div>
+                                    </div>
+                                    <div class="code">
+                                        <code class="text-black" id="code2">
+                                            <span class="text-yellow">check</span> = StringMismatch()<br/>
+                                            <span class="text-yellow">result</span> = check.run(df)
+                                        </code>
+                                        <div class="clipboard-btn position-absolute" data-clipboard-target="#code2" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy to clipboard">
+                                            <img src="assets/images/copy-icon.svg" alt="Copy to clipboard"/>
+                                         </div>
+                                    </div>
+                                </div>
+                                <a href="https://docs.deepchecks.com/html/guides/examples/quickstart_in_5_minutes.html" class="btn-primary">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="methodology-section img-content-block">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 d-none d-md-block">
+                            <div class="img-block text-center wow fadeInUp" data-wow-delay="0.3s">
+                                <img src="assets/images/chart.png" alt="" class="mw-520"/>
+                            </div>
+                        </div>
+                        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                            <h3>Methodology Issues</h3>
+                            <div class="chart-img text-center d-block d-md-none">
+                                <img src="assets/images/chart.png" alt="" class="mw-520"/>
+                            </div>
+                            <div class="code-items">
+                                <div class="code">
+                                    <code class="text-black" id="code5">
+                                        <span class="text-red">OverfiteSuite</span> = <span class="text-red">overfit_check_suite()</span><br/> OverfiteSuite.<span class="text-red">run(train_dataset</span>=alternative_train_df, test_dataset=alternative_test_df, model=alt_rf_clf, check_datasets_policy=<span class="text-lightyellow">’both’</span><span class="text-red">)</span>
+                                    </code>
+                                    <div class="clipboard-btn position-absolute" data-clipboard-target="#code5" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy to clipboard">
+                                        <img src="assets/images/copy-icon.svg" alt="Copy to clipboard"/>
+                                     </div>
+                                </div>
+                                <div class="code">
+                                    <code class="text-black" id="code6">
+                                        <span class="text-yellow">check</span> BoostingOverfit()<br/>
+                                        <span class="text-yellow">result</span> = check.run(train_ds, validation_ds, clf)
+                                    </code>
+                                    <div class="clipboard-btn position-absolute" data-clipboard-target="#code6" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy to clipboard">
+                                        <img src="assets/images/copy-icon.svg" alt="Copy to clipboard"/>
+                                     </div>
+                                </div>
+                            </div>
+                            <a href="https://docs.deepchecks.com/html/guides/examples/quickstart_in_5_minutes.html" class="btn-primary">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="distribution-section img-content-block">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <h3>Distribution Checks</h3>
+                            <div class="table-img text-center d-block d-md-none">
+                                <img src="assets/images/line-graph.png" alt="" />
+                            </div>
+                            <div class="code-items">
+                                <div class="code">
+                                    <code class="text-black" id="code7">
+                                        <span class="text-yellow">check</span> =  TrainTestDrift()<br/>
+                                        <span class="text-yellow">result</span> = check.run(train_dataset=train_dataset, test_dataset=test_dataset, model=model)
+                                    </code>
+                                    <div class="clipboard-btn position-absolute" data-clipboard-target="#code7" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy to clipboard">
+                                        <img src="assets/images/copy-icon.svg" alt="Copy to clipboard"/>
+                                     </div>
+                                </div>
+                            </div>
+                            <a href="https://docs.deepchecks.com/html/guides/examples/quickstart_in_5_minutes.html" class="btn-primary">Get Started</a>
+                        </div>
+                        <div class="col-md-6 d-none d-md-block wow fadeInUp" data-wow-delay="0.4s">
+                            <div class="img-block text-center">
+                                <img src="assets/images/line-graph.png" alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="performance-section img-content-block">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 d-none d-md-block wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="img-block text-center">
+                                <img src="assets/images/graphic.png" alt=""/>
+                            </div>
+                        </div>
+                        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                            <h3>Performance Checks</h3>
+                            <div class="chart-img text-center d-block d-md-none">
+                                <img src="assets/images/graphic.png" alt="" />
+                            </div>
+                            <div class="code-items">
+                                <div class="code">
+                                    <code class="text-black" id="code8">
+                                        <span class="text-yellow">PerformanceSuite</span> = [erformance_check_suite() <br/>
+                                        <span class="text-yellow">PerformanceSuite.run(train_dataset=alternative_train_df</span>, test_dataset=alternative_test_df, <br/><span class="text-yellow">model=alt_rf_clf</span>, check+datasets_policy=’both’)
+                                    </code>
+                                     <div class="clipboard-btn position-absolute" data-clipboard-target="#code8" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy to clipboard">
+                                        <img src="assets/images/copy-icon.svg" alt="Copy to clipboard"/>
+                                     </div>
+                                </div>
+                                <div class="code">
+                                    <code class="text-black" id="code9">
+                                        <span class="text-yellow">SegmentPerformance(feature_1=’workclass’,</span> feature_2=’hours-per-week’) .run(validation_ds, model)
+                                    </code>
+                                     <div class="clipboard-btn position-absolute" data-clipboard-target="#code9" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy to clipboard">
+                                        <img src="assets/images/copy-icon.svg" alt="Copy to clipboard"/>
+                                     </div>
+                                </div>
+                            </div>
+                            <a href="https://docs.deepchecks.com/html/guides/examples/quickstart_in_5_minutes.html" class="btn-primary">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="explainability-section img-content-block">
+                <div class="container">
+                    <div class="row align-items-center wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="col-md-6">
+                            <h3>Model Explainability Checks</h3>
+                            <div class="image-block d-block d-md-none">
+                                <div class="table-img text-center">
+                                    <img src="assets/images/chart1.png" alt="" class="mb-0 mw-415"/>
+                                </div>
+                            </div>
+                            <span class="btn-secondary">Coming Soon...</span>
+                        </div>
+                        <div class="col-md-6 d-none d-md-block wow fadeInUp" data-wow-delay="0.4s">
+                            <div class="img-block text-center">
+                                <img src="assets/images/chart1.png" alt="" class="mw-415"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="community-section img-content-block">
+                <div class="container">
+                    <div class="inner-content wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="main-title mb-0">
+                            <h2>Open Source &<br class="d-block d-sm-none"/> Community</h2>
+                            <p class="mw-700">Deepchecks is committed to keeping the ML validation package open-sourced and community-focused, so that during the training phase users will have the best possible experience. Our business model is based on charging for those extra features that are typically important for models deployed in production or relevant for internal business applications.</p>
+                            <a href="https://join.slack.com/t/deepcheckscommunity/shared_invite/zt-y28sjt1v-PBT50S3uoyWui_Deg5L_jg" class="btn-secondary"><img src="assets/images/slack-logo.svg" alt="slack"/>Join our Slack Community</a>
+                        </div>
+                        <img src="assets/images/slack-logo.svg" alt="slack" class="slack-logo"/>
+                    </div>
+                </div>
+            </section>
+            <section class="blog-section pt-lg-0">
+                <div class="container">
+                    <div class="main-title wow fadeInUp" data-wow-delay="0.2s">
+                        <h2>Recent Blog Posts</h2>
+                    </div>
+                    <div class="post-list home-post-list post-slider wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="blog-item">
+                            <div class="blog-post">
+                                <a href="#!">
+                                    <img src="assets/images/blog-img-01.png" alt="" class="thumb-img"/>
+                                </a>
+                                <div class="blog-post-inner">
+                                    <div class="post-date">December, 01 2021</div>
+                                    <div class="post-title">
+                                        <a href="#!">How to Check the Accuracy of Your Machine Learning Model</a>
+                                    </div>
+                                    <div class="post-meta">
+                                        <img src="assets/images/emily-smith.png" alt=""/>
+                                        Emily Smith
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-item">
+                            <div class="blog-post">
+                                <a href="#!">
+                                    <img src="assets/images/blog-img-02.png" alt="" class="thumb-img"/>
+                                </a>
+                                <div class="blog-post-inner">
+                                    <div class="post-date">November 10, 2021</div>
+                                    <div class="post-title">
+                                        <a href="#!">How to Test Machine Learning Models</a>
+                                    </div>
+                                    <div class="post-meta">
+                                        <img src="assets/images/shiv-chorev.png" alt=""/>
+                                        Shir Chorev
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-item">
+                            <div class="blog-post">
+                                <a href="#!">
+                                    <img src="assets/images/blog-img-03.png" alt="" class="thumb-img"/>
+                                </a>
+                                <div class="blog-post-inner">
+                                    <div class="post-date">November 10, 2021</div>
+                                    <div class="post-title">
+                                        <a href="#!">Data Drift vs. Concept Drift: What Are the Main Differences?</a>
+                                    </div>
+                                    <div class="post-meta">
+                                        <img src="assets/images/philip-tannor.png" alt=""/>
+                                        Philip Tannor
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="roadmap-section">
+                <div class="container">
+                    <div class="main-title wow fadeInUp" data-wow-delay="0.2s">
+                        <h2>Want to Learn More About Deepchecks Pro?</h2>
+                        <p class="mw-700">Deepchecks is a solution for continuously validating ML models and data throughout the different phases of their life cycles:</p>
+                    </div>
+                </div>
+                <!-- <div class="roadmap-content">
+                    <div class="inner-content">
+                        <div class="container">
+                            <div class="card-content left-border">
+                                <span class="count-number wow fadeInUp" data-wow-delay="0.3s">1</span>
+                                <h3 class="wow fadeInUp" data-wow-delay="0.4s">Training</h3>
+                                <p class="wow fadeInUp" data-wow-delay="0.5s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
+                            </div>
+                            <div class="card-content right-border">
+                                <h3 class="wow fadeInUp" data-wow-delay="0.4s">Production</h3>
+                                <p class="wow fadeInUp" data-wow-delay="0.5s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
+                                <span class="count-number wow fadeInUp" data-wow-delay="0.3s">2</span>
+                            </div>
+                            <div class="card-content left-border">
+                                <span class="count-number wow fadeInUp" data-wow-delay="0.3s">3</span>
+                                <h3 class="wow fadeInUp" data-wow-delay="0.4s">New version releases</h3>
+                                <p class="wow fadeInUp" data-wow-delay="0.5s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="roadmap-content">
+                    <div class="inner-content">
+                        <div class="container">
+                            <div class="new-card-content left-border">
+                                <span class="count-number wow fadeInUp" data-wow-delay="0.3s">1</span>
+                                <h3 class="wow fadeInUp" data-wow-delay="0.4s">Training</h3>
+                                <p class="wow fadeInUp" data-wow-delay="0.5s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
+                            </div>
+                            <div class="new-card-content right-border">
+                                <h3 class="wow fadeInUp" data-wow-delay="0.6s">Production</h3>
+                                <p class="wow fadeInUp" data-wow-delay="0.7s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
+                                <span class="count-number wow fadeInUp" data-wow-delay="0.8s">2</span>
+                            </div>
+                            <div class="new-card-content bottom-left-border">
+                                <span class="count-number wow fadeInUp" data-wow-delay="0.9s">3</span>
+                                <h3 class="wow fadeInUp" data-wow-delay="1s">New version releases</h3>
+                                <p class="wow fadeInUp" data-wow-delay="1.1s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="text-center mt-5 wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="#!" class="btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </section>
+            <section class="newsletter-section">
+                <div class="container">
+                    <div class="main-title wow fadeInUp" data-wow-delay="0.2s">
+                        <h2>Subscribe to Our Newsletter</h2>
+                        <p class="mw-700">Do you want to stay informed? Keep up-to-date with industry news, the latest trends in MLOps, and observability of ML systems.</p>
+                    </div>
+                    <div class="newsletter-input-block wow fadeInUp" data-wow-delay="0.3s">
+                        <input type="email" class="form-control" placeholder="Your email..."/>
+                        <button class="btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- // MAIN SECTION -->
+
+        <!-- FOOTER SECTION -->
+        <footer class="main-footer">
+            <img src="assets/images/logo-white.svg" alt="Deepchecks" class="footer-bg-logo"/>
+            <div class="container">
+                <div class="footer-link-section">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-2 col-lg-1">
+                            <div class="footer-logo wow fadeInUp" data-wow-delay="0.2s">
+                                <img src="assets/images/logo-white.svg" alt="Deepchecks"/>
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-lg-7">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0.3s">
+                                    <h2>Deepchecks Pro</h2>
+                                    <ul class="footer-links">
+                                        <li>
+                                            <a href="#!">What is Deepchecks Pro</a>
+                                            <ul class="sub-list">
+                                                <li><a href="#!">Deepchecks Pro Features</a></li>
+                                                <li><a href="#!">System Capabilities</a></li>
+                                                <li><a href="#!">Supported Models</a></li>
+                                                <li><a href="#!">Integrations</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#!">Use Cases</a>
+                                            <ul class="sub-list">
+                                                <li><a href="#!">Fraud</a></li>
+                                                <li><a href="#!">NLP</a></li>
+                                                <li><a href="#!">LTV</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#!">Industries</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
+                                    <h2>Open Source</h2>
+                                    <ul class="footer-links">
+                                        <li><a href="#!">Download</a></li>
+                                        <li><a href="#!">Community</a></li>
+                                        <li><a href="#!">Documentation</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0.5s">
+                                    <h2>Resources</h2>
+                                    <ul class="footer-links">
+                                        <li><a href="#!">Blog</a></li>
+                                        <li><a href="#!">Glossary</a></li>
+                                        <li><a href="#!">Datasets</a></li>
+                                        <li><a href="#!">FAQs</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0.6s">
+                                    <h2>About</h2>
+                                    <ul class="footer-links">
+                                        <li><a href="#!">Our Story</a></li>
+                                        <li><a href="#!">Careers</a></li>
+                                        <li><a href="#!">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
+                            <h2>Subscribe to Newsletter</h2>
+                            <div class="newsletter-input-block">
+                                <input type="email" class="form-control" placeholder="Your email..."/>
+                                <button class="btn-primary">Subscribe</button>
+                            </div>
+                            <ul class="social-icon">
+                                <li><a href="https://github.com/deepchecks/deepchecks" target="_blank"><img src="assets/images/github.svg" alt="github"/></a></li>
+                                <li><a href="https://www.linkedin.com/company/deepchecks/" target="_blank"><img src="assets/images/linkedin.svg" alt="linkedin"/></a></li>
+                                <li><a href="https://twitter.com/deepchecks" target="_blank"><img src="assets/images/twitter.svg" alt="twitter"/></a></li>
+                                <li><a href="https://www.facebook.com/deepchecks/" target="_blank"><img src="assets/images/facbook.svg" alt="facbook"/></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <ul class="footer-links">
+                                <li><a href="https://deepchecks.com/privacy-policy/">Privacy Policy</a></li>
+                                <li><a href="https://deepchecks.com/cookies-policy/">Cookies Policy</a></li>
+                                <li><a href="https://deepchecks.com/terms-and-conditions/">Terms & Conditions</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 text-md-end wow fadeInUp" data-wow-delay="0.4s">
+                            <p>© 2021 Deepchecks Inc.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- JS -->
+        
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/slick.min.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/clipboard.min.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script>
+            $( document ).ready(function() {
+                var clipboard = new ClipboardJS('.clipboard-btn');
+            });
+            $(window).on('scroll', function() {
+                var docViewTop = $(window).scrollTop();
+                var docViewBottom = docViewTop + $(window).height();
+
+                var elemTop = $('.new-card-content').offset().top;
+                var elemBottom = elemTop + $('.new-card-content').height();
+                
+                if ((elemBottom <= docViewBottom) && (elemTop >= docViewTop)) {
+                    $('.left-border').addClass('animated');
+                    setTimeout(function() {
+                        $('.right-border').addClass('animated');
+                        setTimeout(function() {
+                            $('.bottom-left-border').addClass('animated');
+                        }, 800);
+                    }, 800);
+                    
+                }
+            });
+        </script>
+    </body>
+</html>
