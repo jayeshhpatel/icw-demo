@@ -706,4 +706,89 @@ html .portal {
     @media (max-width: 350px) {
         
     }
+        /*****************************Akash css************************************/
+
+    // moderation-block
+    .moderation-block{
+        .overview-box{
+            .card{
+                background-color: #F7F8F9;
+            }
+        }
+        .card{
+            border: 1px solid #E2E5E9;
+            @include border-radius(10px);
+            padding: 30px;
+            margin-bottom:20px;
+            .img-block{
+                img{
+                    width: 100%;
+                }
+            }
+            .time-user-name{
+                color: #E2E5E9;
+            }
+            p{font-size: 16px;margin: 5px 0;}
+            span{
+                color: #0E132A;font-size: 13px;
+                em{
+                    color: #8690A0;
+                }
+            }
+            .remove-link{
+                color: $orange;
+                font-size: 16px;
+                line-height: 45px;
+            }
+            .ignored-link{
+                color: #8690A0;
+                font-size: 16px;
+                line-height: 45px;
+            }
+        }
+        @media(max-width:991px){
+            .card{
+                padding: 15px;
+                .remove-link{
+                    line-height: normal;
+                }
+                .ignored-link{
+                    line-height: normal;
+                }
+            }
+        }
+    }
+
+    // profanity-filter-block
+    .profanity-filter-block{
+        .card{
+            border: 1px solid #E2E5E9;
+            @include border-radius(10px);
+            padding: 20px;
+            margin-bottom:20px;
+            h2{
+                font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1900 - 320)));
+            }
+        }
+        p{
+            color: #8690A0;
+        }
+        .filter-method-list{
+            .custom-html-dropdown{
+                max-width: 200px;
+            }
+            h2{
+                color: #0E132A;
+                font-size: 16px;
+                margin-bottom: 8px;
+                font-size: 16px;
+            }
+            .description{
+                padding-top: 10px;
+                p{
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
 }
