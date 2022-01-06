@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="theme-color" content="#000000">
+        <meta name="Googlebot" content="noindex,nofollow">
+        <meta name="author" content="Deepchecks">
+        <meta name="description" content="Continuous validation for machine learning. Validate and monitor your data and models during training, production and new version releases.">
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" href="assets/images/favicons/apple-touch-icon.png" sizes="180x180">
+        <link rel="mask-icon" href="assets/images/favicons/safari-pinned-tab.svg" color="#000000">
+        <link rel="shortcut icon" type="assets/images/favicons/x-icon" href="favicon.ico">  
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+        <title>Testing Machine Learning Models | Deepchecks</title>
+    </head>
+
+    <body>
+        <!-- HEADER SECTION -->
+        <header class="main-header">
+            <div class="header-note">
+                <div class="container">
+                    <div class="note-text">If you like what we’re working on, please <a href="https://github.com/GitHub-Stars"> <strong class="text-blue"> star us on GitHub.</strong></a> This enables us to continue to give back to the community.</div>
+                </div>
+            </div>
+            <div class="header-nav-wrap">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container">
+                        <div class="header-first-block">
+                            <button class="sidebar-icon toggle-sidebar d-inline-block d-lg-none">
+                                <span class="line1"></span>
+                                <span class="line2"></span>
+                                <span class="line3"></span>
+                            </button>
+                            <a class="header-logo" href="/"><img src="assets/images/logo.svg" alt="Deepchecks" /></a>
+                            <div class="menu-list">
+                                <ul class="navbar-nav me-auto">
+                                    <li class="nav-item">
+                                        <a href="#!">Resources</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="#!">Blog</a></li>
+                                            <li><a href="#!">Glossary</a></li>
+                                            <li><a href="#!">Integrations</a></li>
+                                            <li><a href="#!">Supported Models</a></li>
+                                            <li><a href="#!">F.A.Q.</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="community.html">Community</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#!">Documentation</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://docs.deepchecks.com/html/guides/examples/quickstart_in_5_minutes.html" class="btn-primary d-inline-flex">Get Started</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- // HEADER SECTION -->
+        
+        <!-- MAIN SECTION -->
+        <main class="main-content-wrapper">
+            <section class="main-banner">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 col-lg-5 order-2 order-md-1">
+                            <div class="banner-text main-title mb-0 text-start wow fadeInUp" data-wow-delay="0.2s">
+                                <span class="sub-title">Powerful Decision</span>
+                                <h1>What is Deepchecks Pro</h1>
+                                <p>You know that once your models pass the ‘notebook’ phase and are deployed to production, the potential business impact of undetected glitches is much greater. While weighing your options to satisfy the need for continuous validation, take a few minutes to get to know Deepchecks Pro.</p>
+                                <div class="banner-btn">
+                                    <a href="https://docs.deepchecks.com/html/guides/examples/quickstart_in_5_minutes.html" class="btn-primary">Get Started</a>
+                                    <a href="https://github.com/deepchecks/deepchecks" class="btn-secondary"><img src="assets/images/github-icon.svg" alt="deepchecks"/>Our Github</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-7 text-center order-1 order-md-2">
+                            <div class="hero-image wow fadeInUp" data-wow-delay="0.4s">
+                                <img src="assets/images/hero-img.svg" alt="deepchecks"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animation-shape">
+                    <span class="shape1">145</span>
+                    <span class="shape2"></span>
+                </div>
+            </section>
+            <section class="blog-section">
+                <div class="container">
+                    <div class="validation-card wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="main-title text-start">
+                            <span class="sub-title">Open source package for ml validation</span>
+                            <h2>Build Test Suites for ML Models & Data<br/> with Deepchecks</h2>
+                            <div class="validation-btn">
+                                <a href="https://docs.deepchecks.com/html/guides/examples/quickstart_in_5_minutes.html" class="btn-primary">Get Started</a>
+                                <a href="https://github.com/deepchecks/deepchecks" class="btn-secondary"><img src="assets/images/github-icon.svg" alt="deepchecks">Our Github</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="roadmap-section">
+                <div class="container">
+                    <div class="main-title wow fadeInUp" data-wow-delay="0.2s">
+                        <h2>Continuous Validation with Deepchecks Pro</h2>
+                        <p class="mw-770">Built on top of Deepchecks Open Source, <strong>Deepchecks Pro</strong> offers <em>continuous</em> machine learning model validation throughout deployment, monitoring and retraining.</p>
+                    </div>
+                </div>
+                <div class="roadmap-content">
+                    <div class="inner-content">
+                        <div class="container">
+                            <div class="card-content">
+                                <span class="count-number wow fadeInUp" data-wow-delay="0.3s">1</span>
+                                <h3 class="wow fadeInUp" data-wow-delay="0.4s">Training</h3>
+                                <p class="wow fadeInUp" data-wow-delay="0.5s">Inspect the model together with the data used for training, validation and testing. This can typically be done in the “notebook” environment with no need for production data.</p>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="wow fadeInUp" data-wow-delay="0.4s">Production</h3>
+                                <p class="wow fadeInUp" data-wow-delay="0.5s">Check to see if the production data differs from the training data or changes over time. This is typically done in the production environment, but relies on aggregated data from the training phase.</p>
+                                <span class="count-number wow fadeInUp" data-wow-delay="0.3s">2</span>
+                            </div>
+                            <div class="card-content">
+                                <span class="count-number wow fadeInUp" data-wow-delay="0.3s">3</span>
+                                <h3 class="wow fadeInUp" data-wow-delay="0.4s">New version releases</h3>
+                                <p class="wow fadeInUp" data-wow-delay="0.5s">Check to see if a new “challenger” model performs better than the last version, or if new unexpected behavior is introduced. This can be done by comparing model to model or data to data (train & prod data both work).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="text-center mt-5 wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="#!" class="btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </section>
+            <section class="features-section img-content-block">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <h3>Same Fundamentals as the OSS Package</h3>
+                            <div class="img-block text-center wow fadeInUp d-block d-md-none" data-wow-delay="0.3s">
+                                <img src="assets/images/diagram.svg" alt="" class="mw-570"/>
+                            </div>
+                            <p class="mw-470">Like the OSS package, Deepchecks Pro is based on <strong>checks & suites</strong> related to the leading issues to observe in production. Book a demo to see how you can use the foundations of the open source package to easily configure production metrics and alerts for each new ML task you begin to monitor.</p>
+                            <a href="#!" class="btn-primary mt-3">Book a demo</a>
+                        </div>
+                        <div class="col-md-6 wow fadeInUp d-none d-md-block" data-wow-delay="0.4s">
+                            <div class="img-block text-center wow fadeInUp" data-wow-delay="0.3s">
+                                <img src="assets/images/diagram.svg" alt="" class="mw-570"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="features-section img-content-block white-section">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <h3 class="d-block d-md-none">Holistic Approach</h3>
+                            <div class="team-svg-animation-block">
+                                <div class="team-user-info user-1 wow fadeInDown">
+                                    <span class="team-user-img">
+                                        <img src="assets/images/team-user-1.png" alt="" />
+                                    </span>
+                                    <span class="text">DS</span>
+                                </div>
+                                <div class="team-user-info user-2 wow fadeInDown" data-wow-delay="0.9s">
+                                    <span class="team-user-img">
+                                        <img src="assets/images/team-user-2.png" alt="" />
+                                    </span>
+                                    <span class="text">ML Engineer</span>
+                                </div>
+                                <div class="team-user-info user-3 wow fadeInDown" data-wow-delay="0.6s">
+                                    <span class="team-user-img">
+                                        <img src="assets/images/team-user-3.png" alt="" />
+                                    </span>
+                                    <span class="text">DE</span>
+                                </div>
+                                <div class="team-user-info user-4 wow fadeInDown" data-wow-delay="1.2s">
+                                    <span class="team-user-img">
+                                        <img src="assets/images/team-user-4.png" alt="" />
+                                    </span>
+                                    <span class="text">DS Team Lead</span>
+                                </div>
+                                <div class="team-user-info user-5 wow fadeInDown" data-wow-delay="0.3s">
+                                    <span class="team-user-img">
+                                        <img src="assets/images/team-user-5.png" alt="" />
+                                    </span>
+                                    <span class="text">Business Analyst</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="mw-470 mx-auto">
+                                <h3 class="d-none d-md-block">Holistic Approach</h3>
+                                <p class="mw-470">Deepchecks Pro is an extensive MLOps solutions for enterprises and tech companies, built with <strong>multiple users</strong> in mind. Schedule a demo to see how different users can derive value from the solution while interacting with it using methods that fit naturally into their workflow.</p>
+                                <a href="#!" class="btn-primary mt-3">Book a demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="features-section img-content-block">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="mw-470">
+                                <h3>What Else You’ll Be Getting</h3>
+                                <div class="img-block text-center wow fadeInUp d-block d-md-none" data-wow-delay="0.3s">
+                                    <img src="assets/images/dashboard.png" alt=""/>
+                                </div>
+                                <p>Deepchecks Pro adds features critical for the production setting: </p>
+                                <ul class="dots-list">
+                                    <li>User interface and Pro dashboards</li>
+                                    <li>Integrations</li>
+                                    <li>User management</li>
+                                    <li>Third party alerts</li>
+                                    <li>Engineering support</li>
+                                    <li>SLA commitments</li>
+                                    <li>Liability, and more.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6 wow fadeInUp d-none d-md-block" data-wow-delay="0.4s">
+                            <div class="img-block text-center wow fadeInUp" data-wow-delay="0.3s">
+                                <img src="assets/images/dashboard.png" alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="build-section">
+                <div class="container">
+                    <div class="main-title wow fadeInUp" data-wow-delay="0.2s">
+                        <h2>Build vs Buy</h2>
+                        <p class="mw-700">If you’re familiar with Deepchecks Open Source, you know you could try and create your own monitoring system in-house. For ML teams solving observability challenges, there are two reasons why the best practice is to partner with a third party such as Deepchecks:</p>
+                    </div>
+                    <div class="build-inner-block">
+                        <div class="row m-0">
+                            <div class="col-md-6 p-0">
+                                <div class="card-item">
+                                    <div class="img-block wow fadeInUp" data-wow-delay="0.3s">
+                                        <img src="assets/images/money.svg" alt="money"/>
+                                    </div>
+                                    <h3 class="wow fadeInUp" data-wow-delay="0.4s">Costs</h3>
+                                    <p class="wow fadeInUp" data-wow-delay="0.5s">Building an ML Monitoring system in-house typically costs a lot more than initial estimations (in terms of engineering hours).</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 boder-left p-0">
+                                <div class="card-item">
+                                    <div class="img-block wow fadeInUp" data-wow-delay="0.3s">
+                                        <img src="assets/images/development.svg" alt="development"/>
+                                    </div>
+                                    <h3 class="wow fadeInUp" data-wow-delay="0.4s">Keeping up</h3>
+                                    <p class="wow fadeInUp" data-wow-delay="0.5s">We’re continuously advancing Deepchecks Pro with features, dashboards and integrations so your team stays ahead seamlessly instead of falling behind on homegrown monitoring dashboards.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="price-section">
+                <div class="container">
+                  <div class="row row-cols-1 row-cols-md-3 g-4">
+                     <div class="col">
+                        <div class="card price-card-item">
+                              <div class="card-head wow fadeInUp" data-wow-delay="0.3s">
+                                 <img src="assets/images/search.svg" alt=""/>
+                              </div>
+                              <div class="card-body wow fadeInUp" data-wow-delay="0.4s">
+                                 <h2 class="card-title">Deepchecks Open Source</h2>
+                                 <ul class="check-list">
+                                 <li>Preconfigured + custom checks</li>
+                                 <li>Preconfigured + custom conditions</li>
+                                 <li>Preconfigured + custom suites</li>
+                                 <li>Reports within Python notebooks</li>
+                                 <li>Community support</li>
+                                 </ul>
+                              </div>
+                              <div class="card-footer wow fadeInUp" data-wow-delay="0.5s">
+                                 <a href="#!" class="btn-primary">Get Started</a>
+                              </div>
+                        </div>
+                     </div>
+                     <div class="col">
+                        <div class="card price-card-item">
+                              <div class="card-head wow fadeInUp" data-wow-delay="0.3s">
+                                 <img src="assets/images/rocket.svg" alt=""/>
+                              </div>
+                              <div class="card-body wow fadeInUp" data-wow-delay="0.4s">
+                                 <h2  class="card-title">Deepchecks Pro</h2>
+                                 <p>Includes everything in Deepchecks OSS, plus:</p>
+                                 <ul class="check-list">
+                                    <li>On-prem deployment within client’s cloud account or servers</li>
+                                    <li>Simple setup based on configurable suites and checks</li>
+                                    <li>User interface for ongoing production monitoring (stream + batch modes)</li>
+                                    <li>Alerts based on the checks’ conditions</li>
+                                    <li>Deepchecks API for setup, config and data transfer</li>
+                                    <li>Built-in integrations with DBs and buckets</li>
+                                    <li>Scheduling of suite calculations for monitoring and retraining</li>
+                                    <li>Logging of suite results for future investigation</li>
+                                    <li>Designated Slack channel and ongoing engineering support</li>
+                                 </ul>
+                              </div>
+                              <div class="card-footer wow fadeInUp" data-wow-delay="0.5s">
+                                 <a href="#!" class="btn-primary">Book a Demo</a>
+                              </div>
+                        </div>
+                     </div>
+                     <div class="col">
+                        <div class="card price-card-item">
+                            <div class="card-head wow fadeInUp" data-wow-delay="0.3s">
+                                <img src="assets/images/universe.svg" alt=""/>
+                            </div>
+                            <div class="card-body wow fadeInUp" data-wow-delay="0.4s">
+                                <h2 class="card-title">Deepchecks Enterprise</h2>
+                                <p>Includes everything in Deepchecks OSS, plus:</p>
+                                <ul class="check-list">
+                                <li>Custom deployment options</li>
+                                <li>Custom contract</li>
+                                <li>Custom security & user management features</li>
+                                <li>Custom integrations with existing tools</li>
+                                <li>Designated account manager and engineering support</li>
+                                <li>Support in adapting reports to suit regulatory purposes</li>
+                                <li>Built -in capabilities for investigating and explaining past predictions </li>
+                                </ul>
+                            </div>
+                            <div class="card-footer wow fadeInUp" data-wow-delay="0.5s">
+                                <a href="#!" class="btn-primary">Book a Demo</a>
+                            </div>
+                        </div>
+                     </div>
+                  </div>
+                </div>
+            </section>
+            <section class="home-video-section">
+               <div class="container">
+                  <div class="main-title wow fadeInUp" data-wow-delay="0.2s">
+                     <h2>Explainer Video</h2>
+                  </div>
+                  <div class="video-wrap-container">
+                     <div class="play-video-block">
+                        <div class="play-iframe" data-videosrc="https://www.youtube.com/embed/Y4P1E5y1jZ8">
+                           <img src="assets/images/video-img.png" alt=""/>
+                           <span class="play-icon">
+                              <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M48 0.5C21.8 0.5 0.5 21.8 0.5 48C0.5 74.2 21.8 95.5 48 95.5C74.2 95.5 95.5 74.2 95.5 48C95.5 21.8 74.2 0.5 48 0.5ZM63.3 50.4L40.9 65.3C39 66.6 36.4 65.2 36.4 62.9V33.1C36.4 30.8 39 29.4 40.9 30.7L63.3 45.6C65 46.7 65 49.3 63.3 50.4Z" fill="white"/>
+                              </svg>
+                           </span>
+                        </div>
+                     </div> 
+                  </div>
+               </div>
+            </section>
+            <section class="blog-section pt-lg-0">
+                <div class="container">
+                    <div class="main-title wow fadeInUp" data-wow-delay="0.2s">
+                        <h2>Recent Blog Posts</h2>
+                    </div>
+                    <div class="post-list home-post-list post-slider wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="blog-item">
+                            <div class="blog-post">
+                                <a href="#!">
+                                    <img src="assets/images/blog-img-01.png" alt="" class="thumb-img"/>
+                                </a>
+                                <div class="blog-post-inner">
+                                    <div class="post-date">December, 01 2021</div>
+                                    <div class="post-title">
+                                        <a href="#!">How to Check the Accuracy of Your Machine Learning Model</a>
+                                    </div>
+                                    <div class="post-meta">
+                                        <img src="assets/images/emily-smith.png" alt=""/>
+                                        Emily Smith
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-item">
+                            <div class="blog-post">
+                                <a href="#!">
+                                    <img src="assets/images/blog-img-02.png" alt="" class="thumb-img"/>
+                                </a>
+                                <div class="blog-post-inner">
+                                    <div class="post-date">November 10, 2021</div>
+                                    <div class="post-title">
+                                        <a href="#!">How to Test Machine Learning Models</a>
+                                    </div>
+                                    <div class="post-meta">
+                                        <img src="assets/images/shiv-chorev.png" alt=""/>
+                                        Shir Chorev
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-item">
+                            <div class="blog-post">
+                                <a href="#!">
+                                    <img src="assets/images/blog-img-03.png" alt="" class="thumb-img"/>
+                                </a>
+                                <div class="blog-post-inner">
+                                    <div class="post-date">November 10, 2021</div>
+                                    <div class="post-title">
+                                        <a href="#!">Data Drift vs. Concept Drift: What Are the Main Differences?</a>
+                                    </div>
+                                    <div class="post-meta">
+                                        <img src="assets/images/philip-tannor.png" alt=""/>
+                                        Philip Tannor
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="newsletter-section">
+                <div class="container">
+                    <div class="main-title wow fadeInUp" data-wow-delay="0.2s">
+                        <h2>Subscribe to Our Newsletter</h2>
+                        <p class="mw-700">Do you want to stay informed? Keep up-to-date with industry news, the latest trends in MLOps, and observability of ML systems.</p>
+                    </div>
+                    <div class="newsletter-input-block wow fadeInUp" data-wow-delay="0.3s">
+                        <input type="email" class="form-control" placeholder="Your email..."/>
+                        <button class="btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- // MAIN SECTION -->
+
+        <!-- FOOTER SECTION -->
+        <footer class="main-footer">
+            <img src="assets/images/logo-white.svg" alt="Deepchecks" class="footer-bg-logo"/>
+            <div class="container">
+                <div class="footer-link-section">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-2 col-lg-1">
+                            <div class="footer-logo wow fadeInUp" data-wow-delay="0.2s">
+                                <img src="assets/images/logo-white.svg" alt="Deepchecks"/>
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-lg-7">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0.3s">
+                                    <h2>Deepchecks Pro</h2>
+                                    <ul class="footer-links">
+                                        <li>
+                                            <a href="#!">What is Deepchecks Pro</a>
+                                            <ul class="sub-list">
+                                                <li><a href="#!">Deepchecks Pro Features</a></li>
+                                                <li><a href="#!">System Capabilities</a></li>
+                                                <li><a href="#!">Supported Models</a></li>
+                                                <li><a href="#!">Integrations</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#!">Use Cases</a>
+                                            <ul class="sub-list">
+                                                <li><a href="#!">Fraud</a></li>
+                                                <li><a href="#!">NLP</a></li>
+                                                <li><a href="#!">LTV</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#!">Industries</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
+                                    <h2>Open Source</h2>
+                                    <ul class="footer-links">
+                                        <li><a href="#!">Download</a></li>
+                                        <li><a href="#!">Community</a></li>
+                                        <li><a href="#!">Documentation</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0.5s">
+                                    <h2>Resources</h2>
+                                    <ul class="footer-links">
+                                        <li><a href="#!">Blog</a></li>
+                                        <li><a href="#!">Glossary</a></li>
+                                        <li><a href="#!">Datasets</a></li>
+                                        <li><a href="#!">FAQs</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0.6s">
+                                    <h2>About</h2>
+                                    <ul class="footer-links">
+                                        <li><a href="#!">Our Story</a></li>
+                                        <li><a href="#!">Careers</a></li>
+                                        <li><a href="#!">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
+                            <h2>Subscribe to Newsletter</h2>
+                            <div class="newsletter-input-block">
+                                <input type="email" class="form-control" placeholder="Your email..."/>
+                                <button class="btn-primary">Subscribe</button>
+                            </div>
+                            <ul class="social-icon">
+                                <li><a href="https://github.com/deepchecks/deepchecks" target="_blank"><img src="assets/images/github.svg" alt="github"/></a></li>
+                                <li><a href="https://www.linkedin.com/company/deepchecks/" target="_blank"><img src="assets/images/linkedin.svg" alt="linkedin"/></a></li>
+                                <li><a href="https://twitter.com/deepchecks" target="_blank"><img src="assets/images/twitter.svg" alt="twitter"/></a></li>
+                                <li><a href="https://www.facebook.com/deepchecks/" target="_blank"><img src="assets/images/facbook.svg" alt="facbook"/></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <ul class="footer-links">
+                                <li><a href="https://deepchecks.com/privacy-policy/">Privacy Policy</a></li>
+                                <li><a href="https://deepchecks.com/cookies-policy/">Cookies Policy</a></li>
+                                <li><a href="https://deepchecks.com/terms-and-conditions/">Terms & Conditions</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 text-md-end wow fadeInUp" data-wow-delay="0.4s">
+                            <p>© 2021 Deepchecks Inc.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- JS -->
+        
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/slick.min.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/clipboard.min.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script>
+           if ($('.play-iframe').length){
+			$('.play-iframe').click(function(ev){	
+				videourl = $(this).data('videosrc')+"?api=1&autoplay=1&muted=1";
+				video = '<div class="video-wrap"><iframe class="embed-responsive-item play-in_iframe" src="'+videourl+'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
+				$(this).parents('.play-video-block').html(video);
+				ev.preventDefault();
+			});
+		}
+        </script>
+    </body>
+</html>
