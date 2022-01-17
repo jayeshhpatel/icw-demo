@@ -27,7 +27,7 @@ $('.menu-item').bind('click',function(event){
     $anchor.addClass("active");
     $('html, body').stop().animate({
         scrollTop: $($anchor.attr('href')).offset().top-$hoffset
-    }, 1000,'easeInOutExpo');
+    }, 10,'easeInOutExpo');
     event.preventDefault();
 });
 
@@ -45,10 +45,3 @@ if (jQuery('.section-block').length) {
         });
     }).scroll();
 }
-
- /* WOW Animation - Init */
-try {
-    new WOW().init();
-} catch (e) {
-  //
-};
