@@ -22,7 +22,7 @@ $(document).ready(function () {
 /* menu-wise scroll body */
 $('.menu-item').bind('click',function(event){
     var $anchor = $(this);
-    var $hoffset = '90';
+    var $hoffset = '20';
     $('.menu-item').removeClass("active");
     $anchor.addClass("active");
     $('html, body').stop().animate({
