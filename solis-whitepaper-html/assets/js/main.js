@@ -39,6 +39,7 @@ if (jQuery('.section-block').length) {
                 if (jQuery(this).position().top <= scrollDistance - 500 ) { 
                     var getid = jQuery(this).attr('id');  
                     jQuery('.sidebar-menu-list li a').removeClass('active');
+                    jQuery('.sidebar-menu-list li a[href^="#'+getid+'"]').parents('.with-sub-menu').find('.menu-item').addClass('active');
                     jQuery('.sidebar-menu-list li a[href^="#'+getid+'"]').addClass('active');
                 }
             }
